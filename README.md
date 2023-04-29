@@ -42,7 +42,7 @@ This project was developed in [CodeAnywhere](https://app.codeanywhere.com/) Clou
 10. Stop the server ('ctrl + c' on windows, 'cmd + .' on mac) and run the initial migrations using the `python3 manage.py migrate` in the terminal.
 11. Create a superuser so that you can log in to the Admin panel. `python3 manage.py createsuperuser` and enter your username, email and password. The skeleton of the project is now complete.
 
-## First Deployment
+## Setup for First Deployment
 
 With the skeleton of the project running locally, it is best to prepare it for deployment on Heroku at this early stage.
 
@@ -154,6 +154,62 @@ In settings.py scroll to ALLOWED_HOSTS and add the Heroku host name before the U
     * 'web' tells Heroku that this a process that should accept HTTP traffic.
     * 'gunicorn' is the server used
     * 'wsgi' stands for web services gateway interface and is a standard that allows Python services to integrate with web servers
+
+## First Deployment
+
+Make sure everything is saved and pushed to GitHub before continuing on.
+
+1. Go back to the Heroku dashboard and click on the 'deploy' tab.
+2. For deployment method, select 'GitHub' and search for the project's repository from the list.
+3. Select and then click on 'Deploy Branch'.
+4. When the build log is complete it should say that the app has been successfully deployed.
+5. Click on the 'Open App' button to view it and the Django “The install worked successfully!” page, should be displayed.
+
+## Amazon Web Services Setup
+
+[Amazon Web Services(AWS) S3](https://aws.amazon.com/) is a cloud-based storage service where we can store our static and media files. The following are the steps of how I set it up following a guide by one of CI's tutors. Please be aware that AWS might have updated their User Interface since these steps were written.  
+
+### Creating the S3 Bucket
+
+1. Navigate to [Amazon AWS](https://aws.amazon.com/) in the browser and login or create an account. Be aware that you will be asked to enter a credit card number which will be used for billing if you go above the free usage limits. Enter your details and billing information then select the basic support which is free and click on the 'Complete sign up' button. Head over to the AWS Management Console where you will be redirected to the sign in page.
+2. Sign in using the root user.  Enter your email and password.
+3. You will be directed to the Console Home. Navigate to S3 in the Services menu if you haven't accessed this service before.
+4. Open S3 and create a new bucket to store the media and static files.  To keep things organised give it the same name as the Heroku app name and select the region closest to you.
+5. In Object Ownership, select ACLs enabled and Bucket owner preferred.
+6. In Block Public Access, uncheck Block all public access and acknowledge that the bucket will be public if you want to allow public access to the static files. Click 'Create bucket'.
+7. Click the newly created bucket to set a few basic settings.  In the Properties tab, scroll down to Static website hosting, click 'Edit' and select Enable and Host a static website.
+8. Enter a default value in the Index document field and click the 'Save changes' button at the bottom right.
+9. In the Permissions tab, scroll down to the Cross-origin resource sharing (CORS) section and click the 'Edit' button. Paste in the following CORS configuration which will set up the required access with the Heroku app and save changes.
+
+    ```json
+    [
+        {
+            "AllowedHeaders": [
+                "Authorization"
+            ],
+            "AllowedMethods": [
+                "GET"
+            ],
+            "AllowedOrigins": [
+                "*"
+            ],
+            "ExposeHeaders": []
+        }
+    ]
+    ```
+
+10. Still in the Permissions tab, go to the Bucket Policy section and click 'Edit'.  Click on 'Policy generator' to create a security policy for this bucket.
+    * Select 'S3 Bucket Policy' for Type of Policy.
+    * Add a (*) star symbol in the Principal field to allow all principals.
+    * In the Actions dropdown select GetObject.
+    * Copy the ARN from the orignal tab and paste it in the ARN input box provided.
+    * Click 'Add Statement' then 'Generate Policy'.
+    * Copy the policy that opens up in the modal and paste it in the Bucket Policy Editor from the original tab.
+    * Add a slash star (/*) to the end of the Resource value in order to allow access to all resources in this bucket.
+    * Save changes
+11. To configure the bucket, go to the Access control list(ACL) section and select List for Everyone (public access). Accept the warning box and save changes.
+
+### Creating AWS Groups, Policies and Users
 
 _____
 
