@@ -17,14 +17,30 @@ This project was developed in [CodeAnywhere](https://app.codeanywhere.com/) Clou
    * `pip3 install 'django<4' gunicorn`  - This installs [Django 3.2](https://www.djangoproject.com/start/overview/) and the server [gunicorn](https://gunicorn.org/) used to run the project on Heroku.
    * `pip3 install dj_database_url==0.5.0 psycopg2`  - This installs the [postgreSQL](https://www.postgresql.org/) relational database management system along with [psycopg2](https://www.psycopg.org/docs/) and adapter for Python.
    * `pip3 freeze --local > requirements.txt`  - This creates the requirements.txt file and adds Django and the installed supporting libraries to it.
-5. Create a new Django project and give it the name of the website. `django-admin startproject reclaimed_treasures .`  - Don't forget the (.) dot to create the project in the current directory.
-6. Create a basic .gitignore file `touch .gitignore` (you might already have this if you're using CI's Full Template). Then add:
+5. Create a new Django project and give it the name of the website. `django-admin startproject project_directory .`  - Don't forget the (.) dot to create the project in the current directory.
+6. Create the first app. I started with the home app. `python3 manage.py startapp home`
+7. Add the new app to the INSTALLED_APPS in settings.py.
+
+   ```python
+   INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        #  Custom apps
+        'home',
+    ]
+    ```
+
+8. Create a basic .gitignore file `touch .gitignore` (you might already have this if you're using CI's Full Template). Then add:
    * `*.sqlite3`  - so as not to commit the development database to version control.
    * `.pyc` and `__pycache__`  - to ignore compiled Python code not needed in version control.
-7. Run the project to make sure that everything is working properly using the `python3 manage.py runserver` command and exposing port 8000. If working on CodeAnywhere, you may get a 'DisallowedHost at /' error.  Copy the URL of your running CodeAnywhere project to the ALLOWED_HOSTS variable in settings.py and run it again. Do not add the 'https://' at the start or the trailing '/' at the end. You should now get the 'Install worked successfully' page below.
+9. Run the project to make sure that everything is working properly using the `python3 manage.py runserver` command and exposing port 8000. If working on CodeAnywhere, you may get a 'DisallowedHost at /' error.  Copy the URL of your running CodeAnywhere project to the ALLOWED_HOSTS variable in settings.py and run it again. `ALLOWED_HOSTS = ['8000-githubusername-gitrepositoryname-abcde12fgh.us2.codeanyapp.com']` - Do not add the 'https://' at the start or the trailing '/' at the end. You should now get the 'Install worked successfully' page below.
 ![Django Successful Installation page](docs/django_successful.png)
-8. Stop the server ('ctrl + c' on windows, 'cmd + .' on mac) and run the initial migrations using the `python3 manage.py migrate` in the terminal.
-9. Create a superuser so that you can log in to the Admin panel. `python3 manage.py createsuperuser` and enter your username, email and password. The skeleton of the project is now complete.
+10. Stop the server ('ctrl + c' on windows, 'cmd + .' on mac) and run the initial migrations using the `python3 manage.py migrate` in the terminal.
+11. Create a superuser so that you can log in to the Admin panel. `python3 manage.py createsuperuser` and enter your username, email and password. The skeleton of the project is now complete.
 
 ## First Deployment
 
@@ -105,6 +121,39 @@ It is important to make the Django project aware of the env.py file and to conne
 5. To make sure the application is now connected to the remote database hosted on ElephantSQL, head over to your ElephantSQL dashboard and select the newly created database instance. Select the 'Browser' tab on the left and click on 'Table queries'.  This displays a dropdown field with the database structure which has been populated from the Django migrations. If you select 'auth_user' and click on the 'Execute' button on the right, you should be able to see your superuser details displayed.  This confirms your tables have been created and you can add data to your database.
 
 6. If you don't see your superuser details displayed run the `python3 manage.py createsuperuser` command again, give yourself a Username, email and password and go over step 5 above again.
+
+### Connect the database to Heroku
+
+1. Open up the Heroku dashboard, select the project's app and click on the 'Settings' tab.
+2. Click on 'Reveal Config Vars' and add the DATABASE_URL with the value of the copied URL (without quotation marks) from the database instance created on ElephantSQL.
+3. Also add the SECRET_KEY with the value of the secret key added to the env.py file.
+4. If using GitPod another key needs to be added in order for the deployment to succeed.  This is PORT with the value of 8000.
+5. To help get the project deployed without static files you need to add one more temporary variable.  This needs to be removed before deploying the full project.  Use DISABLE_COLLECTSTATIC as the key and '1' as the value.
+
+### Setup the Templates directory
+
+In settings.py scroll down to the TEMPLATES variable to instruct Django to store the root templates directory in the DIRS setting, like so:
+
+```python
+'DIRS' = [
+    os.path.join(BASE_DIR, 'templates'),
+]
+```
+
+This is where the custom allauth directory will also be set.
+
+### Add Heroku Host Name
+
+In settings.py scroll to ALLOWED_HOSTS and add the Heroku host name before the URL of your running CodeAnywhere project. This should be the Heroku app name created earlier followed by .herokuapp.com.
+`ALLOWED_HOSTS = ['heroku-app-name.herokuapp.com', '8000-githubusername-gitrepositoryname-abcde12fgh.us2.codeanyapp.com']`
+
+### Create the Process file
+
+1. Create the media, static and templates directories at the root level next to the manage.py file.
+2. At the root level again, create a new file called 'Procfile' with a capital 'P'. This tells Heroku how to run this project. In this file add the following code, including the name of your project directory. `web: gunicorn project_directory.wsgi:application`
+    * 'web' tells Heroku that this a process that should accept HTTP traffic.
+    * 'gunicorn' is the server used
+    * 'wsgi' stands for web services gateway interface and is a standard that allows Python services to integrate with web servers
 
 _____
 

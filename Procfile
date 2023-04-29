@@ -1,0 +1,1 @@
+web: gunicorn reclaimed_treasures.wsgi:application
