@@ -1,3 +1,113 @@
+# Overview
+
+Vera's Reclaimed Treasures is an educational fullstack website based on business logic used to control a centrally owned dataset.  It has an authentication mechanism and provides paid access based on the dataset in the purchasing of products.
+
+_____
+
+# Deployment
+
+This project was developed in [CodeAnywhere](https://app.codeanywhere.com/) Cloud IDE using [Code Institute's Full Template](https://github.com/Code-Institute-Org/ci-full-template).  The following describes the process undertaken to set up the Django project using a postgreSQL database instance on [ElephantSQL](https://www.elephantsql.com/), an [Amazon AWS S3 Bucket](https://aws.amazon.com/) for media and static file storage and deployment to [Heroku](https://www.heroku.com/).  
+
+## Setup
+
+1. Create a new GitHub repository using the [Code Institute's Full Template](https://github.com/Code-Institute-Org/ci-full-template) which preinstalls all the tools needed to get started.  If you do not have access to this you need to pre-install Python and all requirements into your IDE.
+2. Once your repository has been created on GitHub, copy the repository URL and log into [CodeAnywhere](https://app.codeanywhere.com/) with your GitHub account.
+3. Click on the 'New Workspace' button on your dashboard and paste in the copied repository URL.  Click 'Create'. This will create your new workspace which can be accessed from the [CodeAnywhere Dashboard](https://app.codeanywhere.com/).
+4. In your new workspace navigate to the 'Terminal' tab in the top menu and click on 'New Terminal'. This will open a terminal at the bottom of the workspace where you can run the following commands to install Django and supporting libraries.
+   * `pip3 install 'django<4' gunicorn`  - This installs [Django 3.2](https://www.djangoproject.com/start/overview/) and the server [gunicorn](https://gunicorn.org/) used to run the project on Heroku.
+   * `pip3 install dj_database_url==0.5.0 psycopg2`  - This installs the [postgreSQL](https://www.postgresql.org/) relational database management system along with [psycopg2](https://www.psycopg.org/docs/) and adapter for Python.
+   * `pip3 freeze --local > requirements.txt`  - This creates the requirements.txt file and adds Django and the installed supporting libraries to it.
+5. Create a new Django project and give it the name of the website. `django-admin startproject reclaimed_treasures .`  - Don't forget the (.) dot to create the project in the current directory.
+6. Create a basic .gitignore file `touch .gitignore` (you might already have this if you're using CI's Full Template). Then add:
+   * `*.sqlite3`  - so as not to commit the development database to version control.
+   * `.pyc` and `__pycache__`  - to ignore compiled Python code not needed in version control.
+7. Run the project to make sure that everything is working properly using the `python3 manage.py runserver` command and exposing port 8000. If working on CodeAnywhere, you may get a 'DisallowedHost at /' error.  Copy the URL of your running CodeAnywhere project to the ALLOWED_HOSTS variable in settings.py and run it again. Do not add the 'https://' at the start or the trailing '/' at the end. You should now get the 'Install worked successfully' page below.
+![Django Successful Installation page](docs/django_successful.png)
+8. Stop the server ('ctrl + c' on windows, 'cmd + .' on mac) and run the initial migrations using the `python3 manage.py migrate` in the terminal.
+9. Create a superuser so that you can log in to the Admin panel. `python3 manage.py createsuperuser` and enter your username, email and password. The skeleton of the project is now complete.
+
+## First Deployment
+
+With the skeleton of the project running locally, it is best to prepare it for deployment on Heroku at this early stage.
+
+### Create the Heroku App
+
+1. Login to [Heroku](https://www.heroku.com/) and click on the top right button ‘New’ on the dashboard.
+2. Click 'Create new app'.
+3. Give your app a unique name and select the region closest to you.
+4. Click on the 'Create app' button.
+
+### Create the postgreSQL Database
+
+Since the database provided by Django is only accessible within Gitpod, a new database suitable for production needs to be created in order for Heroku to be able to access it.  The following steps create a new postgreSQL database instance, hosted on [ElephantSQL](https://www.elephantsql.com/).
+
+1. Login to ElephantSQL and click on the top right button 'Create New Instance'.
+2. Give your plan the name of the project and select the Tiny Turtle (Free) plan.  The 'Tags' field can be left empty.
+3. Click on 'Select Region'. Select a data centre near you.  Choose another region if there is none in your region yet. Click 'Review'.
+4. Make sure your plan is correct and click 'Create Instance'.
+5. Return to the dashboard and click on this project's instance you just created. This will open up the 'Details' page where the link to the URL is displayed.  This needs to be added to the env.py file in the project's directories as well as to the Heroku Config Vars so copy it and keep this tab open.
+
+### Create an env.py file
+
+With the database created, it now needs to be connected with the project.  Certain variables need to be kept private and should not be published to GitHub.  In order to keep these variables hidden, it is important to create an env.py file and add it to .gitignore.  
+
+1. Run the `touch env.py` command in the terminal to create the env.py file.
+2. Import os and set the DATABASE_URL variable using the `os.environ` method and add the URL copied from instance created above to it here, like so: `os.environ[“DATABASE_URL”] = ”postgres://ElephantSQLcopiedURL”`
+3. The Django application requires a SECRET_KEY to encrypt session cookies.  Set this variable to any string you like or generate a secret key on this [MiniWebTool](https://miniwebtool.com/django-secret-key-generator/).
+   `os.environ[“SECRET_KEY”] = ”longSecretString”`
+
+### Modify settings.py
+
+It is important to make the Django project aware of the env.py file and to connect the workspace to the new database.
+
+1. Open up the settings.py file and add the following code. The if statement acts as a safety net for the application in case it is run without the env.py file.
+
+    ```python
+    import os  
+    import dj_database_url  
+
+    if os.path.isfile('env.py'):
+        import env
+    ```
+
+2. Remove the insecure secret key provided by Django further down and reference the variable in the env.py file, like so:
+
+    ```python
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    ```
+
+3. Hook up the database using the dj_database_url import added above.  Comment out the original DATABASES variable provided by Django which connects the Django application to the created db.sqlite3 database within your repo.  This database is not suitable for production so add the following code instead:
+
+    ```python
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    } 
+    ```
+
+    Note: If you prefer to work with the db.sqlite3 one in development then use the following code to use it if the external database is not yet hooked up.
+
+    ```python
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+
+4. Save and migrate this database structure to the newly connected postgreSQL database.  Run the migrate command `python3 manage.py migrate` in your terminal.
+
+5. To make sure the application is now connected to the remote database hosted on ElephantSQL, head over to your ElephantSQL dashboard and select the newly created database instance. Select the 'Browser' tab on the left and click on 'Table queries'.  This displays a dropdown field with the database structure which has been populated from the Django migrations. If you select 'auth_user' and click on the 'Execute' button on the right, you should be able to see your superuser details displayed.  This confirms your tables have been created and you can add data to your database.
+
+6. If you don't see your superuser details displayed run the `python3 manage.py createsuperuser` command again, give yourself a Username, email and password and go over step 5 above again.
+
+_____
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
@@ -34,6 +144,6 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
----
+_____
 
 Happy coding!
