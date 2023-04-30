@@ -233,7 +233,42 @@ Make sure everything is saved and pushed to GitHub before continuing on.
 ### Connecting Django to S3
 
 1. To connect Django to S3, you need to install boto3 `pip3 install boto3` and django-storages `pip3 install django-storages`.  Add to requirements and add `storages` to the INSTALLED_APPS in settings.py.
-2. 
+2. Here you also need to add the following to tell Django which bucket it should be communicating with.  You only want to do this on Heroku so add an if statement and configure your bucket.
+
+   ```python
+   if 'USE_AWS' in os.environ:
+        #  Bucket Config
+        AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+        AWS_S3_REGION_NAME = 'your-chosen-region'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    ```
+
+3. Make sure to add the last two in your env.py file in order to keep them secret. You will find these in the CSV file you downloaded earlier.
+
+    ```python
+    os.environ["AWS_ACCESS_KEY_ID"] = "yourAccessKeyId"
+    os.environ["AWS_SECRET_ACCESS_KEY"] = "yourSecretAccessKey"
+    ```
+
+4. Add them to your Heroku config vars and include `USE_AWS` and set it to `True`. You can leave DISABLE_COLLECTSTATIC set to 1 in development but remember to remove it before final deployment so that Django will collect static files automatically and upload them to S3.
+5. Back in settings.py tell Django where the static files will be coming from in production. `AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'`
+6. To tell Django to send the uploaded product images to the S3 bucket in production, create a file at the root level - custom_storages.py - and create custom classes for static and media storage telling Django to get the location from settings.py.
+7. Define these locations in settings.py within the if statement created earlier. You also need to override and explicitly set the URLs for static and media files using your custom domain and the new locations.
+
+   ```python
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+
+8. When development is finished remember to remove the DISABLE_COLLECTSTATIC variable in Heroku so that when the project is deployed, it will run python3 manage.py collectstatic during the build process, which will search through all the apps and project folders for static files and it will use the S3 custom domain setting above in conjunction with the custom storage classes to find out the location of that URL where you want them to be saved.
+
 _____
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
