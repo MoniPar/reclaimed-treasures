@@ -277,7 +277,7 @@ _____
 
 # Bugs
 
-* Copying django-allauth packages
+* Copying django-allauth templates
 
 Problem: Using the `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/` command to make a copy of the built-in allauth template directories was giving me `cp: cannot stat '../.pip-modules/lib/python3.8/site-packages/allauth/templates/*': No such file or directory`
 
