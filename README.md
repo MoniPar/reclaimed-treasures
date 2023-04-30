@@ -211,6 +211,29 @@ Make sure everything is saved and pushed to GitHub before continuing on.
 
 ### Creating AWS Groups, Policies and Users
 
+1. In order to access the bucket, a user needs to be created through the Identity and Access Management Service (IAM). To open this, go back to the Services menu and click on IAM.  This will open the IAM Dashboard.
+2. First you need to create a group for the user to live in.  Click on User groups in the left side bar, then click the 'Create Group' button on the top right. Give the group a meaningful name like "manage-project-name", then scroll down to the bottom and click 'Create Group'.
+3. Next, create the policy used to access the bucket by clicking on Policy in the left side bar and then click the 'Create Policy' button. Click on the JSON tab and then on the 'Import managed policy' link.  This will open a modal.  Search for S3 and then select and import the "AmazonS3FullAccess" policy.
+4. In order to allow full access to the bucket and everything within it, you need to get the bucket ARN from the bucket policy page in s3. To do this, open S3 in a separate tab, navigate to the bucket, click on the Properties tab and copy the ARN from the Bucket overview section.
+5. Navigate back to the IAM Managment Console tab and paste in the ARN you just copied as the value of the key Resource.  Paste it again after a comma, adding the slash and star (/*) to add another rule for all files/folders in the bucket.
+
+    ```json
+    "Resource": [
+        "arn:aws:s3:::bucket-name",
+        "arn:aws:s3:::bucket-name/*"
+    ]
+    ```
+
+6. Now that you have all S3 actions allowed both on the bucket and everything within it, click on 'Next: Tags' and 'Next: Review'.  Give the policy a name, e.g. "bucket-name-policy" and a description - "Access to S3 bucket for project-name static files".  Then click the 'Create policy" button.  This will take you back to the policies page where you can see the policy that has just been created.
+7. To attach the policy to the group, click on User Groups in the left side bar, click on the group you just created and go to the Permissions tab.  Open the Add permissions dropdown and select 'Attach policies'. Select the policy and click the 'Add permissions' button at the bottom right.
+8. Finally, create a user to put in the group by clicking on Users in the left side bar and then the 'Add users' button at the top right.  Create a user named something like "project-name-staticfiles-user" and click 'Next'.
+9. In the Permissions options, select 'Add user to group' and the group you just created, then click the 'Next' button. Review and click the 'Create User' button.
+10. In order to get the access key and secret access key which you'll use to authenticate them from the Django app, click on the user and then on the Security Credentials tab.  Scroll down to Access Keys and click on 'Create access key'.  Choose 'Other' and click next.  Give your access key a description tag to facilitate rotating this access key confidentially later, e.g. project-name-django-app, and click 'Create access key'. You can now download the CSV file containing the users and secret access keys, which you will need to authenticate from the Django app.
+
+### Connecting Django to S3
+
+1. To connect Django to S3, you need to install boto3 `pip3 install boto3` and django-storages `pip3 install django-storages`.  Add to requirements and add `storages` to the INSTALLED_APPS in settings.py.
+2. 
 _____
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
