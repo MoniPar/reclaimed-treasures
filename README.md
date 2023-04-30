@@ -268,6 +268,21 @@ Make sure everything is saved and pushed to GitHub before continuing on.
     ```
 
 8. When development is finished remember to remove the DISABLE_COLLECTSTATIC variable in Heroku so that when the project is deployed, it will run python3 manage.py collectstatic during the build process, which will search through all the apps and project folders for static files and it will use the S3 custom domain setting above in conjunction with the custom storage classes to find out the location of that URL where you want them to be saved.
+9. You can test this after pushing your code to GitHub and deploying on Heroku. If you go to S3, you will see a static folder in your bucket with all the static files in it.
+
+### S3 media folder upload
+
+
+_____
+
+# Bugs
+
+* Copying django-allauth packages
+
+Problem: Using the `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/` command to make a copy of the built-in allauth template directories was giving me `cp: cannot stat '../.pip-modules/lib/python3.8/site-packages/allauth/templates/*': No such file or directory`
+
+Solution: Found on a CI slack channel.  
+![Copy django-allauth templates solution](docs/django-allauth-tempsol.png)
 
 _____
 
