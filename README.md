@@ -272,7 +272,6 @@ Make sure everything is saved and pushed to GitHub before continuing on.
 
 ### S3 media folder upload
 
-
 _____
 
 # Bugs
