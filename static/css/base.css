@@ -22,6 +22,10 @@ centered and have a consistent size unless manually changed */
     color: #000;
 }
 
+.bg-black {
+    background-color: #000;
+}
+
 h1 {
     font-family: 'Amaranth', sans-serif;
 }
@@ -82,7 +86,7 @@ h1 {
     .d-lg-flex {
         justify-content: space-evenly;
     }
-    
+
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
