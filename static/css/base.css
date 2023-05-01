@@ -1,0 +1,94 @@
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* from Bulma - ensures that fontawesome icons stay 
+centered and have a consistent size unless manually changed */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.text-black {
+    color: #000;
+}
+
+h1 {
+    font-family: 'Amaranth', sans-serif;
+}
+
+/* Main Navigation */
+
+
+.main-logo-link {
+    width: fit-content;
+}
+
+
+
+.cta-container {
+    height: calc(60vh - 140px);
+    background: url('/media/home-cta.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* margin-top: 8rem; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron {
+    color: #fff;
+    background-color: transparent;
+}
+
+.cta-btn {
+    background: rgb(104, 175, 104);
+    color: #fff;
+    min-width: 260px;
+}
+
+.cta-btn:hover,
+.cta-btn:active,
+.cta-btn:focus {
+    background: rgb(54, 95, 54);
+}
+
+@media only screen and (min-width: 920px) {
+
+    html {
+        font-size: 100%;
+    }
+
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
