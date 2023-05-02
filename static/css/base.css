@@ -8,6 +8,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* from Bulma - ensures that fontawesome icons stay 
 centered and have a consistent size unless manually changed */
 .icon {
@@ -26,7 +34,9 @@ centered and have a consistent size unless manually changed */
     background-color: #000;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-family: 'Amaranth', sans-serif;
 }
 
@@ -78,14 +88,54 @@ h1 {
     background: rgb(54, 95, 54);
 }
 
+
+/* Footer */
+
+.footer-container {
+    background-color: rgb(54, 95, 54);
+    color: rgb(222, 237, 222);
+}
+
+footer .list-group-item {
+    background-color: transparent;
+    line-height: 1.0;
+}
+
+footer a {
+    color: rgb(170, 226, 170);
+}
+
+footer a:hover,
+footer a:focus {
+    color: #fff;
+}
+
+footer .list-group {
+    justify-content: space-evenly;
+}
+
+footer .list-group-horizontal>.list-group-item {
+    background-color: rgb(48, 67, 48);
+    /* border: 1px solid rgb(170, 226, 170); */
+    border-radius: 50%;
+}
+
+footer .social {
+    font-size: 1.8rem;
+    /* line-height: 2em; */
+    /* text-align: center; */
+    /* color: #fff; */
+    /* border-radius: 50%; */
+    /* box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4); */
+    /* margin: 0 .5em; */
+}
+
+
 @media only screen and (min-width: 920px) {
 
     /* html {
         font-size: 100%;
     } */
-    .d-lg-flex {
-        justify-content: space-evenly;
-    }
 
     .fixed-top-desktop-only {
         position: fixed;
