@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'storages',
     # custom apps
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
