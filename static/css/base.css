@@ -40,20 +40,11 @@ h3 {
     font-family: 'Amaranth', sans-serif;
 }
 
-/* Main Navigation */
-
-
-.main-logo-link {
-    width: fit-content;
-}
-
-
-
+/* CTA */
 .cta-container {
     height: calc(90vh - 140px);
     background: url('/media/home-cta.jpg') no-repeat center fixed;
     background-size: cover;
-    /* margin-top: 8rem; */
 
     display: flex;
     align-items: center;
@@ -91,23 +82,22 @@ h3 {
 
 /* Footer */
 
-.footer-container {
+/* .footer-container {
     background-color: rgb(54, 95, 54);
     color: rgb(222, 237, 222);
-}
+} */
 
 footer .list-group-item {
-    background-color: transparent;
     line-height: 1.0;
 }
 
 footer a {
-    color: rgb(170, 226, 170);
+    color: #000;
 }
 
 footer a:hover,
 footer a:focus {
-    color: #fff;
+    color: rgb(68, 136, 68);
 }
 
 footer .list-group {
@@ -115,19 +105,18 @@ footer .list-group {
 }
 
 footer .list-group-horizontal>.list-group-item {
-    background-color: rgb(48, 67, 48);
-    /* border: 1px solid rgb(170, 226, 170); */
+    background-color: rgb(170, 226, 170);
     border-radius: 50%;
+}
+
+footer .list-group-horizontal>.list-group-item:hover,
+footer .list-group-horizontal>.list-group-item:focus {
+    background-color:rgb(54, 95, 54);
 }
 
 footer .social {
     font-size: 1.8rem;
-    /* line-height: 2em; */
-    /* text-align: center; */
-    /* color: #fff; */
-    /* border-radius: 50%; */
-    /* box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4); */
-    /* margin: 0 .5em; */
+    color: #fff;
 }
 
 
