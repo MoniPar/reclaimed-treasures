@@ -4,7 +4,6 @@ html {
 }
 
 body {
-
     font-family: 'Poppins', sans-serif;
 }
 
@@ -36,7 +35,8 @@ centered and have a consistent size unless manually changed */
 
 h1,
 h2,
-h3 {
+h3,
+.title-font {
     font-family: 'Amaranth', sans-serif;
 }
 
@@ -119,6 +119,17 @@ footer .social {
     color: #fff;
 }
 
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+
+@media only screen and (max-width: 991px) {
+
+    /* pad the top when navbar is collapsed on mobile */
+    .header-container {
+        padding-top: 174px;
+    }
+}
 
 @media only screen and (min-width: 920px) {
 
@@ -138,7 +149,6 @@ footer .social {
         padding-top: 164px;
     }
 }
-
 
 @media only screen and (min-width: 1200px) {
 
