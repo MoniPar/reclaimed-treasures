@@ -26,11 +26,11 @@
                 Shop
             </a>
             <div class="dropdown-menu border-0 text-center" aria-labelledby="shop-link">
-                <a href="" class="dropdown-item">CDs</a>
-                <a href="" class="dropdown-item">Glassware</a>
-                <a href="" class="dropdown-item">Frames</a>
-                <a href="" class="dropdown-item">Pebbles</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?category=cd" class="dropdown-item">CDs</a>
+                <a href="{% url 'products' %}?category=glassware" class="dropdown-item">Glassware</a>
+                <a href="{% url 'products' %}?category=frame" class="dropdown-item">Frames</a>
+                <a href="{% url 'products' %}?category=pebbles" class="dropdown-item">Pebbles</a>
+                <a href="{% url 'products' %}?category=cd,glassware,frame,pebbles" class="dropdown-item">All Products</a>
             </div>
         </li>
 
