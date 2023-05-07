@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'veras-reclaimed-treasures.herokuapp.com',
-    '8000-monipar-reclaimed-treasu-xbmgl44hmc.us2.codeanyapp.com'
+    '8000-monipar-reclaimed-treasu-rshndnaags.us2.codeanyapp.com'
 ]
 
 
@@ -83,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },

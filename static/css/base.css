@@ -40,6 +40,10 @@ h3,
     font-family: 'Amaranth', sans-serif;
 }
 
+.delivery-banner {
+    font-size: 20px;
+}
+
 /* CTA */
 .cta-container {
     height: calc(90vh - 140px);
@@ -87,6 +91,11 @@ h3,
     color: rgb(222, 237, 222);
 } */
 
+.footer-logo {
+    display: block;
+    padding: 0;
+}
+
 footer .list-group-item {
     line-height: 1.0;
 }
@@ -119,34 +128,46 @@ footer .social {
     color: #fff;
 }
 
+/* -------- */
+/*   SHOP   */
+/* -------- */
+
+.category-badge > span.badge:hover,
+.category-badge > span.badge:focus {
+    background-color: rgb(54, 95, 54);
+    color: #fff;
+}
+
 /* ------------- */
 /* Media Queries */
 /* ------------- */
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 463px) {
 
     /* pad the top when navbar is collapsed on mobile */
     .header-container {
-        padding-top: 174px;
+        padding-top: 240px;
     }
 }
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 464px) {
 
+    .header-container {
+        padding-top: 210px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
     /* html {
         font-size: 100%;
     } */
-
+    
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
     }
 }
 

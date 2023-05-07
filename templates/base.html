@@ -54,8 +54,8 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-3 offset-lg-1 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home'%}" class="nav-link main-logo-link">
-                    <img src="media/logo2.png" alt="Vera's Reclaimed Treasures Logo"
+                <a href="{% url 'home'%}" class="nav-link">
+                    <img src="{{ MEDIA_URL }}logo2.png" alt="Vera's Reclaimed Treasures Logo"
                         width="191" height="106">
                 </a>
             </div>
@@ -123,8 +123,9 @@
         </div>
         <div class="row bg-white">
             <div class="col-12 text-center d-block d-lg-none">
-                <a href="{% url 'home'%}" class="nav-link main-logo-link">
-                    <img src="media/logo2.png" alt="Vera's Reclaimed Treasures Logo" width="191" height="106">
+                <a href="{% url 'home'%}" class="nav-link">
+                    <img src="{{ MEDIA_URL }}logo2.png" alt="Vera's Reclaimed Treasures Logo" 
+                        width="191" height="106">
                 </a>
             </div>
             <nav class="navbar navbar-expand-lg navbar-light w-100 text-center">
@@ -139,10 +140,10 @@
         </div>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="my-2">
+                <p class="delivery-banner my-2">
                     <i class="fa-solid fa-truck mr-2" aria-hidden="true"></i>
-                    Enjoy <span class="text-uppercase">free</span> delivery on orders over €{{ free_shipping_threshold }}
-                </h4>
+                    Enjoy <span class="text-uppercase">free</span> delivery on orders over €75{{ free_shipping_threshold }}
+                </p>
             </div>
         </div>
     </header>
@@ -165,7 +166,7 @@
                 </div>
                 <div class="col-12 col-lg-6 mb-4 mb-lg-0 text-center">
                     <a href="{% url 'home' %}" class="footer-logo">
-                        <img src="media/logo2.png" width="191" height="106" alt="Vera's Reclaimed Treasures Logo">
+                        <img src="{{ MEDIA_URL }}logo2.png" width="191" height="106" alt="Vera's Reclaimed Treasures Logo">
                     </a>
                 </div>
             </div>
