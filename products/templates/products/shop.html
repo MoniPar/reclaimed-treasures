@@ -44,6 +44,8 @@
                                 <option value="theme_desc" {% if current_sorting == 'theme_desc' %}selected{% endif %}>Theme (Z-A)</option>
                                 <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
                                 <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                                <option value="stock_asc" {% if current_sorting == 'stock_asc' %}selected{% endif %}>Availability (low to high)</option>
+                                <option value="stock_desc" {% if current_sorting == 'stock_desc' %}selected{% endif %}>Availability (high to low)</option>
                             </select>
                         </div>
                     </div>
@@ -134,4 +136,33 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+
+    <!-- Sort selector box -->
+    <script type="text/javascript">
+        $('#sort-selector').change(function () {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+
+            var selectedVal = selector.val();
+            if (selectedVal != "reset") {
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}

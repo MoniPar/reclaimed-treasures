@@ -283,6 +283,14 @@ Problem: Using the `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/te
 Solution: Found on a CI slack channel.  
 ![Copy django-allauth templates solution](docs/django-allauth-tempsol.png)
 
+* Sorting Products
+
+Problem: While testing the sort selector box functionality, it was noticed that products sorted by rating descending was displaying a new test product with 'No Rating' first.
+Expected behaviour: This product should be displayed last along with the other products with no rating.
+
+Solution: This new test product was logged into the database without a value in the Rating field while the other 'No Rating' products were saved with a value of '0.0'. The arguments for the rating field in the Product model are set to the following:
+`rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)`.  Since this new product test was stored with a NULL value it was not being counted as '0'. In order to avoid this from occurring again, the model field needs to be changed to either making the field required i.e. `blank=False` or set to `default=0.0`.
+
 _____
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
