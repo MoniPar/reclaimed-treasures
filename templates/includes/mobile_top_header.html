@@ -53,20 +53,22 @@
 </li>
 <li class="list-inline-item dropdown">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
-        href="#" id="basket-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        href="" id="basket-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fa-solid fa-basket-shopping" title="Shopping Basket" aria-hidden="true"></i>
+            <div><i class="fa-solid fa-basket-shopping fa-lg" title="Shopping Basket" aria-hidden="true"></i>
                 <span class="sr-only">Shopping Basket</span>
             </div>
         </div>
     </a>
     <div class="dropdown-menu border-0" aria-labelledby="basket-options">
-        <p class="dropdown-item">
-            {% if grand_total %}
-            ${{ grand_total|floatformat:2 }}
-            {% else %}
-            $0.00
-            {% endif %}
-        </p>
+        <a href="{% url 'shopping_basket' %}" class="d-block d-lg-none">
+            <p class="dropdown-item my-0 mx-0">
+                {% if grand_total %}
+                €{{ grand_total|floatformat:2 }}
+                {% else %}
+                €0.00
+                {% endif %}
+            </p>
+        </a>
     </div>
 </li>
