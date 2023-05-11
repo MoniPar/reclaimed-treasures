@@ -27,5 +27,5 @@ def add_to_basket(request, item_id):
 
     # Override the variable in the session with the updated version
     request.session['basket'] = basket
-    print(request.session['basket'])
+    # print(request.session['basket'])
     return redirect(redirect_url)
