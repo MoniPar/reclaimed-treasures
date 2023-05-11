@@ -44,6 +44,27 @@ h3,
     font-size: 20px;
 }
 
+/* Buttons */
+
+.btn-green {
+    background-color: rgb(104, 175, 104);
+    color: #fff;
+    min-width: 260px;
+}
+
+.btn-green:hover,
+.btn-green:active,
+.btn-green:focus {
+    background-color: rgb(54, 95, 54);
+    color: #fff;
+}
+
+.btn-outline-green {
+    background-color: #fff;
+    color: rgb(54, 95, 54);
+    border: 1px solid rgb(54, 95, 54);
+}
+
 /* CTA */
 .cta-container {
     height: calc(90vh - 140px);
@@ -71,17 +92,7 @@ h3,
     background-color: transparent;
 }
 
-.cta-btn {
-    background: rgb(104, 175, 104);
-    color: #fff;
-    min-width: 260px;
-}
 
-.cta-btn:hover,
-.cta-btn:active,
-.cta-btn:focus {
-    background: rgb(54, 95, 54);
-}
 
 
 /* Footer */
