@@ -62,7 +62,8 @@
                                 </div>    
                                 <div class="col-sm-12 offset-1 col-md-3 offset-md-0 my-md-auto">
                                     <div class="py-3">
-                                        <form action="" method="POST" class="form update-form">
+                                        <form action="{% url 'update_basket' item.item_id %}" method="POST" 
+                                            class="form update-form">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
@@ -92,7 +93,7 @@
                                         </form>
                                         <!-- <p class="my-0">{{ item.product.quantity }} in basket</p> -->
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
+                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}">
                                             <small>Remove</small>
                                         </a>
                                     </div>
