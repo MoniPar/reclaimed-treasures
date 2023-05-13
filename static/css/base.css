@@ -5,6 +5,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    
 }
 
 li {
@@ -63,6 +64,18 @@ h3,
     background-color: #fff;
     color: rgb(54, 95, 54);
     border: 1px solid rgb(54, 95, 54);
+}
+
+.btn-outline-green:hover,
+.btn-outline-green:active,
+.btn-outline-green:focus {
+    background-color: rgb(54, 95, 54);
+    color: #fff;
+}
+
+.update-link,
+.remove-link {
+    cursor: pointer;
 }
 
 /* CTA */
