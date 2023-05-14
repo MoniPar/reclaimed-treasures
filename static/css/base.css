@@ -1,11 +1,11 @@
 html {
     height: 100%;
-    /* font-size: 62.5%; */
+    font-size: 62.5%;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    
+    font-size: 1.6rem;
 }
 
 li {
@@ -39,13 +39,19 @@ h2,
 h3,
 .title-font {
     font-family: 'Amaranth', sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 900;
 }
 
-.delivery-banner {
-    font-size: 20px;
-}
+/* .delivery-banner {
+    font-size: 2rem;
+} */
 
 /* Buttons */
+
+.btn {
+    font-size: 1.6rem;
+}
 
 .btn-green {
     background-color: rgb(104, 175, 104);
@@ -78,10 +84,16 @@ h3,
     cursor: pointer;
 }
 
+/* HEADER */
+/* pad the top when navbar is collapsed on mobile */
+.header-container {
+    padding-top: 15rem;
+}
+
 /* CTA */
 .cta-container {
-    height: calc(90vh - 140px);
-    background: url('/media/home-cta.jpg') no-repeat center fixed;
+    height: 90vh;
+    background: url('/media/home-hero1.jpg') no-repeat center fixed;
     background-size: cover;
 
     display: flex;
@@ -105,7 +117,10 @@ h3,
     background-color: transparent;
 }
 
-
+.jumbotron .lead {
+    font-size: 1.8rem;
+    letter-spacing: 1.5px;
+}
 
 
 /* Footer */
@@ -144,7 +159,7 @@ footer .list-group-horizontal>.list-group-item {
 
 footer .list-group-horizontal>.list-group-item:hover,
 footer .list-group-horizontal>.list-group-item:focus {
-    background-color:rgb(54, 95, 54);
+    background-color: rgb(54, 95, 54);
 }
 
 footer .social {
@@ -156,8 +171,8 @@ footer .social {
 /*   SHOP   */
 /* -------- */
 
-.category-badge > span.badge:hover,
-.category-badge > span.badge:focus {
+.category-badge>span.badge:hover,
+.category-badge>span.badge:focus {
     background-color: rgb(54, 95, 54);
     color: #fff;
 }
@@ -175,26 +190,20 @@ footer .social {
 /* Media Queries */
 /* ------------- */
 
-@media only screen and (max-width: 463px) {
-
-    /* pad the top when navbar is collapsed on mobile */
-    .header-container {
-        padding-top: 240px;
+@media only screen and (min-width: 767px) {
+    .cta-container {
+        height: 100vh;
+        background-size: cover;
     }
 }
 
-@media only screen and (min-width: 464px) {
-
-    .header-container {
-        padding-top: 210px;
-    }
-}
 
 @media only screen and (min-width: 992px) {
-    /* html {
-        font-size: 100%;
-    } */
     
+    html {
+        font-size: 75%;
+    }
+
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -210,4 +219,11 @@ footer .social {
     .container {
         max-width: 80%;
     }
+}
+
+@media only screen and (min-width: 2560px) {
+    
+    html {
+            font-size: 100%;
+        }
 }
