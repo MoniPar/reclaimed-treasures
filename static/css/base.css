@@ -14,6 +14,7 @@ li {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 /* from Bulma - ensures that fontawesome icons stay 
@@ -30,8 +31,20 @@ centered and have a consistent size unless manually changed */
     color: #000;
 }
 
+.text-green {
+    color: #0b8e59;
+}
+
 .bg-black {
     background-color: #000;
+}
+
+.border-black {
+    border: 1px solid #000;
+}
+
+.border-green {
+    border: 1px solid #0b8e59;
 }
 
 h1,
@@ -43,9 +56,18 @@ h3,
     font-weight: 900;
 }
 
-/* .delivery-banner {
-    font-size: 2rem;
-} */
+.delivery-banner {
+    /* background-color: #5d4a66; */
+    background-color: #5e4352;
+}
+
+.form-control {
+    font-size: 1.6rem;
+}
+
+.dropdown-item {
+    font-size: 1.2rem;
+}
 
 /* Buttons */
 
@@ -54,7 +76,7 @@ h3,
 }
 
 .btn-green {
-    background-color: rgb(104, 175, 104);
+    background-color: #0b8e59;
     color: #fff;
     /* min-width: 260px; */
 }
@@ -85,12 +107,18 @@ h3,
 }
 
 /* HEADER */
+
 /* pad the top when navbar is collapsed on mobile */
 .header-container {
     padding-top: 15rem;
 }
 
+.mobile-nav {
+    display: contents;
+}
+
 /* TOASTS */
+
 .message-container {
     position: fixed;
     top: 12.4rem;
@@ -100,15 +128,43 @@ h3,
 
 .custom-toast {
     overflow: visible;
+    font-size: 1.2rem;
 }
 
 .toast-capper {
     height: 2px;
 }
 
+.arrow-up {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid #0b8e59;
+    top: -10px;
+    right: 4rem;
+}
+
+/* Convenience classes - some colors copied from Bootstrap */
+.arrow-primary { border-bottom-color: #0b8e59; }
+.arrow-secondary { border-bottom-color: #be3e82; }
+.arrow-success { border-bottom-color: #28a745; }
+.arrow-danger { border-bottom-color: #dc3545; }
+.arrow-warning { border-bottom-color: #ffc107; }
+.arrow-info { border-bottom-color: #17a2b8; }
+.arrow-light { border-bottom-color: #f8f9fa; }
+.arrow-dark { border-bottom-color: #343a40; }
+
+.basket-preview-wrapper {
+    max-height: 10rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 /* CTA */
 .cta-container {
-    height: 90vh;
+    height: calc(90vh - 187px);
     background: url('/media/home-hero1.jpg') no-repeat center fixed;
     background-size: cover;
 
@@ -131,6 +187,8 @@ h3,
 .jumbotron {
     color: #fff;
     background-color: transparent;
+    margin-top: 15rem;
+    margin-bottom: 15rem;
 }
 
 .jumbotron .lead {
@@ -198,7 +256,7 @@ footer .social {
     padding: 0 .25rem;
     background: transparent;
     max-height: 3rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 
@@ -233,7 +291,7 @@ footer .social {
 
     .message-container {
         top: 7rem;
-        right: 15px;
+        right: 2.5rem;
     }
 
 }
@@ -260,7 +318,11 @@ footer .social {
         font-size: 100%;
     }
 
+    .header-container {
+        padding-top: 12rem;
+    }
+
     .message-container {
-        right: 26rem;
+        right: 17rem;
     }
 }
