@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from products.models import Product
 
 
 def shopping_basket(request):
@@ -13,6 +15,7 @@ def add_to_basket(request, item_id):
     """
     Adds quantity of the specific chosen product to the shopping basket
     """
+    product = Product.objects.get(pk=item_id)
     # Get the quantity and the redirect_url from the form
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -24,6 +27,8 @@ def add_to_basket(request, item_id):
         basket[item_id] += quantity
     else:
         basket[item_id] = quantity
+        messages.success(request,
+                         f'{product.name} has been added to your basket!')
 
     # Override the variable in the session with the updated version
     request.session['basket'] = basket
@@ -52,9 +57,13 @@ def remove_from_basket(request, item_id):
     Removes a specified product from the shopping basket
     """
     try:
+        product = Product.objects.get(pk=item_id)
         basket = request.session.get('basket', {})
 
         basket.pop(item_id)
+        messages.success(request,
+                         f'{product.name} was successfully removed'
+                         'from your basket!')
 
         request.session['basket'] = basket
         return HttpResponse(status=200)

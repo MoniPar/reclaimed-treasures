@@ -90,6 +90,22 @@ h3,
     padding-top: 15rem;
 }
 
+/* TOASTS */
+.message-container {
+    position: fixed;
+    top: 12.4rem;
+    right: 5px;
+    z-index: 99999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* CTA */
 .cta-container {
     height: 90vh;
@@ -213,17 +229,38 @@ footer .social {
     }
 }
 
+@media only screen and (min-width: 1024px) {
+
+    .message-container {
+        top: 7rem;
+        right: 15px;
+    }
+
+}
+
 @media only screen and (min-width: 1200px) {
 
     /* Slightly larger container on xl screens */
     .container {
         max-width: 80%;
     }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .message-container {
+        right: 9rem;
+    }
 }
 
 @media only screen and (min-width: 2560px) {
     
     html {
-            font-size: 100%;
-        }
+        font-size: 100%;
+    }
+
+    .message-container {
+        right: 26rem;
+    }
 }
