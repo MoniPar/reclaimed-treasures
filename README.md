@@ -1,8 +1,26 @@
-# Overview
+# VERA'S RECLAIMED TREASURES
 
 Vera's Reclaimed Treasures is an educational fullstack website based on business logic used to control a centrally owned dataset.  It has an authentication mechanism and provides paid access based on the dataset in the purchasing of products.
 
 _____
+
+## Table of Contents
+
+* [Overview]()
+* [Planning & Research]()
+* [Agile Methodology]()
+* [Visual Design]()
+* [Features]()
+* [Testing]()
+* [Deployment](#deployment)
+* [Bugs](#bugs) <!-- Temporary -->
+* [Technologies]()
+* [Credits]()
+* [Acknowledgments]()
+
+[Back to Top](#table-of-contents)
+
+_______
 
 # Deployment
 
@@ -291,6 +309,24 @@ Expected behaviour: This product should be displayed last along with the other p
 Solution: This new test product was logged into the database without a value in the Rating field while the other 'No Rating' products were saved with a value of '0.0'. The arguments for the rating field in the Product model are set to the following:
 `rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)`.  Since this new product test was stored with a NULL value it was not being counted as '0'. In order to avoid this from occurring again, the model field needs to be changed to either making the field required i.e. `blank=False` or set to `default=0.0`.
 
+_____
+
+# Technologies
+
+This project was developed using the following languages, frameworks, libraries and dependencies:
+
+## Languages
+
+* [HTML5](https://www.w3schools.com/html/)
+* [CSS3](https://www.w3schools.com/css/css_intro.asp)
+* [Python 3.8.12](https://www.python.org/downloads/release/python-3812/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+## Frameworks & Dependencies
+
+* [Django 3.2.18](https://docs.djangoproject.com/en/3.2/)
+
+[Back to Top](#table-of-contents)
 _____
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
