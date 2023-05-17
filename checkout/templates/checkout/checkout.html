@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load basket_tools %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col text-center mt-3 mb-4">
+            <h1>Checkout</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <div class="row">
+                <div class="col-7 offset-2">
+                    <p class="mb-1 mt-0 small text-muted">Item</p>
+                </div>
+                <div class="col-3 text-right">
+                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                </div>
+            </div>
+            {% for item in basket_items %}
+                <div class="row">
+                    <div class="col-2 mb-1">
+                        <a href="{% url 'product_detail' item.product.id %}">
+                            {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" 
+                                    alt="{{ item.product.name }}" class="w-100">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}noimage.png" 
+                                    alt="{{ item.product.name }}" class="w-100">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-7">
+                        <p class="my-0">
+                            <strong>{{ item.product.name }}</strong>
+                        </p>
+                        <p class="my-0 small">
+                            Qty: {{ item.quantity }}
+                        </p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="my-0 small text-muted">
+                            €{{ item.product.price | calc_subtotal:item.quantity }}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+            <hr class="my-0">
+            <div class="row text-black text-right">
+                <div class="col-7 offset-2">
+                    <p class="my-0">Order Total:</p>
+                    <p class="my-0">Deliver:</p>
+                    <p class="my-0">Grand Total:</p>
+                </div>
+                <div class="col-3">
+                    <p class="my-0">€{{ total | floatformat:2 }}</p>
+                    <p class="my-0">€{{ delivery | floatformat:2 }}</p>
+                    <p class="my-0">
+                        <strong>€{{ grand_total | floatformat:2 }}</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">
+                Please fill out the form below to complete your order
+            </p>
+            <form action="{% url 'checkout' %}" method="POST"
+                id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">
+                        Details
+                    </legend>
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">
+                        Delivery
+                    </legend>
+                        {{ order_form.phone_number | as_crispy_field }}
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
+                        {{ order_form.eircode | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        <div class="form-check form-check-inline float-right mr-0">
+                            {% if user.is_authenticated %}
+                                <label for="id-save-info" class="form-check-label">
+                                    Save this delivery information to my account
+                                </label>
+                                <input type="checkbox" class="form-check-input ml-2 mr-0"
+                                    id="id-save-info" name="save-info" checked>
+                            {% else %}
+                                <label for="id-save-info" class="text-info">
+                                    <a href="{% url 'account_signup' %}" class="text-info">
+                                        Create an account
+                                    </a> or
+                                    <a href="{% url 'account_login' %}" class="text-info">
+                                        Login to save this information
+                                    </a>
+                                </label>
+                            {% endif %}
+                        </div>
+                </fieldset>
+                <fieldset class="rounded px-3">
+                    <legend class="fieldset-label small text-black px-2 w-">
+                        Payment
+                    </legend>
+                    <!-- Stripe card element  -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Form Errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </fieldset>
+                <div class="submit-btn text-right mt-5 mb-2">
+                    <a href="{% url 'shopping_basket' %}" role="button" 
+                        class="btn btn-outline-green">
+                        <span class="icon">
+                            <i class="fa-solid fa-chevron-left" 
+                                aria-hidden="true">
+                            </i>
+                        </span>
+                        <span class="font-weight-bold">Adjust Basket</span>
+                    </a>
+                    <button id="submit-btn" class="btn btn-green">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="icon">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                    <p class="small text-danger my-0">
+                        <span class="icon">
+                            <i class="fa-solid fa-circle-exclamation" 
+                                aria-hidden="true" title="Alert"></i>
+                            <span class="sr-only">Alert</span>
+                        </span>
+                        <span>Your card will be charged <strong>
+                                ${{ grand_total|floatformat:2 }}</strong>
+                        </span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+<script type="text/javascript">
+
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        // Find the most recently seen update form in the DOM
+        var form = $(this).prev('.update-form');
+        form.submit();
+    });
+
+    // Remove item and reload on click
+    $('.remove-link').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/basket/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+
+</script>
+{% endblock %}

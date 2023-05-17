@@ -45,12 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
+    # allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     # others
     'storages',
+    'crispy_forms',
     # custom apps
     'home',
     'products',
@@ -70,6 +71,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'reclaimed_treasures.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -87,6 +90,10 @@ TEMPLATES = [
                 'django.template.context_processors.media',  # noqa needed for media_url
                 'basket.contexts.basket_contents',  # noqa makes contexts globally accessible
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
