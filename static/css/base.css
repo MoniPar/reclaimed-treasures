@@ -62,7 +62,8 @@ h3,
 }
 
 .form-control {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .dropdown-item {
@@ -147,14 +148,37 @@ h3,
 }
 
 /* Convenience classes - some colors copied from Bootstrap */
-.arrow-primary { border-bottom-color: #0b8e59; }
-.arrow-secondary { border-bottom-color: #be3e82; }
-.arrow-success { border-bottom-color: #28a745; }
-.arrow-danger { border-bottom-color: #dc3545; }
-.arrow-warning { border-bottom-color: #ffc107; }
-.arrow-info { border-bottom-color: #17a2b8; }
-.arrow-light { border-bottom-color: #f8f9fa; }
-.arrow-dark { border-bottom-color: #343a40; }
+.arrow-primary {
+    border-bottom-color: #0b8e59;
+}
+
+.arrow-secondary {
+    border-bottom-color: #be3e82;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40;
+}
 
 .basket-preview-wrapper {
     max-height: 10rem;
@@ -273,7 +297,7 @@ footer .social {
 
 
 @media only screen and (min-width: 992px) {
-    
+
     html {
         font-size: 75%;
     }
@@ -313,7 +337,7 @@ footer .social {
 }
 
 @media only screen and (min-width: 2560px) {
-    
+
     html {
         font-size: 100%;
     }

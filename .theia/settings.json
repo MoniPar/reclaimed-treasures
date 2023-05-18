@@ -1,5 +1,8 @@
 {
     "[html]": {
         "editor.defaultFormatter": "davidanson.vscode-markdownlint"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
