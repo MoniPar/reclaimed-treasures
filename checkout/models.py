@@ -16,7 +16,7 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     eircode = models.CharField(max_length=20, null=True, blank=True)
-    town_or_city = models.CharField(max_length=40, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
@@ -28,7 +28,7 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """
         Generates a random and unique order number
         """
@@ -53,7 +53,7 @@ class Order(models.Model):
         Overrides original save method to set and save the order number
         """
         if not self.order_number:
-            self.order_number = self.generate_order_number()
+            self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):

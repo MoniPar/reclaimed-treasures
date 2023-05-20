@@ -6,8 +6,8 @@ class CheckoutConfig(AppConfig):
     name = 'checkout'
 
 
-def ready(self):
-    """
-    Lets Django know there's a new signals module with listeners
-    """
-    import checkout.signals
+    def ready(self):
+        """
+        Lets Django know there's a new signals module with listeners
+        """
+        import checkout.signals

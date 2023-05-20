@@ -36,5 +36,8 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=0)
     image = models.ImageField(null=True, blank=True)
 
+    # def has_stock(self):
+    #     return self.stock > 0
+
     def __str__(self):
         return self.name
