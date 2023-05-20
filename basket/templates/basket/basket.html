@@ -52,9 +52,15 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 mb-2 col-md-3 mb-md-0">
-                                    <img src="{{ item.product.image.url }}" 
-                                        alt="{{ item.product.description }}" 
-                                        class="img-fluid rounded">
+                                    {% if product.image %}
+                                        <img src="{{ item.product.image.url }}" 
+                                            alt="{{ item.product.description }}" 
+                                            class="img-fluid rounded">
+                                    {% else %}
+                                        <img class="card-img-top border-2 img-fluid" 
+                                            src="{{ MEDIA_URL }}noimage.png" 
+                                            alt="Placeholder for no image">
+                                    {% endif %}
                                 </div>
                                 <div class="col-sm-12 mb-2 text-center col-md-3 text-md-left my-md-auto">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
