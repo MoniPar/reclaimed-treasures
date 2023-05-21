@@ -309,6 +309,25 @@ Expected behaviour: This product should be displayed last along with the other p
 Solution: This new test product was logged into the database without a value in the Rating field while the other 'No Rating' products were saved with a value of '0.0'. The arguments for the rating field in the Product model are set to the following:
 `rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)`.  Since this new product test was stored with a NULL value it was not being counted as '0'. In order to avoid this from occurring again, the model field needs to be changed to either making the field required i.e. `blank=False` or set to `default=0.0`.
 
+* Database product deletion while in basket
+
+Problem: In development, everytime I tried to run the server I was getting Error 404 Page not found on all the pages of the website including the admin.  Retracing my steps I figured that there might have been a test product still in the basket session when I deleted it from the database.  
+
+Solution: Since I had no access to the Admin, I could not log out the user in order to delete the basket session.  Eventually I did it manually in Django shell by grabbing the user and deleting the session objects.
+
+```python
+    from django.contrib.auth.models import User
+    from django.contrib.sessions.models import Session
+
+    user = User.objects.get(username='Admin')
+    session = Session.objects.all()
+
+    user
+    session.delete()
+```
+
+When I tried to run the page again, I was able to access all the pages and the basket was empty.  
+  
 _____
 
 # Technologies
@@ -327,6 +346,20 @@ This project was developed using the following languages, frameworks, libraries 
 * [Django 3.2.18](https://docs.djangoproject.com/en/3.2/)
 
 [Back to Top](#table-of-contents)
+_____
+
+# Credits
+
+## Code
+
+The following walkthroughs helped me get my project in shape. I have adapted the code in these walkthroughs for the needs of my project.
+
+* Code Institute's "Boutique Ado" which is found in the CI's LMS for the Diploma in Software Development.  I followed this walkthrough to build the [Boutique Ado Store](https://github.com/MoniPar/boutique_ado_v1/tree/main) and deployed it to Heroku. [Live Site here](https://monipar-boutique-ado.herokuapp.com/).  I used this as the basis for my own store and added functionality.
+
+[How to reduce stock quantity when an order is made](https://stackoverflow.com/questions/65216808/django-how-to-reduce-stock-quantity-when-an-order-is-made)
+
+[How to force a user to logout](https://stackoverflow.com/questions/953879/how-to-force-a-user-logout-in-django)
+
 _____
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)

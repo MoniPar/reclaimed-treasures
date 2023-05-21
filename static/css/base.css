@@ -31,6 +31,11 @@ centered and have a consistent size unless manually changed */
     color: #000;
 }
 
+.text-print {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4rem;
+}
+
 .text-green {
     color: #0b8e59;
 }
