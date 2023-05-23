@@ -19,12 +19,11 @@ def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        intent = stripe.PaymentIntent.modify(pid, metadata={
+        stripe.PaymentIntent.modify(pid, metadata={
             'basket': json.dumps(request.session.get('basket', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
-        print(intent)
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request,
@@ -57,7 +56,11 @@ def checkout(request):
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
             # Iterates through the items in basket and creates each line item
             for item_id, quantity in basket.items():
                 try:
