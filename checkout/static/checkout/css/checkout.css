@@ -1,8 +1,8 @@
-#payment-form .form-control,
+/* #payment-form .form-control,
 #card-element {
     color: #000;
     border: 1px solid #0b8e59;
-}
+} */
 
 .fieldset-label {
     position: relative;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
     height: 4rem;
     padding: 10px 12px;
-    border: 1px solid transparent;
+    border: 1px solid #0b8e59;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 1px 3px 0 #e6ebf1;
@@ -62,4 +62,14 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
+
+select,
+select option {
+    color: #000;
 }
