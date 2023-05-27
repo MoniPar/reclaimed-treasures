@@ -326,8 +326,28 @@ Solution: Since I had no access to the Admin, I could not log out the user in or
     session.delete()
 ```
 
-When I tried to run the page again, I was able to access all the pages and the basket was empty.  
-  
+When I tried to run the page again, I was able to access all the pages and the basket was empty.
+
+* Integrity Error after checkout
+
+Problem: An IntegrityError was being thrown after checking out a Made to Order product.  `IntegrityError: new row for relation "products_product" violates check constraint "products_product_stock_check"
+DETAIL:  Failing row contains (23, vrtgw0006, Blue Vein Decanter, Patterns, Upcycled clear decanter, hand-painted with a blue and white veni..., Dimensions - 240 x 141mm; Capacity - 700ml; Total weight - 0.75k..., 14.00, 4.2, f, -3, glassware_blue-vein-decanter.jpg, 2).` The error shows that the stock was "-3" on this particular product.  This is because there were 3 ordered, and as the stock was already at 0, it was deducted to a negative value. The order still went through and the payment was successful on Stripe.  
+
+Expected behaviour: The customer is able to order up to 3 Made to Order products and directed to the Checkout Success Page.  
+
+Solution: The product stock deduction code in checkout/views.py was placed inside a while loop in order to only count down stock when there is stock available.
+
+```python
+    # Iterates through the items in basket and creates each line item
+    for item_id, quantity in basket.items():
+        try:
+            product = Product.objects.get(id=item_id)
+            # Decrements stock depending on quantity purchased
+            while product.stock > 0:
+                product.stock -= quantity
+                product.save()
+```
+
 _____
 
 # Technologies

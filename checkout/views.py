@@ -66,8 +66,9 @@ def checkout(request):
                 try:
                     product = Product.objects.get(id=item_id)
                     # Decrements stock depending on quantity purchased
-                    product.stock -= quantity
-                    product.save()
+                    while product.stock > 0:
+                        product.stock -= quantity
+                        product.save()
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
