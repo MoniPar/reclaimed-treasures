@@ -3,10 +3,12 @@
     // Handle Enable/Disable
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`.id_qty_${itemId}`).val());
-        var minusDisabled = currentValue < 2;
-        var plusDisabled = currentValue > 9;
+        var minvalue = document.getElementById('id_qty_' + itemId).min;
+        var maxvalue = document.getElementById('id_qty_' + itemId).max;
+        var minusDisabled = currentValue == minvalue;
+        var plusDisabled = currentValue == maxvalue;
         // prop method sets disabled attr on buttons to true/false 
-        // depending on whether current value is < 2 or > 9
+        // depending on whether current value is minvalue or maxvalue
         $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }
@@ -39,19 +41,30 @@
         handleEnableDisable(itemId);
     })
 
-        // Decrement quantity
-        $('.decrement-qty').click(function(e) {
-            e.preventDefault();
-            // Get item_id from button's data-item_id
-            var itemId = $(this).data('item_id');
-            // Search up the DOM (closest) and then down (find)
-            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-            var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
-            // Cache the current value and set the new value to the current - 1
-            var currentValue = parseInt($(closestInput).val());
-            $(allQtyInputs).val(currentValue - 1);
-            
-            handleEnableDisable(itemId);
-        })
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+        e.preventDefault();
+        // Get item_id from button's data-item_id
+        var itemId = $(this).data('item_id');
+        // Search up the DOM (closest) and then down (find)
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
+        // Cache the current value and set the new value to the current - 1
+        var currentValue = parseInt($(closestInput).val());
+        $(allQtyInputs).val(currentValue - 1);
+        
+        handleEnableDisable(itemId);
+    })
+
+    // Limit quantity to 3 on Made to Order products
+    function checkstock(productId) {
+        alert(productId);
+        var stock = $('#stock-id').attr('data-stock');
+        if (stock == Number(0)) {
+            var input = document.getElementById('id_qty_' + productId);
+            input.setAttribute('max', 3);
+            alert(stock);
+        }
+    }
 
 </script>

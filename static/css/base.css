@@ -40,6 +40,10 @@ centered and have a consistent size unless manually changed */
     color: #0b8e59;
 }
 
+.mark, mark {
+    display: inline-block;
+}
+
 .bg-black {
     background-color: #000;
 }
