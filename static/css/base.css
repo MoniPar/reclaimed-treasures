@@ -70,8 +70,12 @@ h3,
     background-color: #5e4352;
 }
 
+input[name="q"]::placeholder {
+    color: #aab7c4;
+}
+
 .form-control {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -229,6 +233,33 @@ h3,
     letter-spacing: 1.5px;
 }
 
+
+/* Allauth Formatting */
+.allauth-inner-content label {
+    margin-bottom: .25rem;
+}
+
+.allauth-inner-content input {
+    border: 1px solid #0b8e59;
+    border-radius: 4px;
+}
+
+.allauth-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-inner-content input:last-child {
+    margin-bottom: 2.5rem;
+}
+
+.allauth-inner-content .form-check-label {
+    margin-left: .5rem;
+}
+
+.allauth-inner-content a {
+    color:rgb(54, 95, 54);
+    font-weight: 700;
+}
 
 /* Footer */
 
