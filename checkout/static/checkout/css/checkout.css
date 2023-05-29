@@ -20,7 +20,7 @@
     height: 4rem;
     padding: 10px 12px;
     border: 1px solid #0b8e59;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: #fff;
     box-shadow: 0 1px 3px 0 #e6ebf1;
     --webkit-transition: box-shadow 150ms ease;
@@ -37,8 +37,19 @@
     background-color: #fefde5;
 }
 
-.stripe-style-input::placeholder {
+/* .stripe-style-input::placeholder {
     color: #aab7c4;
+} */
+
+select,
+select option {
+    color: #000;
+    font-style: normal;
+}
+
+select:invalid,
+select option[value=""] {
+    font-style: italic;
 }
 
 .order-no {
@@ -64,14 +75,6 @@
     height: 100%;
 }
 
-select,
-select option {
-    color: #000;
-}
 
-select:invalid,
-select option[value=""] {
-    color: #aab7c4 !important;
-}
 
 

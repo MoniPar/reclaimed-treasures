@@ -19,7 +19,7 @@ var style = {
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-            color: '#aab7c4'
+            fontStyle: 'italic'
         }
     },
     invalid: {

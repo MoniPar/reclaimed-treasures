@@ -18,24 +18,24 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
 
-        placeholders = {
+        labels = {
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'eircode': 'Eircode',
-            'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
+            'town_or_city': 'Town or City',
+            'eircode': 'Eircode',
             'county': 'County, State or Locality',
+            'country': 'Country',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':
-                if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
-                else:
-                    placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            if self.fields[field].required:
+                label = f'{labels[field]} *'
+            else:
+                label = labels[field]
+            self.fields[field].widget.attrs['label'] = label
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+        

@@ -1,0 +1,13 @@
+#profile-update-form .form-control {
+    font-style: normal;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    font-style: normal;
+}
+
+#id_default_country::placeholder,
+#id_default_country option:first-child {
+    font-style: italic;
+}
