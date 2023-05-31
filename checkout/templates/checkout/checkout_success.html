@@ -175,18 +175,30 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>    
+    </div>
+    <div class="row">
         <div class="col-12 col-lg-7 offset-lg-1 text-right">
-            <a href="{% url 'products' %}?category=new,deals" 
-                class="btn btn-green my-4">
-                <span class="icon mr-2">
-                    <i class="fa-solid fa-gifts" aria-hidden="true"></i>
-                </span>
-                <span class="text-uppercase">
-                    Checkout the latest additions and deals!
-                </span>
-            </a>
+            {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-green rounded my-4">
+                    <span class="icon mr-2">
+                        <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Profile</span>
+                </a>
+            {% else %}
+                <a href="{% url 'products' %}?category=new,deals" 
+                    class="btn btn-green rounded my-4">
+                    <span class="icon mr-2">
+                        <i class="fa-solid fa-gifts" aria-hidden="true"></i>
+                    </span>
+                    <span class="text-uppercase">
+                        Checkout the latest additions and deals!
+                    </span>
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>
+
 {% endblock %}
