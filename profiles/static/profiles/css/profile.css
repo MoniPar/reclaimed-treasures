@@ -11,3 +11,7 @@
 #id_default_country option:first-child {
     font-style: italic;
 }
+
+.thead-darken {
+    background-color: #5e4352;
+}

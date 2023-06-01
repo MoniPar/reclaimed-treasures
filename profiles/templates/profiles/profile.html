@@ -34,16 +34,16 @@
             </form>
         </div>
         <!-- Order History -->
-        <div class="col-10 offset-1 mb-5 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+        <div class="col-12 mb-5 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
             <p class="text-muted">Order History</p>
             <div class="order-history table-responsive">
-                <table class="table table-sm table-borderless">
-                    <thead>
+                <table class="table table-sm table-borderless table-striped small">
+                    <thead class="thead-darken text-white">
                         <tr>
                             <th>Order Number</th>
                             <th>Date</th>
                             <th>Items</th>
-                            <th>Order Total</th>
+                            <th class="text-right">Order Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,19 +55,19 @@
                                         {{ order.order_number|truncatechars:6 }}
                                     </a>
                                 </td>
-                                <td>{{ order.date }}</td>
+                                <td>{{ order.date|date:"d-m-Y" }}</td>
                                 <td>
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
                                             <li class="small">
-                                                {{ item.product.category }} 
+                                                ({{ item.product.category.friendly_name }}) 
                                                 {{ item.product.name }} 
                                                 x {{ item.quantity }}
                                             </li>
                                         {% endfor %}
                                     </ul>
                                 </td>
-                                <td>{{ order.grand_total }}</td>
+                                <td class="text-right">€{{ order.grand_total }}</td>
                             </tr>
                         {% endfor %}
                     </tbody>
