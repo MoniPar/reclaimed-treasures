@@ -65,12 +65,31 @@ def checkout(request):
             order.save()
             # Iterates through the items in basket and creates each line item
             for item_id, quantity in basket.items():
-                try:
-                    product = Product.objects.get(id=item_id)
-                    # Decrements stock depending on quantity purchased
-                    while product.stock > 0:
+                product = Product.objects.get(id=item_id)
+                # Decrements stock depending on quantity purchased
+                if product.stock > 0:
+                    if quantity < product.stock:
                         product.stock -= quantity
-                        # product.save()
+                        product.save()
+                    elif quantity > product.stock:
+                        messages.warning(request,
+                                         f"There's only { product.stock } "
+                                         f"of { product.name } left in stock! "
+                                         "We can make more to order "
+                                         "(limit of 3).")
+
+                        return redirect(reverse('shopping_basket'))
+                    else:
+                        product.stock = 0
+                        product.save()
+                else:
+                    messages.info(request,
+                                  f"{ product.name } is currently out of "
+                                  "stock and will be made to order. "
+                                  "Please be aware that it will take "
+                                  "3 to 5 extra days to deliver!")
+
+                try:
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
@@ -84,6 +103,7 @@ def checkout(request):
                                    "call us for further assistance!")
                     order.delete()
                     return redirect(reverse('shopping_basket'))
+
             # Save the information to the user's profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',

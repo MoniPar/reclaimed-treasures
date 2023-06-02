@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-    // Handle Enable/Disable
+    // Handles Enable/Disable
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`.id_qty_${itemId}`).val());
         var minvalue = document.getElementById('id_qty_' + itemId).min;
@@ -13,58 +13,49 @@
         $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
-    // Ensure enabling/disabling all inputs on page load
+    // Ensures enabling/disabling all inputs on page load
     var allQtyInputs = $('.qty_input');
     for (var i = 0; i < allQtyInputs.length; i++) {
         var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
-    // Check enable/disable every time the input is changed
+    // Checks enable/disable every time the input is changed
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
-    // Increment quantity
+    // Increments quantity
     $('.increment-qty').click(function(e) {
         e.preventDefault();
-        // Get item_id from button's data-item_id
+        // Gets item_id from button's data-item_id
         var itemId = $(this).data('item_id');
-        // Search up the DOM (closest) and then down (find)
-        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-        var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
-        // Cache the current value and set the new value to the current + 1
-        var currentValue = parseInt($(closestInput).val());
-        $(allQtyInputs).val(currentValue + 1);
+         // Gets the value of the quantity by product's id
+        var currentValue = document.getElementById('id_qty_'+itemId).value;
+        // Increments the quantity by 1
+        document.getElementById('id_qty_'+itemId).value = Number(currentValue) + Number(1);
         
         handleEnableDisable(itemId);
     })
 
-    // Decrement quantity
+    // Decrements quantity
     $('.decrement-qty').click(function(e) {
         e.preventDefault();
-        // Get item_id from button's data-item_id
+        // Gets item_id from button's data-item_id
         var itemId = $(this).data('item_id');
-        // Search up the DOM (closest) and then down (find)
-        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-        var allQuantityInputs = $(`.input-group-${itemId} input[name='quantity']`);
-        // Cache the current value and set the new value to the current - 1
-        var currentValue = parseInt($(closestInput).val());
-        $(allQtyInputs).val(currentValue - 1);
+        var currentValue = document.getElementById('id_qty_'+itemId).value;
+        document.getElementById('id_qty_'+itemId).value = Number(currentValue) - Number(1);
         
         handleEnableDisable(itemId);
     })
 
-    // Limit quantity to 3 on Made to Order products
+    // Limits max quantity to 3 on Made to Order products
     function checkstock(productId) {
-        // alert(productId);
-        var stock = $('#stock-id').attr('data-stock');
+        var stock = $('#stock-id-'+productId).attr('data-stock');
         if (stock == Number(0)) {
-            var input = document.getElementById('id_qty_' + productId);
+            var input = document.getElementById('id_qty_'+productId);
             input.setAttribute('max', 3);
-            // input.setAttribute('min', 1);
-            // alert(stock);
         }
     }
 

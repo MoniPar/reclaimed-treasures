@@ -83,6 +83,8 @@
                                                             </span>
                                                         </button>
                                                     </div>
+                                                    <input type="hidden" name="Stock Qty" id="stock-id-{{ item.item_id }}" 
+                                                        data-id="{{ item.item_id }}" data-stock="{{ item.product.stock }}">
                                                     <input type="number" class="form-control form-control-sm qty_input id_qty_{{ item.item_id }}" 
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="10" 
                                                         data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
@@ -159,6 +161,16 @@
     {% include 'products/includes/quantity_input_script.html' %}
     <script type="text/javascript">
         
+        // Gets the input object by Name and loops through all products
+        var inputObj = document.getElementsByName('Stock Qty');
+        var productQty = inputObj.length;
+
+        for (var i = 0; i < productQty; i++) {
+
+            var productId = inputObj[i].getAttribute('data-id');
+            checkstock(productId);
+        }
+
         // Update quantity on click
         $('.update-link').click(function(e) {
             // Find the most recently seen update form in the DOM
