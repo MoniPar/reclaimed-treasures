@@ -179,10 +179,10 @@
     <footer class="footer-container mt-auto mb-0">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                <div class="col-12 col-lg-6 mt-4 mb-4 mb-lg-0">
                     <!-- Mailchimp newsletter signup form -->
                 </div>
-                <div class="col-12 col-lg-6 mb-4 mb-lg-0 text-center">
+                <div class="col-12 col-lg-6 mt-4 mb-4 mb-lg-0 text-center">
                     <a href="{% url 'home' %}" class="footer-logo">
                         <img src="{{ MEDIA_URL }}vrt-logo1.png" width="215" height="75" alt="Vera's Reclaimed Treasures Logo">
                     </a>
@@ -234,7 +234,7 @@
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="" aria-label="Links to the Contact Form" class="list-group-link">
+                            <a href="{% url 'contact' %}" aria-label="Links to the Contact Form" class="list-group-link">
                                 Get in touch
                             </a>
                         </li>
