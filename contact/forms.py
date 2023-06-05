@@ -14,7 +14,7 @@ class ContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Add custom labels & set autofocus on first field
+        Set autofocus on first field and add class to fields
         """
         super().__init__(*args, **kwargs)
 

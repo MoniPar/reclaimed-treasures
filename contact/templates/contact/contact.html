@@ -16,12 +16,13 @@
 {% block content %}
 
     {% if submitted %}
+        <!-- Contact Form Submission Success Message -->
         <div class="container mt-5">
             <div class="row">
-                <div class="col-12 text-center success-message">
+                <div class="col-12 text-center">
                     <h1>Thank You!</h1>
                     <p class="mt-5 mb-4">Your message was submitted successfully!<br>
-                        I will get in touch within 2 working days.
+                        Please expect a reply within 2 working days.
                     </p>
                     <div class="text-center">
                         <a href="{% url 'home' %}" class="btn btn-outline-green">
@@ -36,47 +37,57 @@
         </div>
         
     {% else %}
-        <div class="container-fluid contact-container">
+        <!-- Contact Page Hero -->
+        <div class="container-fluid contact-hero">
             <div class="opaque-overlay">&nbsp;</div>
             <div class="row">
                 <div class="col-12">
-                    <section class="contact-hero jumbotron text-center">
+                    <section class="jumbotron text-center">
                         <h1 class="jumbotron-header">Get in touch</h1>
                         <h2 class="lead">Vera is always happy to help!</h2>
                     </section>
                 </div>
             </div>
         </div>
-        <div class="container contact-page mt-5">
+        <!-- Contact Page Information and Form -->
+        <div class="container contact-content mt-5">
             <div class="row">
                 <div class="col-12 col-lg-6 text-center">
-                    <p>Do you have any question about my products? 
-                        Or queries about an order?<br>
-                        Send my your feedback, your suggestions or just say hello.  I'm always happy to hear
-                        from my customers.  
+                    <p>Do you have any questions about my products? 
+                        Or queries about an order? Or maybe you would
+                        like to send me your feedback, your suggestions or just 
+                        say hello. I'm always happy to hear from my customers.  
                         Drop me a line or send me a message via the contact form.
                     </p>
+                    <!-- Contact links -->
                     <ul class="list-group">
                         <li class="list-group-item border-0">
-                            <a href="tel:+356012345678" target="_blank" rel="noopener" aria-label="Call me on +356 012 345 678"
-                                class="list-group-link">
+                            <a href="tel:+356012345678" target="_blank" 
+                                aria-label="Call me on +356 012 345 678"    
+                                rel="noopener" class="list-group-link">
                                 <span class="icon">
-                                    <i class="fa-solid fa-square-phone" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-square-phone" 
+                                        aria-hidden="true">
+                                    </i>
                                 </span>
                                 <span class="small ml-1">+356 01234567</span>
                             </a>
                         </li>
                         <li class="list-group-item border-0">
-                            <a href="mailto:vera@reclaimedtreasures.mt" target="_blank" rel="noopener"
+                            <a href="mailto:vera@reclaimedtreasures.mt" 
+                                target="_blank" rel="noopener"
                                 aria-label="Email us at vera@reclaimedtreasures.mt (opens in a new tab)"
                                 class="list-group-link">
                                 <span class="icon">
-                                    <i class="fa-solid fa-square-envelope" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-square-envelope" 
+                                        aria-hidden="true">
+                                    </i>
                                 </span>
                                 <span class="small ml-1">vera@reclaimedtreasures.mt</span>
                             </a>
                         </li>
                     </ul>
+                    <!-- Social Icons -->
                     <div class="mt-2 social mx-auto w-50">
                         <ul class="list-group list-group-horizontal social">
                             <li class="list-group-item border-0">
@@ -97,18 +108,44 @@
                 <!-- Contact Form -->
                 <div class="col-10 offset-1 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
                     <h3 class="text-center mb-3 text-lg-left">Contact Form</h3>
-                    <form action="{% url 'contact' %}" method="POST" novalidate>
+                    <form action="{% url 'contact' %}" method="POST" id="contact-form">
                         {% csrf_token %}
                         {{ form|crispy }}
                         <div class="mt-2 mb-3 submit-btn">
                             <input type="submit" value="Submit" role="button" 
                                 class="btn btn-green rounded float-right">
-                            <!-- <button class="btn btn-green rounded float-right" 
-                                id="submit-btn">Submit</button> -->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     {% endif %}
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        
+            // Adapted from CI's Boutique Ado
+            
+            // Gets the value of the select field and stores it in a variable
+            let subjectSelect = $('#id_subject').val();
+            // First option = empty string so can be used as boolean
+            if (!subjectSelect) {
+                $('#id_subject').css('font-style', 'italic');
+            };
+            
+            // Captures change event
+            $('#id_subject').change(function() {
+                // gets value everytime box changes
+                subjectSelect = $(this).val();
+                // determines the proper font-style 
+                if (!subjectSelect) {
+                    $(this).css('font-style', 'italic');
+                } else {
+                    $(this).css('font-style', 'normal');
+                }
+            });
+            
+    </script>
 {% endblock %}

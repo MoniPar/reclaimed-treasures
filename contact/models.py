@@ -5,6 +5,9 @@ class Contact(models.Model):
     """
     Model for Contact Form
     """
+    class Meta:
+        verbose_name_plural = "Messages"
+
     SUBJECT_CHOICES = [
         ('', 'Choose Query Subject'),
         ('PRODUCT', 'Product Query'),

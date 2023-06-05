@@ -1,10 +1,7 @@
-.social .list-group {
-    justify-content: space-around;
-}
-
-.contact-container {
+/* Contact Hero */
+.contact-hero {
     height: 50vh;
-    background: url('/media/home-hero.jpg') no-repeat center topfixed;
+    background: url('/media/home-hero.jpg') no-repeat center fixed;
     background-size: cover;
 
     display: flex;
@@ -12,4 +9,25 @@
     justify-content: center;
 
     position: relative;
+}
+
+/* Social Icons */
+.social .list-group {
+    justify-content: space-around;
+}
+
+/* Input fields */
+#contact-form .form-control {
+    font-style: normal;
+}
+
+/* Subject Select Input */
+#id_subject,
+#id_subject option:not(:first-child) {
+    font-style: normal;
+}
+
+#id_subject::placeholder,
+#id_subject option:first-child {
+    font-style: italic;
 }
