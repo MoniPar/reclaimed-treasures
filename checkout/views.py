@@ -63,32 +63,64 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
-            # Iterates through the items in basket and creates each line item
+            checked_products = []
+
+            # Iterates through the products in the basket, checking quantity
+            # against product stock and saving each checked product in a list
             for item_id, quantity in basket.items():
                 product = Product.objects.get(id=item_id)
-                # Decrements stock depending on quantity purchased
+                # If there's stock
                 if product.stock > 0:
+                    # and quantity ordered is less than the no. in stock
                     if quantity < product.stock:
+                        # set to deduct the quantity ordered from the stock
                         product.stock -= quantity
-                        product.save()
+                        checked_products.append((product, quantity))
+                    # If quantity ordered is greater than the no. in stock
                     elif quantity > product.stock:
-                        messages.warning(request,
-                                         f"There's only { product.stock } "
-                                         f"of { product.name } left in stock! "
-                                         "We can make more to order "
-                                         "(limit of 3).")
+                        # and greater than the overflow of 3, redirect back to
+                        # the shopping basket
+                        if (quantity - product.stock) > 3:
+                            messages.warning(request,
+                                             f"There's only { product.stock } "
+                                             f"of { product.name } left in "
+                                             "stock! If you like, we can make "
+                                             "up to 3 of this product to "
+                                             "order. Please adjust your "
+                                             "quantity to stay within this "
+                                             "limit.")
 
-                        return redirect(reverse('shopping_basket'))
+                            return redirect(reverse('shopping_basket'))
+                        # If quantity ordered is less than the overflow of 3
+                        else:
+                            messages.info(request,
+                                          f"There's only { product.stock } of "
+                                          f"{ product.name } left in stock! We"
+                                          " will make the overflow to order. "
+                                          "Please be aware that they will take"
+                                          " between 3 to 5 extra days to "
+                                          "deliver!")
+                            # sets the product stock to 0
+                            product.stock = 0
+                            checked_products.append((product, quantity))
+                    # If quantity ordered is equal to the no. in stock
                     else:
+                        # sets stock to 0
                         product.stock = 0
-                        product.save()
+                        checked_products.append((product, quantity))
+                # If there's no stock i.e. product is made to order
                 else:
                     messages.info(request,
                                   f"{ product.name } is currently out of "
                                   "stock and will be made to order. "
                                   "Please be aware that it will take "
                                   "3 to 5 extra days to deliver!")
+                    checked_products.append((product, quantity))
 
+            # Iterates through the list of checked products, saves the
+            # difference in stock in the database and creates each line item
+            for product, quantity in checked_products:
+                product.save()
                 try:
                     order_line_item = OrderLineItem(
                         order=order,
@@ -104,7 +136,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('shopping_basket'))
 
-            # Save the information to the user's profile
+            # Saves the information to the user's profile
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success',
                             args=[order.order_number]))
