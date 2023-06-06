@@ -115,6 +115,29 @@
             </div>
         </div>    
     </div>
+    <!-- Reviews -->
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h2>Product Reviews</h2>
+                {% if review %}
+                    {% for review in reviews %}
+                        <h3><a href="{ url 'reviews:review_list' review.id %}">
+                            {{ review.product.name}}</a> 
+                        </h3>
+                        <p>Review for {{ review.product }}</p>
+                        <p>Written by {{ review.rated_by }}</p>
+                        <p>On {{ review.rated_on }}</p>
+                        <p>{{ review.comment }}</p>
+                        <p>{{ review.rating }}/ 5</p>
+                    {% endfor %}
+                {% else %}
+                <p>No reviews available yet! </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12 text-center">
             <a href="{% url 'products' %}" class="btn btn-outline-green">

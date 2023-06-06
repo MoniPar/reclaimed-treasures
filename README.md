@@ -348,6 +348,30 @@ Solution: The product stock deduction code in checkout/views.py was placed insid
                 product.save()
 ```
 
+* Product Stock Overflow Issue [Bug: Product stock #45](https://github.com/users/MoniPar/projects/8/views/1?pane=issue&itemId=29840462)
+
+Customer can checkout an order on made to order products, however they can't checkout if they are trying to order more than what is currently in stock, even if they are within the 3 max limit on made to order.
+
+Expected behaviour:
+Customer will get an alert to make them aware that their order might take 3 - 5 extra days if their quantity is greater than the product stock but within the 3 max limit on made to order.
+
+Customer will get a warning if their quantity exceeds the 3 max limit on made to order when the product is still in stock. E.g. if the customer is trying to order 5 items on a product that has a current stock of 1. They are directed to the basket where they can fix their order quantity in order not to exceed the 3 max limit on made to order. In this case when the customer changes the quantity to 4, the order should go through as there's already 1 in stock and they are allowed to order 3 items on made to order products.
+
+Solution:
+Bug solved by adding another if statement in the quantity > product stock, checking whether quantity - product stock gives an overflow greater than 3. If it does, the customer is redirected to the shopping basket and given a warning directing them to change the quantity on the specific product.
+
+If the quantity - product stock has an overflow within or equal to the 3 max limit, then the order goes through and are just alerted to expect a slight delay.
+
+* Product Stock: Database altered before Order Success
+
+While testing the previous issue, it was found that while iterating through the items in the basket, the product stock was being decremented from the database even when the customer was being redirected to the shopping basket and the order was incomplete.
+
+Expected behaviour:
+The product stock in the database should only be altered after the customer has actually purchased the products.
+
+Solution:
+It was decided to iterate through the products in the basket while checking the product stock against the quantity ordered. But instead of changing the information in the basket, the changes were saved in a list which was then iterated through (instead of the basket) when creating the line items.
+
 _____
 
 # Technologies
