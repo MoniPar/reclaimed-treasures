@@ -19,6 +19,7 @@ class ReviewForm(ModelForm):
         """
         super().__init__(*args, **kwargs)
 
+        self.fields['rating'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = (
                 'border-green rounded review-form')
