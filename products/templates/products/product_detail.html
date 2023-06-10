@@ -118,28 +118,41 @@
     <!-- Reviews -->
     <div class="container mt-3">
         <div class="row">
-            <div class="col-12">
-                <h2>Product Reviews</h2>
-                {% if review %}
-                    {% for review in reviews %}
-                        <h3><a href="{ url 'reviews:review_list' review.id %}">
-                            {{ review.product.name}}</a> 
-                        </h3>
-                        <p>Review for {{ review.product }}</p>
-                        <p>Written by {{ review.rated_by }}</p>
-                        <p>On {{ review.rated_on }}</p>
-                        <p>{{ review.comment }}</p>
-                        <p>{{ review.rating }}/ 5</p>
+            <div class="col-12 col-lg-6">
+                <h3 class="mb-4">Customer reviews for {{ product.name }}</h3>
+            
+                <div class="reviews-wrapper mb-1 w-75">
+                    {% for review in product.reviews.all %}
+                        <div class="review-div border-black rounded px-2 mb-2">
+                            <p class="small">Reviewed by {{ review.rated_by }} on {{ review.rated_on|date:"d-m-Y" }}</p>
+                            <strong>Rating: </strong> {{ review.rating }}/5<br>
+                            <strong>Comment: </strong><br>
+                            {{ review.comment }}
+                        </div>
                     {% endfor %}
-                {% else %}
-                <p>No reviews available yet! </p>
+                </div>
+                
+            </div>
+            <div class="col-12 col-lg-6">
+                {% if request.user.is_authenticated %}
+                    
+                        <h3>Add Review</h3>
+                        <form method="POST" action="{% url 'reviews:add_review' product.id %}">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <a href="{% url 'product_detail' product.id %}" type="button" class="btn btn-outline-green rounded mt-2">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-green rounded mt-2">Add</button>
+                        </form>
+                   
                 {% endif %}
             </div>
+            
         </div>
     </div>
-
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-4">
             <a href="{% url 'products' %}" class="btn btn-outline-green">
                 <span class="icon">
                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
