@@ -36,8 +36,18 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=0)
     image = models.ImageField(null=True, blank=True)
 
-    # def has_stock(self):
-    #     return self.stock > 0
+    # Credits to https://www.youtube.com/watch?v=8iCqlFyFu2s
+    def average_rating(self):
+        """
+        Gets average ratings of each product's reviews
+        """
+        average_rating = 0
+        for review in self.reviews.all():
+            average_rating += review.rating
+        if average_rating > 0:
+            return average_rating / self.reviews.count()
+
+        return 0
 
     def __str__(self):
         return self.name

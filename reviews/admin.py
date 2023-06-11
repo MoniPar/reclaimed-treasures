@@ -7,7 +7,7 @@ class ReviewAdmin(admin.ModelAdmin):
     Defines the model on the Admin Interface
     """
     list_display = (
-        'product', 'rated_by', 'comment', 'rating', 'rated_on',
+        'id', 'product', 'rated_by', 'comment', 'rating', 'rated_on',
     )
 
 

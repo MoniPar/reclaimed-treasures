@@ -18,7 +18,7 @@ def list_reviews(request, product_id):
         'product': product,
         'reviews': reviews,
     }
-    
+
     return render(request, 'products/product_detail.html', context)
 
 
@@ -64,18 +64,22 @@ def edit_review(request, review_id):
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Your review has been successfully "
-                             "updated|")
-            return redirect(reverse('product_detail', args=[product.id]))
+            if request.user == review.rated_by:
+                form.save()
+                messages.success(request, "Your review has been successfully "
+                                "updated|")
+                return redirect(reverse('product_detail', args=[product.id]))
+            else:
+                messages.error(request, "Sorry, you are not authorised to edit"
+                                        " this review!")
+
+                return redirect(reverse('home'))
         else:
             messages.error(request, "Failed to update review. Please make "
                                     "sure both fields are filled in and try "
                                     "again.")
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, "You are updating your review for "
-                               f"{ product.name }.")
 
     context = {
         'form': form,
@@ -84,3 +88,32 @@ def edit_review(request, review_id):
     }
 
     return render(request, 'reviews/edit_review.html', context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """
+    View to handle review deletion
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    product = review.product
+
+    if request.method == 'POST':
+
+        if request.user == review.rated_by:
+            review.delete()
+            messages.success(request, 'Your review has been deleted!')
+
+            return redirect(reverse('product_detail', args=[product.id]))
+        else:
+            messages.error(request, "Sorry, you are not authorised to delete "
+                                    "this review!")
+
+            return redirect(reverse('home'))
+
+    context = {
+        'review': review,
+        'product': product,
+    }
+
+    return render(request, 'reviews/confirm_delete_review.html', context)
