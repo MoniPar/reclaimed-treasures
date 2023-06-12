@@ -1,3 +1,8 @@
+:root {
+    --info: #106573;
+    --danger: #ab2c38;
+}
+
 html {
     height: 100%;
     font-size: 62.5%;
@@ -200,7 +205,8 @@ input[name="q"]::placeholder {
     overflow-y: scroll;
 }
 
-/* CTA */
+/* HOME CTA */
+
 .cta-container {
     height: calc(90vh - 187px);
     background: url('/media/home-hero1.jpg') no-repeat center fixed;
@@ -236,6 +242,7 @@ input[name="q"]::placeholder {
 
 
 /* Allauth Formatting */
+
 .allauth-inner-content label {
     margin-bottom: .25rem;
 }
@@ -263,11 +270,6 @@ input[name="q"]::placeholder {
 }
 
 /* Footer */
-
-/* .footer-container {
-    background-color: rgb(54, 95, 54);
-    color: rgb(222, 237, 222);
-} */
 
 .footer-logo {
     display: block;
@@ -305,25 +307,6 @@ footer .social {
     font-size: 1.8rem;
     color: #fff;
 }
-
-/* -------- */
-/*   SHOP   */
-/* -------- */
-
-.category-badge>span.badge:hover,
-.category-badge>span.badge:focus {
-    background-color: rgb(54, 95, 54);
-    color: #fff;
-}
-
-/* Product Detail */
-.info-dropdown {
-    padding: 0 .25rem;
-    background: transparent;
-    max-height: 3rem;
-    overflow-y: auto;
-}
-
 
 /* ------------- */
 /* Media Queries */

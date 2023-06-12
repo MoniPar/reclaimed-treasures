@@ -1,0 +1,76 @@
+
+.category-badge>span.badge:hover,
+.category-badge>span.badge:focus {
+    background-color: rgb(54, 95, 54);
+    color: #fff;
+}
+
+/* Product Detail */
+.info-dropdown {
+    padding: 0 .25rem;
+    background: transparent;
+    max-height: 3rem;
+    overflow-y: auto;
+}
+
+
+
+.review-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    gap: 2rem;
+    justify-content: space-around;
+}
+
+.review-card {
+    max-width: 30rem;
+    background-color: rgba(190, 62, 130, .1);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 0;
+    box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.card-subtitle {
+    border-top: 1px solid rgba(190, 62, 130, .8);
+    padding-top: 1rem;
+    font-size: 1.2rem;   
+}
+
+.card-text {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    height: 10rem;
+    overflow-y: auto;
+}
+
+q {
+    quotes: '«' '»';
+}
+
+q::before {
+    content: open-quote;
+}
+
+q::after {
+    content: close-quote;
+}
+
+q::before, q::after {
+    font-size: 2.5rem;
+    color: rgba(190, 62, 130, .8);
+}
+
+.btn-outline-info,
+.btn-outline-danger {
+    background-color: #fff;
+    border: 0;
+}
+
+.btn-outline-info {
+    color: #137a8b;
+}

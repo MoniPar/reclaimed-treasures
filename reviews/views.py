@@ -12,11 +12,9 @@ def list_reviews(request, product_id):
     View for displaying product reviews
     """
     product = get_object_or_404(Product, pk=product_id)
-    reviews = Review.objects.all()
 
     context = {
         'product': product,
-        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -61,19 +59,19 @@ def edit_review(request, review_id):
     """
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
+    if review.rated_by != request.user:
+        messages.error(request, "Sorry, you are not authorised to edit"
+                       " this review!")
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
-            if request.user == review.rated_by:
-                form.save()
-                messages.success(request, "Your review has been successfully "
-                                "updated|")
-                return redirect(reverse('product_detail', args=[product.id]))
-            else:
-                messages.error(request, "Sorry, you are not authorised to edit"
-                                        " this review!")
+            form.save()
+            messages.success(request, "Your review has been successfully "
+                                      "updated|")
+            return redirect(reverse('product_detail', args=[product.id]))
 
-                return redirect(reverse('home'))
         else:
             messages.error(request, "Failed to update review. Please make "
                                     "sure both fields are filled in and try "

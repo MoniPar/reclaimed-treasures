@@ -26,3 +26,7 @@ class Review(models.Model):
 
     def __str__(self):
         return f'{ self.product.name }'
+
+    class Meta:
+        unique_together = ('product', 'rated_by')
+        ordering = ['-rated_on']

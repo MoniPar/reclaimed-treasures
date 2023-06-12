@@ -65,9 +65,17 @@ def product_detail(request, product_id):
     A view to show individual product details
     """
     product = get_object_or_404(Product, pk=product_id)
+    # Iterates through each product's reviews and checks if user has
+    # already submitted a review for that particular product
+    # Credits to John Dolan for list comprehension
+    my_reviews = ([review for review in product.reviews.all()
+                  if review.rated_by == request.user])
+    user_has_reviewed = len(my_reviews) > 0
 
     context = {
         'product': product,
+        'user_has_reviewed': user_has_reviewed,
+        'my_reviews': my_reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
