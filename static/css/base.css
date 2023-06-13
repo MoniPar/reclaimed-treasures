@@ -269,15 +269,44 @@ input[name="q"]::placeholder {
     font-weight: 700;
 }
 
-/* Footer */
+/* -------- */
+/*  FOOTER  */
+/* -------- */
 
-.footer-logo {
-    display: block;
+/* Mailchimp signup form */
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+}
+
+#mc_embed_signup input {
+    border: 1px solid #0b8e59;
+}
+
+#mc_embed_signup .button {
+    background-color: #0b8e59;
+}
+
+#mc_embed_signup .button:hover,
+#mc_embed_signup .button:active,
+#mc_embed_signup .button:focus {
+    background-color: rgb(54, 95, 54);
+    color: #fff;
+}
+
+#mc_embed_signup div.response {
+    margin: 0 auto;
+    padding: 0 .5em .5em 0;
+}
+
+.footer-logo {   
     padding: 0;
 }
 
 footer .list-group-item {
-    line-height: 1.0;
+    line-height: .75;
+    border: 0;
 }
 
 footer a {
@@ -289,10 +318,6 @@ footer a:focus {
     color: rgb(68, 136, 68);
 }
 
-footer .list-group {
-    justify-content: space-evenly;
-}
-
 footer .list-group-horizontal>.list-group-item {
     background-color: rgb(170, 226, 170);
     border-radius: 50%;
@@ -300,12 +325,11 @@ footer .list-group-horizontal>.list-group-item {
 
 footer .list-group-horizontal>.list-group-item:hover,
 footer .list-group-horizontal>.list-group-item:focus {
-    background-color: rgb(54, 95, 54);
+    background-color: rgba(54, 95, 54, .5);
 }
 
 footer .social {
     font-size: 1.8rem;
-    color: #fff;
 }
 
 /* ------------- */
