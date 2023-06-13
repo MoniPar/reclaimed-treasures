@@ -3,7 +3,6 @@
     <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header">
-        <!-- <img src="..." class="rounded mr-2" alt="..."> -->
         <strong class="mr-auto">Success!</strong>
         <button type="button" class="ml-2 mb-1 close" 
             data-dismiss="toast" aria-label="Close">
@@ -18,7 +17,7 @@
             </div>
         </div>
         {% if grand_total and not on_profile_page %}
-            <p class="title-font py-1">Your Basket ({{ product_count}})</p>
+            <p class="title-font py-1">Your Basket ({{ product_count }})</p>
             <div class="basket-preview-wrapper">
                 {% for item in basket_items %}
                     <div class="row">
@@ -41,12 +40,12 @@
                     <strong>
                         <p class="mt-3 mb-1 text-black">
                             Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}:
-                            <span class="float-right">${{ total|floatformat:2 }}</span>
+                            <span class="float-right">€{{ total|floatformat:2 }}</span>
                         </p>
                     </strong>
                     {% if free_delivery_delta > 0 %}
                         <p class="mb-0 p-2 bg-warning shadow-sm text-black text-center">
-                            You're only <strong>${{ free_delivery_delta }}</strong> away to qualify for free delivery!
+                            You're <strong>€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                         </p>
                     {% endif %}
                     <a href="{% url 'shopping_basket' %}" class="btn btn-green btn-block">

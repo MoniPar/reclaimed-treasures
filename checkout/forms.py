@@ -3,6 +3,12 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    full_name = forms.CharField(label='Full Name')
+    eircode = forms.CharField(label='Postcode (optional)', required=False)
+    street_address1 = forms.CharField(label='Street Address 1')
+    street_address2 = forms.CharField(
+        label='Street Address 2 (optional)', required=False)
+    county = forms.CharField(label='County (optional)', required=False)
 
     class Meta:
         model = Order
@@ -18,24 +24,6 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
 
-        labels = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
-            'town_or_city': 'Town or City',
-            'eircode': 'Eircode',
-            'county': 'County, State or Locality',
-            'country': 'Country',
-        }
-
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if self.fields[field].required:
-                label = f'{labels[field]} *'
-            else:
-                label = labels[field]
-            self.fields[field].widget.attrs['label'] = label
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-        
