@@ -306,7 +306,7 @@ input[name="q"]::placeholder {
 
 footer .list-group-item {
     line-height: .75;
-    border: 0;
+    border-style: none;
 }
 
 footer a {

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/about.css' %}">
+{% endblock %}
+
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="container mt-5 about-container">
+        <h1 class="text-center mb-5">About Vera & Her Craft</h1>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-4">
+                <div class="img-wrapper">
+                    <img src="{{ MEDIA_URL }}vera-fair.jpg"
+                        alt="Vera at the market fair surrounded by her creations hanging from the trees" 
+                        class="about-img img-fluid">
+                </div>
+            </div>
+            <div class="col-12  mb-4 col-md-6 mb-md-0">
+                <div class="about-txt">
+                    <p>
+                    The story of Vera's Reclaimed Treasures began over 25 years ago in Malta,
+                    when Vera embraced her love for Art in creating painted gifts for friends
+                    and family. Rather than limiting herself to a standard canvas, Vera imbued
+                    her work with her passion for environmental causes and spiritualism,
+                    breathing new life into standard and oft-forgotten household items.
+                    Now commonly referred to as Upcycling, for Vera it is a process of
+                    surfacing, accentuating or enhancing the inherent value of these
+                    ordinary objects.
+                    </p>
+                </div>    
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 d-md-none mb-4">
+                <div class="img2-wrapper">
+                    <img src="{{ MEDIA_URL }}tile.jpg" 
+                        alt="A small collection of Vera's commissioned creations, including window, coffee table, an african motif frame and more cd arts."
+                        class="commis-img img-fluid">
+                </div>
+            </div>
+            <div class="col-12 mb-5 col-md-6 mb-md-0">
+                <div class="about-txt">
+                    Over decades, Vera perfected her craft, progressing from creating 
+                    solely for friends and family to hosting stalls at countless
+                    local Craft Fairs.  Vera is now offering a curated selection 
+                    of eco-conscious gifts in myriad styles through this site, 
+                    along with the facility to get in touch for Made To Order, 
+                    bespoke items.
+                </div>
+            </div>
+            <div class="col-12 d-none col-md-6 d-md-block mb-4">
+                <div class="img2-wrapper">
+                    <img src="{{ MEDIA_URL }}tile.jpg"
+                        alt="A small collection of Vera's commissioned creations, including window, coffee table, an african motif frame and more cd arts."
+                        class="commissions-img img-fluid">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

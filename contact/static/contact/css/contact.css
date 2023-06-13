@@ -1,6 +1,6 @@
 /* Contact Hero */
 .contact-hero {
-    height: 50vh;
+    height: calc(90vh - 187px);
     background: url('/media/home-hero.jpg') no-repeat center fixed;
     background-size: cover;
 

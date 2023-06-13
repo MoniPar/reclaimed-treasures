@@ -394,6 +394,18 @@ _____
 
 # Credits
 
+## Media 
+
+Vera Vinita Schembri for allowing me to use images from her collection for 
+the purpose of this ecommerce store
+
+Austen Donohoe for the designing the Vera's Reclaimed Treasures Logo and the 
+hero images for the Home and Contact Pages.
+
+Photo by Digital Buggu: <https://www.pexels.com/photo/three-multicolored-floral-table-lamps-turned-on-186844/>
+
+Photo by Anna Shvets: <https://www.pexels.com/photo/unrecognizable-painter-mixing-colors-on-paper-5641842/>
+
 ## Code
 
 The following walkthroughs helped me get my project in shape. I have adapted the code in these walkthroughs for the needs of my project.
