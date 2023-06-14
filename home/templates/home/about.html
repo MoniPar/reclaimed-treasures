@@ -15,18 +15,18 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid mt-3">
-    <div class="container mt-5 about-container">
+<div class="container-fluid page-container mt-3">
+    <div class="container my-5">
         <h1 class="text-center mb-5">About Vera & Her Craft</h1>
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6 mb-4">
-                <div class="img-wrapper">
+        <div class="row align-items-center mb-4">
+            <div class="col-12 mb-4 col-md-6 mb-md-0">
+                <div class="w-75 portrait img-wrapper">
                     <img src="{{ MEDIA_URL }}vera-fair.jpg"
-                        alt="Vera at the market fair surrounded by her creations hanging from the trees" 
+                        alt="Vera at the market fair. Displaying cds hanging from the tree branches and a table with other products." 
                         class="about-img img-fluid">
                 </div>
             </div>
-            <div class="col-12  mb-4 col-md-6 mb-md-0">
+            <div class="col-12 col-md-6">
                 <div class="about-txt">
                     <p>
                     The story of Vera's Reclaimed Treasures began over 25 years ago in Malta,
@@ -41,16 +41,16 @@
                 </div>    
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row align-items-center mb-5">
             <div class="col-12 col-md-6 d-md-none mb-4">
-                <div class="img2-wrapper">
+                <div class="landscape-img-wrapper w-75">
                     <img src="{{ MEDIA_URL }}tile.jpg" 
                         alt="A small collection of Vera's commissioned creations, including window, coffee table, an african motif frame and more cd arts."
-                        class="commis-img img-fluid">
+                        class="about-img img-fluid">
                 </div>
             </div>
-            <div class="col-12 mb-5 col-md-6 mb-md-0">
-                <div class="about-txt">
+            <div class="col-12 col-md-6">
+                <div class="about-txt mr-md-5">
                     Over decades, Vera perfected her craft, progressing from creating 
                     solely for friends and family to hosting stalls at countless
                     local Craft Fairs.  Vera is now offering a curated selection 
@@ -59,16 +59,67 @@
                     bespoke items.
                 </div>
             </div>
-            <div class="col-12 d-none col-md-6 d-md-block mb-4">
-                <div class="img2-wrapper">
+            <div class="col-12 d-none col-md-6 d-md-block">
+                <div class="landscape-img-wrapper w-75">
                     <img src="{{ MEDIA_URL }}tile.jpg"
                         alt="A small collection of Vera's commissioned creations, including window, coffee table, an african motif frame and more cd arts."
-                        class="commissions-img img-fluid">
+                        class="about-img img-fluid">
                 </div>
             </div>
-
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid my-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div id="controls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="8000">
+                            <div class="card text-white">
+                                <img src="{{ MEDIA_URL }}contact-hero.jpg" class="card-img d-block w-100"
+                                    alt="A range of products from Vera's store including; an assortment of pebbles, a leafy green bottle, mason jars and cd art">
+                                <div class="card-img-overlay d-flex">
+                                    <div class="slide-content text-center align-self-center mx-auto">
+                                        <h2 class="card-title">Upcycled Gifts</h2>
+                                        <p class="card-text">For the Eco-Conscious</p>
+                                        <div class="my-4">
+                                            <a href="{% url 'products' %}" role="button"
+                                                class="btn btn-sm btn-orange rounded py-2 small">Shop
+                                                Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-interval="8000">
+                            <div class="card text-white">
+                                <img src="{{ MEDIA_URL }}tile2.jpg" class="card-img d-block w-100"
+                                    alt="A range of products from Vera's commissions including; hand-painted window glass, furniture, frames and cd art">
+                                <div class="card-img-overlay d-flex">
+                                    <div class="slide-content text-center align-self-center mx-auto">
+                                        <h2 class="card-title">Commissions</h2>
+                                        <p class="card-text">Transform the Ordinary into Special
+                                        </p>
+                                        <div class="text-center my-4">
+                                            <a href="{% url 'contact' %}" role="button" class="btn btn-sm btn-orange rounded">Get in
+                                                Touch</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#controls" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#controls" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}

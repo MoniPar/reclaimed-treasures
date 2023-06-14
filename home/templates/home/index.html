@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -10,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid cta-container">
+<div class="container-fluid hero-container home-hero">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="row">
         <div class="col-12">
@@ -18,7 +22,7 @@
                 <h1 class="jumbotron-header">Upcycled Home Decor</h1>
                 <h2 class="lead">Revibe your space with a conscience</h2>
                 <div class="my-5">
-                    <a href="{% url 'products' %}" role="button" class="btn btn-lg btn-green text-uppercase rounded py-2">Shop Now</a>
+                    <a href="{% url 'products' %}" role="button" class="btn btn-lg btn-orange text-uppercase rounded py-2">Shop Now</a>
                 </div>
             </section>
         </div>
