@@ -14,11 +14,10 @@ class ContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Set autofocus on first field and add class to fields
+        Add class to fields
         """
         super().__init__(*args, **kwargs)
 
-        self.fields['subject'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = (
                 'border-green rounded contact-form-input')
