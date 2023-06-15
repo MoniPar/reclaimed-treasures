@@ -1,6 +1,12 @@
+
+
 /* Contact Hero */
 .contact-hero {
     background: url('/media/contact-hero.jpg') no-repeat center fixed;
+}
+
+.list-group-item {
+    background-color: transparent;
 }
 
 /* Social Icons */

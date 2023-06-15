@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.core.mail import send_mail, get_connection
+from django.core.mail import send_mail, get_connection, BadHeaderError
+from django.http import HttpResponse
 from django.conf import settings
 from .models import Contact
 from .forms import ContactForm
@@ -16,20 +17,30 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form_cleaned = form.cleaned_data
             form.save()
+            subject = form.cleaned_data['subject'],
+            body = {
+                'name': form.cleaned_data['full_name'],
+                'email': form.cleaned_data['email'],
+                'message': form.cleaned_data['message'],
+            }
+            message = "\n".join(body.values())
             connect = get_connection(settings.EMAIL_BACKEND)
             email_to = settings.DEFAULT_FROM_EMAIL,
-            email_from = form_cleaned['email']
-            send_mail(
-                form_cleaned['subject'],
-                form_cleaned['message'],
-                email_from,
-                email_to,
-                connection=connect
-            )
-            messages.success(request,
-                             "Your message was submitted successfully!")
+            email_from = 'email'
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    email_from,
+                    email_to,
+                    connection=connect
+                )
+            except BadHeaderError:
+                return HttpResponse("Invalid header found.")
+
+            messages.success(request, "Your message was submitted "
+                                      "successfully!")
             return redirect('/contact?submitted=True')
         else:
             messages.error(request,

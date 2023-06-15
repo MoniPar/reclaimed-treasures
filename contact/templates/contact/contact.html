@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_meta %}
+    <meta name="description" content="Vera's Reclaimed Treasures | Contact Page. An E-commerce website for colourful, hand-painted upcycled crafts. Visit our store today, commissions available on request!">
+    <meta name="keywords" content="Contact form, commissions, product queries, get in touch, feedback, suggestions, order queries, e-commerce, upcycled art, environmental friendly, sustainable gifts">
+{% endblock %}
+
+{% block extra_title %} | Contact{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock %}
@@ -17,10 +24,10 @@
 
     {% if submitted %}
         <!-- Contact Form Submission Success Message -->
-        <div class="container mt-5">
-            <div class="row">
+        <div class="container my-auto">
+            <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <h1>Thank You!</h1>
+                    <h1 class="mt-5">Thank You!</h1>
                     <p class="mt-5 mb-4">Your message was submitted successfully!<br>
                         Please expect a reply within 2 working days.
                     </p>
@@ -34,6 +41,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
         </div>
         
     {% else %}
@@ -50,75 +58,73 @@
             </div>
         </div>
         <!-- Contact Page Information and Form -->
-        <div class="container contact-content mt-5">
-            <div class="row">
-                <div class="col-12 col-lg-6 text-center">
-                    <p>Do you have any questions about my products? 
-                        Or queries about an order? Or maybe you would
-                        like to discuss a commission, send me your feedback, 
-                        your suggestions or just say hello. I'm always happy to 
-                        hear from my customers.  
-                        Drop me a line or send me a message via the contact form.
-                    </p>
-                    <!-- Contact links -->
-                    <ul class="list-group">
-                        <li class="list-group-item border-0">
-                            <a href="tel:+356012345678" target="_blank" 
-                                aria-label="Call me on +356 012 345 678"    
-                                rel="noopener" class="list-group-link">
-                                <span class="icon">
-                                    <i class="fa-solid fa-square-phone" 
-                                        aria-hidden="true">
-                                    </i>
-                                </span>
-                                <span class="small ml-1">+356 01234567</span>
-                            </a>
-                        </li>
-                        <li class="list-group-item border-0">
-                            <a href="mailto:vera@reclaimedtreasures.mt" 
-                                target="_blank" rel="noopener"
-                                aria-label="Email us at vera@reclaimedtreasures.mt (opens in a new tab)"
-                                class="list-group-link">
-                                <span class="icon">
-                                    <i class="fa-solid fa-square-envelope" 
-                                        aria-hidden="true">
-                                    </i>
-                                </span>
-                                <span class="small ml-1">vera@reclaimedtreasures.mt</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Social Icons -->
-                    <div class="mt-2 social mx-auto w-50">
-                        <ul class="list-group list-group-horizontal social">
+        <div class="container-fluid page-container">
+            <div class="container contact-content mt-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6 text-center">
+                        <p>Do you have any questions about my products?
+                            Or queries about an order? Or maybe you would
+                            like to discuss a commission, send me your feedback,
+                            your suggestions or just say hello. I'm always happy to
+                            hear from my customers.
+                            Drop me a line or send me a message via the contact form.
+                        </p>
+                        <!-- Contact links -->
+                        <ul class="list-group">
                             <li class="list-group-item border-0">
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener"
-                                    aria-label="Vera's Reclaimed Treasures Facebook Page (opens in a new tab)">
-                                    <i class="icon fa-brands fa-facebook-f"></i>
+                                <a href="tel:+356012345678" target="_blank" aria-label="Call me on +356 012 345 678" rel="noopener"
+                                    class="list-group-link">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-square-phone" aria-hidden="true">
+                                        </i>
+                                    </span>
+                                    <span class="small ml-1">+356 01234567</span>
                                 </a>
                             </li>
                             <li class="list-group-item border-0">
-                                <a href="https://www.instagram.com" target="_blank" rel="noopener"
-                                    aria-label="Vera's Reclaimed Treasures Instagram page (opens in a new tab)">
-                                    <i class="icon fa-brands fa-instagram"></i>
+                                <a href="mailto:vera@reclaimedtreasures.mt" target="_blank" rel="noopener"
+                                    aria-label="Email us at vera@reclaimedtreasures.mt (opens in a new tab)"
+                                    class="list-group-link">
+                                    <span class="icon">
+                                        <i class="fa-solid fa-square-envelope" aria-hidden="true">
+                                        </i>
+                                    </span>
+                                    <span class="small ml-1">vera@reclaimedtreasures.mt</span>
                                 </a>
                             </li>
                         </ul>
+                        <!-- Social Icons -->
+                        <div class="mt-2 social mx-auto w-50">
+                            <ul class="list-group list-group-horizontal social">
+                                <li class="list-group-item border-0">
+                                    <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                                        aria-label="Vera's Reclaimed Treasures Facebook Page (opens in a new tab)">
+                                        <i class="icon fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <a href="https://www.instagram.com" target="_blank" rel="noopener"
+                                        aria-label="Vera's Reclaimed Treasures Instagram page (opens in a new tab)">
+                                        <i class="icon fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="col-10 offset-1 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
+                        <h3 class="text-center mb-3 text-lg-left">Contact Form</h3>
+                        <form action="{% url 'contact' %}" method="POST" id="contact-form">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="mt-2 mb-3 submit-btn">
+                                <input type="submit" value="Submit" role="button" class="btn btn-green rounded float-right">
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <!-- Contact Form -->
-                <div class="col-10 offset-1 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
-                    <h3 class="text-center mb-3 text-lg-left">Contact Form</h3>
-                    <form action="{% url 'contact' %}" method="POST" id="contact-form">
-                        {% csrf_token %}
-                        {{ form|crispy }}
-                        <div class="mt-2 mb-3 submit-btn">
-                            <input type="submit" value="Submit" role="button" 
-                                class="btn btn-green rounded float-right">
-                        </div>
-                    </form>
-                </div>
             </div>
+            <hr>
         </div>
     {% endif %}
 {% endblock %}
