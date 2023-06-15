@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail, get_connection, BadHeaderError
 from django.http import HttpResponse
@@ -14,20 +14,27 @@ def contact(request):
     business address.
     """
     submitted = False
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            subject = form.cleaned_data['subject'],
+            subject = request.POST.get('subject')
             body = {
-                'name': form.cleaned_data['full_name'],
-                'email': form.cleaned_data['email'],
                 'message': form.cleaned_data['message'],
+                'name': form.cleaned_data['full_name'],
+                'phone': form.cleaned_data['phone'],
+                'email': form.cleaned_data['email'],
             }
-            message = "\n".join(body.values())
+            # Joins the cleaned fields together to send as a message in email.
+            # Filters out the None values from the iterable and converts other
+            # values to strings. Credit: https://tinyurl.com/y9a993x9
+            message = "\n".join(
+                filter(
+                    lambda x: str(x) if x is not None else '', body.values()))
             connect = get_connection(settings.EMAIL_BACKEND)
             email_to = settings.DEFAULT_FROM_EMAIL,
-            email_from = 'email'
+            email_from = form.cleaned_data['email']
             try:
                 send_mail(
                     subject,
