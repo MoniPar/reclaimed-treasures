@@ -32,7 +32,7 @@
     border-radius: 8px;
 }
 
-.carousel-inner, .carousel-item, .card-img {
+.carousel-inner, .carousel-item, .card, .card-img {
     border-radius: 8px;
     border-style: none;
 }
