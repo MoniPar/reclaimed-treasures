@@ -9,9 +9,11 @@
     <meta http-equiv="X-UA-compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Monique Parnis">
     {% endblock %}
 
     {% block extra_meta %}
+    <!-- Description and Keywords Meta tags added to specific pages  -->
     {% endblock %}
 
     {% block corecss %}
@@ -23,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Poppins&family=Roboto+Mono&display=swap"
         rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ MEDIA_URL }}vrt-favicon.png" type="image/x-icon">
     <!-- MailChimp Stylesheet Link-->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS link -->
@@ -30,6 +34,7 @@
     {% endblock %}
 
     {% block extra_css %}
+    <!-- Extra stylesheets added to specific pages -->
     {% endblock %}
 
     {% block corejs %}
@@ -52,7 +57,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Vera's Reclaimed Treasures {% block extra_title %}{% endblock %}</title>
+    <title>Vera's Reclaimed Treasures | Upcycled Crafts Online Store {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body class="d-flex flex-column h-100 px-0">

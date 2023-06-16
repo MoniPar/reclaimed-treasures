@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Vera's Reclaimed Treasures | Shop online for 
+    hand-painted, upcycled home decor, selling affordable creative and unique gifts 
+    for eco-conscious people.">
+<meta name="keywords" content="Online store, upcycled crafts, sustainable gifts, 
+    beautiful designs, myriad designs, creative gifts, cd-art, pebble-art, 
+    hand-painted glassware, made to order, affordable prices">
+{% endblock %}
+
+{% block extra_title %} | Shop Products{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" 
         href="{% static 'products/css/products.css' %}">
 {% endblock %}
-
 
 {% block page_header %}
 <div class="container header-container">

@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Vera's Reclaimed Treasures | About Vera, her art
+    and her passion for environmental causes and spiritualism.">
+<meta name="keywords" content="passion, upcycled crafts, sustainable gifts,  
+    mantra designs, made to order, hand-painted, commissions, Malta Art">
+{% endblock %}
+
+{% block extra_title %} | About{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'home/css/about.css' %}">
 {% endblock %}
