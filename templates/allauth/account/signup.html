@@ -19,20 +19,19 @@
         <input type="hidden" name="{{ redirect_field_name }}" 
             value="{{ redirect_field_value }}" />
     {% endif %}
-    <div class="text-right">
-        <a class="btn btn-outline-green rounded" href="{% url 'account_login' %}">
+    <div class="d-flex justify-content-between">
+        <a class="btn btn-outline-green btn-sm rounded" href="{% url 'account_login' %}">
             Back to Login
         </a>
-        <button type="submit" class="btn btn-green rounded ml-5">
+        <button type="submit" class="btn btn-green btn-sm rounded">
             {% trans "Register" %} &raquo;
         </button>
     </div>
 </form>
 <div class="text-center mb-5">
-    
     <a href="{% url 'home' %}" class="btn btn-outline-green rounded ml-3">
         Home
     </a>
 </div>
-
+<hr>
 {% endblock %}

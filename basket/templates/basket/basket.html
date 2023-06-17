@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5 mb-2">
+    <div class="container my-5">
         <div class="row">
             <div class="col text-center mt-3 mb-4">
                 <h1>Shopping Basket</h1>
@@ -20,20 +20,19 @@
         <div class="row">
             <div class="col">
                 {% if basket_items %}
-                <!-- {{ request.session.basket }} -->
                     <div class="d-block d-md-none mb-5 text-center">
                         <div class="basket-summary mb-4">
                             <p class="font-weight-bold">Basket Total: €{{ total|floatformat:2 }}</p>
                             <p>Delivery: €{{ delivery|floatformat:2 }}</p>
                             <p class="font-weight-bolder">Grand Total: €{{ grand_total|floatformat:2 }}</p>
                             {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
-                                You're <strong>€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
+                            <p class="text-danger">
+                                You're <strong class="bg-white">€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                             </p>
                             {% endif %}
                         </div>
-                        <div>
-                            <a href="{% url 'products' %}" class="btn btn-outline-green btn-lg mb-2">
+                        <div class="text-center">
+                            <a href="{% url 'products' %}" class="btn btn-outline-green btn-lg">
                                 <span class="icon">
                                     <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                                 </span>
@@ -52,19 +51,21 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12 mb-2 col-md-3 mb-md-0">
+                                    <div class="w-75 mx-auto">
                                     {% if item.product.image %}
                                         <img src="{{ item.product.image.url }}" 
                                             alt="{{ item.product.description }}" 
-                                            class="img-fluid rounded">
+                                            class="img-fluid rounded shadow-sm">
                                     {% else %}
-                                        <img class="card-img-top border-2 img-fluid" 
+                                        <img class="card-img-top border-0 rounded shadow-sm img-fluid" 
                                             src="{{ MEDIA_URL }}noimage.png" 
                                             alt="Placeholder for no image">
                                     {% endif %}
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 mb-2 text-center col-md-3 text-md-left my-md-auto">
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    <p class="my-0 small">SKU: {{ item.product.sku|upper }}</p>
                                     <p class="my-0">€{{ item.product.price }}</p>
                                 </div>    
                                 <div class="col-sm-12 offset-1 col-md-3 offset-md-0 my-md-auto">
@@ -100,11 +101,12 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <!-- <p class="my-0">{{ item.product.quantity }} in basket</p> -->
-                                        <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-link text-danger float-right" id="remove_{{ item.item_id }}">
-                                            <small>Remove</small>
-                                        </a>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <a class="update-link btn-outline-info rounded" role="button" id="update-link"><small>Update</small></a>
+                                            <a class="remove-link btn-outline-danger rounded" role="button" id="remove_{{ item.item_id }}">
+                                                <small>Remove</small>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>    
                                 <div class="col-sm-12 mb-4 text-right col-md-3 my-md-auto">
@@ -121,7 +123,7 @@
                             <p class="font-weight-bolder">Grand Total: €{{ grand_total|floatformat:2 }}</p>
                             {% if free_delivery_delta > 0 %}
                             <p class="mb-1 text-danger">
-                                You're <strong>€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
+                                You're <strong class="bg-white">€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                             </p>
                             {% endif %}
                         </div>
@@ -154,6 +156,7 @@
             </div>
         </div>
     </div>
+    <hr>
 {% endblock %}
 
 {% block postloadjs %}
@@ -174,7 +177,7 @@
         // Update quantity on click
         $('.update-link').click(function(e) {
             // Find the most recently seen update form in the DOM
-            var form = $(this).prev('.update-form');
+            var form = $(this).parent().prev('.update-form');
             form.submit();
         });
 

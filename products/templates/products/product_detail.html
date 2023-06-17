@@ -21,13 +21,13 @@
         <div class="col-12 pl-5 col-md-6 col-lg-4">
             <div class="image-container my-5">
                 {% if product.image %}
-                    <a href="{{  product.image.url }}" target="_blank">
-                        <img class="card-img-top border-2 img-fluid" 
+                    <a href="{{ product.image.url }}" target="_blank">
+                        <img class="card-img-top border-0 rounded shodow-sm img-fluid" 
                             src="{{ product.image.url }}" alt="{{ product.description }}">
                     </a>
                 {% else %}
                     <a href="">
-                        <img class="card-img-top border-2 img-fluid" 
+                        <img class="card-img-top border-0 rounded shadow-sm img-fluid" 
                             src="{{ MEDIA_URL }}noimage.png" alt="Placeholder for no image">
                     </a>
                 {% endif %}
@@ -55,7 +55,7 @@
                     {% endif %}
                 </div>
                 {% if product.average_rating > 0 %}
-                    <small class="text-muted">
+                    <small>
                         <i class="fa-regular fa-star mr-1" title="Rating" aria-hidden="true"></i>
                         <span class="sr-only">Rating</span>
                             {{ product.average_rating|floatformat:1 }} / 5
@@ -64,12 +64,12 @@
                     <small class="text-muted">No rating</small>
                 {% endif %}
                 <p class="mt-3">{{ product.description }}</p>
-                <p class="small mt-1 mb-0" id="stock-id-{{ product.id }}" data-stock="{{ product.stock }}">
+                <p class="mt-1 mb-0" id="stock-id-{{ product.id }}" data-stock="{{ product.stock }}">
                     {% if product.stock > 0 %}
                         Stock: {{ product.stock }}
                     {% else %}
                         Made to Order <br> 
-                        <span class="text-muted small"> 
+                        <span class="text-muted"> 
                             Please allow 3 to 5 days extra for delivery!
                         </span>
                     {% endif %}
@@ -79,7 +79,7 @@
                         Additional Information
                     </a>
                     <div class="dropdown-menu info-dropdown mb-3">
-                        <p class="small text-muted">{{ product.additional_info }}</p>
+                        <p class="text-muted">{{ product.additional_info }}</p>
                     </div>
                 </div>
                 <form action="{% url 'add_to_basket' product.id %}" class="form" method="POST">
@@ -113,14 +113,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 text-right">
-                            <input type="submit" class="btn btn-green text-uppercase" value="Add to Basket">
+                        <div class="col-12 mt-4">
+                            <input type="submit" class="btn btn-sm btn-green text-uppercase" value="Add to Basket">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
             </div>
         </div>    
+    </div>
+    <div class="btn-container text-center my-2">
+        <a href="{% url 'products' %}" class="btn btn-sm btn-outline-green">
+            <span class="icon">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </span>
+            <span class="text-uppercase">Back to Shop</span>
+        </a>
     </div>
 </div>
 <hr>
@@ -158,7 +166,7 @@
                     <span class="sr-only">Rating</span> {{ review.rating }} / 5
                 </p>
                 <p class="card-text mb-3 text-center"><q> {{ review.comment }} </q></p>
-                <p class="card-subtitle text-muted">Reviewed by <em>{{ review.rated_by }}</em> on
+                <p class="card-subtitle">Reviewed by <em>{{ review.rated_by }}</em> on
                     <em>{{ review.rated_on|date:"d-m-Y" }}</em>
                 </p>
                 
@@ -182,29 +190,27 @@
     {% endfor %}    
     </div>
     {% if request.user.is_authenticated %}
-        {% if user_has_reviewed %}
-            <div class="text-center">
-                <p class="text-muted">You have already submitted a review! 
+        <div class="text-center mt-4">
+            {% if user_has_reviewed %}
+                <p class="small">You have already submitted a review 
+                    for this product!<br> 
                     If you would like to update your
-                    review, please use the Edit button above.<br> 
+                    review, please use the Edit Review button above.<br> 
                     Thank you!</p>
-            </div>
         {% else %}
-            <div class="text-center">
-                <p class="text-muted">To submit a review for this product 
-                    please use the Add button above.<br> Thank you! 
+                <p class="small">To submit a review for this product 
+                    please use the Add Review button above.<br> Thank you! 
                 </p>
-            </div>
         {% endif %}
+        </div>
     {% else %}
-        <div class="text-center">
+        <div class="text-center mt-4">
             <p class="text-muted">In order to submit a review, please</p>
             <a href="{% url 'account_signup' %}" class="text-green"> Register</a> or
             <a href="{% url 'account_login' %}" class="text-green"> Login</a>
         </div>
     {% endif %}
 </div>
-<hr>
 <div class="row">
     <div class="col-12 text-center mt-4">
         <a href="{% url 'products' %}" class="btn btn-outline-green">
@@ -215,6 +221,7 @@
         </a>
     </div>
 </div>
+<hr>
 
 {% endblock %}
 

@@ -1,8 +1,8 @@
-from django import forms
+from django.forms import ModelForm, Textarea
 from .models import Contact
 
 
-class ContactForm(forms.ModelForm):
+class ContactForm(ModelForm):
     """
     Contact Model form
     """
@@ -11,10 +11,13 @@ class ContactForm(forms.ModelForm):
         fields = (
             'subject', 'full_name', 'email', 'phone', 'message',
         )
+        widgets = {
+            'message': Textarea(attrs={'cols': 40, 'rows': 5}),
+        }
 
     def __init__(self, *args, **kwargs):
         """
-        Add class to fields
+        Adds class to fields
         """
         super().__init__(*args, **kwargs)
 

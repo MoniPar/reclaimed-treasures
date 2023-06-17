@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container my-5">
     <div class="row">
         <div class="col text-center mt-3 mb-4">
             <h1>Checkout</h1>
@@ -23,13 +23,13 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <p class="small">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-muted">Item</p>
+                    <p class="mb-1 mt-0 small">Item</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                    <p class="mb-1 mt-0 small">Subtotal</p>
                 </div>
             </div>
             {% for item in basket_items %}
@@ -54,7 +54,7 @@
                         </p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="my-0 small text-muted">
+                        <p class="my-0 small">
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </p>
                     </div>
@@ -77,21 +77,21 @@
             </div>
         </div>
         <div class="col-12 col-md-10 col-lg-6">
-            <p class="text-muted">
+            <p class="small">
                 Please fill out the form below to complete your order
             </p>
             <form action="{% url 'checkout' %}" method="POST"
                 id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto">
+                    <legend class="fieldset-label small text-uppercase text-black px-2 w-auto">
                         Details
                     </legend>
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto">
+                    <legend class="fieldset-label small text-black text-uppercase px-2 w-auto">
                         Delivery
                     </legend>
                         {{ order_form.phone_number | as_crispy_field }}
@@ -149,13 +149,13 @@
                             <i class="fa-solid fa-lock" aria-hidden="true"></i>
                         </span>
                     </button>
-                    <p class="small text-danger my-0">
+                    <p class="text-danger my-0">
                         <span class="icon">
                             <i class="fa-solid fa-circle-exclamation" 
                                 aria-hidden="true" title="Alert"></i>
                             <span class="sr-only">Alert</span>
                         </span>
-                        <span>Your card will be charged <strong>
+                        <span class="bg-light">Your card will be charged <strong>
                                 €{{ grand_total|floatformat:2 }}</strong>
                         </span>
                     </p>
@@ -173,7 +173,7 @@
         </div>
     </div>
 </div>
-
+<hr>
 {% endblock %}
 
 {% block postloadjs %}

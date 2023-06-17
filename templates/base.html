@@ -139,15 +139,16 @@
                         width="215" height="75">
                 </a>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light w-100 text-center pr-5">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#main-nav" aria-controls="main-nav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/mobile_top_header.html' %}
-                {% include 'includes/main_nav.html' %}
-            </nav>
+            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-2">
+                <nav class="navbar navbar-expand-lg navbar-light w-100 text-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/mobile_top_header.html' %}
+                    {% include 'includes/main_nav.html' %}
+                </nav>
+            </div>
         </div>
         <div class="row delivery-banner text-center">
             <div class="col text-white">
@@ -160,7 +161,7 @@
     </header>
 
     {% if messages %}
-        <div class="message-container">
+        <div class="toast-container">
             {% for message in messages %}
                 {% with message.level as level %}
                     {% if level == 40 %}
@@ -252,7 +253,7 @@
                     <div class="mx-auto mt-2">
                         <ul class="list-group list-group-horizontal social justify-content-center">
                             <li class="list-group-item mr-2">
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                                <a href="https://www.facebook.com/verasreclaimedtreasures/" target="_blank" rel="noopener"
                                     aria-label="Vera's Reclaimed Treasures Facebook Page (opens in a new tab)">
                                     <i class="icon fa-brands fa-facebook-f"></i>
                                 </a>
@@ -281,7 +282,7 @@
                             </a>
                         </li>
                         <li class="list-group-item">
-                            <a href="https://ecomarketmalta.wordpress.com/" target="_blank" rel="noopener"
+                            <a href="https://ecomarketmalta.wordpress.com/" target="_blank" rel="sponsored"
                                 aria-label="Links to the EcoMarket Malta page (opens in a new tab)" class="list-group-link">Eco
                                 Market Malta
                             </a>

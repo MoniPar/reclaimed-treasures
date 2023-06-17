@@ -28,7 +28,7 @@
 
     {% if submitted %}
         <!-- Contact Form Submission Success Message -->
-        <div class="container my-auto">
+        <div class="container my-5">
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <h1 class="mt-5">Thank You!</h1>
@@ -45,9 +45,8 @@
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
-        
+        <hr>
     {% else %}
         <!-- Contact Page Hero -->
         <div class="container-fluid hero-container contact-hero">
@@ -101,7 +100,7 @@
                         <div class="mt-2 social mx-auto w-50">
                             <ul class="list-group list-group-horizontal social">
                                 <li class="list-group-item border-0">
-                                    <a href="https://www.facebook.com" target="_blank" rel="noopener"
+                                    <a href="https://www.facebook.com/verasreclaimedtreasures/" target="_blank" rel="noopener"
                                         aria-label="Vera's Reclaimed Treasures Facebook Page (opens in a new tab)">
                                         <i class="icon fa-brands fa-facebook-f"></i>
                                     </a>
@@ -116,7 +115,7 @@
                         </div>
                     </div>
                     <!-- Contact Form -->
-                    <div class="col-10 offset-1 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
+                    <div class="col-10 mb-5 offset-1 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
                         <h3 class="text-center mb-3 text-lg-left">Contact Form</h3>
                         <form action="{% url 'contact' %}" method="POST" id="contact-form">
                             {% csrf_token %}
@@ -128,8 +127,8 @@
                     </div>
                 </div>
             </div>
-            <hr>
         </div>
+        <hr>
     {% endif %}
 {% endblock %}
 

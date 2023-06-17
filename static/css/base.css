@@ -48,10 +48,6 @@ centered and have a consistent size unless manually changed */
     color: #0b8e59;
 }
 
-.mark, mark {
-    display: inline-block;
-}
-
 .bg-black {
     background-color: #000;
 }
@@ -74,7 +70,6 @@ h3,
 }
 
 .delivery-banner {
-    /* background-color: #5d4a66; */
     background-color: #5e4352;
 }
 
@@ -126,6 +121,7 @@ input[name="q"]::placeholder {
     background-color: #d44a13;
     color: #fff;
 }
+
 .btn-outline-green {
     background-color: #fff;
     color: rgb(54, 95, 54);
@@ -139,9 +135,22 @@ input[name="q"]::placeholder {
     color: #fff;
 }
 
-.update-link,
-.remove-link {
-    cursor: pointer;
+
+/* Reviews & Basket edit/update delete buttons */
+.btn-outline-info,
+.btn-outline-danger {
+    background-color: #fff;
+    padding: .25rem .75rem;
+}
+
+.btn-outline-info {
+    color: #137a8b;
+    border: 1px solid var(--info); 
+}
+
+.btn-outline-danger {
+    color: var(--danger);
+    border: 1px solid var(--danger);
 }
 
 /* HEADER */
@@ -151,17 +160,36 @@ input[name="q"]::placeholder {
     padding-top: 15rem;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, .8);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:active {
+    background-color: #e9ecef;
+}
+
 .mobile-nav {
     display: contents;
 }
 
 /* TOASTS */
 
-.message-container {
+.toast-container {
     position: fixed;
     top: 12.4rem;
-    right: 5px;
+    right: 2.5rem;
     z-index: 99999;
+}
+
+.toast {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+}
+
+.toast, .toast-header {
+    background-color: #e6ebe3;
+    color:rgba(0, 0, 0, 0.8);
 }
 
 .custom-toast {
@@ -181,7 +209,7 @@ input[name="q"]::placeholder {
     border-right: 4px solid transparent;
     border-bottom: 10px solid #0b8e59;
     top: -10px;
-    right: 4rem;
+    right: 6rem;
 }
 
 /* Convenience classes - some colors copied from Bootstrap */
@@ -223,10 +251,10 @@ input[name="q"]::placeholder {
     overflow-y: scroll;
 }
 
-/* Home & Contact Hero */
+/* HOME & CONTACT HERO */
 
 .hero-container {
-    height: calc(90vh - 187px);
+    height: calc(90vh - 190px);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -320,7 +348,7 @@ input[name="q"]::placeholder {
 }
 
 footer {
-    border-top: 1px solid #5e4352;
+    border-top: 1px solid rgba(94, 67, 82, .1);
     background-color: #fff;
 }
 
@@ -360,10 +388,24 @@ footer .social {
 /* Media Queries */
 /* ------------- */
 
+@media only screen and (min-width: 425px) {
+    .toast-container {
+        right: 5.5rem;
+    }
+
+    .arrow-up {
+        right: 3rem;
+    }
+}
+
 @media only screen and (min-width: 767px) {
-    .cta-container {
-        height: 100vh;
-        background-size: cover;
+    
+    .toast-container {
+            right: 5.5rem;
+        }
+    
+    .arrow-up {
+        right: 10rem;
     }
 }
 
@@ -374,22 +416,20 @@ footer .social {
         font-size: 75%;
     }
 
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+    .toast-container {
+        top: 7.4rem;
+        right: 5.5rem;
+    }
+
+    .arrow-up {
+        right: 5rem;
     }
 }
 
 @media only screen and (min-width: 1024px) {
-
-    .message-container {
-        top: 7rem;
-        right: 2.5rem;
+    .header-container {
+        padding-top: 14.75rem;
     }
-
 }
 
 @media only screen and (min-width: 1200px) {
@@ -398,13 +438,12 @@ footer .social {
     .container {
         max-width: 80%;
     }
-
 }
 
 @media only screen and (min-width: 1440px) {
 
-    .message-container {
-        right: 9rem;
+    .toast-container {
+        right: 9.5rem;
     }
 }
 
@@ -418,7 +457,7 @@ footer .social {
         padding-top: 12rem;
     }
 
-    .message-container {
-        right: 17rem;
+    .arrow-up {
+        right: 14rem;
     }
 }

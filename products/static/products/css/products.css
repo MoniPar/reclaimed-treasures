@@ -1,3 +1,6 @@
+.category-badge>span.badge {
+    background-color: #fff;
+}
 
 .category-badge>span.badge:hover,
 .category-badge>span.badge:focus {
@@ -6,6 +9,14 @@
 }
 
 /* Product Detail */
+.image-container {
+    max-width: 30rem;
+}
+
+.mark, mark {
+    display: inline-block;
+}
+
 .info-dropdown {
     padding: 0 .25rem;
     background: transparent;
@@ -13,8 +24,7 @@
     overflow-y: auto;
 }
 
-
-
+/* Reviews */
 .review-wrapper {
     display: flex;
     flex-direction: row;
@@ -26,7 +36,8 @@
 
 .review-card {
     max-width: 30rem;
-    background-color: rgba(190, 62, 130, .1);
+    background-color: #0b8e5a1a;
+    /* background-color: rgba(190, 62, 130, .1); */
     border-radius: 12px;
     padding: 1rem;
     border: 0;
@@ -36,7 +47,7 @@
 }
 
 .card-subtitle {
-    border-top: 1px solid rgba(190, 62, 130, .8);
+    border-top: 1px solid rgba(11, 142, 89, .9);
     padding-top: 1rem;
     font-size: 1.2rem;   
 }
@@ -62,15 +73,5 @@ q::after {
 
 q::before, q::after {
     font-size: 2.5rem;
-    color: rgba(190, 62, 130, .8);
-}
-
-.btn-outline-info,
-.btn-outline-danger {
-    background-color: #fff;
-    border: 0;
-}
-
-.btn-outline-info {
-    color: #137a8b;
+    color: rgba(11, 142, 89, .7);
 }

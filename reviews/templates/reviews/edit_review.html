@@ -14,25 +14,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5 text-center">
+<div class="container mt-3 mb-5 text-center">
     <div class="row mx-auto">
         <div class="col-12 mt-5 mb-3 col-md-10 offset-md-1">
-            <h1 class="mb-3">Edit Review</h1>
+            <h1 class="mb-5">Edit Review</h1>
             <div class="row mx-auto">
                 <div class="col-4 offset-md-1 col-lg-3 offset-lg-0">
                     <div class="image-container">
                         {% if product.image %}
-                        <img class="review-form-img border-2 img-fluid" src="{{ product.image.url }}"
+                        <img class="review-form-img border-0 rounded shadow-sm img-fluid" src="{{ product.image.url }}"
                             alt="{{ product.description }}">
                         {% else %}
-                        <img class="review-form-img border-2 img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                        <img class="review-form-img border-0 rounded shadow-sm img-fluid" src="{{ MEDIA_URL }}noimage.png"
                             alt="Placeholder for no image">
                         {% endif %}
                     </div>
                 </div>
                 <div class="col-8 col-md-7 col-lg-3 my-auto my-lg-0 pt-lg-5">
                     <div class="product-info">
-                        <p><span class="text-muted">{{ product.category.friendly_name }} </span><br>
+                        <p><span class="small">{{ product.category.friendly_name }} </span><br>
                             <strong>{{ product.name }}</strong>
                         </p>
                     </div>
@@ -41,15 +41,18 @@
                     <form method="POST" class="text-left">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <a href="{% url 'product_detail' product.id %}" type="button"
-                            class="btn btn-outline-green rounded mt-2">
-                            Cancel
-                        </a>
-                        <button type="submit" class="btn btn-green rounded mt-2">Update</button>
+                        <div class="d-flex justify-content-between mt-2">
+                            <a href="{% url 'product_detail' product.id %}" type="button" 
+                                class="btn btn-outline-green rounded">
+                                Cancel
+                            </a>
+                            <button type="submit" class="btn btn-green rounded">Update</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {% endblock %}
+<hr>
+{% endblock %}
