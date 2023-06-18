@@ -38,11 +38,53 @@ def checkout(request):
     """
     Gets session data and checks form validation
     """
+    basket = request.session.get('basket', {})
+    checked_products = []
+
+    # Iterates through the products in the basket, checking quantity
+    # against product stock and saving each checked product in a list
+    for item_id, quantity in basket.items():
+        product = Product.objects.get(id=item_id)
+        # If there's stock
+        if product.stock > 0:
+            # and quantity ordered is less than the no. in stock
+            if quantity < product.stock:
+                # set to deduct the quantity ordered from the stock
+                product.stock -= quantity
+                checked_products.append((product, quantity))
+            # If quantity ordered is greater than the no. in stock
+            elif quantity > product.stock:
+                # and greater than the overflow of 3, redirect back to
+                # the shopping basket
+                if (quantity - product.stock) > 3:
+                    messages.error(request,
+                                   f"There's only { product.stock } "
+                                   f"of { product.name } left in "
+                                   "stock! If you like, we can make "
+                                   "up to 3 of this product to "
+                                   "order. Please adjust your "
+                                   "quantity to stay within this "
+                                   "limit.")
+
+                    return redirect(reverse('shopping_basket'))
+                # If quantity ordered is less than the overflow of 3
+                else:
+                    # sets the product stock to 0
+                    product.stock = 0
+                    checked_products.append((product, quantity))
+            # If quantity ordered is equal to the no. in stock
+            else:
+                # sets stock to 0
+                product.stock = 0
+                checked_products.append((product, quantity))
+        # If there's no stock i.e. product is made to order
+        else:
+            checked_products.append((product, quantity))
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        basket = request.session.get('basket', {})
 
         form_data = {
             'full_name': request.POST['full_name'],
@@ -55,7 +97,7 @@ def checkout(request):
             'eircode': request.POST['eircode'],
             'country': request.POST['country'],
         }
-
+        print('Post msg received')
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -63,59 +105,6 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
             order.save()
-            checked_products = []
-
-            # Iterates through the products in the basket, checking quantity
-            # against product stock and saving each checked product in a list
-            for item_id, quantity in basket.items():
-                product = Product.objects.get(id=item_id)
-                # If there's stock
-                if product.stock > 0:
-                    # and quantity ordered is less than the no. in stock
-                    if quantity < product.stock:
-                        # set to deduct the quantity ordered from the stock
-                        product.stock -= quantity
-                        checked_products.append((product, quantity))
-                    # If quantity ordered is greater than the no. in stock
-                    elif quantity > product.stock:
-                        # and greater than the overflow of 3, redirect back to
-                        # the shopping basket
-                        if (quantity - product.stock) > 3:
-                            messages.warning(request,
-                                             f"There's only { product.stock } "
-                                             f"of { product.name } left in "
-                                             "stock! If you like, we can make "
-                                             "up to 3 of this product to "
-                                             "order. Please adjust your "
-                                             "quantity to stay within this "
-                                             "limit.")
-
-                            return redirect(reverse('shopping_basket'))
-                        # If quantity ordered is less than the overflow of 3
-                        else:
-                            messages.info(request,
-                                          f"There's only { product.stock } of "
-                                          f"{ product.name } left in stock! We"
-                                          " will make the overflow to order. "
-                                          "Please be aware that they will take"
-                                          " between 3 to 5 extra days to "
-                                          "deliver!")
-                            # sets the product stock to 0
-                            product.stock = 0
-                            checked_products.append((product, quantity))
-                    # If quantity ordered is equal to the no. in stock
-                    else:
-                        # sets stock to 0
-                        product.stock = 0
-                        checked_products.append((product, quantity))
-                # If there's no stock i.e. product is made to order
-                else:
-                    messages.info(request,
-                                  f"{ product.name } is currently out of "
-                                  "stock and will be made to order. "
-                                  "Please be aware that it will take "
-                                  "3 to 5 extra days to deliver!")
-                    checked_products.append((product, quantity))
 
             # Iterates through the list of checked products, saves the
             # difference in stock in the database and creates each line item

@@ -48,12 +48,21 @@
                             You're <strong>€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                         </p>
                     {% endif %}
+                    {% if not on_basket_page %}
                     <a href="{% url 'shopping_basket' %}" class="btn btn-green btn-block">
                         <span class="text-uppercase">View Basket &nbsp;</span>
                         <span class="icon">
                             <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
                         </span>
                     </a>
+                    {% else %}
+                    <a href="{% url 'checkout' %}" class="btn btn-green btn-block">
+                        <span class="text-uppercase">Secure Checkout&nbsp;</span>
+                        <span class="icon">
+                            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         {% endif %} 

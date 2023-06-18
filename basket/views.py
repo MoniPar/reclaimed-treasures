@@ -8,8 +8,10 @@ def shopping_basket(request):
     """
     Renders the shopping basket page
     """
-
-    return render(request, 'basket/basket.html')
+    context = {
+        'on_basket_page': True
+    }
+    return render(request, 'basket/basket.html', context)
 
 
 def add_to_basket(request, item_id):
