@@ -169,7 +169,7 @@ def checkout(request):
                 # Uses initial parameter on order form to prefill all fields
                 order_form = OrderForm(initial={
                     'full_name': profile.default_full_name,
-                    'email': profile.user.email,
+                    'email': profile.default_email,
                     'phone_number': profile.default_phone_number,
                     'street_address1': profile.default_street_address1,
                     'street_address2': profile.default_street_address2,

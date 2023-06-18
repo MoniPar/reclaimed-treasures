@@ -74,7 +74,7 @@ class StripeWH_Handler:
                 profile.default_email = billing_details.email
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
-                profile.default_postal_code = (
+                profile.default_eircode = (
                     shipping_details.address.postal_code)
                 profile.default_town_or_city = shipping_details.address.city
                 profile.default_street_address1 = (
