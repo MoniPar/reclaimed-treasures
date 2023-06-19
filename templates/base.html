@@ -63,13 +63,13 @@
 <body class="d-flex flex-column min-vh-100 px-0">
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-3 offset-lg-1 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-3 ml-xl-5">
                 <a href="{% url 'home'%}" class="nav-link">
                     <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures Logo"
                         width="217" height="75">
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 offset-lg-1  my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group v-100">
                         <input type="text" class="form-control border-green rounded" 
@@ -86,7 +86,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-center my-0">
                     <li class="list-inline-item dropdown">
                         <a href="#" class="text-black nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -139,9 +139,10 @@
                         width="215" height="75">
                 </a>
             </div>
-            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-2">
-                <nav class="navbar navbar-expand-lg navbar-light w-100 text-center">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-4 offset-xl-5">
+                <nav class="navbar navbar-expand-lg navbar-light w-100">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                        data-target="#main-nav" aria-controls="main-nav"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

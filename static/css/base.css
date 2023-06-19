@@ -172,8 +172,16 @@ input[name="q"]::placeholder {
     padding-top: 15rem;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, .8);
+.navbar-light .navbar-toggler {
+    border: none;
+    margin-right: 3rem;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    border:1px solid rgb(68, 136, 68);
+    border-radius: 2px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -266,7 +274,7 @@ input[name="q"]::placeholder {
 /* HOME & CONTACT HERO */
 
 .hero-container {
-    height: calc(90vh - 190px);
+    height: 60vh;
     background-size: cover;
     display: flex;
     align-items: center;
