@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %} | Error 404 {% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3 mb-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="card bg-white shadow-sm rounded text-center mb-4">
+                <div class="card-header p-4">
+                    <h1>Error 404</h1>
+                </div>
+                <div class="card-body p-4">
+                    <p>No Treasures Here!!</p>
+                </div>
+                <div class="card-footer p-4">
+                    <p><a class="btn btn-green btn-lg rounded" role="button" href="{% url 'home' %}">Back to Home</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

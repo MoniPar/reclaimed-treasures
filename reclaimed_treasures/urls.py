@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import error404, error403, error500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,3 +31,7 @@ urlpatterns = [
     path('reviews/', include('reviews.urls', namespace="review")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+hadler404 = 'reclaimed_treasures.views.error404'
+handler403 = 'reclaimed_treasures.views.error403'
+handler500 = 'reclaimed_treasures.views.error500'
