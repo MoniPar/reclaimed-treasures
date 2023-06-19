@@ -36,4 +36,44 @@
         </div>
     </div>
 </div>
+<div class="container my-5 home-content">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4 my-3">
+            <div class="text-center bg-white p-5 rounded shadow">
+                <i class="content-icon fa-solid fa-leaf" aria-hidden="true"></i>
+                <h3 class="mt-3 mb-4">Eco-Friendly Products</h3>
+                <p>Welcome to Vera's Reclaimed Treasures, where you can find unique
+                    and sustainable gifts for yourself and your loved ones. All my
+                    products are hand-painted with love and care, using upcycled
+                    materials like CDs, picture frames, glassware and more.
+                </p>
+                <a href="{% url 'about' %}" role="button" class="btn btn-sm btn-outline-green rounded">About Me</a>
+            </div> 
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 my-3">
+            <div class="text-center bg-white p-5 rounded shadow">
+                <i class="content-icon fa-solid fa-recycle" aria-hidden="true"></i>
+                <h3 class="mt-3 mb-4">Reclaimed Materials</h3>
+                <p>I transform discarded items into beautiful and elaborate designs
+                    with myriad patterns, inspired by nature and spirituality.
+                    My mission is to reduce waste and promote eco-friendly living,
+                    while spreading joy and harmony through my art.
+                </p>
+                <a href="{% url 'contact' %}" role="button" class="btn btn-sm btn-outline-green rounded">Get in Touch</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 my-3">
+            <div class="text-center bg-white p-5 rounded shadow">
+                <i class="content-icon fa-solid fa-award" aria-hidden="true"></i>
+                <h3 class="mt-3 mb-4">Excellent Service</h3>
+                <p>90% of my reviewers have recommended my products with 4.5 star reviews. 
+                    Pleased with their eco-friendly packaging, on time deliveries and the 
+                    uniqueness of each product.
+                    Browse my collection and discover the perfect gift for any occasion.
+                </p>
+                <a href="{% url 'products' %}" role="button" class="btn btn-sm btn-outline-green rounded">My Collection</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
