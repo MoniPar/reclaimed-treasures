@@ -25,6 +25,12 @@ a {
     color: #000;
 }
 
+a:hover,
+a:focus,
+a:active {
+    background-color: #e9ecef;
+}
+
 /* from Bulma - ensures that fontawesome icons stay 
 centered and have a consistent size unless manually changed */
 .icon {

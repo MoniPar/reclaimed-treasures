@@ -19,7 +19,7 @@
 <div class="container mt-5">
     <div class="row mx-auto">
         <div class="col-12 pl-5 col-md-6 col-lg-4">
-            <div class="image-container my-5">
+            <div class="image-container mt-5 mb-2 my-md-5">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top border-0 rounded shodow-sm img-fluid" 
@@ -34,13 +34,13 @@
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 pl-5 pr-3">
-            <div class="product-details-container mb-5 mt-md-5">
+            <div class="product-details-container rounded mb-5 mt-md-5 p-4">
                 <p class="text-muted small float-right">{{ product.sku|upper}}</p>
-                <p class="mt-1 mb-0">{{ product.name }}</p>
-                <p class="mark mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                <p class="my-3">{{ product.name }}</p>
+                <p class="mark mb-2 text-left font-weight-bold">€{{ product.price }}</p>
                 <div class="d-flex justify-content-between">
                     {% if product.category %}
-                    <p class="small mt-1 mb-0">
+                    <p class="small my-2">
                         <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
                             <i class="fa-solid fa-tag mr-1" title="Category" aria-hidden="true"></i>
                             <span class="sr-only">Category</span>{{ product.category.friendly_name }}
@@ -48,7 +48,7 @@
                     </p>
                     {% endif %}
                     {% if product.theme %}
-                    <p class="small mt-1 mb-0">
+                    <p class="small my-2">
                         <i class="fa-solid fa-paintbrush mr-1" title="Theme" aria-hidden="true"></i>
                         <span class="sr-only">Theme</span>{{ product.theme }}
                     </p>
@@ -68,10 +68,10 @@
                     {% if product.stock > 0 %}
                         Stock: {{ product.stock }}
                     {% else %}
-                        Made to Order <br> 
-                        <span class="text-muted"> 
-                            Please allow 3 to 5 days extra for delivery!
-                        </span>
+                        <strong>Made to Order</strong>
+                        <div class="order-note"> 
+                            <p>Limited to 3 per order. Expect additional wait time for delivery.</span>
+                        </div>
                     {% endif %}
                 </p>
                 <div class="dropdown mt-2 mb-3">
@@ -82,6 +82,7 @@
                         <p class="text-muted">{{ product.additional_info }}</p>
                     </div>
                 </div>
+                {% if product.available %}
                 <form action="{% url 'add_to_basket' product.id %}" class="form" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -119,6 +120,9 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
+                {% else %}
+                <button type="button" class="btn btn-secondary btn-lg rounded mt-5" disabled>Not Available</button>
+                {% endif %}
             </div>
         </div>    
     </div>
