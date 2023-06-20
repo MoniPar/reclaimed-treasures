@@ -9,12 +9,9 @@
 }
 
 /* Product Detail */
-.product-details-container {
-    background-color: #fff;
-}
 
 .image-container {
-    max-width: 30rem;
+    max-width: 25rem;
 }
 
 .mark, mark {
@@ -43,13 +40,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 2rem auto;
+    margin: 2rem auto 0rem;
     gap: 2rem;
     justify-content: space-around;
 }
 
 .review-card {
-    max-width: 30rem;
+    max-width: 25rem;
     background-color: #0b8e5a1a;
     /* background-color: rgba(190, 62, 130, .1); */
     border-radius: 12px;
