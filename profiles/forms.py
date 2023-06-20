@@ -29,7 +29,6 @@ class UserProfileForm(forms.ModelForm):
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             label = labels[field]
-            self.fields[field].widget.attrs['label'] = label
             self.fields[field].widget.attrs['class'] = (
                 'border-green rounded profile-form-input')
             self.fields[field].label = label + ':'

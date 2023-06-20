@@ -121,7 +121,7 @@
                             {% csrf_token %}
                             {{ form|crispy }}
                             <div class="mt-2 mb-3 submit-btn">
-                                <input type="submit" value="Submit" role="button" class="btn btn-green rounded float-right">
+                                <input type="submit" value="Submit" class="btn btn-green rounded float-right">
                             </div>
                         </form>
                     </div>
@@ -134,17 +134,14 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        
+    <script>
             // Adapted from CI's Boutique Ado
-            
             // Gets the value of the select field and stores it in a variable
             let subjectSelect = $('#id_subject').val();
             // First option = empty string so can be used as boolean
             if (!subjectSelect) {
                 $('#id_subject').css('font-style', 'italic');
             };
-            
             // Captures change event
             $('#id_subject').change(function() {
                 // gets value everytime box changes
@@ -156,6 +153,5 @@
                     $(this).css('font-style', 'normal');
                 }
             });
-            
     </script>
 {% endblock %}

@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
-                        <p class="text-muted mt-3 text-center text-md-left">
+                        <p class="mt-3 text-center text-md-left">
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
@@ -158,9 +158,8 @@
 
 {% block postloadjs %}
     {{ block.super }}
-
     <!-- Sort selector box -->
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function () {
             var selector = $(this);
             var currentUrl = new URL(window.location);

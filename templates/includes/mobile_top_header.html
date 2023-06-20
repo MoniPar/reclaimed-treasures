@@ -32,7 +32,8 @@
         </div>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
+        <a class="text-black nav-link d-block d-lg-none" href="#" 
+            id="user-options-mobile" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div>
@@ -41,7 +42,7 @@
                 </div>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu border-0" aria-labelledby="user-options-mobile">
             {% if request.user.is_authenticated %}
             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -53,7 +54,7 @@
     </li>
     <li class="list-inline-item dropdown">
         <a class="{% if grand_total %}text-green font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
-            href="" id="basket-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            href="" id="basket-options-mobile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div>
                     <i class="fa-solid fa-basket-shopping fa-lg" title="Shopping Basket" aria-hidden="true"></i>
@@ -61,7 +62,7 @@
                 </div>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="basket-options">
+        <div class="dropdown-menu border-0" aria-labelledby="basket-options-mobile">
             <a href="{% url 'shopping_basket' %}" class="d-block d-lg-none">
                 <p class="dropdown-item mb-0">
                     {% if grand_total %}

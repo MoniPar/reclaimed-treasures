@@ -33,6 +33,5 @@ class OrderForm(forms.ModelForm):
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             label = labels[field]
-            self.fields[field].widget.attrs['label'] = label
             self.fields[field].label = label
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'

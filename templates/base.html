@@ -57,7 +57,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Vera's Reclaimed Treasures | Upcycled Crafts Online Store {% block extra_title %}{% endblock %}</title>
+    <title>Vera's Reclaimed Treasures {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100 px-0">
@@ -65,7 +65,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-3 ml-xl-5">
                 <a href="{% url 'home'%}" class="nav-link">
-                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures Logo"
+                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures - green logo over white background - Vera's is large in serif font while Reclaimed Treasures is smaller in sans-serif font"
                         width="217" height="75">
                 </a>
             </div>
@@ -89,7 +89,8 @@
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-center my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="text-black nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                        <a href="#" class="text-black nav-link" 
+                            id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <div class="text-center">
                                 <div>
@@ -98,11 +99,8 @@
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options-desktop">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Product Management</a>
-                            {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
@@ -139,7 +137,7 @@
                         width="215" height="75">
                 </a>
             </div>
-            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-4 offset-xl-5">
+            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-4 offset-xl-4">
                 <nav class="navbar navbar-expand-lg navbar-light w-100">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" 
                         data-target="#main-nav" aria-controls="main-nav"
@@ -196,7 +194,7 @@
                             method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
                             novalidate>
                             <div id="mc_embed_signup_scroll">
-                                <h3>Join the club</h3>
+                                <h2>Join the club</h2>
                                 <p class="text-muted">Subscribe to my email list for special access to exclusive offers, latest news and discounts!</p>
                                 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                                 <div class="mc-field-group">
@@ -214,10 +212,15 @@
                                         name="b_2a17d3cd208455bf5c10361e1_70384ba7be" tabindex="-1" value=""></div>
                                 <div class="optionalParent">
                                     <div class="clear foot">
-                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                        <p class="brandingLogo"><a href="http://eepurl.com/itjP_g"
-                                                title="Mailchimp - email marketing made easy and fun"><img
-                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
+                                        <input type="submit" value="Subscribe" 
+                                            name="subscribe" id="mc-embedded-subscribe" 
+                                            class="button">
+                                        <p class="brandingLogo">
+                                            <a href="http://eepurl.com/itjP_g" 
+                                                title="Mailchimp - email marketing made easy and fun">
+                                                <img alt="Made with Mailchimp logo - displays a monkey wearing a postman's cap"
+                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
@@ -228,7 +231,8 @@
                 </div>
                 <div class="col-12 col-md-6 mt-2 mb-4 mb-md-0 text-center">
                     <a href="{% url 'home' %}" class="footer-logo img-fluid">
-                        <img src="{{ MEDIA_URL }}vrt-logo1.png" width="215" height="75" alt="Vera's Reclaimed Treasures Logo">
+                        <img src="{{ MEDIA_URL }}vrt-logo1.png" width="215" height="75" 
+                        alt="Vera's Reclaimed Treasures Logo - green logo over white background - Vera's is large in serif font while Reclaimed Treasures is smaller in sans-serif font">
                     </a>
                 </div>
             </div>
@@ -305,10 +309,9 @@
     {% block postloadjs %}
         
     <!-- Mailchimp Scripts-->
-        <script type='text/javascript' 
-            src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+        <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
         </script>
-        <script type='text/javascript'>
+        <script>
             (function ($) { 
                 window.fnames = new Array(); 
                 window.ftypes = new Array(); 
@@ -329,7 +332,7 @@
         </script>
 
         <!-- Toast Message Call -->
-        <script type="text/javascript">
+        <script>
             $('.toast').toast('show');
         </script>
     {% endblock %}

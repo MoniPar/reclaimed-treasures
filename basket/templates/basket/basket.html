@@ -2,6 +2,8 @@
 {% load static %}
 {% load basket_tools %}
 
+{% block extra_title %} | Basket{% endblock %}
+
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -102,7 +104,7 @@
                                             </div>
                                         </form>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <a class="update-link btn-outline-info rounded" role="button" id="update-link"><small>Update</small></a>
+                                            <a class="update-link btn-outline-info rounded" role="button"><small>Update</small></a>
                                             <a class="remove-link btn-outline-danger rounded" role="button" id="remove_{{ item.item_id }}">
                                                 <small>Remove</small>
                                             </a>
@@ -162,7 +164,7 @@
 {% block postloadjs %}
     {{ block.super }}
     {% include 'products/includes/quantity_input_script.html' %}
-    <script type="text/javascript">
+    <script>
         
         // Gets the input object by Name and loops through all products
         var inputObj = document.getElementsByName('Stock Qty');
