@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q
-from reviews.forms import ReviewForm
 from .models import Product, Category
 
 

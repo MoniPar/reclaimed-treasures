@@ -32,6 +32,6 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-hadler404 = 'reclaimed_treasures.views.error404'
+handler404 = 'reclaimed_treasures.views.error404'
 handler403 = 'reclaimed_treasures.views.error403'
 handler500 = 'reclaimed_treasures.views.error500'

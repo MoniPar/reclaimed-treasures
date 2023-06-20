@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.contrib.auth.models import User
 from products.models import Product
 from .models import Review
 from .forms import ReviewForm
@@ -96,6 +95,11 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
 
+    if request.user != review.rated_by:
+        messages.error(request, "You are not authorised to delete "
+                                "review!")
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
 
         if request.user == review.rated_by:
@@ -107,7 +111,7 @@ def delete_review(request, review_id):
             messages.error(request, "Sorry, you are not authorised to delete "
                                     "this review!")
 
-            return redirect(reverse('home'))
+        return redirect(reverse('home'))
 
     context = {
         'review': review,
