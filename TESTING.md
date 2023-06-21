@@ -16,6 +16,8 @@
       - [Login](#login)
       - [Logout](#logout)
     - [Error404](#error404)
+    - [Error403](#error403)
+  - [CSS](#css)
 - [Lighthouse](#lighthouse)
 - [Responsiveness](#responsiveness)
 - [Browser Compatibility](#browser-compatibility)
@@ -104,8 +106,17 @@ No Errors or warnings to show.
 
 ### Error404
 
-![HTML Validation for Error404 Page]()
+![HTML Validation for Error404 Page](docs/validation/html-val_error404.png)
 
+No Errors or warnings to show.
+
+### Error403
+
+![HTML Validation for Error403 Page](docs/validation/html-val_error403.png)
+
+No Errors or warnings to show.
+
+## CSS
 
 
 _____

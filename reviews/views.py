@@ -28,6 +28,10 @@ def add_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm()
     review = []
+    my_reviews = ([review for review in product.reviews.all()
+                  if review.rated_by == request.user])
+    user_has_reviewed = len(my_reviews) > 0
+    
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -41,12 +45,19 @@ def add_review(request, product_id):
                                       "submitted!")
             return redirect(reverse('product_detail', args=[product_id]))
     else:
-        form = ReviewForm()
+        if user_has_reviewed:
+            messages.warning(request, "You have already submitted a review "
+                                      "for this product. You can edit your "
+                                      "review instead!")
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            form = ReviewForm()
 
     context = {
         'product': product,
         'form': form,
         'review': review,
+        'user_has_reviewed': user_has_reviewed,
     }
 
     return render(request, 'reviews/add_review.html', context)
