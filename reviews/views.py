@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.core.exceptions import PermissionDenied
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from products.models import Product
@@ -58,10 +59,10 @@ def edit_review(request, review_id):
     """
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
+    
     if review.rated_by != request.user:
-        messages.error(request, "Sorry, you are not authorised to edit"
-                       " this review!")
-        return redirect(reverse('home'))
+        raise PermissionDenied()
+        return handler403
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -96,9 +97,8 @@ def delete_review(request, review_id):
     product = review.product
 
     if request.user != review.rated_by:
-        messages.error(request, "You are not authorised to delete "
-                                "review!")
-        return redirect(reverse('home'))
+        raise PermissionDenied()
+        return handler403
 
     if request.method == 'POST':
 
@@ -108,10 +108,8 @@ def delete_review(request, review_id):
 
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, "Sorry, you are not authorised to delete "
-                                    "this review!")
-
-        return redirect(reverse('home'))
+            messages.error(request, "Failed to delete review. Please "
+                                    "try again.")
 
     context = {
         'review': review,
