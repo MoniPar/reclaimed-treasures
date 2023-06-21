@@ -35,6 +35,7 @@ class Product(models.Model):
     available = models.BooleanField(default=False)
     stock = models.PositiveIntegerField(default=0)
     image = models.ImageField(null=True, blank=True)
+    img_thumbnail = models.ImageField(null=True, blank=True)
 
     # Credits to https://www.youtube.com/watch?v=8iCqlFyFu2s
     def average_rating(self):

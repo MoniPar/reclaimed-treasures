@@ -79,9 +79,9 @@
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <div class="card border-0 shadow-sm rounded">
                                 <div class="card-img-top">
-                                    {% if product.image %}
+                                    {% if product.img_thumbnail %}
                                     <a href="{% url 'product_detail' product.id %}">
-                                        <img class="card-img border-0 img-fluid" src="{{ product.image.url }}" alt="{{ product.description }}">
+                                        <img class="card-img border-0 img-fluid" src="{{ product.img_thumbnail.url }}" alt="{{ product.description }}">
                                     </a>
                                     {% else %}
                                     <a href="{% url 'product_detail' product.id %}">

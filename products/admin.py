@@ -10,8 +10,8 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'sku', 'name', 'category', 'theme', 'price',
-        'stock', 'available', 'image'
+        'id', 'sku', 'name', 'category', 'price',
+        'stock', 'available', 'image', 'img_thumbnail',
     )
 
     ordering = ('sku',)
