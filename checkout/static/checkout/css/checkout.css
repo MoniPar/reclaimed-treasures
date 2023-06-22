@@ -42,10 +42,6 @@ select option[value=""] {
     font-style: italic;
 }
 
-.order-no {
-    font-size: 1.2rem;
-}
-
 #loading-overlay {
     display: none;
     position: fixed;
@@ -63,4 +59,15 @@ select option[value=""] {
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+/* Order Receipt checkout success */
+
+.text-print {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4rem;
+}
+
+.order-no {
+    font-size: 1.2rem;
 }

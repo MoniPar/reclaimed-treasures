@@ -1,13 +1,11 @@
 :root {
-    --primary: #00BF63;
-    --secondary: #FF5714;
     --info: #106573;
     --danger: #ab2c38;
 }
 
 html {
     height: 100%;
-    font-size: 62.5%;
+    font-size: 62.5%; /* 10px of 16px (browser's font size) 1rem = 10px  */
 }
 
 body {
@@ -16,13 +14,17 @@ body {
     background-color: rgba(255, 87, 20, .05);
 }
 
-li {
-    list-style-type: none;
-}
+li { list-style-type: none; }
 
 a {
     text-decoration: none;
     color: #000;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: rgb(68, 136, 68);
 }
 
 /* from Bulma - ensures that fontawesome icons stay 
@@ -35,30 +37,12 @@ centered and have a consistent size unless manually changed */
     width: 1.5rem;
 }
 
-.content-icon {
-    font-size: 3rem;
-    color: #00BF63;
-}
-
 .text-black {
     color: #000;
 }
 
-.text-print {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.4rem;
-}
-
 .text-green {
     color: #0b8e59;
-}
-
-.bg-black {
-    background-color: #000;
-}
-
-.border-black {
-    border: 1px solid #000;
 }
 
 .border-green {
@@ -92,7 +76,7 @@ input[name="q"]::placeholder {
     font-size: 1.2rem;
 }
 
-/* Buttons */
+/* Custom Buttons */
 
 .btn {
     font-size: 1.6rem;
@@ -147,6 +131,7 @@ input[name="q"]::placeholder {
 
 
 /* Reviews & Basket edit/update delete buttons */
+
 .btn-outline-info,
 .btn-outline-danger {
     background-color: #fff;
@@ -229,37 +214,13 @@ input[name="q"]::placeholder {
 }
 
 /* Convenience classes - some colors copied from Bootstrap */
-.arrow-primary {
-    border-bottom-color: #0b8e59;
-}
+.arrow-success { border-bottom-color: #28a745; }
 
-.arrow-secondary {
-    border-bottom-color: #be3e82;
-}
+.arrow-danger { border-bottom-color: #dc3545; }
 
-.arrow-success {
-    border-bottom-color: #28a745;
-}
+.arrow-warning { border-bottom-color: #ffc107; }
 
-.arrow-danger {
-    border-bottom-color: #dc3545;
-}
-
-.arrow-warning {
-    border-bottom-color: #ffc107;
-}
-
-.arrow-info {
-    border-bottom-color: #17a2b8;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40;
-}
+.arrow-info { border-bottom-color: #17a2b8; }
 
 .basket-preview-wrapper {
     max-height: 10rem;
@@ -303,11 +264,18 @@ input[name="q"]::placeholder {
     letter-spacing: 1.5px;
 }
 
+/* Home Page Content */
+
+.content-icon {
+    font-size: 3rem;
+    color: #00BF63;
+}
+
 .home-content h3 {
     color: #156941;
 }
 
-/* Allauth Formatting */
+/* ALLAUTH FORMATTING */
 
 .allauth-inner-content label {
     margin-bottom: .25rem;
@@ -335,9 +303,7 @@ input[name="q"]::placeholder {
     font-weight: 700;
 }
 
-/* -------- */
 /*  FOOTER  */
-/* -------- */
 
 /* Mailchimp signup form */
 #mc_embed_signup {
@@ -371,22 +337,11 @@ footer {
     background-color: #fff;
 }
 
-.footer-logo {   
-    padding: 0;
-}
+.footer-logo { padding: 0; }
 
 footer .list-group-item {
     line-height: .75;
     border-style: none;
-}
-
-footer a {
-    color: #000;
-}
-
-footer a:hover,
-footer a:focus {
-    color: rgb(68, 136, 68);
 }
 
 footer .list-group-horizontal>.list-group-item {
@@ -411,7 +366,6 @@ footer .social {
     .toast-container {
         right: 2.5rem;
     }
-
     .arrow-up {
         right: 3rem;
     }
@@ -422,7 +376,6 @@ footer .social {
     .toast-container {
             right: 5.5rem;
         }
-    
     .arrow-up {
         right: 10rem;
     }
@@ -435,11 +388,14 @@ footer .social {
         font-size: 75%;
     }
 
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: space-evenly;
+    }
+
     .toast-container {
         top: 7.4rem;
         right: 5.5rem;
     }
-
     .arrow-up {
         right: 5rem;
     }

@@ -1,14 +1,16 @@
+<!-- Main Navigation for Mobile & Desktop -->
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav">
-        <li class="nav-item d-block d-lg-none">
-            <a class="title-font font-weight-bold nav-link text-black" href="{% url 'home' %}" id="home-link">
+        <!-- Home link for mobile only -->
+        <li class="nav-item">
+            <a class="title-font font-weight-bold nav-link text-black mx-lg-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
-
+        <!-- Shop Dropdown -->
         <li class="nav-item dropdown">
-            <a class="title-font font-weight-bold nav-link text-black mr-5 dropdown-toggle" 
-                href="" id="shop-link" role="button"
+            <a class="dropdown-toggle title-font font-weight-bold nav-link text-black mx-lg-5" 
+                href="#" id="shop-link" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Shop
             </a>
@@ -23,15 +25,15 @@
                 <a href="{% url 'products' %}?category=cds,glassware,frames,pebbles,new,deals" class="dropdown-item">All Products</a>
             </div>
         </li>
-
+        <!-- About Page Link -->
         <li class="nav-item">
-            <a class="title-font font-weight-bold nav-link text-black mr-lg-5" href="{% url 'about' %}" id="about-link">
+            <a class="title-font font-weight-bold nav-link text-black mx-lg-5" href="{% url 'about' %}" id="about-link">
                 About
             </a>
         </li>
-
+        <!-- Contact Page Link -->
         <li class="nav-item">
-            <a class="title-font font-weight-bold nav-link text-black mr-lg-5" href="{% url 'contact' %}" id="contact-link">
+            <a class="title-font font-weight-bold nav-link text-black mx-lg-5" href="{% url 'contact' %}" id="contact-link">
                 Contact
             </a>
         </li>

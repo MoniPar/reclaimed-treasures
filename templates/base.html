@@ -1,8 +1,6 @@
 {% load static %}
-
 <!doctype html>
 <html lang="en">
-
 <head>
     {% block meta %}
     <!-- Required meta tags -->
@@ -11,20 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Monique Parnis">
     {% endblock %}
-
-    {% block extra_meta %}
     <!-- Description and Keywords Meta tags added to specific pages  -->
+    {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Google Font Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Poppins&family=Roboto+Mono&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Poppins&family=Roboto+Mono&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="{{ MEDIA_URL }}vrt-favicon.png" type="image/x-icon">
     <!-- MailChimp Stylesheet Link-->
@@ -32,28 +27,21 @@
     <!-- Custom CSS link -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
-
-    {% block extra_css %}
     <!-- Extra stylesheets added to specific pages -->
+    {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
     <!-- FontAwesome kit code link -->
     <script src="https://kit.fontawesome.com/967a4d433b.js" crossorigin="anonymous"></script>
     <!-- Separate Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
-
+    <!-- Extra JavaScript added to specific pages -->
     {% block extra_js %}
     {% endblock %}
 
@@ -62,23 +50,23 @@
 
 <body class="d-flex flex-column min-vh-100 px-0">
     <header class="container-fluid fixed-top">
+        <!-- Desktop Top Navigation -->
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+            <!-- Website Logo -->
             <div class="col-12 col-lg-3 ml-xl-5">
                 <a href="{% url 'home'%}" class="nav-link">
-                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures - green logo over white background - Vera's is large in serif font while Reclaimed Treasures is smaller in sans-serif font"
-                        width="217" height="75">
+                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures - green logo over white background - Vera's is large in serif font while Reclaimed Treasures is smaller in sans-serif font" width="217" height="75">
                 </a>
             </div>
+            <!-- Search Field -->
             <div class="col-12 col-lg-4 offset-lg-1  my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group v-100">
-                        <input type="text" class="form-control border-green rounded" 
-                            name="q" placeholder="Search my collection">
+                        <input type="text" class="form-control border-green rounded" name="q" placeholder="Search my collection">
                         <div class="input-group-append">
                             <button class="form-control btn btn-green border border-green rounded" type="submit">
                                 <span class="icon">
-                                    <i class="fa-solid fa-magnifying-glass" title="Submit my search request"
-                                        aria-hidden="true"></i>
+                                    <i class="fa-solid fa-magnifying-glass" title="Submit my search request" aria-hidden="true"></i>
                                     <span class="sr-only">Submit my search request</span>
                                 </span>
                             </button>
@@ -86,12 +74,11 @@
                     </div>
                 </form>
             </div>
+            <!-- Account Dropdown & Basket -->
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-center my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="text-black nav-link" 
-                            id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a href="#" class="text-black nav-link" id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div>
                                     <i class="fa-solid fa-user" title="My Account" aria-hidden="true"></i>
@@ -110,8 +97,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a href="{% url 'shopping_basket' %}"
-                            class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
+                        <a href="{% url 'shopping_basket' %}" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
                             <div class="text-center">
                                 <div>
                                     <i class="fa-solid fa-basket-shopping" title="Shopping Basket" aria-hidden="true"></i>
@@ -130,18 +116,18 @@
                 </ul>
             </div>
         </div>
+        <!-- Mobile Top Navigation -->
         <div class="row bg-white">
+            <!-- Logo -->
             <div class="col-12 text-center d-block d-lg-none">
                 <a href="{% url 'home'%}" class="nav-link">
-                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures Logo" 
-                        width="215" height="75">
+                    <img src="{{ MEDIA_URL }}vrt-logo1.png" alt="Vera's Reclaimed Treasures Logo" width="215" height="75">
                 </a>
             </div>
-            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-8 offset-lg-4 offset-xl-4">
+            <!-- Includes Mobile Top Navigation & Main Navigation -->
+            <div class="col-12 pr-5 mr-5 col-md-10 pr-md-0 mr-md-0 col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light w-100">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                        data-target="#main-nav" aria-controls="main-nav"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     {% include 'includes/mobile_top_header.html' %}
@@ -149,6 +135,7 @@
                 </nav>
             </div>
         </div>
+        <!-- Delivery Banner -->
         <div class="row delivery-banner text-center">
             <div class="col text-white">
                 <p class="my-2">
@@ -158,7 +145,7 @@
             </div>
         </div>
     </header>
-
+    <!-- Toasts -->
     {% if messages %}
         <div class="toast-container">
             {% for message in messages %}
@@ -189,17 +176,13 @@
                 <div class="col-12 col-md-6 mt-2 mb-2 mb-md-0">
                     <!-- Mailchimp newsletter signup form -->
                     <div id="mc_embed_signup">
-                        <form
-                            action="https://herokuapp.us21.list-manage.com/subscribe/post?u=2a17d3cd208455bf5c10361e1&amp;id=70384ba7be&amp;f_id=00ba58e1f0"
-                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-                            novalidate>
+                        <form action="https://herokuapp.us21.list-manage.com/subscribe/post?u=2a17d3cd208455bf5c10361e1&amp;id=70384ba7be&amp;f_id=00ba58e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                             <div id="mc_embed_signup_scroll">
                                 <h2>Join the club</h2>
                                 <p class="text-muted">Subscribe to my email list for special access to exclusive offers, latest news and discounts!</p>
                                 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                                 <div class="mc-field-group">
-                                    <label for="mce-EMAIL">Email: <span class="asterisk">*</span>
-                                    </label>
+                                    <label for="mce-EMAIL">Email: <span class="asterisk">*</span></label>
                                     <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
                                     <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                                 </div>
@@ -208,18 +191,15 @@
                                     <div class="response" id="mce-success-response" style="display:none"></div>
                                 </div>
                                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                        name="b_2a17d3cd208455bf5c10361e1_70384ba7be" tabindex="-1" value=""></div>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_2a17d3cd208455bf5c10361e1_70384ba7be" tabindex="-1" value="">
+                                </div>
                                 <div class="optionalParent">
                                     <div class="clear foot">
-                                        <input type="submit" value="Subscribe" 
-                                            name="subscribe" id="mc-embedded-subscribe" 
-                                            class="button">
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
                                         <p class="brandingLogo">
-                                            <a href="http://eepurl.com/itjP_g" 
-                                                title="Mailchimp - email marketing made easy and fun">
-                                                <img alt="Made with Mailchimp logo - displays a monkey wearing a postman's cap"
-                                                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
+                                            <a href="http://eepurl.com/itjP_g" title="Mailchimp - email marketing made easy and fun">
+                                                <img alt="Made with Mailchimp logo - displays a monkey wearing a postman's cap" src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
                                             </a>
                                         </p>
                                     </div>
@@ -227,8 +207,8 @@
                             </div>
                         </form>
                     </div>
-                    <!--End mc_embed_signup-->
                 </div>
+                <!-- Website Logo -->
                 <div class="col-12 col-md-6 mt-2 mb-4 mb-md-0 text-center">
                     <a href="{% url 'home' %}" class="footer-logo img-fluid">
                         <img src="{{ MEDIA_URL }}vrt-logo1.png" width="215" height="75" 
@@ -237,6 +217,7 @@
                 </div>
             </div>
             <div class="row text-center">
+                <!-- Contact Phone & Email -->
                 <div class="col-12 col-md-4 mb-4 mb-lg-0 text-md-left">
                     <h3>Contact</h3>
                     <ul class="list-group">
@@ -253,6 +234,7 @@
                         </li>
                     </ul>
                 </div>
+                <!-- Social Links -->
                 <div class="col-12 col-md-4 mb-5 mb-lg-0">
                     <h3>Follow me on</h3>
                     <div class="mx-auto mt-2">
@@ -272,6 +254,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Useful Links -->
                 <div class="col-12 col-md-4 mb-4 mb-lg-0 text-md-right">
                     <h3>Useful links</h3>
                     <ul class="list-group">
@@ -295,6 +278,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Copyright -->
             <div class="row">
                 <div class="col">
                     <p class="copyright text-center text-muted small">&copy; 2023 Vera's Reclaimed Treasures | Created by
@@ -307,35 +291,11 @@
     </footer>
 
     {% block postloadjs %}
-        
     <!-- Mailchimp Scripts-->
-        <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
-        </script>
-        <script>
-            (function ($) { 
-                window.fnames = new Array(); 
-                window.ftypes = new Array(); 
-                fnames[0] = 'EMAIL'; 
-                ftypes[0] = 'email'; 
-                fnames[1] = 'FNAME'; 
-                ftypes[1] = 'text'; 
-                fnames[2] = 'LNAME'; 
-                ftypes[2] = 'text'; 
-                fnames[3] = 'ADDRESS'; 
-                ftypes[3] = 'address'; 
-                fnames[4] = 'PHONE'; 
-                ftypes[4] = 'phone'; 
-                fnames[5] = 'BIRTHDAY'; 
-                ftypes[5] = 'birthday'; 
-            }(jQuery)); 
-            var $mcj = jQuery.noConflict(true);
-        </script>
-
+        <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+        <script>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
         <!-- Toast Message Call -->
-        <script>
-            $('.toast').toast('show');
-        </script>
+        <script>$('.toast').toast('show');</script>
     {% endblock %}
 </body>
-
 </html>
