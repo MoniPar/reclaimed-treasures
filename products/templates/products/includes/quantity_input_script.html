@@ -37,7 +37,7 @@
         document.getElementById('id_qty_'+itemId).value = Number(currentValue) + Number(1);
         
         handleEnableDisable(itemId);
-    })
+    });
 
     // Decrements quantity
     $('.decrement-qty').click(function(e) {
@@ -48,7 +48,7 @@
         document.getElementById('id_qty_'+itemId).value = Number(currentValue) - Number(1);
         
         handleEnableDisable(itemId);
-    })
+    });
 
     // Limits max quantity to 3 on Made to Order products
     function checkstock(productId) {

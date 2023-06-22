@@ -111,11 +111,11 @@
                                 <input type="checkbox" class="form-check-input ml-2 mr-0"
                                     id="id-save-info" name="save-info" checked>
                             {% else %}
-                                <label for="id-save-info" class="text-info">
-                                    <a href="{% url 'account_signup' %}" class="text-info">
+                                <label for="id-save-info">
+                                    <a href="{% url 'account_signup' %}" class="txt-info">
                                         Create an account
                                     </a> or
-                                    <a href="{% url 'account_login' %}" class="text-info">
+                                    <a href="{% url 'account_login' %}" class="txt-info">
                                         Login to save this information
                                     </a>
                                 </label>
@@ -129,7 +129,7 @@
                     <!-- Stripe card element  -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Form Errors -->
-                    <div class="mb-3 text-danger" 
+                    <div class="mb-3 txt-danger" 
                         id="card-errors" role="alert"></div>
                     <!-- Pass Client Secret to get payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" 
@@ -151,15 +151,13 @@
                             <i class="fa-solid fa-lock" aria-hidden="true"></i>
                         </span>
                     </button>
-                    <p class="text-danger my-0">
+                    <p class="txt-danger my-0">
                         <span class="icon">
                             <i class="fa-solid fa-circle-exclamation" 
                                 aria-hidden="true" title="Alert"></i>
                             <span class="sr-only">Alert</span>
                         </span>
-                        <span class="bg-light">Your card will be charged <strong>
-                                €{{ grand_total|floatformat:2 }}</strong>
-                        </span>
+                        <strong>Your card will be charged €{{ grand_total|floatformat:2 }}</strong>
                     </p>
                 </div>
             </form>

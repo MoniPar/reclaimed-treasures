@@ -88,6 +88,8 @@ HTML code was tested using the [W3C Validator](https://validator.w3.org/) via te
 
 ![HTML Validation for Error403 Page](docs/validation/html-val_error403.png)
 
+![HTML Validation for Error500 Page](docs/validation/html-val_error500.png)
+
 </details>
 
 [Back To Top](#table-of-contents)
@@ -111,12 +113,156 @@ _____
 
 Python code was tested using [Code Institute's Python Linter](https://pep8ci.herokuapp.com/).
 
-Long lines in `settings.py` and `env.py` were cleared using `# noqa`. These were values by the Django generated AUTH_PASSWORD_VALIDATORS and the long password values.
+Long lines in 'settings.py' and 'env.py' were cleared using `# noqa`. These were values by the Django generated `AUTH_PASSWORD_VALIDATORS` and the long password values in 'env.py'.
+
+<details>
+<summary>Main App & custom_storages.py</summary>
+<br>
+
+![Python Validation for settings.py](docs/validation/settings.png)
+
+![Python Validation for urls.py](docs/validation/urls.png)
+
+![Python Validation for views.py](docs/validation/views.png)
+
+![Python Validation for custom_storages.py](docs/validation/custom_storages.py.png)
+
+</details>
+
+<details>
+<summary>Home App</summary>
+<br>
+
+![Python Validation for views.py](docs/validation/home-views.py.png)
+
+![Python Validation for urls.py](docs/validation/home-urls.py.png)
+
+</details>
+
+<details>
+<summary>Profiles App</summary>
+<br>
+
+![Python Validation for admin.py](docs/validation/profiles-admin.png)
+
+![Python Validation for forms.py](docs/validation/profiles-forms.png)
+
+![Python Validation for models.py](docs/validation/profiles-models.png)
+
+![Python Validation for urls.py](docs/validation/profiles-urls.png)
+
+![Python Validation for views.py](docs/validation/profiles-views.png)
+
+</details>
+
+<details>
+<summary>Products App</summary>
+<br>
+
+![Python Validation for admin.py](docs/validation/products-admin.py.png)
+
+![Python Validation for models.py](docs/validation/products-models.py.png)
+
+![Python Validation for urls.py](docs/validation/products-urls.py.png)
+
+![Python Validation for views.py](docs/validation/products-views.py.png)
+
+</details>
+
+<details>
+<summary>Basket App</summary>
+<br>
+
+![Python Validation for basket_tools.py](docs/validation/basket-basket_tools.py.png)
+
+![Python Validation for context.py](docs/validation/basket-context.py.png)
+
+![Python Validation for urls.py](docs/validation/basket-urls.py.png)
+
+![Python Validation for views.py](docs/validation/basket-views.py.png)
+
+</details>
+
+<details>
+<summary>Checkout App</summary>
+<br>
+
+![Python Validation for admin.py](docs/validation/checkout-admin.py.png)
+
+![Python Validation for apps.py](docs/validation/checkout-apps.py.png)
+
+![Python Validation for forms.py](docs/validation/checkout-forms.py.png)
+
+![Python Validation for models.py](docs/validation/checkout-models.py.png)
+
+![Python Validation for signals.py](docs/validation/checkout-signals.py.png)
+
+![Python Validation for urls.py](docs/validation/checkout-urls.py.png)
+
+![Python Validation for views.py](docs/validation/checkout-views.py.png)
+
+![Python Validation for webhook_handler.py](docs/validation/checkout-webhook_handler.py.png)
+
+![Python Validation for webhooks.py](docs/validation/checkout-webhooks.py.png)
+
+</details>
+
+<details>
+<summary>Reviews App</summary>
+<br>
+
+![Python Validation for admin.py](docs/validation/reviews-admin.py.png)
+
+![Python Validation for forms.py](docs/validation/reviews-forms.py.png)
+
+![Python Validation for models.py](docs/validation/reviews-models.py.png)
+
+![Python Validation for urls.py](docs/validation/reviews-urls.py.png)
+
+![Python Validation for views.py](docs/validation/reviews-views.py.png)
+
+</details>
+
+<details>
+<summary>Contact App</summary>
+<br>
+
+![Python Validation for admin.py](docs/validation/contact-admin.py.png)
+
+![Python Validation for forms.py](docs/validation/contact-forms.py.png)
+
+![Python Validation for models.py](docs/validation/contact-models.py.png)
+
+![Python Validation for urls.py](docs/validation/contact-urls.py.png)
+
+![Python Validation for views.py](docs/validation/contact-views.py.png)
+
+</details>
 
 [Back To Top](#table-of-contents)
 _____
 
 ## JavaScript
+
+[JShint](https://jshint.com/) was used to validate customised scripts. No Errors or warnings were flagged.
+
+<details>
+<summary>Screenshots available here</summary>
+<br>
+
+**Script in basket.html**
+![JavaScript Validation for script in basket.html](docs/validation/js_val-basket.html_script.png)
+
+**Modified quantity_input_script.html**
+![JavaScript Validation for script in quantity_input_script.html](docs/validation/js_val-quantity_input_script.png)
+
+**Slightly modified countryfield.js file**
+![JavaScript Validation for countryfield.js](docs/validation/js_val-countryfield_script.png)
+
+**Slightly modified stripe_elements.js file**
+![JavaScript Validation for stripe_elements.js](docs/validation/js_val-stripe_elements_script.png)
+
+</details>
 
 [Back To Top](#table-of-contents)
 
@@ -131,6 +277,7 @@ _____
 <br>
 
 MOBILE
+
 ![Lighthouse testing results for Home Page Mobile](docs/lighthouse/mobile-home.png)
 
 Low performance score due to render blocking resources and unused javascript.
@@ -138,6 +285,7 @@ Render blocking resources included the Bootstrap suit with the highest transfer 
 Stripe was flagged as unused JS, however it was decided to leave this in the base.html as recommended by Stripe documentation to manage fraudulent activity.
 
 DESKTOP
+
 ![Lighthouse testing results for Home Page](docs/lighthouse/desktop-home.png)
 
 </details>
@@ -147,17 +295,118 @@ DESKTOP
 <br>
 
 MOBILE
+
 ![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
 
 Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
 Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
 
 DESKTOP
+
 ![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
 
 </details>
 
+<details>
+<summary>Product Detail Page & Review Forms</summary>
+<br>
 
+PRODUCT DETAIL MOBILE
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+
+PRODUCT DETAIL DESKTOP
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+ADD REVIEW MOBILE
+
+ADD REVIEW DESKTOP
+
+EDIT REVIEW MOBILE
+
+EDIT REVIEW DESKTOP
+
+DELETE REVIEW CONFIRMATION MOBILE
+
+DELETE REVIEW CONFIRMATION DESKTOP
+
+</details>
+
+<details>
+<summary>Profile Page</summary>
+<br>
+
+MOBILE
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+
+DESKTOP
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+</details>
+
+<details>
+<summary>About Page</summary>
+<br>
+
+MOBILE
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+
+DESKTOP
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+</details>
+
+<details>
+<summary>Basket Page</summary>
+<br>
+
+MOBILE
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+
+DESKTOP
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+</details>
+
+<details>
+<summary>Checkout & Checkout Success Pages</summary>
+<br>
+
+CHECKOUT PAGE MOBILE
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+
+CHECKOUT PAGE DESKTOP
+
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+CHECKOUT SUCCESS MOBILE
+
+CHECKOUT SUCCESS DESKTOP
+
+</details>
 
 [Back To Top](#table-of-contents)
 

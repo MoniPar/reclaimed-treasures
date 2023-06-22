@@ -3,7 +3,7 @@ let countrySelected = $('#id_default_country').val();
 // First option = empty string so can be used as boolean
 if(!countrySelected) {
     $('#id_default_country').css('font-style', 'italic');
-};
+}
 
 // Captures change event
 $('#id_default_country').change(function () {

@@ -20,7 +20,7 @@ def add_to_basket(request, item_id):
     """
     product = get_object_or_404(Product, pk=item_id)
     # Get the quantity and the redirect_url from the form
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity') or 0)
     redirect_url = request.POST.get('redirect_url')
     # Access the session if it exists and create it if it doesn't
     basket = request.session.get('basket', {})
@@ -47,7 +47,7 @@ def update_basket(request, item_id):
     Updates the quantity of specific products to the specified amount
     """
     product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    quantity = int(request.POST.get('quantity') or 0)
     basket = request.session.get('basket', {})
 
     if quantity > 0:

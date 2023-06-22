@@ -28,7 +28,7 @@
                             <p>Delivery: €{{ delivery|floatformat:2 }}</p>
                             <p class="font-weight-bolder">Grand Total: €{{ grand_total|floatformat:2 }}</p>
                             {% if free_delivery_delta > 0 %}
-                            <p class="text-danger">
+                            <p class="txt-danger">
                                 You're <strong class="bg-white">€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                             </p>
                             {% endif %}
@@ -124,7 +124,7 @@
                             <p>Delivery: €{{ delivery|floatformat:2 }}</p>
                             <p class="font-weight-bolder">Grand Total: €{{ grand_total|floatformat:2 }}</p>
                             {% if free_delivery_delta > 0 %}
-                            <p class="mb-1 text-danger">
+                            <p class="mb-1 txt-danger">
                                 You're <strong class="bg-white">€{{ free_delivery_delta }}</strong> away to qualify for free delivery!
                             </p>
                             {% endif %}
@@ -165,13 +165,10 @@
     {{ block.super }}
     {% include 'products/includes/quantity_input_script.html' %}
     <script>
-        
         // Gets the input object by Name and loops through all products
         var inputObj = document.getElementsByName('Stock Qty');
         var productQty = inputObj.length;
-
         for (var i = 0; i < productQty; i++) {
-
             var productId = inputObj[i].getAttribute('data-id');
             checkstock(productId);
         }
@@ -189,12 +186,10 @@
             var itemId = $(this).attr('id').split('remove_')[1];
             var url = `/basket/remove/${itemId}/`;
             var data = { 'csrfmiddlewaretoken': csrfToken};
-
             $.post(url, data)
                 .done(function () {
                     location.reload();
                 });
-        })
-
+        });
     </script>
 {% endblock %}

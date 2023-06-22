@@ -45,6 +45,14 @@ centered and have a consistent size unless manually changed */
     color: #0b8e59;
 }
 
+.txt-info {
+    color: var(--info);
+}
+
+.txt-danger {
+    color: var(--danger);
+}
+
 .border-green {
     border: 1px solid #0b8e59;
 }
