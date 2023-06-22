@@ -98,11 +98,35 @@ _____
 
 ## CSS
 
-CSS code was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) via text input. 
+CSS code was tested using the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) via file input.  No errors found, warnings due to vendor prefixes.
 
 <details>
 <summary>Screenshot with results for the styles.css file</summary>
 <br>
+
+BASE STYLESHEET
+
+![CSS Validation for base.css file](docs/validation/base.png)
+
+PRODUCTS STYLESHEET
+
+![CSS Validation for products.css file](docs/validation/products.png)
+
+CHECKOUT STYLESHEET
+
+![CSS Validation for checkout.css file](docs/validation/checkout.png)
+
+PROFILE STYLESHEET
+
+![CSS Validation for profile.css file](docs/validation/profile.png)
+
+CONTACT STYLESHEET
+
+![CSS Validation for contact.css file](docs/validation/contact.png)
+
+ABOUT STYLESHEET
+
+![CSS Validation for about.css file](docs/validation/about.png)
 
 </details>
 
@@ -313,26 +337,39 @@ DESKTOP
 
 PRODUCT DETAIL MOBILE
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+![Lighthouse testing results for Product Detail Page](docs/lighthouse/mobile-product_detail.png)
 
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
-Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+Low performance score due to render blocking resources and unused javascript.
 
 PRODUCT DETAIL DESKTOP
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+![Lighthouse testing results for Product Detail Page](docs/lighthouse/desktop-product_detail.png)
 
 ADD REVIEW MOBILE
 
+![Lighthouse testing results for Add Review Page](docs/lighthouse/mobile-add_review.png)
+
+Low performance score due to unused javascript and render blocking resources.
+
 ADD REVIEW DESKTOP
+
+![Lighthouse testing results for Add Review Page](docs/lighthouse/desktop-add_review.png)
 
 EDIT REVIEW MOBILE
 
+![Lighthouse testing results for Edit Review Page](docs/lighthouse/mobile-edit_review.png)
+
 EDIT REVIEW DESKTOP
+
+![Lighthouse testing results for Edit Review Page](docs/lighthouse/desktop-edit_review.png)
 
 DELETE REVIEW CONFIRMATION MOBILE
 
+![Lighthouse testing results for Delete Confirmation Review Page](docs/lighthouse/mobile_delete_review.png)
+
 DELETE REVIEW CONFIRMATION DESKTOP
+
+![Lighthouse testing results for Delete Confirmation Review Page](docs/lighthouse/desktop-delete_review.png)
 
 </details>
 
@@ -342,14 +379,11 @@ DELETE REVIEW CONFIRMATION DESKTOP
 
 MOBILE
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
-
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
-Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+![Lighthouse testing results for Profile Page](docs/lighthouse/mobile-profile.png)
 
 DESKTOP
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+![Lighthouse testing results for Profile Page](docs/lighthouse/desktop-profile.png)
 
 </details>
 
@@ -359,14 +393,13 @@ DESKTOP
 
 MOBILE
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
+![Lighthouse testing results for About Page](docs/lighthouse/mobile-about.png)
 
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
-Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+Low performance score due to unused javascript, render blocking resources and use of HTTP1.
 
 DESKTOP
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+![Lighthouse testing results for About Page](docs/lighthouse/desktop-about.png)
 
 </details>
 
@@ -376,14 +409,11 @@ DESKTOP
 
 MOBILE
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
-
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
-Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+![Lighthouse testing results for Basket Page](docs/lighthouse/mobile-basket.png)
 
 DESKTOP
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+![Lighthouse testing results for Basket Page](docs/lighthouse/desktop-basket.png)
 
 </details>
 
@@ -393,18 +423,70 @@ DESKTOP
 
 CHECKOUT PAGE MOBILE
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
-
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
-Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
+![Lighthouse testing results for Checkout Page](docs/lighthouse/mobile-checkout.png)
 
 CHECKOUT PAGE DESKTOP
 
-![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+![Lighthouse testing results for Checkout Page](docs/lighthouse/desktop-checkout.png)
 
 CHECKOUT SUCCESS MOBILE
 
+![Lighthouse testing results for Checkout Success Page](docs/lighthouse/mobile-checkout_success.png)
+
 CHECKOUT SUCCESS DESKTOP
+
+![Lighthouse testing results for Checkout Success Page](docs/lighthouse/desktop-checkout_success.png)
+
+</details>
+
+<details>
+<summary>Contact & Contact Success Page</summary>
+
+CONTACT MOBILE
+
+![Lighthouse testing results for Contact Page](docs/lighthouse/mobile-contact.png)
+
+CONTACT DESKTOP
+
+![Lighthouse testing results for Contact Page](docs/lighthouse/desktop-contact.png)
+
+CONTACT SUCCESS MOBILE
+
+![Lighthouse testing results for Contact Success Page](docs/lighthouse/mobile-contact_success.png)
+
+CONTACT SUCCESS DESKTOP
+
+![Lighthouse testing results for Contact Success Page](docs/lighthouse/desktop-contact_success.png)
+
+</details>
+
+<details>
+<summary>Signup, Login & Logout</summary>
+<br>
+
+SIGNUP MOBILE
+
+![Lighthouse testing results for Signup Page](docs/lighthouse/mobile-register.png)
+
+SIGNUP DESKTOP
+
+![Lighthouse testing results for Signup Page](docs/lighthouse/desktop-register.png)
+
+LOGIN MOBILE
+
+![Lighthouse testing results for Login Page](docs/lighthouse/mobile-login.png)
+
+LOGIN DESKTOP
+
+![Lighthouse testing results for Login Page](docs/lighthouse/desktop-login.png)
+
+LOGOUT MOBILE
+
+![Lighthouse testing results for Logout Page](docs/lighthouse/mobile-logout.png)
+
+LOGOUT DESKTOP
+
+![Lighthouse testing results for Logout Page](docs/lighthouse/desktop-logout.png)
 
 </details>
 
