@@ -138,7 +138,7 @@ Render blocking resources included the Bootstrap suit with the highest transfer 
 Stripe was flagged as unused JS, however it was decided to leave this in the base.html as recommended by Stripe documentation to manage fraudulent activity.
 
 DESKTOP
-![Lighthouse testing results for Home Page](docs/lighthouse/desktop=home.png)
+![Lighthouse testing results for Home Page](docs/lighthouse/desktop-home.png)
 
 </details>
 
@@ -153,7 +153,9 @@ Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Am
 Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
 
 DESKTOP
-![Lighthouse testing results for Shop Page](docs/)
+![Lighthouse testing results for Shop Page](docs/lighthouse/desktop-shop.png)
+
+</details>
 
 
 
