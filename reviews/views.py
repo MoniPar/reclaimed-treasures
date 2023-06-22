@@ -31,7 +31,7 @@ def add_review(request, product_id):
     my_reviews = ([review for review in product.reviews.all()
                   if review.rated_by == request.user])
     user_has_reviewed = len(my_reviews) > 0
-    
+
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -70,7 +70,7 @@ def edit_review(request, review_id):
     """
     review = get_object_or_404(Review, pk=review_id)
     product = review.product
-    
+
     if review.rated_by != request.user:
         raise PermissionDenied()
         return handler403

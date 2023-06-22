@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %} | Edit Review{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
 {% endblock %}
@@ -42,7 +44,7 @@
                         {% csrf_token %}
                         {{ form|crispy }}
                         <div class="d-flex justify-content-between mt-2">
-                            <a href="{% url 'product_detail' product.id %}" type="button" 
+                            <a href="{% url 'product_detail' product.id %}" role="button" 
                                 class="btn btn-outline-green rounded">
                                 Cancel
                             </a>
