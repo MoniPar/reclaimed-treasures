@@ -1,307 +1,303 @@
 # VERA'S RECLAIMED TREASURES
 
-Vera's Reclaimed Treasures is an educational fullstack website based on business logic used to control a centrally owned dataset.  It has an authentication mechanism and provides paid access based on the dataset in the purchasing of products.
+Welcome to Vera's Reclaimed Treasures, a full stack e-commerce website built using the Django framework, Bootstrap, HTML, CSS, Python & JavaScript.  It utilises Stripe as the payment processor and Amazon Web Services S3 Bucket for storing static and media files. The project has been deployed on Heroku and uses a postgreSQL database instance hosted on ElephantSQL.
 
+This project was created for educational purposes only as my fifth and final project for a Diploma in Software Development with Code Institute.
+
+Vera's Reclaimed Treasures is an online store where one can buy unique and sustainable products, hand-painted on upcycled materials in myriads of patterns and colourful designs.
+
+[Link to the live website](https://veras-reclaimed-treasures.herokuapp.com/).
+
+![VRT Am I Responsive](docs/responsive/am-i-responsive.png)
 _____
 
 ## Table of Contents
 
-* [Overview]()
-* [Planning & Research]()
-* [Agile Methodology]()
-* [Visual Design]()
-* [Features]()
-* [Testing]()
-* [Deployment](#deployment)
-* [Bugs](#bugs) <!-- Temporary -->
-* [Technologies]()
-* [Credits]()
-* [Acknowledgments]()
+- [VERA'S RECLAIMED TREASURES](#veras-reclaimed-treasures)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Business Model](#business-model)
+    - [Marketing Strategy](#marketing-strategy)
+      - [Social Media Marketing](#social-media-marketing)
+      - [Email Marketing](#email-marketing)
+    - [Search Engine Optimisation](#search-engine-optimisation)
+    - [Website Main Goals](#website-main-goals)
+  - [User Experience](#user-experience)
+    - [User Stories](#user-stories)
+  - [User Interface](#user-interface)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks \& Dependencies](#frameworks--dependencies)
+    - [Tools](#tools)
+  - [Deployment](#deployment)
+  - [Validation \& Testing](#validation--testing)
+  - [Bugs](#bugs)
+  - [Credits](#credits)
+    - [Media](#media)
+    - [Code](#code)
+    - [Acknowledgements](#acknowledgements)
+
+[Back to Top](#table-of-contents)
+_____
+
+## Introduction
+
+In my planning phase for this project, I wanted to create an ecommerce store for hand-made candles and soaps until I came across this lady's hand-painted collection of upcycled products at a fair in Malta. I was absolutely enthralled by what she had managed to create and decided to ask her for permission to use her creations for the basis of my ecommerce store.  That lady's name is Vera and her small business is called Vera's Magical Creations. At the moment Vera reaches potential customers at local markets, through her [facebook page]((https://www.facebook.com/profile.php?id=100070440427112)), or by word of mouth. All transactions are cash based and delivered in person which is time consuming.  
+This project aims to create a more permanent online presence for Vera's business.  It gives her a way to organize her products, keep track of orders and automate sales without necessarily having to interact directly with all her customers.  An online store can help her reach a wider audience and maximize her business's potential.
+
+This project aims to create a more permanent online presence for Vera's business.  It gives her a way to organize her products, keep track of orders and automate sales without necessarily having to interact directly with all her customers.  An online store can help her reach a wider audience and maximize her business's potential.
+
+By following the principles of User Experience Design, Search Engine Optimization and utilizing the Django full-stack framework and Stripe API for secure payments, Vera's Reclaimed Treasures offers its customers an efficient and seamless way to view and purchase her products from anywhere in the world.
+
+You can test the payment functionality by using the following details in the checkout page:
+•	Card Number: 4242 4242 4242 4242
+•	Expiry Date: Any future date formatted to MM/YY
+•	CVN: Any 3 digit number
+•	Postcode: Any 5 digits
+
+[Back to Top](#table-of-contents)
+_____
+
+## Business Model
+
+Vera's Reclaimed Treasures is a Business to Consumer(B2C) e-commerce site.  It gives the site owner an online presence where people can find her latest works and browse a wide range of finished pieces.  In addition to being a store, it is also a showcase of Vera's artistic abilities.  It carries a message of eco-consciousness and will appeal to people who are seeking eco-friendly, creative art pieces.
+As a small, fledgling business, Vera’s Reclaimed Treasures, relies on engaging with the customers, open communication and relationship building.  The website offers ways to get in touch with Vera with feedback, queries and suggestions.  Customers can also post reviews on individual products which would help Vera improve the product selection while giving the customers a positive shopping experience.
+The site's target audience falls into two overlapping tiers.  The first is people who are more broadly interested in art for use of décor or gifts.  The second are interested in reuse of discarded materials and items from an eco-friendly perspective.  These audiences are both very active demographics on Social Media, including Facebook, with many pages and discussion groups catering to them.
+
+### Marketing Strategy
+
+The marketing strategy at the outset will rely on a combination of organic content through social media,  and a newsletter subscription service.  Through creating attractive and engaging posts and emails, the aim will be to both foster and grow an audience for Vera's art while also directing traffic to the website.
+
+#### Social Media Marketing
+
+As mentioned earlier, Vera already has established a Business Facebook page and she has a few followers, who have purchased her products in the past and who are interested in the same causes as her.  If utilized properly, this offers potential for business growth. 
+Pros of a Business Facebook Page:
+
+- Organic approach allows for limited growth at no cost.
+- Potential customers can be attracted to the posts based on interests relevant to the business, specifically Art and Environmentalism.
+- Fosters a sense of community through engagement, building brand personality.
+- Helps improve customer service and support.
+- The existing Facebook page already has an established presence and a foundation of showcasing many of her art pieces.
+- The Facebook Business page will include the link to the online ecommerce store, while users of the site are also linked back to her Facebook page so that they are kept in the loop about any new pieces, posts etc.
+
+Opportunities for improvement:
+
+- Increase the variety and consistency of content and posts.  This can include images and videos of Vera working at her craft.  
+- Useful posts like tips and tricks and how to reuse recycled materials.
+- Have Q & A sessions: getting people to ask questions which she will answer in a video.
+- Posts about upcoming promotions, sales & deals.
+- Posts about upcoming in person events where Vera will be displaying and selling some of her work and asking people to bring recycled materials.
+
+For the purposes of this project, a mock-up Business Facebook page was created, similar to Vera's own.
+  
+![Mock-up Facebook Page](docs/vrt-facebookb.png)
+
+Links to the Social links can be found in the Footer of the website as well as on the Contact Page.
+
+![Image of Social links on Footer](docs/footer-social.png)
+
+#### Email Marketing
+
+A Newsletter subscription service will be set up on the Ecommerce website.  This will keep users up to date on Vera's news, special promotions and more while encouraging them to revisit the website.
+
+Pros of posting a Newsletter:
+
+- Easy and free to set up.
+- Acts as a reminder to previous customers and others interested in Vera's products.
+- Doesn't need to be as consistent as Facebook posts.
+- Different approaches can be tested out, allowing for a more refined marketing strategy over time.
+- A way to inform potential and returning customers about seasonal products, discount codes and bring in dates.
+  
+A newsletter sign-up form has been added to the Footer of the website.
+
+![Image of MailChimp Newsletter sign-up form on footer](docs/newsletter-signupform.png)
+
+### Search Engine Optimisation
+
+Search Engine Optimisation(SEO) is a set of practices designed to improve the appearance and positioning of web pages in organic search results. To improve my website's visibility on search engines, I started by conducting some keyword research and defining short-tail keywords and long-tail keywords.  I used [Word Tracker]( https://www.wordtracker.com/) to narrow them down to the most relevant.  Once I had identified the keywords, I used them in the website's meta tags, title, headings, content and image alt descriptions.  These will help search engines understand the relationship between the different pages on the website. 
+A [sitemap.xml]( https://www.xml-sitemaps.com/) and a robots.txt file were also added to my project.  The sitemap lists all the pages on the website, while the robots.txt file tells search engines which pages they should not crawl.
+In the footer I added one link to the Eco Market Malta website. This website ranks higher on Google and is very relevant to Vera's Reclaimed Treasures as it promotes artists and eco-friendly products.
+A privacy policy was also added to the website. While this is not a direct ranking factor for SEO, it is recommended to have Google and other search engines index it. In addition, it helps improve the website's credibility and trustworthiness and compliance with various laws and regulations related to data protection and privacy.
+
+### Website Main Goals
+
+For the site owner:
+
+- To be able to showcase her collection to a wider audience.
+- To provide her customers with up-to-date information about her business and herself.
+- To have an inventory of her products displayed in the one place.
+- To have a safe and efficient way to get payment for her products.
+- To keep track of the orders made by her customers.
+- To have a limit on Made to Order purchases.
+- To be able to easily mark products as not available.
+- To be able to add new products to the inventory through the admin panel.
+- To be able to quickly respond to customer queries.
+- To be able to improve her product selection through customers’ orders and feedback. 
+
+For the user/customer:
+
+- To give users a responsive and easy to navigate website with a clear purpose.
+- To provide users with products that meet their expectations.
+- To allow users to view details on products and add them to their shopping basket.
+- To allow users to purchase Made to Order products if the stock runs out.
+- To allow users to checkout quickly and safely.
+- To give users the option to save their information for future visits.
+- To give registered users the ability to view their previous orders.
+- To give registered users the ability to submit product reviews.
+- To give users ways to contact the business owner easily and efficiently.
+
+[Back to Top](#table-of-contents)
+_____
+
+## User Experience
+
+This section aims to determine what a user would expect from interacting with the website. Each User Story was recorded in [GitHub Issues](https://github.com/MoniPar/reclaimed-treasures/issues).  Scenarios of actions each type of user, including the business/site owner, wishes to take are listed below.  These were categorised into Epics listed in the Agile Methodology section, for the development of the project.  Two of the user stories listed below weren't completed on time and have been placed in the backlog for future iterations.
+
+### User Stories
+
+From User/Customer perspective:
+
+- [#7](https://github.com/MoniPar/reclaimed-treasures/issues/7) As a user, I can register an account, so that I have access to other features of the website.
+- [#8](https://github.com/MoniPar/reclaimed-treasures/issues/8) As a user, I can check my emails for a registration confirmation email, so that I can verify that my registration was successful.
+- [#9](https://github.com/MoniPar/reclaimed-treasures/issues/9) As a User, I can login and logout from my account, so that I can access my account's information and keep my information secure.
+- [#10](https://github.com/MoniPar/reclaimed-treasures/issues/10) As a User, I can reset my password, so that I can recover access to my account if I forget my password.
+- [#11](https://github.com/MoniPar/reclaimed-treasures/issues/11) As a User, I can land on the homepage of the site, so that I can learn more about the business and the types of products they sell.
+- [#12](https://github.com/MoniPar/reclaimed-treasures/issues/12) As a User, I can view the logo and the links in the navigation bar, so that I can easily navigate to other pages of the site.
+- [#13](https://github.com/MoniPar/reclaimed-treasures/issues/13) As a User, I can access contact details, social and developer links across all pages, so that I can follow/contact the business owner and the website creator.
+- [#15](https://github.com/MoniPar/reclaimed-treasures/issues/15) As a User, I can find out more about the artist/business owner, so that I can decide if I want to deal with them or not.
+- [#17](https://github.com/MoniPar/reclaimed-treasures/issues/17) As a User, I can quickly write a message to the business owner using the contact form, so that I can query a commission or give feedback.
+- [#18](https://github.com/MoniPar/reclaimed-treasures/issues/18) As a User, I can sign up to the newsletter, so that I keep updated on the latest products, offers and pop up stalls.
+- [#19](https://github.com/MoniPar/reclaimed-treasures/issues/19) As a User, I can connect with my social media account, so that I can easily create an account.
+- [#24](https://github.com/MoniPar/reclaimed-treasures/issues/24) As a Customer, I can view a list of products, so that I can select some to purchase.
+- [#25](https://github.com/MoniPar/reclaimed-treasures/issues/25) As a Customer, I can view individual product details, so that I can identify more details about the product.
+- [#26](https://github.com/MoniPar/reclaimed-treasures/issues/26) As a Customer, I can search for a specific product or view a category of products, so that I can quickly find products I'm interested in.
+- [#27](https://github.com/MoniPar/reclaimed-treasures/issues/27) As a Customer, I can sort the list of available products, so that I can easily identify the best rated and best priced categorically sorted products.
+- [#29](https://github.com/MoniPar/reclaimed-treasures/issues/29) As a customer, I can access my basket, so that I can review items before I purchase them.
+- [#31](https://github.com/MoniPar/reclaimed-treasures/issues/31) As a customer, I can add items and identify their total cost in the basket, so that I know how much I'm spending.
+- [#33](https://github.com/MoniPar/reclaimed-treasures/issues/33) As a Customer, I can update the quantity of each item in my basket, so that I can easily make changes to my purchase before checkout.
+- [#34](https://github.com/MoniPar/reclaimed-treasures/issues/34) As a User, I can see real-time notifications as I interact with the website, so that I can have a better experience.
+- [#36](https://github.com/MoniPar/reclaimed-treasures/issues/36) As a Customer, I can confirm my items and total cost in the checkout page, so that I can continue to enter the required information to complete my order.
+- [#38](https://github.com/MoniPar/reclaimed-treasures/issues/38) As a Customer, I can easily enter my payment information, so that I can checkout quickly and with no hassles.
+- [#39](https://github.com/MoniPar/reclaimed-treasures/issues/39) As a Customer, I can view an order confirmation after checkout, so that I can confirm that my order was successful.
+- [#42](https://github.com/MoniPar/reclaimed-treasures/issues/42) As a Customer, I can have a personalised user profile, so that I can save my payment info and view my order history and confirmations.
+- [#43](https://github.com/MoniPar/reclaimed-treasures/issues/43) As a Customer, I can edit personal information on my profile, so that I can use the correct details when processing future orders.
+- [#44](https://github.com/MoniPar/reclaimed-treasures/issues/44) As a Customer, I can receive an email confirmation after checking out, so that I can keep the confirmation of the transaction for my records.
+- [#46](https://github.com/MoniPar/reclaimed-treasures/issues/46) As a Customer, I can check products' ratings and reviews and submit my own, so that I can make up my mind if I want to purchase the product and provide feedback on products purchased.
+- [#48](https://github.com/MoniPar/reclaimed-treasures/issues/48) As a Customer, I can edit and delete my reviews, so that I have the ability to correct any mistakes I make.
+- [#47](https://github.com/MoniPar/reclaimed-treasures/issues/47) As a User, I can navigate to the About page, so that I can learn more about the shop owner.
+- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I don't have to scroll back up through all the products in order to access the links at the top of the page.
+
+The following User Stories were used to implement features which make the website run more smoothly and give the user a better experience using the website.  Some are made from the Business owner's or Developer's perspective.  Stories concerned with setting up and other developer tasks were left out from this list. Due to time lost with Code Anywhere technical issues, it was decided to leave the Product Management Interface and the Featured Products on Home page out. These were placed in the backlog for future iterations.
+- []
+-	#16 Featured Products
+-	#21 Add product via UI
+-	#22 Update product via UI
+-	#23 Delete product via UI
+-	#32 Quantity Selector
+-	#40 Stripe webhooks
+-	#41 Product Stock
+-	#50 Social Media Marketing
+-	#51 SEO Implementations
+-	#55 Error Pages
+
 
 [Back to Top](#table-of-contents)
 
-_______
+_____
 
-# Deployment
+## User Interface
 
-This project was developed in [CodeAnywhere](https://app.codeanywhere.com/) Cloud IDE using [Code Institute's Full Template](https://github.com/Code-Institute-Org/ci-full-template).  The following describes the process undertaken to set up the Django project using a postgreSQL database instance on [ElephantSQL](https://www.elephantsql.com/), an [Amazon AWS S3 Bucket](https://aws.amazon.com/) for media and static file storage and deployment to [Heroku](https://www.heroku.com/).  
-
-## Setup
-
-1. Create a new GitHub repository using the [Code Institute's Full Template](https://github.com/Code-Institute-Org/ci-full-template) which preinstalls all the tools needed to get started.  If you do not have access to this you need to pre-install Python and all requirements into your IDE.
-2. Once your repository has been created on GitHub, copy the repository URL and log into [CodeAnywhere](https://app.codeanywhere.com/) with your GitHub account.
-3. Click on the 'New Workspace' button on your dashboard and paste in the copied repository URL.  Click 'Create'. This will create your new workspace which can be accessed from the [CodeAnywhere Dashboard](https://app.codeanywhere.com/).
-4. In your new workspace navigate to the 'Terminal' tab in the top menu and click on 'New Terminal'. This will open a terminal at the bottom of the workspace where you can run the following commands to install Django and supporting libraries.
-   * `pip3 install 'django<4' gunicorn`  - This installs [Django 3.2](https://www.djangoproject.com/start/overview/) and the server [gunicorn](https://gunicorn.org/) used to run the project on Heroku.
-   * `pip3 install dj_database_url==0.5.0 psycopg2`  - This installs the [postgreSQL](https://www.postgresql.org/) relational database management system along with [psycopg2](https://www.psycopg.org/docs/) and adapter for Python.
-   * `pip3 freeze --local > requirements.txt`  - This creates the requirements.txt file and adds Django and the installed supporting libraries to it.
-5. Create a new Django project and give it the name of the website. `django-admin startproject project_directory .`  - Don't forget the (.) dot to create the project in the current directory.
-6. Create the first app. I started with the home app. `python3 manage.py startapp home`
-7. Add the new app to the INSTALLED_APPS in settings.py.
-
-   ```python
-   INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        #  Custom apps
-        'home',
-    ]
-    ```
-
-8. Create a basic .gitignore file `touch .gitignore` (you might already have this if you're using CI's Full Template). Then add:
-   * `*.sqlite3`  - so as not to commit the development database to version control.
-   * `.pyc` and `__pycache__`  - to ignore compiled Python code not needed in version control.
-9. Run the project to make sure that everything is working properly using the `python3 manage.py runserver` command and exposing port 8000. If working on CodeAnywhere, you may get a 'DisallowedHost at /' error.  Copy the URL of your running CodeAnywhere project to the ALLOWED_HOSTS variable in settings.py and run it again. `ALLOWED_HOSTS = ['8000-githubusername-gitrepositoryname-abcde12fgh.us2.codeanyapp.com']` - Do not add the 'https://' at the start or the trailing '/' at the end. You should now get the 'Install worked successfully' page below.
-![Django Successful Installation page](docs/django_successful.png)
-10. Stop the server ('ctrl + c' on windows, 'cmd + .' on mac) and run the initial migrations using the `python3 manage.py migrate` in the terminal.
-11. Create a superuser so that you can log in to the Admin panel. `python3 manage.py createsuperuser` and enter your username, email and password. The skeleton of the project is now complete.
-
-## Setup for First Deployment
-
-With the skeleton of the project running locally, it is best to prepare it for deployment on Heroku at this early stage.
-
-### Create the Heroku App
-
-1. Login to [Heroku](https://www.heroku.com/) and click on the top right button ‘New’ on the dashboard.
-2. Click 'Create new app'.
-3. Give your app a unique name and select the region closest to you.
-4. Click on the 'Create app' button.
-
-### Create the postgreSQL Database
-
-Since the database provided by Django is only accessible within Gitpod, a new database suitable for production needs to be created in order for Heroku to be able to access it.  The following steps create a new postgreSQL database instance, hosted on [ElephantSQL](https://www.elephantsql.com/).
-
-1. Login to ElephantSQL and click on the top right button 'Create New Instance'.
-2. Give your plan the name of the project and select the Tiny Turtle (Free) plan.  The 'Tags' field can be left empty.
-3. Click on 'Select Region'. Select a data centre near you.  Choose another region if there is none in your region yet. Click 'Review'.
-4. Make sure your plan is correct and click 'Create Instance'.
-5. Return to the dashboard and click on this project's instance you just created. This will open up the 'Details' page where the link to the URL is displayed.  This needs to be added to the env.py file in the project's directories as well as to the Heroku Config Vars so copy it and keep this tab open.
-
-### Create an env.py file
-
-With the database created, it now needs to be connected with the project.  Certain variables need to be kept private and should not be published to GitHub.  In order to keep these variables hidden, it is important to create an env.py file and add it to .gitignore.  
-
-1. Run the `touch env.py` command in the terminal to create the env.py file.
-2. Import os and set the DATABASE_URL variable using the `os.environ` method and add the URL copied from instance created above to it here, like so: `os.environ[“DATABASE_URL”] = ”postgres://ElephantSQLcopiedURL”`
-3. The Django application requires a SECRET_KEY to encrypt session cookies.  Set this variable to any string you like or generate a secret key on this [MiniWebTool](https://miniwebtool.com/django-secret-key-generator/).
-   `os.environ[“SECRET_KEY”] = ”longSecretString”`
-
-### Modify settings.py
-
-It is important to make the Django project aware of the env.py file and to connect the workspace to the new database.
-
-1. Open up the settings.py file and add the following code. The if statement acts as a safety net for the application in case it is run without the env.py file.
-
-    ```python
-    import os  
-    import dj_database_url  
-
-    if os.path.isfile('env.py'):
-        import env
-    ```
-
-2. Remove the insecure secret key provided by Django further down and reference the variable in the env.py file, like so:
-
-    ```python
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    ```
-
-3. Hook up the database using the dj_database_url import added above.  Comment out the original DATABASES variable provided by Django which connects the Django application to the created db.sqlite3 database within your repo.  This database is not suitable for production so add the following code instead:
-
-    ```python
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    } 
-    ```
-
-    Note: If you prefer to work with the db.sqlite3 one in development then use the following code to use it if the external database is not yet hooked up.
-
-    ```python
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-    else:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': BASE_DIR / 'db.sqlite3',
-            }
-        }
-    ```
-
-4. Save and migrate this database structure to the newly connected postgreSQL database.  Run the migrate command `python3 manage.py migrate` in your terminal.
-
-5. To make sure the application is now connected to the remote database hosted on ElephantSQL, head over to your ElephantSQL dashboard and select the newly created database instance. Select the 'Browser' tab on the left and click on 'Table queries'.  This displays a dropdown field with the database structure which has been populated from the Django migrations. If you select 'auth_user' and click on the 'Execute' button on the right, you should be able to see your superuser details displayed.  This confirms your tables have been created and you can add data to your database.
-
-6. If you don't see your superuser details displayed run the `python3 manage.py createsuperuser` command again, give yourself a Username, email and password and go over step 5 above again.
-
-### Connect the database to Heroku
-
-1. Open up the Heroku dashboard, select the project's app and click on the 'Settings' tab.
-2. Click on 'Reveal Config Vars' and add the DATABASE_URL with the value of the copied URL (without quotation marks) from the database instance created on ElephantSQL.
-3. Also add the SECRET_KEY with the value of the secret key added to the env.py file.
-4. If using GitPod another key needs to be added in order for the deployment to succeed.  This is PORT with the value of 8000.
-5. To help get the project deployed without static files you need to add one more temporary variable.  This needs to be removed before deploying the full project.  Use DISABLE_COLLECTSTATIC as the key and '1' as the value.
-
-### Setup the Templates directory
-
-In settings.py scroll down to the TEMPLATES variable to instruct Django to store the root templates directory in the DIRS setting, like so:
-
-```python
-'DIRS' = [
-    os.path.join(BASE_DIR, 'templates'),
-]
-```
-
-This is where the custom allauth directory will also be set.
-
-### Add Heroku Host Name
-
-In settings.py scroll to ALLOWED_HOSTS and add the Heroku host name before the URL of your running CodeAnywhere project. This should be the Heroku app name created earlier followed by .herokuapp.com.
-`ALLOWED_HOSTS = ['heroku-app-name.herokuapp.com', '8000-githubusername-gitrepositoryname-abcde12fgh.us2.codeanyapp.com']`
-
-### Create the Process file
-
-1. Create the media, static and templates directories at the root level next to the manage.py file.
-2. At the root level again, create a new file called 'Procfile' with a capital 'P'. This tells Heroku how to run this project. In this file add the following code, including the name of your project directory. `web: gunicorn project_directory.wsgi:application`
-    * 'web' tells Heroku that this a process that should accept HTTP traffic.
-    * 'gunicorn' is the server used
-    * 'wsgi' stands for web services gateway interface and is a standard that allows Python services to integrate with web servers
-
-## First Deployment
-
-Make sure everything is saved and pushed to GitHub before continuing on.
-
-1. Go back to the Heroku dashboard and click on the 'deploy' tab.
-2. For deployment method, select 'GitHub' and search for the project's repository from the list.
-3. Select and then click on 'Deploy Branch'.
-4. When the build log is complete it should say that the app has been successfully deployed.
-5. Click on the 'Open App' button to view it and the Django “The install worked successfully!” page, should be displayed.
-
-## Amazon Web Services Setup
-
-[Amazon Web Services(AWS) S3](https://aws.amazon.com/) is a cloud-based storage service where we can store our static and media files. The following are the steps of how I set it up following a guide by one of CI's tutors. Please be aware that AWS might have updated their User Interface since these steps were written.  
-
-### Creating the S3 Bucket
-
-1. Navigate to [Amazon AWS](https://aws.amazon.com/) in the browser and login or create an account. Be aware that you will be asked to enter a credit card number which will be used for billing if you go above the free usage limits. Enter your details and billing information then select the basic support which is free and click on the 'Complete sign up' button. Head over to the AWS Management Console where you will be redirected to the sign in page.
-2. Sign in using the root user.  Enter your email and password.
-3. You will be directed to the Console Home. Navigate to S3 in the Services menu if you haven't accessed this service before.
-4. Open S3 and create a new bucket to store the media and static files.  To keep things organised give it the same name as the Heroku app name and select the region closest to you.
-5. In Object Ownership, select ACLs enabled and Bucket owner preferred.
-6. In Block Public Access, uncheck Block all public access and acknowledge that the bucket will be public if you want to allow public access to the static files. Click 'Create bucket'.
-7. Click the newly created bucket to set a few basic settings.  In the Properties tab, scroll down to Static website hosting, click 'Edit' and select Enable and Host a static website.
-8. Enter a default value in the Index document field and click the 'Save changes' button at the bottom right.
-9. In the Permissions tab, scroll down to the Cross-origin resource sharing (CORS) section and click the 'Edit' button. Paste in the following CORS configuration which will set up the required access with the Heroku app and save changes.
-
-    ```json
-    [
-        {
-            "AllowedHeaders": [
-                "Authorization"
-            ],
-            "AllowedMethods": [
-                "GET"
-            ],
-            "AllowedOrigins": [
-                "*"
-            ],
-            "ExposeHeaders": []
-        }
-    ]
-    ```
-
-10. Still in the Permissions tab, go to the Bucket Policy section and click 'Edit'.  Click on 'Policy generator' to create a security policy for this bucket.
-    * Select 'S3 Bucket Policy' for Type of Policy.
-    * Add a (*) star symbol in the Principal field to allow all principals.
-    * In the Actions dropdown select GetObject.
-    * Copy the ARN from the orignal tab and paste it in the ARN input box provided.
-    * Click 'Add Statement' then 'Generate Policy'.
-    * Copy the policy that opens up in the modal and paste it in the Bucket Policy Editor from the original tab.
-    * Add a slash star (/*) to the end of the Resource value in order to allow access to all resources in this bucket.
-    * Save changes
-11. To configure the bucket, go to the Access control list(ACL) section and select List for Everyone (public access). Accept the warning box and save changes.
-
-### Creating AWS Groups, Policies and Users
-
-1. In order to access the bucket, a user needs to be created through the Identity and Access Management Service (IAM). To open this, go back to the Services menu and click on IAM.  This will open the IAM Dashboard.
-2. First you need to create a group for the user to live in.  Click on User groups in the left side bar, then click the 'Create Group' button on the top right. Give the group a meaningful name like "manage-project-name", then scroll down to the bottom and click 'Create Group'.
-3. Next, create the policy used to access the bucket by clicking on Policy in the left side bar and then click the 'Create Policy' button. Click on the JSON tab and then on the 'Import managed policy' link.  This will open a modal.  Search for S3 and then select and import the "AmazonS3FullAccess" policy.
-4. In order to allow full access to the bucket and everything within it, you need to get the bucket ARN from the bucket policy page in s3. To do this, open S3 in a separate tab, navigate to the bucket, click on the Properties tab and copy the ARN from the Bucket overview section.
-5. Navigate back to the IAM Managment Console tab and paste in the ARN you just copied as the value of the key Resource.  Paste it again after a comma, adding the slash and star (/*) to add another rule for all files/folders in the bucket.
-
-    ```json
-    "Resource": [
-        "arn:aws:s3:::bucket-name",
-        "arn:aws:s3:::bucket-name/*"
-    ]
-    ```
-
-6. Now that you have all S3 actions allowed both on the bucket and everything within it, click on 'Next: Tags' and 'Next: Review'.  Give the policy a name, e.g. "bucket-name-policy" and a description - "Access to S3 bucket for project-name static files".  Then click the 'Create policy" button.  This will take you back to the policies page where you can see the policy that has just been created.
-7. To attach the policy to the group, click on User Groups in the left side bar, click on the group you just created and go to the Permissions tab.  Open the Add permissions dropdown and select 'Attach policies'. Select the policy and click the 'Add permissions' button at the bottom right.
-8. Finally, create a user to put in the group by clicking on Users in the left side bar and then the 'Add users' button at the top right.  Create a user named something like "project-name-staticfiles-user" and click 'Next'.
-9. In the Permissions options, select 'Add user to group' and the group you just created, then click the 'Next' button. Review and click the 'Create User' button.
-10. In order to get the access key and secret access key which you'll use to authenticate them from the Django app, click on the user and then on the Security Credentials tab.  Scroll down to Access Keys and click on 'Create access key'.  Choose 'Other' and click next.  Give your access key a description tag to facilitate rotating this access key confidentially later, e.g. project-name-django-app, and click 'Create access key'. You can now download the CSV file containing the users and secret access keys, which you will need to authenticate from the Django app.
-
-### Connecting Django to S3
-
-1. To connect Django to S3, you need to install boto3 `pip3 install boto3` and django-storages `pip3 install django-storages`.  Add to requirements and add `storages` to the INSTALLED_APPS in settings.py.
-2. Here you also need to add the following to tell Django which bucket it should be communicating with.  You only want to do this on Heroku so add an if statement and configure your bucket.
-
-   ```python
-   if 'USE_AWS' in os.environ:
-        #  Bucket Config
-        AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
-        AWS_S3_REGION_NAME = 'your-chosen-region'
-        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    ```
-
-3. Make sure to add the last two in your env.py file in order to keep them secret. You will find these in the CSV file you downloaded earlier.
-
-    ```python
-    os.environ["AWS_ACCESS_KEY_ID"] = "yourAccessKeyId"
-    os.environ["AWS_SECRET_ACCESS_KEY"] = "yourSecretAccessKey"
-    ```
-
-4. Add them to your Heroku config vars and include `USE_AWS` and set it to `True`. You can leave DISABLE_COLLECTSTATIC set to 1 in development but remember to remove it before final deployment so that Django will collect static files automatically and upload them to S3.
-5. Back in settings.py tell Django where the static files will be coming from in production. `AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'`
-6. To tell Django to send the uploaded product images to the S3 bucket in production, create a file at the root level - custom_storages.py - and create custom classes for static and media storage telling Django to get the location from settings.py.
-7. Define these locations in settings.py within the if statement created earlier. You also need to override and explicitly set the URLs for static and media files using your custom domain and the new locations.
-
-   ```python
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    ```
-
-8. When development is finished remember to remove the DISABLE_COLLECTSTATIC variable in Heroku so that when the project is deployed, it will run python3 manage.py collectstatic during the build process, which will search through all the apps and project folders for static files and it will use the S3 custom domain setting above in conjunction with the custom storage classes to find out the location of that URL where you want them to be saved.
-9. You can test this after pushing your code to GitHub and deploying on Heroku. If you go to S3, you will see a static folder in your bucket with all the static files in it.
-
-### S3 media folder upload
+[Back to Top](#table-of-contents)
 
 _____
 
-# Bugs
+## Features
 
-* Copying django-allauth templates
+[Back to Top](#table-of-contents)
+
+_____
+
+## Technologies Used
+
+This project was developed using the following languages, frameworks, libraries and dependencies:
+
+### Languages
+
+- [HTML5](https://www.w3schools.com/html/)
+- [CSS3](https://www.w3schools.com/css/css_intro.asp)
+- [Python 3.8.12](https://www.python.org/downloads/release/python-3812/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Frameworks & Dependencies
+
+- [Django 3.2.18](https://www.djangoproject.com/) - Free and open source Python Web Framework
+- [Gunicorn 20.1.0](https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku
+- [PostgreSQL 0.5.0](https://www.postgresql.org/) - A powerful, open-source object-relational database system
+- [Pyscopg2 2.9.5](https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python
+- [Stripe](https://stripe.com/) - Provides a secure and convenient way to handle online payments
+- [Amazon Web Services S3 Bucket](https://aws.amazon.com/s3/) - A cloud storage service which provides object storage, built for storing and recovering any amount of information or data from anywhere over the internet through a web services interface
+- [Heroku](https://www.heroku.com) - A cloud platform as a service
+- [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL database hosting service
+- [SQLite3](https://docs.python.org/3/library/sqlite3.html) - The database provided by Django
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration
+- [Bootstrap 4.6.2](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Provides a |crispy filter and {% crispy %} tag that helps control the rendering behavior of Django forms in a very elegant and DRY way
+- [Pillow](https://pypi.org/project/Pillow/) - A Python Imaging Library adds image processing capabilities to your Python interpreter
+
+### Tools
+
+- [Cloud Anywhere](https://codeanywhere.com/solutions/collaborate) - Online Cloud Editor Used
+- [GitHub](https://github.com/) - Cloud based git repository used
+- [W3C Validator](https://validator.w3.org/) - A validator which checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - A validator which checks the validity of CSS code
+- [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Highlights syntactical and stylistic problems in Python source code
+- [JShint](https://jshint.com/) - A JavaScript code quality tool
+- [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools
+- [Box Shadow Generator](https://cssgenerator.org/box-shadow-css-generator.html) - A box shadow generating tool
+- [Am I responsive](https://ui.dev/amiresponsive) - For responsive visuals of the website
+- [CanIUse](https://caniuse.com/) - Browser support tables for modern web technologies
+- [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size
+- [TinyURL](https://tinyurl.com/app/) - Shortens links
+- [Canva](https://www.canva.com/colors/color-palette-generator/) - Colour Palette Generator
+- [Google Fonts](https://fonts.google.com/) - Fonts
+- [Font Awesome](https://fontawesome.com/) - Icons
+- [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
+- [LucidChart](https://www.lucidchart.com/) - Entity Relationship Diagram
+- [BrowserStack](https://www.browserstack.com/) - App and Browser Testing
+
+[Back to Top](#table-of-contents)
+_____
+
+## Deployment
+
+All deployment information can be found in [DEPLOYMENT.md](DEPLOYMENT.md)
+
+[Back to Top](#table-of-contents)
+
+_____
+
+## Validation & Testing
+
+All validation & testing information can be found in [TESTING.md](TESTING.md).
+
+[Back to Top](#table-of-contents)
+_____
+
+## Bugs
+
+<details>
+<summary>Bugs encountered during Development</summary>
+<br>
+
+**Copying django-allauth templates**
 
 Problem: Using the `cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/` command to make a copy of the built-in allauth template directories was giving me `cp: cannot stat '../.pip-modules/lib/python3.8/site-packages/allauth/templates/*': No such file or directory`
 
 Solution: Found on a CI slack channel.  
 ![Copy django-allauth templates solution](docs/django-allauth-tempsol.png)
 
-* Sorting Products
+**Sorting Products**
 
 Problem: While testing the sort selector box functionality, it was noticed that products sorted by rating descending was displaying a new test product with 'No Rating' first.
 Expected behaviour: This product should be displayed last along with the other products with no rating.
@@ -309,7 +305,9 @@ Expected behaviour: This product should be displayed last along with the other p
 Solution: This new test product was logged into the database without a value in the Rating field while the other 'No Rating' products were saved with a value of '0.0'. The arguments for the rating field in the Product model are set to the following:
 `rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)`.  Since this new product test was stored with a NULL value it was not being counted as '0'. In order to avoid this from occurring again, the model field needs to be changed to either making the field required i.e. `blank=False` or set to `default=0.0`.
 
-* Database product deletion while in basket
+Note: One week before project submission, I realised that I completely ignored the sorting factor when it comes to rating after I added the reviews app.  I failed to connect the products.rating field with the reviews.rating field and I had to remove the Sort by Rating functionality.  In future versions I will need to make amends for this and make sure that the two are related together.
+
+**Database product deletion while in basket**
 
 Problem: In development, everytime I tried to run the server I was getting Error 404 Page not found on all the pages of the website including the admin.  Retracing my steps I figured that there might have been a test product still in the basket session when I deleted it from the database.  
 
@@ -328,7 +326,7 @@ Solution: Since I had no access to the Admin, I could not log out the user in or
 
 When I tried to run the page again, I was able to access all the pages and the basket was empty.
 
-* Integrity Error after checkout
+**Integrity Error after checkout**
 
 Problem: An IntegrityError was being thrown after checking out a Made to Order product.  `IntegrityError: new row for relation "products_product" violates check constraint "products_product_stock_check"
 DETAIL:  Failing row contains (23, vrtgw0006, Blue Vein Decanter, Patterns, Upcycled clear decanter, hand-painted with a blue and white veni..., Dimensions - 240 x 141mm; Capacity - 700ml; Total weight - 0.75k..., 14.00, 4.2, f, -3, glassware_blue-vein-decanter.jpg, 2).` The error shows that the stock was "-3" on this particular product.  This is because there were 3 ordered, and as the stock was already at 0, it was deducted to a negative value. The order still went through and the payment was successful on Stripe.  
@@ -348,7 +346,7 @@ Solution: The product stock deduction code in checkout/views.py was placed insid
                 product.save()
 ```
 
-* Product Stock Overflow Issue [Bug: Product stock #45](https://github.com/users/MoniPar/projects/8/views/1?pane=issue&itemId=29840462)
+**Product Stock Overflow Issue [Bug: Product stock #45](https://github.com/users/MoniPar/projects/8/views/1?pane=issue&itemId=29840462)**
 
 Customer can checkout an order on made to order products, however they can't checkout if they are trying to order more than what is currently in stock, even if they are within the 3 max limit on made to order.
 
@@ -362,7 +360,7 @@ Bug solved by adding another if statement in the quantity > product stock, check
 
 If the quantity - product stock has an overflow within or equal to the 3 max limit, then the order goes through and are just alerted to expect a slight delay.
 
-* Product Stock: Database altered before Order Success
+**Product Stock: Database altered before Order Success**
 
 While testing the previous issue, it was found that while iterating through the items in the basket, the product stock was being decremented from the database even when the customer was being redirected to the shopping basket and the order was incomplete.
 
@@ -372,7 +370,7 @@ The product stock in the database should only be altered after the customer has 
 Solution:
 It was decided to iterate through the products in the basket while checking the product stock against the quantity ordered. But instead of changing the information in the basket, the changes were saved in a list which was then iterated through (instead of the basket) when creating the line items.
 
-* Duplicate orders in Database
+**Duplicate orders in Database**
 
 While testing, it was noticed that some orders where being recorded twice in the database as well as on the Order History in the User's Profile page.  This wasn't the case with Stripe as only one payment intent was being created for each order.  Only one order confirmation email was being sent to the customer too.  
 
@@ -380,31 +378,14 @@ Expected behaviour:
 Only one order should be registered in the database and on the user's profile for each order made.
 
 Solution:
-With further testing, it was noticed that certain orders weren't being duplicated.  When investigating further, the duplicate orders issue was narrowed down to the user not filling in the 'Eircode' field in the checkout form.  This is not a required field and I had previously changed its label to say 'Postcode' rather than the Irish term 'Eircode' by using the 'label' attribute in the OrderForm(ModelForm).  This change must have created inconsistent personal details on orders.  Looking back in the webhook handler for handling payment intent succeeded, I was trying to get the `default_postal_code` from the profile rather than the `default_eircode`.  This was amended back to `default_eircode`, however this did not solve the issue.  What did eventually sort the issue was rather than using the 'label' attribute in the OrderForm(ModelForm), a labels dictionary was added to the `__init__` method. After testing again, whether filling in the post code field or not, orders were not being duplicated. 
-
-_____
-
-# Technologies
-
-This project was developed using the following languages, frameworks, libraries and dependencies:
-
-## Languages
-
-* [HTML5](https://www.w3schools.com/html/)
-* [CSS3](https://www.w3schools.com/css/css_intro.asp)
-* [Python 3.8.12](https://www.python.org/downloads/release/python-3812/)
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-## Frameworks & Dependencies
-
-* [Django 3.2.18](https://docs.djangoproject.com/en/3.2/)
+With further testing, it was noticed that certain orders weren't being duplicated.  When investigating further, the duplicate orders issue was narrowed down to the user not filling in the 'Eircode' field in the checkout form.  This is not a required field and I had previously changed its label to say 'Postcode' rather than the Irish term 'Eircode' by using the 'label' attribute in the OrderForm(ModelForm).  This change must have created inconsistent personal details on orders.  Looking back in the webhook handler for handling payment intent succeeded, I was trying to get the `default_postal_code` from the profile rather than the `default_eircode`.  This was amended back to `default_eircode`, however this did not solve the issue.  What did eventually sort the issue was rather than using the 'label' attribute in the OrderForm(ModelForm), a labels dictionary was added to the `__init__` method. After testing again, whether filling in the post code field or not, orders were not being duplicated.
 
 [Back to Top](#table-of-contents)
 _____
 
-# Credits
+## Credits
 
-## Media 
+### Media
 
 Vera Vinita Schembri for allowing me to use images from her collection for 
 the purpose of this ecommerce store
@@ -412,11 +393,7 @@ the purpose of this ecommerce store
 Austen Donohoe for the designing the Vera's Reclaimed Treasures Logo and the 
 hero images for the Home and Contact Pages.
 
-Photo by Digital Buggu: <https://www.pexels.com/photo/three-multicolored-floral-table-lamps-turned-on-186844/>
-
-Photo by Anna Shvets: <https://www.pexels.com/photo/unrecognizable-painter-mixing-colors-on-paper-5641842/>
-
-## Code
+### Code
 
 The following walkthroughs helped me get my project in shape. I have adapted the code in these walkthroughs for the needs of my project.
 
@@ -424,11 +401,17 @@ The following walkthroughs helped me get my project in shape. I have adapted the
 
 * [Django Tutorial: A simple contact form](https://www.youtube.com/watch?v=1ihn3iRXtsY)
 
-
 [BobbyHadz.com - TypeError - Sequence item 0: expected str instance, NoneType found](https://bobbyhadz.com/blog/python-typeerror-sequence-item-0-expected-str-instance-list-found#sequence-item-0-expected-str-instance-nonetype-found)
 
 [How to reduce stock quantity when an order is made](https://stackoverflow.com/questions/65216808/django-how-to-reduce-stock-quantity-when-an-order-is-made)
 
 [How to force a user to logout](https://stackoverflow.com/questions/953879/how-to-force-a-user-logout-in-django)
 
+[Back to Top](#table-of-contents)
 _____
+
+### Acknowledgements
+
+[Back to Top](#table-of-contents)
+
+____
