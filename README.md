@@ -24,7 +24,10 @@ _____
     - [Website Main Goals](#website-main-goals)
   - [User Experience](#user-experience)
     - [User Stories](#user-stories)
-  - [User Interface](#user-interface)
+    - [Project \& Database Structure](#project--database-structure)
+      - [Data Models](#data-models)
+    - [Wireframes \& Design Choices](#wireframes--design-choices)
+  - [Agile Methodology](#agile-methodology)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
@@ -158,7 +161,7 @@ This section aims to determine what a user would expect from interacting with th
 
 From User/Customer perspective:
 
-- [#7](https://github.com/MoniPar/reclaimed-treasures/issues/7) As a user, I can register an account, so that I have access to other features of the website.
+- [#7](https://github.com/MoniPar/reclaimed-treasures/issues/7) As a user, I can register for an account, so that I have access to other features of the website.
 - [#8](https://github.com/MoniPar/reclaimed-treasures/issues/8) As a user, I can check my emails for a registration confirmation email, so that I can verify that my registration was successful.
 - [#9](https://github.com/MoniPar/reclaimed-treasures/issues/9) As a User, I can login and logout from my account, so that I can access my account's information and keep my information secure.
 - [#10](https://github.com/MoniPar/reclaimed-treasures/issues/10) As a User, I can reset my password, so that I can recover access to my account if I forget my password.
@@ -166,19 +169,19 @@ From User/Customer perspective:
 - [#12](https://github.com/MoniPar/reclaimed-treasures/issues/12) As a User, I can view the logo and the links in the navigation bar, so that I can easily navigate to other pages of the site.
 - [#13](https://github.com/MoniPar/reclaimed-treasures/issues/13) As a User, I can access contact details, social and developer links across all pages, so that I can follow/contact the business owner and the website creator.
 - [#15](https://github.com/MoniPar/reclaimed-treasures/issues/15) As a User, I can find out more about the artist/business owner, so that I can decide if I want to deal with them or not.
-- [#17](https://github.com/MoniPar/reclaimed-treasures/issues/17) As a User, I can quickly write a message to the business owner using the contact form, so that I can query a commission or give feedback.
+- [#17](https://github.com/MoniPar/reclaimed-treasures/issues/17) As a User, I can quickly write a message to the business owner using the contact form, so that I can ask questions or give feedback.
 - [#18](https://github.com/MoniPar/reclaimed-treasures/issues/18) As a User, I can sign up to the newsletter, so that I keep updated on the latest products, offers and pop up stalls.
 - [#19](https://github.com/MoniPar/reclaimed-treasures/issues/19) As a User, I can connect with my social media account, so that I can easily create an account.
 - [#24](https://github.com/MoniPar/reclaimed-treasures/issues/24) As a Customer, I can view a list of products, so that I can select some to purchase.
-- [#25](https://github.com/MoniPar/reclaimed-treasures/issues/25) As a Customer, I can view individual product details, so that I can identify more details about the product.
+- [#25](https://github.com/MoniPar/reclaimed-treasures/issues/25) As a Customer, I can view individual product details, so that I can identify more information about the product.
 - [#26](https://github.com/MoniPar/reclaimed-treasures/issues/26) As a Customer, I can search for a specific product or view a category of products, so that I can quickly find products I'm interested in.
 - [#27](https://github.com/MoniPar/reclaimed-treasures/issues/27) As a Customer, I can sort the list of available products, so that I can easily identify the best rated and best priced categorically sorted products.
 - [#29](https://github.com/MoniPar/reclaimed-treasures/issues/29) As a customer, I can access my basket, so that I can review items before I purchase them.
 - [#31](https://github.com/MoniPar/reclaimed-treasures/issues/31) As a customer, I can add items and identify their total cost in the basket, so that I know how much I'm spending.
-- [#33](https://github.com/MoniPar/reclaimed-treasures/issues/33) As a Customer, I can update the quantity of each item in my basket, so that I can easily make changes to my purchase before checkout.
+- [#33](https://github.com/MoniPar/reclaimed-treasures/issues/33) As a Customer, I can update the quantity of each item in my basket, so that I can easily make changes to my order before checkout.
 - [#34](https://github.com/MoniPar/reclaimed-treasures/issues/34) As a User, I can see real-time notifications as I interact with the website, so that I can have a better experience.
 - [#36](https://github.com/MoniPar/reclaimed-treasures/issues/36) As a Customer, I can confirm my items and total cost in the checkout page, so that I can continue to enter the required information to complete my order.
-- [#38](https://github.com/MoniPar/reclaimed-treasures/issues/38) As a Customer, I can easily enter my payment information, so that I can checkout quickly and with no hassles.
+- [#38](https://github.com/MoniPar/reclaimed-treasures/issues/38) As a Customer, I can easily enter my payment information, so that I can checkout quickly and efficiently.
 - [#39](https://github.com/MoniPar/reclaimed-treasures/issues/39) As a Customer, I can view an order confirmation after checkout, so that I can confirm that my order was successful.
 - [#42](https://github.com/MoniPar/reclaimed-treasures/issues/42) As a Customer, I can have a personalised user profile, so that I can save my payment info and view my order history and confirmations.
 - [#43](https://github.com/MoniPar/reclaimed-treasures/issues/43) As a Customer, I can edit personal information on my profile, so that I can use the correct details when processing future orders.
@@ -186,30 +189,283 @@ From User/Customer perspective:
 - [#46](https://github.com/MoniPar/reclaimed-treasures/issues/46) As a Customer, I can check products' ratings and reviews and submit my own, so that I can make up my mind if I want to purchase the product and provide feedback on products purchased.
 - [#48](https://github.com/MoniPar/reclaimed-treasures/issues/48) As a Customer, I can edit and delete my reviews, so that I have the ability to correct any mistakes I make.
 - [#47](https://github.com/MoniPar/reclaimed-treasures/issues/47) As a User, I can navigate to the About page, so that I can learn more about the shop owner.
-- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I don't have to scroll back up through all the products in order to access the links at the top of the page.
+- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I can easily access other parts of the website.
 
 The following User Stories were used to implement features which make the website run more smoothly and give the user a better experience using the website.  Some are made from the Business owner's or Developer's perspective.  Stories concerned with setting up and other developer tasks were left out from this list. Due to time lost with Code Anywhere technical issues, it was decided to leave the Product Management Interface and the Featured Products on Home page out. These were placed in the backlog for future iterations.
-- []
--	#16 Featured Products
--	#21 Add product via UI
--	#22 Update product via UI
--	#23 Delete product via UI
--	#32 Quantity Selector
--	#40 Stripe webhooks
--	#41 Product Stock
--	#50 Social Media Marketing
--	#51 SEO Implementations
--	#55 Error Pages
 
+- [#14](https://github.com/MoniPar/reclaimed-treasures/issues/14) As a business owner, I can have a banner with a CTA clearly visible on the landing page, so that users are encouraged to access the shop and view/buy products.
+- [#16](https://github.com/MoniPar/reclaimed-treasures/issues/16) As a business owner, I can choose which products to feature on the landing page, so that users are encouraged to check them out.
+- [#21](https://github.com/MoniPar/reclaimed-treasures/issues/21) As a store owner, I can add a product, so that I can add new items to my store.
+- [#22](https://github.com/MoniPar/reclaimed-treasures/issues/22) As a store owner, I can edit/update a product, so that I can change the product price, description, image and other product criteria.
+- [#23](https://github.com/MoniPar/reclaimed-treasures/issues/23) As a store owner, I can delete a product, so that remove items that are no longer on sale.
+- [#32](https://github.com/MoniPar/reclaimed-treasures/issues/32) As a developer, I can add functionality with the plus (+) and minus (-) buttons to the quantity selector, so that the user has a better experience adding products to their basket on mobile.
+- [#40](https://github.com/MoniPar/reclaimed-treasures/issues/40) As a Developer, I can make sure that customers can confidently provide the information required safely and securely, so that they can have a positive experience on the site.
+- [#41](https://github.com/MoniPar/reclaimed-treasures/issues/41) As a Developer, I can decrement stock on payment success, so that I can add functionality when item becomes out of stock.
+- [#50](https://github.com/MoniPar/reclaimed-treasures/issues/50) As a Business Owner, I can have my Business Facebook page linked with my website, so that I can connect and interact with my customers directly and potentially extend my reach through posts and other content creation.
+- [#51](https://github.com/MoniPar/reclaimed-treasures/issues/51) As a Developer, I can add metadata, a sitemap and robots.txt file, so that the website can be found and ranked by search engines.
+- [#55](https://github.com/MoniPar/reclaimed-treasures/issues/55) As a Developer, I can build custom error pages, so that the user remains on the site and has a way to get back to the homepage or access navigation.
 
 [Back to Top](#table-of-contents)
 
 _____
 
-## User Interface
+### Project & Database Structure
+
+Utilising the Django Framework, the project is divided into specific apps handling the different features of the website. The Project directory contains the different folders for these apps as well as a templates folder where the Allauth Authentication folders, the base templates and error pages templates live. It also contains a media folder for the product images and all other images on the website and a static directory which serves as a central location for storing static assets used throughout the project.
+
+The base template holds all the necessary <head> elements including the meta tags, title, links to stylesheets and scripts etc.  It also holds the Navigation, Footer and Messages/Toasts Code. All other apps' templates are extended from the base template.
+
+The Main Project app holds the project's configuration file (settings.py) as well as the main URLs and the views for the error pages.  Each of the apps described below also contains its own views and URLs files.
+
+The Home App includes the content of the Home Page as well as that of the About Page.  Like most of the other apps mentioned below it also contains its own static folder and stylesheet specific to the app's added styles.
+
+The Products App includes the Shop Page and Product Detail functionality.  This is mostly based on the Boutique Ado walkthrough, with added features such as product stock & product availability.  The increment button on the product detail page has been amended to increment item quantity only up to 10 on products in stock, as Vera's inventory is quite small.   On Made to Order products, the increment button only goes up to 3.  This is to make sure that Vera doesn't get a large order of products that are not ready to be shipped.  The product availability was also added so that Vera can decide if she wants to replenish her stock before setting the product up as Made to Order, as some of her products take time to prepare and others depend on the availability of recycled materials.
+
+The Review App includes a custom model for Reviews.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they haven't yet purchased them.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.  
+
+The Basket App includes the functionality for the basket.  Once again this is based on the Boutique Ado project with the added functionality on the increment button mentioned in the Product App paragraph above.  Users can update the quantity of items in their basket or delete them if they change their mind.  They can also see a subtotal and a total for their order on the page and under the basket icon in the navigation.
+
+The Checkout App includes the functionality to handle the payment form.  Before the user gets to the checkout form page, I added a final check on the quantity of each product in their basket to make sure that there isn't an overflow greater than the limit of 3 items on products that were not marked as Made to Order.  Again, this is to ensure that Vera doesn't get a large order of products that are not readily available for shipping.  Upon form validation and successful payment intent, the user is directed to the checkout success page where they can see details of their order.  This is when the product stock is decremented in the database and the products are set to Made to Order if the stock is 0.
+
+The Contact App handles the Contact form functionality, where users can easily submit their queries or suggestions.  This is set so that Vera receives an email directly to her business email account in order to facilitate fast action.  Once the form is submitted, the user is directed to a thank you page.
+
+#### Data Models
+
+Models define the source of the data stored.  Each model contains the essential fields and behaviours of the data being stored. The image below shows this project's Data Schema and the relationships between the models.
+
+<details>
+<summary>Database Schema</summary>
+<br>
+
+![Initial Database Schema](docs/data-schema.png)
+
+</details>
+
+The shaded tables are the custom models created for this project. These include the Review Model stored in the Review App and the Contact Model stored in the Contact App as mentioned above.  
+
+The Review Model has a one-to-many relationship with the Product Model and a Many-to-One relationship with User.  It stores the rating for each product, the comments and submission dates of reviews made by registered users.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they haven't yet purchased them.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.
+
+The Contact Model has changed a little since the design of the Database Schema.  Extra fields were added to provide more information.  The Subject Field as a choice field, helps Vera quickly assess which submissions require more urgent action.  The date of submission and the actioned fields were also added to this effect.
+  
+The Product Model was customised to include:
+
+- A field for additional information, this includes the weight and size of the product as well as the care information of certain products.  
+- A theme field, added to be able to categorise the products by the type of designs they display.  This would be helpful for commissions users might request.  
+- A stock field, which adds functionality to this model.  This is set to display the number of items left in the inventory.  Once the number of items in the inventory is decremented to 0, the Made to Order text is displayed and the customer is only allowed to order a limited quantity of that particular product per order.  
+- An available field displays a checkbox in the admin, which if unchecked would display a disabled button on the product detail page instead of the increment and decrement buttons.  This would stop the user from being able to purchase the product giving Vera time to replenish her stock and/or source the recycled materials needed.  
+- Finally an image thumbnail field was added in order to be able to add smaller versions of the product images to help the shop page load faster.
+
+Unfortunately, due to time restrictions the rating field on this model isn't doing anything at the moment.  In future iterations, I would like to save the data from the review rating field in here so that the products can be sorted by their average ratings as well.  
+
+### Wireframes & Design Choices
+
+Wireframes were first roughly sketched with pen and paper.  This method helped me with brainstorming, deciding the most essential parts for the website and getting a feel for the website as a whole.  They were then wireframed in [balsamiq](https://balsamiq.com/wireframes) to give a closer indication of the design.  Through the design phase some elements as well as the colour palette were changed to allow for a better user experience.
+
+![Wireframes]()
+
+**Colour Scheme**
+
+[Coolors]( https://coolors.co/) was used to generate a colour palette for the website.  Since Vera's Reclaimed Treasures is an eco-friendly business, it was decided to use emerald green for the logo and the buttons.  The rest of the colours were created from the Home Page Hero image using Coolors Image picker.  
+
+![Colour Palette](docs/palette_bright.png)
+
+Giants orange created a great contrast against the dark overlay on the background images.
+Eggplant was used for the delivery banner to create more contrast against the white navigation.
+Mulberry colour was used as a hover effect on the main navigation links.  A very low opacity of this colour was also used as a background colour through out all the site.
+
+**Typography**
+
+[Google Fonts]( https://fonts.google.com/) Amaranth was used as the heading's font for the website. This font has some distinctive curves which makes it ideal for headings while still easy to read.  Poppins, a geometric sans-serif font was used as the main font of the website.  Roboto mono was used in the order summary to mimic a printed receipt.
+
+**Icons**
+
+[Font Awesome](https://fontawesome.com) icons are used throughout the site.  The Social Media icons on the Footer and the Contact page are interactive links and have an aria-label which gives the relevant information to screen readers.   The icons on the product cards also have an aria-label as well as a tooltip explaining what the icon is meant to convey.  Other icons on the site are used for decorative purposes only and so they are set up so that they are not read by screen readers.
 
 [Back to Top](#table-of-contents)
+_____
 
+## Agile Methodology
+
+Agile Methodology was used during the development of this project.  This was my second time using this methodology and I took a slightly different approach to it.  During the planning of the project, the main user stories were recorded in a document.  The relevant user stories were then added in [GitHub Issues](https://github.com/MoniPar/reclaimed-treasures/issues) at each phase of development. They were labelled with User Story Points and MoSCoW prioritisation and assigned to an Epic/Milestone.  At the start of development, I used individual Epics/Milestones as my Sprints. Some User Stories were started but could not be completed within the Sprint Cycle they were assigned to, so they were placed in the backlog to be tackled again at a later stage.  As the project progressed further and more User Stories were created, my Sprints became a mixture of User Stories from different Epics/Milestones.
+
+**Epics/Milestones**
+
+In total 10 Epics were created during the development of this project. These were recorded in [GitHub Project Milestones](https://github.com/MoniPar/reclaimed-treasures/milestones). In hindsight, the Epics 'Product Management' and 'Product Viewing & Navigation' should have been amalgamated into one.  'Product Management' mostly had stories that were not necessary for the MVP of this project and did not get to be implemented before submission.
+
+**Sprints**
+
+This project was completed in 9 sprints.  The first 3 sprints were completed in the first week while each of the other sprints took about a week to complete.  
+
+<details>
+<summary>First Sprint Screenshot</summary>
+<br>
+
+![First Sprint](docs/agile/sprint-1.png)
+
+</details>
+
+The first sprint tackled the Initial Setup Epic and involved getting the development environment setup and the relevant packages installed. I decided to get the project ready for deployment at this early stage, so Heroku and the production database were configured and setup during this sprint.  Since this was done relatively fast, I also used the time to start setting up the S3 bucket.  The AWS Bucket Setup story was then placed in the backlog to be completed at a later stage.
+
+Completed User Stories:
+
+- [#1 Installation](https://github.com/MoniPar/reclaimed-treasures/issues/1)
+- [#2 Create the Django project and first app](https://github.com/MoniPar/reclaimed-treasures/issues/2)
+- [#3 Create the Heroku app and external PostgreSQL database](https://github.com/MoniPar/reclaimed-treasures/issues/3)
+- [#5 Preparation and first deployment](https://github.com/MoniPar/reclaimed-treasures/issues/5)
+- [#6 Admin Panel Access](https://github.com/MoniPar/reclaimed-treasures/issues/6)
+
+<details>
+<summary>Second Sprint screenshot</summary>
+<br>
+
+![Second Sprint](docs/agile/sprint-2.png)
+
+</details>
+
+The second sprint tackled the User Registration & Authorisation Epic and  involved setting up Django Allauth functionality. While shorter than the first sprint, this took a bit longer than expected as I ran into some issues while copying the templates.  The Password Reset story was placed into the backlog as one of the tasks needed testing in production.
+
+Completed User Stories:
+
+- [#7 Registration](https://github.com/MoniPar/reclaimed-treasures/issues/7)
+- [#8 Registration Confirmation Email](https://github.com/MoniPar/reclaimed-treasures/issues/8)
+- [#9 Login & Logout](https://github.com/MoniPar/reclaimed-treasures/issues/9)
+
+<details>
+<summary>Third Sprint screenshots</summary>
+<br>
+
+![Third Sprint](docs/agile/sprint-3.png)
+
+</details>
+
+The third sprint tackled the Landing Page and Navigation Epic and involved creating the skeleton structure for the front-end and implementing the main navigation functionality. The Newsletter story in the image above is marked as a Must.  This was a mistake on my part as my plan was to have it in the footer which should have been marked as Must instead. The Newsletter story was not tackled in this sprint.
+
+Completed User Stories:
+
+- [#11 Home Page](https://github.com/MoniPar/reclaimed-treasures/issues/11)
+- [#12 Navigation](https://github.com/MoniPar/reclaimed-treasures/issues/12)
+- [#13 Footer](https://github.com/MoniPar/reclaimed-treasures/issues/13)
+- [#14 Call to Action](https://github.com/MoniPar/reclaimed-treasures/issues/14)
+
+<details>
+<summary>Fourth Sprint screenshot</summary>
+<br>
+
+![Fourth Sprint](docs/agile/sprint-4.png)
+
+</details>
+
+The Fourth sprint tackled one user story from the Product Management Epic and the Product Viewing and Navigation Epic and consisted of setting up and getting the online shop running.  This was a much longer sprint than the others before it but I got it completed within the week as intended. 
+
+Completed User Stories:
+
+- [#20 Setting up the online shop](https://github.com/MoniPar/reclaimed-treasures/issues/20)
+- [#24 View Products](https://github.com/MoniPar/reclaimed-treasures/issues/24)
+- [#25 View Product Detail](https://github.com/MoniPar/reclaimed-treasures/issues/25)
+- [#26 Search and Filter Products](https://github.com/MoniPar/reclaimed-treasures/issues/26)
+- [#27 Sort Products](https://github.com/MoniPar/reclaimed-treasures/issues/27)
+
+<details>
+<summary>Fifth Sprint screenshot</summary>
+<br>
+
+![Fifth Sprint](docs/agile/sprint-5.png)
+
+</details>
+
+The Fifth sprint tackled the Shopping Basket Epic and involved creating the shopping basket functionality including toast messages.  Again this was a longer sprint but the number of story points within this sprint seemed optimal.
+
+Completed User Stories:
+
+- [#29 Basket Access](https://github.com/MoniPar/reclaimed-treasures/issues/29)
+- [#30 Context Processor](https://github.com/MoniPar/reclaimed-treasures/issues/30)
+- [#31 Add items & total cost](https://github.com/MoniPar/reclaimed-treasures/issues/31)
+- [#32 Quantity Selector](https://github.com/MoniPar/reclaimed-treasures/issues/32)
+- [#33 Updating and Removing Items](https://github.com/MoniPar/reclaimed-treasures/issues/33)
+- [#34 Toasts](https://github.com/MoniPar/reclaimed-treasures/issues/34)
+
+<details>
+<summary>Sixth Sprint screenshot</summary>
+<br>
+
+![Sixth Sprint](docs/agile/sprint-6.png)
+
+</details>
+
+The Sixth sprint tackled the Checkout Epic and involved creating the functionality for the checkout including the implementation of secure payments via the Stipe API.
+
+Completed User Stories:
+
+- [#35 Checkout App](https://github.com/MoniPar/reclaimed-treasures/issues/35)
+- [#36 Checkout Page](https://github.com/MoniPar/reclaimed-treasures/issues/36)
+- [#37 Setup Stripe Card Element](https://github.com/MoniPar/reclaimed-treasures/issues/37)
+- [#38 Payment System Basic Functionality](https://github.com/MoniPar/reclaimed-treasures/issues/38)
+- [#39 Checkout Success Logic](https://github.com/MoniPar/reclaimed-treasures/issues/39)
+- [#40 Stripe Webhooks](https://github.com/MoniPar/reclaimed-treasures/issues/40)
+
+<details>
+<summary>Seventh Sprint screenshot</summary>
+<br>
+
+![Seventh Sprint](docs/agile/sprint-7.png)
+
+</details>
+
+The Seventh sprint continued tackling the Checkout Epic and the User Profile Epic.  In this sprint I started adding the functionality for decrementing the product stock from the inventory on which I spent the majority of the time.  While working on that user story, I quickly came to realise that it needed a lot more work than I had anticipated.  In hindsight, I should have divided it into a few more user stories, which would have included updating the functionality of the increment button on the product detail page and the basket page.  The story points for the Product Stock user story were not indicative of the work I spent on it.
+
+Completed User Stories:
+
+- [#41 Product Stock](https://github.com/MoniPar/reclaimed-treasures/issues/41)
+- [#42 User Profile](https://github.com/MoniPar/reclaimed-treasures/issues/42)
+- [#43 Update User Profile](https://github.com/MoniPar/reclaimed-treasures/issues/43)
+- [#44 Email Confirmation](https://github.com/MoniPar/reclaimed-treasures/issues/44)
+
+<details>
+<summary>Eighth Sprint Screenshots</summary>
+<br>
+
+![Eight Sprint](docs/agile/sprint-8t.png)
+
+<br>
+
+![Eight Sprint](docs/agile/sprint-8.png)
+
+</details>
+
+The Eight sprint was originally set to tackle the 4 user stories from different Epics (displayed in the image above) as well as a bug I found while testing the product stock functionality.  Another user story was created for the product review functionality which was added to this sprint as displayed in the second image above.
+
+With this sprint completed the project was deployed again this time with the media files in the S3 bucket.
+
+Completed User Stories:
+
+- [#17 Contact Form](https://github.com/MoniPar/reclaimed-treasures/issues/17)
+- [#18 Newsletter](https://github.com/MoniPar/reclaimed-treasures/issues/18)
+- [#46 Product Review](https://github.com/MoniPar/reclaimed-treasures/issues/46)
+- [#48 Product Review – Edit & Delete](https://github.com/MoniPar/reclaimed-treasures/issues/48)
+- [#47 About Page](https://github.com/MoniPar/reclaimed-treasures/issues/47)
+- [#4 AWS Bucket Setup](https://github.com/MoniPar/reclaimed-treasures/issues/4)
+
+<details>
+<summary>Ninth Sprint screenshot</summary>
+<br>
+
+![Ninth Sprint](docs/agile/sprint-9.png)
+
+</details>
+
+The Ninth sprint mainly tackled the SEO and Web Marketing Epic and included some bugs I found while testing the deployed site. The Back to Top button user story was deemed unnecessary since the navigation was always fixed at the top, so it was placed in the backlog for future iterations.
+
+Completed User Stories:
+
+- [#51 SEO Implementations](https://github.com/MoniPar/reclaimed-treasures/issues/51)
+- [#50 Social Media Marketing](https://github.com/MoniPar/reclaimed-treasures/issues/50)
+- [#10 Password Reset](https://github.com/MoniPar/reclaimed-treasures/issues/10)
+
+**Final Thoughts on Agile**
+
+Although there is still a lot of room for improvement when it comes to adopting this methodology to its full extent, I still feel that it helped a lot in keeping me focussed on the priorities of the MVP project.  Even though I didn't set any due dates for my sprints, I found that it helped me get into a good rhythm of planning -> coding -> testing -> planning cycle.
+
+[Back to Top](#table-of-contents)
 _____
 
 ## Features
@@ -259,11 +515,14 @@ This project was developed using the following languages, frameworks, libraries 
 - [CanIUse](https://caniuse.com/) - Browser support tables for modern web technologies
 - [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size
 - [TinyURL](https://tinyurl.com/app/) - Shortens links
-- [Canva](https://www.canva.com/colors/color-palette-generator/) - Colour Palette Generator
+- [Coolors](https://coolors.co/) - Colour Palette Generator
 - [Google Fonts](https://fonts.google.com/) - Fonts
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
-- [LucidChart](https://www.lucidchart.com/) - Entity Relationship Diagram
+- [Google Drawings](https://docs.google.com/drawings) - Data Schema Tables
+- [XML Sitemaps](https://www.xml-sitemaps.com/) - Sitemap Generator
+- [Word Tracker](https://www.wordtracker.com/) - Keyword Research
+- [Privacy Policy](https://www.privacypolicygenerator.info/) - Privacy Policy Generator
 - [BrowserStack](https://www.browserstack.com/) - App and Browser Testing
 
 [Back to Top](#table-of-contents)
