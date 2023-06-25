@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
+from django.db.models import Avg
 from django.db.models import Q
 from .models import Product, Category
 
@@ -10,6 +11,7 @@ def shop(request):
     A view to show all products
     """
     products = Product.objects.all()
+    products = products.annotate(avgrating=Avg('reviews__rating'))
     query = None
     categories = None
     sort = None

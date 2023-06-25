@@ -45,9 +45,9 @@
                                 </option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)
                                 </option>
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)
+                                <option value="avgrating_asc" {% if current_sorting == 'avgrating_asc' %}selected{% endif %}>Rating (low to high)
                                 </option>
-                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)
+                                <option value="avgrating_desc" {% if current_sorting == 'avgrating_desc' %}selected{% endif %}>Rating (high to low)
                                 </option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
@@ -105,10 +105,10 @@
                                                 </p>
                                                 {% endif %}
                                             </div>
-                                            {% if product.average_rating > 0 %}
+                                            {% if product.avgrating %}
                                             <small class="text-muted">
                                                 <i class="fa-regular fa-star mr-1" title="Rating" aria-hidden="true"></i>
-                                                <span class="sr-only">Rating</span>{{ product.average_rating|floatformat:1 }} / 5
+                                                <span class="sr-only">Rating</span>{{ product.avgrating|floatformat:1 }} / 5
                                             </small>
                                             {% else %}
                                             <small class="text-muted">No rating</small>
