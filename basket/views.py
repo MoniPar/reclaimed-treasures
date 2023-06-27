@@ -29,12 +29,12 @@ def add_to_basket(request, item_id):
     if item_id in list(basket.keys()):
         basket[item_id] += quantity
         messages.success(request,
-                         f'You now have {basket[item_id]} of {product.name}'
-                         ' in your basket.')
+                         f"You now have {basket[item_id]} of {product.name}"
+                         " in your basket.")
     else:
         basket[item_id] = quantity
         messages.success(request,
-                         f'{product.name} has been added to your basket!')
+                         f"{product.name} has been added to your basket!")
 
     # Override the variable in the session with the updated version
     request.session['basket'] = basket
@@ -50,15 +50,23 @@ def update_basket(request, item_id):
     quantity = int(request.POST.get('quantity') or 0)
     basket = request.session.get('basket', {})
 
-    if quantity > 0:
+    if quantity > 10:
+        messages.error(request, "You can only order up to 10 items per "
+                                "product! Please adjust your quantity on "
+                                f"{product.name}")
+    elif (product.stock == 0) and (quantity > 3):
+        messages.error(request, "You can only order up to 3 items on "
+                                "Made to Order products! Please adjust your "
+                                f"quantity on {product.name}")
+    elif quantity > 0:
         basket[item_id] = quantity
         messages.success(request,
-                         f'You now have {basket[item_id]} of {product.name}'
-                         ' in your basket')
+                         f"You now have {basket[item_id]} of {product.name}"
+                         " in your basket")
     else:
         basket.pop(item_id)
         messages.success(request,
-                         f'{product.name} has been removed from your basket!')
+                         f"{product.name} has been removed from your basket!")
 
     request.session['basket'] = basket
     return redirect(reverse('shopping_basket'))
@@ -74,8 +82,8 @@ def remove_from_basket(request, item_id):
 
         basket.pop(item_id)
         messages.success(request,
-                         f'{product.name} was successfully removed'
-                         ' from your basket!')
+                         f"{product.name} was successfully removed"
+                         " from your basket!")
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
