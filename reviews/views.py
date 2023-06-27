@@ -73,7 +73,6 @@ def edit_review(request, review_id):
 
     if review.rated_by != request.user:
         raise PermissionDenied()
-        return handler403
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -109,7 +108,6 @@ def delete_review(request, review_id):
 
     if request.user != review.rated_by:
         raise PermissionDenied()
-        return handler403
 
     if request.method == 'POST':
 
