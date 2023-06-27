@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
-from django.db.models import Avg
-from django.db.models import Q
+from django.db.models import Q, Avg, F
 from .models import Product, Category
 
 
@@ -26,11 +25,14 @@ def shop(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
+            order_logic = sortkey
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+                    order_logic = F(sortkey).desc(nulls_last=True)
+                else:
+                    order_logic = F(sortkey).asc(nulls_first=True)
+            products = products.order_by(order_logic)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
