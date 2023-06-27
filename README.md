@@ -136,7 +136,7 @@ For the site owner:
 - To be able to easily mark products as not available.
 - To be able to add new products to the inventory through the admin panel.
 - To be able to quickly respond to customer queries.
-- To be able to improve her product selection through customers’ orders and feedback. 
+- To be able to improve her product selection through customers’ orders and feedback.
 
 For the user/customer:
 
@@ -163,44 +163,55 @@ From User/Customer perspective:
 
 - [#7](https://github.com/MoniPar/reclaimed-treasures/issues/7) As a user, I can register for an account, so that I have access to other features of the website.
 - [#8](https://github.com/MoniPar/reclaimed-treasures/issues/8) As a user, I can check my emails for a registration confirmation email, so that I can verify that my registration was successful.
-- [#9](https://github.com/MoniPar/reclaimed-treasures/issues/9) As a User, I can login and logout from my account, so that I can access my account's information and keep my information secure.
-- [#10](https://github.com/MoniPar/reclaimed-treasures/issues/10) As a User, I can reset my password, so that I can recover access to my account if I forget my password.
+- [#9](https://github.com/MoniPar/reclaimed-treasures/issues/9) As a Registered User, I can login and logout from my account, so that I can access my account's information and keep my information secure.
+- [#10](https://github.com/MoniPar/reclaimed-treasures/issues/10) As a Registered User, I can reset my password, so that I can recover access to my account if I forget my password.
+  
 - [#11](https://github.com/MoniPar/reclaimed-treasures/issues/11) As a User, I can land on the homepage of the site, so that I can learn more about the business and the types of products they sell.
 - [#12](https://github.com/MoniPar/reclaimed-treasures/issues/12) As a User, I can view the logo and the links in the navigation bar, so that I can easily navigate to other pages of the site.
 - [#13](https://github.com/MoniPar/reclaimed-treasures/issues/13) As a User, I can access contact details, social and developer links across all pages, so that I can follow/contact the business owner and the website creator.
-- [#15](https://github.com/MoniPar/reclaimed-treasures/issues/15) As a User, I can find out more about the artist/business owner, so that I can decide if I want to deal with them or not.
+- [#15](https://github.com/MoniPar/reclaimed-treasures/issues/15) As a User, I can learn more about the business, so that I can decide if I want to purchase from them or not.
 - [#17](https://github.com/MoniPar/reclaimed-treasures/issues/17) As a User, I can quickly write a message to the business owner using the contact form, so that I can ask questions or give feedback.
 - [#18](https://github.com/MoniPar/reclaimed-treasures/issues/18) As a User, I can sign up to the newsletter, so that I keep updated on the latest products, offers and pop up stalls.
-- [#19](https://github.com/MoniPar/reclaimed-treasures/issues/19) As a User, I can connect with my social media account, so that I can easily create an account.
-- [#24](https://github.com/MoniPar/reclaimed-treasures/issues/24) As a Customer, I can view a list of products, so that I can select some to purchase.
-- [#25](https://github.com/MoniPar/reclaimed-treasures/issues/25) As a Customer, I can view individual product details, so that I can identify more information about the product.
-- [#26](https://github.com/MoniPar/reclaimed-treasures/issues/26) As a Customer, I can search for a specific product or view a category of products, so that I can quickly find products I'm interested in.
-- [#27](https://github.com/MoniPar/reclaimed-treasures/issues/27) As a Customer, I can sort the list of available products, so that I can easily identify the best rated and best priced categorically sorted products.
+- [#19](https://github.com/MoniPar/reclaimed-treasures/issues/19) As a User, I can connect with my social media account, so that I can easily create an account. - Not Completed
+
+- [#24](https://github.com/MoniPar/reclaimed-treasures/issues/24) As a User, I can view a list of products, so that I can select some to purchase.
+- [#25](https://github.com/MoniPar/reclaimed-treasures/issues/25) As a User, I can view individual product details, so that I can identify more information about the product.
+- [#26](https://github.com/MoniPar/reclaimed-treasures/issues/26) As a User, I can search for a specific product or view a category of products, so that I can quickly find products I'm interested in.
+- [#27](https://github.com/MoniPar/reclaimed-treasures/issues/27) As a User, I can sort the list of available products, so that I can easily identify the best rated and best priced categorically sorted products.
+
 - [#29](https://github.com/MoniPar/reclaimed-treasures/issues/29) As a customer, I can access my basket, so that I can review items before I purchase them.
 - [#31](https://github.com/MoniPar/reclaimed-treasures/issues/31) As a customer, I can add items and identify their total cost in the basket, so that I know how much I'm spending.
 - [#33](https://github.com/MoniPar/reclaimed-treasures/issues/33) As a Customer, I can update the quantity of each item in my basket, so that I can easily make changes to my order before checkout.
 - [#34](https://github.com/MoniPar/reclaimed-treasures/issues/34) As a User, I can see real-time notifications as I interact with the website, so that I can have a better experience.
+
 - [#36](https://github.com/MoniPar/reclaimed-treasures/issues/36) As a Customer, I can confirm my items and total cost in the checkout page, so that I can continue to enter the required information to complete my order.
 - [#38](https://github.com/MoniPar/reclaimed-treasures/issues/38) As a Customer, I can easily enter my payment information, so that I can checkout quickly and efficiently.
 - [#39](https://github.com/MoniPar/reclaimed-treasures/issues/39) As a Customer, I can view an order confirmation after checkout, so that I can confirm that my order was successful.
-- [#42](https://github.com/MoniPar/reclaimed-treasures/issues/42) As a Customer, I can have a personalised user profile, so that I can save my payment info and view my order history and confirmations.
-- [#43](https://github.com/MoniPar/reclaimed-treasures/issues/43) As a Customer, I can edit personal information on my profile, so that I can use the correct details when processing future orders.
+  
+- [#42](https://github.com/MoniPar/reclaimed-treasures/issues/42) As a Registered Customer, I can have a personal user profile, so that I can save my payment info and view my order history and confirmations.
+- [#43](https://github.com/MoniPar/reclaimed-treasures/issues/43) As a Registered Customer, I can edit personal information on my profile, so that I can use the correct details when processing future orders.
 - [#44](https://github.com/MoniPar/reclaimed-treasures/issues/44) As a Customer, I can receive an email confirmation after checking out, so that I can keep the confirmation of the transaction for my records.
-- [#46](https://github.com/MoniPar/reclaimed-treasures/issues/46) As a Customer, I can check products' ratings and reviews and submit my own, so that I can make up my mind if I want to purchase the product and provide feedback on products purchased.
-- [#48](https://github.com/MoniPar/reclaimed-treasures/issues/48) As a Customer, I can edit and delete my reviews, so that I have the ability to correct any mistakes I make.
+
+- [#46](https://github.com/MoniPar/reclaimed-treasures/issues/46) As a User, I can check products' ratings and reviews, so that I can make up my mind if I want to purchase the product.
+- [#46](https://github.com/MoniPar/reclaimed-treasures/issues/46) As a Registered User, I can add a review, so that I can submit my feedback on the product.
+- [#48](https://github.com/MoniPar/reclaimed-treasures/issues/48) As a Registered Customer, I can edit and delete my reviews, so that I have the ability to correct any mistakes I make.
+
 - [#47](https://github.com/MoniPar/reclaimed-treasures/issues/47) As a User, I can navigate to the About page, so that I can learn more about the shop owner.
-- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I can easily access other parts of the website.
+- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I can easily access other parts of the website. - Not Completed
 
 The following User Stories were used to implement features which make the website run more smoothly and give the user a better experience using the website.  Some are made from the Business owner's or Developer's perspective.  Stories concerned with setting up and other developer tasks were left out from this list. Due to time lost with Code Anywhere technical issues, it was decided to leave the Product Management Interface and the Featured Products on Home page out. These were placed in the backlog for future iterations.
 
 - [#14](https://github.com/MoniPar/reclaimed-treasures/issues/14) As a business owner, I can have a banner with a CTA clearly visible on the landing page, so that users are encouraged to access the shop and view/buy products.
 - [#16](https://github.com/MoniPar/reclaimed-treasures/issues/16) As a business owner, I can choose which products to feature on the landing page, so that users are encouraged to check them out.
-- [#21](https://github.com/MoniPar/reclaimed-treasures/issues/21) As a store owner, I can add a product, so that I can add new items to my store.
-- [#22](https://github.com/MoniPar/reclaimed-treasures/issues/22) As a store owner, I can edit/update a product, so that I can change the product price, description, image and other product criteria.
-- [#23](https://github.com/MoniPar/reclaimed-treasures/issues/23) As a store owner, I can delete a product, so that remove items that are no longer on sale.
+- [#20](https://github.com/MoniPar/reclaimed-treasures/issues/20) As a Shop Owner, I can use the Admin interface to add, update, view and delete products so that I can populate the online shop.
+- [#21](https://github.com/MoniPar/reclaimed-treasures/issues/21) As a store owner, I can add a product via the UI, so that I can add new items to my store.
+- [#22](https://github.com/MoniPar/reclaimed-treasures/issues/22) As a store owner, I can edit/update a product via the UI, so that I can change the product price, description, image and other product criteria.
+- [#23](https://github.com/MoniPar/reclaimed-treasures/issues/23) As a store owner, I can delete a product via the UI, so that remove items that are no longer on sale.
+  
 - [#32](https://github.com/MoniPar/reclaimed-treasures/issues/32) As a developer, I can add functionality with the plus (+) and minus (-) buttons to the quantity selector, so that the user has a better experience adding products to their basket on mobile.
-- [#40](https://github.com/MoniPar/reclaimed-treasures/issues/40) As a Developer, I can make sure that customers can confidently provide the information required safely and securely, so that they can have a positive experience on the site.
-- [#41](https://github.com/MoniPar/reclaimed-treasures/issues/41) As a Developer, I can decrement stock on payment success, so that I can add functionality when item becomes out of stock.
+- [#40](https://github.com/MoniPar/reclaimed-treasures/issues/40) As a developer, I can make sure that customers can confidently provide the information required safely and securely, so that they can have a positive experience on the site.
+
+- [#41](https://github.com/MoniPar/reclaimed-treasures/issues/41) As a developer, I can decrement stock on payment success, so that I can add functionality when item becomes out of stock.
 - [#50](https://github.com/MoniPar/reclaimed-treasures/issues/50) As a Business Owner, I can have my Business Facebook page linked with my website, so that I can connect and interact with my customers directly and potentially extend my reach through posts and other content creation.
 - [#51](https://github.com/MoniPar/reclaimed-treasures/issues/51) As a Developer, I can add metadata, a sitemap and robots.txt file, so that the website can be found and ranked by search engines.
 - [#55](https://github.com/MoniPar/reclaimed-treasures/issues/55) As a Developer, I can build custom error pages, so that the user remains on the site and has a way to get back to the homepage or access navigation.
@@ -241,7 +252,7 @@ Models define the source of the data stored.  Each model contains the essential 
 
 </details>
 
-The shaded tables are the custom models created for this project. These include the Review Model stored in the Review App and the Contact Model stored in the Contact App as mentioned above.  
+The shaded tables are the custom models created for this project. These include the Review Model stored in the Review App and the Contact Model stored in the Contact App as mentioned above. The Product Model was customised to include extra features (please read on for more information).  
 
 The Review Model has a one-to-many relationship with the Product Model and a Many-to-One relationship with User.  It stores the rating for each product, the comments and submission dates of reviews made by registered users.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they haven't yet purchased them.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.
 
@@ -254,8 +265,6 @@ The Product Model was customised to include:
 - A stock field, which adds functionality to this model.  This is set to display the number of items left in the inventory.  Once the number of items in the inventory is decremented to 0, the Made to Order text is displayed and the customer is only allowed to order a limited quantity of that particular product per order.  
 - An available field displays a checkbox in the admin, which if unchecked would display a disabled button on the product detail page instead of the increment and decrement buttons.  This would stop the user from being able to purchase the product giving Vera time to replenish her stock and/or source the recycled materials needed.  
 - Finally an image thumbnail field was added in order to be able to add smaller versions of the product images to help the shop page load faster.
-
-Unfortunately, due to time restrictions the rating field on this model isn't doing anything at the moment.  In future iterations, I would like to save the data from the review rating field in here so that the products can be sorted by their average ratings as well.  
 
 ### Wireframes & Design Choices
 
@@ -322,7 +331,7 @@ Completed User Stories:
 
 </details>
 
-The second sprint tackled the User Registration & Authorisation Epic and  involved setting up Django Allauth functionality. While shorter than the first sprint, this took a bit longer than expected as I ran into some issues while copying the templates.  The Password Reset story was placed into the backlog as one of the tasks needed testing in production.
+The second sprint tackled the User Registration & Authentication Epic and  involved setting up Django Allauth functionality. While shorter than the first sprint, this took a bit longer than expected as I ran into some issues while copying the templates.  The Password Reset story was placed into the backlog as one of the tasks needed testing in production.
 
 Completed User Stories:
 
@@ -355,7 +364,7 @@ Completed User Stories:
 
 </details>
 
-The Fourth sprint tackled one user story from the Product Management Epic and the Product Viewing and Navigation Epic and consisted of setting up and getting the online shop running.  This was a much longer sprint than the others before it but I got it completed within the week as intended. 
+The Fourth sprint tackled one user story from the Product Management Epic and the Product Viewing and Navigation Epic and consisted of setting up and getting the online shop running.  This was a much longer sprint than the others before it but I got it completed within the week as intended.
 
 Completed User Stories:
 
@@ -500,6 +509,7 @@ This project was developed using the following languages, frameworks, libraries 
 - [Bootstrap 4.6.2](https://getbootstrap.com/docs/4.6/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites
 - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Provides a |crispy filter and {% crispy %} tag that helps control the rendering behavior of Django forms in a very elegant and DRY way
 - [Pillow](https://pypi.org/project/Pillow/) - A Python Imaging Library adds image processing capabilities to your Python interpreter
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html) - Allows connection to S3 bucket
 
 ### Tools
 
@@ -546,7 +556,7 @@ _____
 ## Bugs
 
 <details>
-<summary>Bugs encountered during Development</summary>
+<summary>Bugs encountered during development and testing</summary>
 <br>
 
 **Copying django-allauth templates**
@@ -564,7 +574,7 @@ Expected behaviour: This product should be displayed last along with the other p
 Solution: This new test product was logged into the database without a value in the Rating field while the other 'No Rating' products were saved with a value of '0.0'. The arguments for the rating field in the Product model are set to the following:
 `rating = models.DecimalField(max_digits=6, decimal_places=1, null=True, blank=True)`.  Since this new product test was stored with a NULL value it was not being counted as '0'. In order to avoid this from occurring again, the model field needs to be changed to either making the field required i.e. `blank=False` or set to `default=0.0`.
 
-Note: One week before project submission, I realised that I completely ignored the sorting factor when it comes to rating after I added the reviews app.  I failed to connect the products.rating field with the reviews.rating field and I had to remove the Sort by Rating functionality.  In future versions I will need to make amends for this and make sure that the two are related together.
+After Note: The rating field of the Review model has taken over functionality of the Product model rating field.  See *Sorting Products by Rating* for more info.
 
 **Database product deletion while in basket**
 
@@ -605,7 +615,7 @@ Solution: The product stock deduction code in checkout/views.py was placed insid
                 product.save()
 ```
 
-**Product Stock Overflow Issue [Bug: Product stock #45](https://github.com/users/MoniPar/projects/8/views/1?pane=issue&itemId=29840462)**
+**Product Stock Overflow Issue** [#45](https://github.com/users/MoniPar/projects/8/views/1?pane=issue&itemId=29840462)
 
 Customer can checkout an order on made to order products, however they can't checkout if they are trying to order more than what is currently in stock, even if they are within the 3 max limit on made to order.
 
@@ -629,7 +639,7 @@ The product stock in the database should only be altered after the customer has 
 Solution:
 It was decided to iterate through the products in the basket while checking the product stock against the quantity ordered. But instead of changing the information in the basket, the changes were saved in a list which was then iterated through (instead of the basket) when creating the line items.
 
-**Duplicate orders in Database**
+**Duplicate orders in Database** [#54](https://github.com/MoniPar/reclaimed-treasures/issues/54)
 
 While testing, it was noticed that some orders where being recorded twice in the database as well as on the Order History in the User's Profile page.  This wasn't the case with Stripe as only one payment intent was being created for each order.  Only one order confirmation email was being sent to the customer too.  
 
@@ -638,6 +648,83 @@ Only one order should be registered in the database and on the user's profile fo
 
 Solution:
 With further testing, it was noticed that certain orders weren't being duplicated.  When investigating further, the duplicate orders issue was narrowed down to the user not filling in the 'Eircode' field in the checkout form.  This is not a required field and I had previously changed its label to say 'Postcode' rather than the Irish term 'Eircode' by using the 'label' attribute in the OrderForm(ModelForm).  This change must have created inconsistent personal details on orders.  Looking back in the webhook handler for handling payment intent succeeded, I was trying to get the `default_postal_code` from the profile rather than the `default_eircode`.  This was amended back to `default_eircode`, however this did not solve the issue.  What did eventually sort the issue was rather than using the 'label' attribute in the OrderForm(ModelForm), a labels dictionary was added to the `__init__` method. After testing again, whether filling in the post code field or not, orders were not being duplicated.
+
+**Unhandled Event Charge** [#57](https://github.com/MoniPar/reclaimed-treasures/issues/57)
+
+Problem:
+In the case of an overflow limit exceeded, user is directed back to the shopping basket and asked to adjust the quantity on the specific product to meet the limitation. The order is once again being saved twice in the DB and Stripe is catching the event and charging the user. When the user fixes the quantity and checks out again. The order is being once again saved and Stripe is creating a charge again.
+
+Expected behaviour:
+An error needs to be displayed when the user tries to go to checkout with the excess overflow in the basket. Upon changing the quantity to the right amount the user is then allowed to fill in the checkout form and checkout. The order should only be recorded once in the DB and Stripe issues only 1 charge.
+
+Solution:
+Looped through each item in the user's basket and checked stock at the start of the checkout function, before the request.post method in order to prevent the user from getting into the checkout form before the check is complete. Adjusted the inventory once the form is valid and order is complete.
+
+**Sorting products by rating** [#58](https://github.com/MoniPar/reclaimed-treasures/issues/58)
+
+Problem:
+Since I added a new model (Review) with a rating field, I have been calculating the ratings gathered from the Review Form and saving them to the Review Table. This meant that with the current functionality for product sorting, the sort by rating does nothing.
+
+Possible solutions:
+In order to be able to sort the products by their rating, I might need to save the average rating in the Product table or find out how to add a sortkey for the average rating.
+
+Solution:
+I managed to sort the average rating using annotation and the Avg() function on the Review rating field. 
+
+'''python
+products = products.annotate(avgrating=Avg('reviews__rating'))
+'''
+
+Problem:
+However, the reviews with no rating are showing up first when sorting is desc and vice versa.
+
+Possible solution: [Use the F() to sort null values](https://docs.djangoproject.com/en/4.2/ref/models/expressions/#:~:text=Using%20F()%20to%20sort>,ordering%20depends%20on%20your%20database.)
+
+Solution:
+In trying to use the nulls_last = True to control the order of the NULL value,
+
+```python
+if 'direction' in request.GET:
+    direction = request.GET['direction']
+     if direction == 'desc':
+         sortkey = f'-{sortkey}'
+products = products.order_by(sortkey)
+```
+
+was conflicting with the desc(nulls_last=True).  Sortkey needed to be placed in the F() with desc(nulls_last=True)  and then order the products by the new variable "order_logic". 
+
+```python
+order_logic = sortkey
+if 'direction' in request.GET:
+    direction = request.GET['direction']
+    if direction == 'desc':
+        order_logic = F(sortkey).desc(nulls_last=True)
+    else:
+        order_logic = F(sortkey).asc(nulls_first=True)
+products = products.order_by(order_logic)
+```
+
+Tested all other sorting parameters and seems to be working ok while the reviews with no rating are not showing last in desc and first in asc.
+
+</details>
+
+<details>
+<summary>Bugs yet to Fix</summary>
+<br>
+
+Due to time restrictions the following bugs have not yet been fixed.
+
+**Sorting by Availability**
+
+Problem:
+Products that are marked as 'Not Available' (boolean field) are recorded as having a value of 0 in the DB just like products that are 'Made to Order'.  This means that when sorting by availability they don't take prioriy over the Made to Order products and so they don't show up first or last like what one would expect them to.
+
+**Orders created in webhook**
+
+Problem:
+When simulating issues during checkout transaction in development, the payment intent is being created and is successful. Stripe sends the metadata to django and the order is being created successfully in the DB.  Email confirmation of order is being sent and a registered user can see the order details in their Profile page.  However, the product stock is not being decremented and the items are not being cleared from the user's basket.
+
+</details>
 
 [Back to Top](#table-of-contents)
 _____
@@ -656,15 +743,16 @@ hero images for the Home and Contact Pages.
 
 The following walkthroughs helped me get my project in shape. I have adapted the code in these walkthroughs for the needs of my project.
 
-* Code Institute's "Boutique Ado", found in the CI's LMS for the Diploma in Software Development.  I followed this walkthrough as the basis for my own store, then added functionality to better serve the purpose of my project.
+- Code Institute's "Boutique Ado", found in the CI's LMS for the Diploma in Software Development.  I followed this walkthrough as the basis for my own store, then added functionality to better serve the purpose of my project.
 
-* [Django Tutorial: A simple contact form](https://www.youtube.com/watch?v=1ihn3iRXtsY)
+- [Django Tutorial: A simple contact form](https://www.youtube.com/watch?v=1ihn3iRXtsY)
 
-[BobbyHadz.com - TypeError - Sequence item 0: expected str instance, NoneType found](https://bobbyhadz.com/blog/python-typeerror-sequence-item-0-expected-str-instance-list-found#sequence-item-0-expected-str-instance-nonetype-found)
-
-[How to reduce stock quantity when an order is made](https://stackoverflow.com/questions/65216808/django-how-to-reduce-stock-quantity-when-an-order-is-made)
-
-[How to force a user to logout](https://stackoverflow.com/questions/953879/how-to-force-a-user-logout-in-django)
+- [BobbyHadz.com - TypeError - Sequence item 0: expected str instance, NoneType found](https://bobbyhadz.com/blog/python-typeerror-sequence-item-0-expected-str-instance-list-found#sequence-item-0-expected-str-instance-nonetype-found)
+- [How to reduce stock quantity when an order is made](https://stackoverflow.com/questions/65216808/django-how-to-reduce-stock-quantity-when-an-order-is-made)
+- [Average for rating](https://stackoverflow.com/questions/60602349/average-for-ratings-in-django)
+- [Adding null last to query](https://stackoverflow.com/questions/15121093/django-adding-nulls-last-to-query)
+- [Using F to sort null values](https://docs.djangoproject.com/en/4.2/ref/models/expressions/#using-f-to-sort-null-values)
+- [How to force a user to logout](https://stackoverflow.com/questions/953879/how-to-force-a-user-logout-in-django)
 
 [Back to Top](#table-of-contents)
 _____
