@@ -577,6 +577,7 @@ As a business owner, I can choose which products to feature on the landing page,
 | A products section which displays at least three categories of products | Yet to Achieve | |
 | Each product is displayed on a card with name, image and a button which leads to the shop | Yet to Achieve | |
 
+<br>
 </details>
 
 <details>
@@ -626,6 +627,7 @@ As a User, I can connect with my social media account, so that I can create an a
 |---------------------------|-------|----------------|
 | User can register using their Facebook account | Yet to Achieve | |
 
+<br>
 </details>
 
 <details>
@@ -668,6 +670,7 @@ As a Store Owner, I can delete a product, so that I can remove items that are no
 |The Store Owner is able to update and delete a product via the quick links | Yet to achieve | For now updating and deleting products can only be done via the Admin interface |
 |Only the Store Owner/Superuser is able to access this functionality | N/A | There is no functionality to test |
 
+<br>
 </details>
 
 <details>
@@ -747,6 +750,7 @@ As a User, I can easily navigate back to  the top of the page with one click, so
 
 This User Story has been marked as won't have at this time as the user can easily navigate to other parts of the website because the Navigation bar is always fixed on top.
 
+<br>
 </details>
 
 <details>
@@ -773,6 +777,7 @@ As a Customer, I can edit personal information on my profile, so that I can use 
 | The customer is able to see a history of their orders in their profile | Achieved | |
 | The information saved in the profile can be retrieved in the Checkout form, if the user checks the save info box | Achieved | | 
 
+<br>
 </details>
 
 <details>
@@ -835,6 +840,7 @@ As a User, I can see real-time notifications as I interact with the website, so 
 | The User is provided with neat and clear notifications when using functional features of the site | Achieved | |
 | The notifications are designed to display the result of the user's interaction | Achieved | |
 
+<br>
 </details>
 
 <details>
@@ -897,6 +903,7 @@ As a customer, I can view an order confirmation after checkout, so that I can co
 
 ![VRT Checkout Success ](docs/features/checkoutsuccess.png)
 
+<br>
 </details>
 
 <details>
@@ -905,6 +912,7 @@ As a customer, I can view an order confirmation after checkout, so that I can co
 
 ![Stripe Payment Intent Succeeded](docs/features/stripe-paymentintentsucceeded.png)
 
+<br>
 </details>
 
 <details>
@@ -915,13 +923,32 @@ As a customer, I can view an order confirmation after checkout, so that I can co
 
 ![Admin Line Items](docs/features/admin-lineitems.png)
 
+<br>
+</details>
+
+<details>
+<summary>Test results for a typical successful order</summary>
+<br>
+
+|Acceptance Criteria | Test | Comments |
+|--------------------|------|----------|
+| A loading modal informs the user that the transaction is being processed | Achieved | |
+| The Order Success Confirmation page is displayed with order details | Achieved | |
+| The payment intent is successfully created in Stripe printing out “verified order already in the database” | Achieved | |
+| The order is submitted to the DB | Achieved | |
+| The stock is decremented | Achieved | |
+| The basket is cleared | Achieved | |
+| Order confirmation can be found in registered user’s profile | Achieved | |
+| Confirmation email received | Achieved | |
+
+<br>
 </details>
 
 [User Story #40](https://github.com/MoniPar/reclaimed-treasures/issues/40)
 
 As a developer, I can make sure that customers can confidently provide the information required safely and securely so that they can have a positive experience on the site.
 
-Webhook handler for issues during checkout transactions tested in development: Simulated by commenting out form.submit() in stripe_elements.js
+Webhook handler for issues during checkout transactions tested in *development*: Simulated by commenting out `form.submit()` in stripe_elements.js
 
 |Acceptance Criteria | Test | Comments |
 |---------------------------|-------|----------------|
@@ -933,6 +960,130 @@ Webhook handler for issues during checkout transactions tested in development: S
 | Order confirmation can be found in registered user's profile | Achieved | |
 | Confirmation email received | Achieved | |
 
+Webhook handler for issues during checkout transactions tested in *production*: Simulated by closing the website before checkout success page is displayed. Two different outcomes from the number of tests undertaken:
+
+| Criteria | Outcome 1 | Outcome 2 |
+|----------|-----------|-----------|
+| A loading modal informs the user that the transaction is being processed | Achieved | Achieved |
+| User closes the tab before checkout success page is displayed | Achieved | Achieved |
+| The payment intent is successfully created in Stripe printing out “Created order in Webhook” | Not Achieved - “Verified order already in the database” | Achieved | 
+| The order is submitted to the DB | Achieved | Achieved |
+| The stock is decremented | Achieved | Not Achieved |
+| The basket is cleared | Achieved | Not Achieved |
+| Order confirmation can be found in registered user's profile | Not Achieved | Achieved |
+| Confirmation email received | Achieved | Achieved |
+
+[User Story #41](https://github.com/MoniPar/reclaimed-treasures/issues/41)
+
+As a developer, I can decrement stock on payment success, so that I can add functionality when item becomes out of stock.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| “Stock: (no. of stock)” is displayed on the UI on each product detail | Achieved | |
+| Product stock is decremented upon normal successful order | Achieved | Yet to achieve when order is created in webhook |
+| When product stock is 0, the “Stock: (no. of stock)” on the UI changes to “Made to Order” | Achieved | |
+| Max quantity one can order on products that have sufficient stock is 10 | Achieved | |
+| Max quantity one can order on Made to Order products is 3 | Achieved | | 
+| Max quantity overflow one can order on products that have insufficient stock is 3   | Achieved | |
+
+[User Story #44](https://github.com/MoniPar/reclaimed-treasures/issues/44)
+As a customer, I can receive email confirmation after checkout, so that I can keep the confirmation of the transaction for my records.
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| The customer receives a confirmation email of their order | Achieved | |
+| The registered customer is able to view their order history in their profile even if the checkout success page fails | Mixed Results | See [User Story #40](https://github.com/MoniPar/reclaimed-treasures/issues/40) |
+
+<br>
+</details>
+
+<details>
+<summary>SEO & WebMarketing</summary>
+<br>
+
+[User Story #18](https://github.com/MoniPar/reclaimed-treasures/issues/18)
+
+As a user, I can sign up to the website’s newsletter so that I can keep updated with the latest news, offers, products and pop up stalls.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| A Newsletter email signup form is displayed on the footer | Achieved | |
+| When user enters email address and hits subscribe, a success message is displayed below the field | Achieved | |
+| Email address is recorded on the Mailchimp account | Achieved |
+
+[User Story #50](https://github.com/MoniPar/reclaimed-treasures/issues/50)
+
+As a business owner, I can have my Facebook business page linked with my website, so that I can connect and interact with my customers directly and potentially extend my reach through posts and other content creation. 
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| Website users can access the Facebook page through the link in the footer and on the contact page | Achieved | |
+| Facebook users can access the website through the link on the Facebook account and posts | Achieved| |
+| Facebook page has relevant information about the business, including keywords used through the website | Achieved | |
+
+[User Story #50](https://github.com/MoniPar/reclaimed-treasures/issues/50)
+
+As a developer, I can add metadata, a sitemap and robots.txt file so that the website can be found and ranked by search engines.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| The description & relevant keywords and titles are included on the main pages of the website’s metatags | Achieved | |
+| A sitemap.xml file is included in the project’s root folder | Achieved | |
+| A robots.txt file is also included in the project’s root folder | Achieved | |
+
+<br>
+</details>
+
+<details>
+<summary>Other Features</summary>
+<br>
+
+[User Story #47](https://github.com/MoniPar/reclaimed-treasures/issues/47)
+
+As a user, I can navigate to the About page, so that I can learn more about the shop owner and her business.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| User can easily navigate to the About page from the navigation link and the About me link on the Home page | Achieved | | 
+| An image of the shop owner is displayed here | Achieved | |
+| Information about the shop owner and her business are displayed here | Achieved | |
+| A CTA with a link to the shop | Achieved | Carousel slide |
+| A card with a link to the contact page | Achieved | Carousel slide |
+
+[User Story #17](https://github.com/MoniPar/reclaimed-treasures/issues/17)
+
+As a user, I can quickly write a message to the business owner using the contact form, so that I can ask questions or give feedback.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| Contact page displays hero with a heading inviting users to get in touch | Achieved | |
+| Some text with info about why should users get in touch is displayed | Achieved | |
+| Contact info including: phone, email, social links are also included here | Achieved | |
+| Social links open in a new tab | Achieved | | 
+| A Contact form with fields for: Subject, email, phone no., and message box are displayed | Achieved | |
+| User is alerted to any missing information when they try to submit the form with empty required fields | Achieved | |
+| When form is valid, user is directed to a Thank You page with a message and a link to the Home Page | Achieved | |
+| Form information is recorded in the DB | Achieved | |
+| Shop owner receives an email with subject, user's name, email, phone and message | Achieved | See image below |
+
+<detail>
+<summary>Contact form query alert email</summary>
+<br>
+
+![Contact mail received](docs/features/contactemailreceipt.png)
+
+<br>
+</detail>
+
+[User Story #55](https://github.com/MoniPar/reclaimed-treasures/issues/55)
+
+As a developer, I can build custom error pages, so that the user remains on the site and has a way to get back to the homepage or access navigation.
+
+|Acceptance Criteria | Test | Comments |
+|---------------------------|-------|----------------|
+| Custom error pages have styles that match the website | Achieved | |
+| The pages define the error and display a button which brings the user back to the homepage | Achieved | |
+
+<br>
 </details>
 
 [Back To Top](#table-of-contents)
