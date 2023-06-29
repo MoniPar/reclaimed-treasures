@@ -29,6 +29,8 @@ _____
     - [Wireframes \& Design Choices](#wireframes--design-choices)
   - [Agile Methodology](#agile-methodology)
   - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Future Features](#future-features)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks \& Dependencies](#frameworks--dependencies)
@@ -268,9 +270,11 @@ The Product Model was customised to include:
 
 ### Wireframes & Design Choices
 
-Wireframes were first roughly sketched with pen and paper.  This method helped me with brainstorming, deciding the most essential parts for the website and getting a feel for the website as a whole.  They were then wireframed in [balsamiq](https://balsamiq.com/wireframes) to give a closer indication of the design.  Through the design phase some elements as well as the colour palette were changed to allow for a better user experience.
+[Balsamiq](https://balsamiq.com/wireframes) was used to sketch wireframes for the most essential parts of the website, getting a feel for the website as a whole and an indication of the finished design. Through the implementation phase a few elements were changed to allow for a better user experience.
 
-![Wireframes]()
+[Right click for mobile wireframes pdf](docs/vrt-wireframes-mobiletablet.pdf)
+
+[Right click for desktop wireframes pdf](docs/vrt-wireframes-tabletdesktop.pdf)
 
 **Colour Scheme**
 
@@ -478,6 +482,397 @@ Although there is still a lot of room for improvement when it comes to adopting 
 _____
 
 ## Features
+
+### Existing Features
+
+**Header & Navigation**
+
+Featured on all pages, the fully responsive header is fixed to the top so that the user always has access to the navigation links, includes is divided into 3 parts:
+
+1. The Top Navigation - consisting of:
+
+    - The website's logo which is a link that brings the user to the Home Page.
+    - A search box on desktop or search icon on mobile and tablet which when clicked opens a text input for users to search the Shop Owner's Collection.
+    - An icon for Accounts which when clicked drops down links for the Registration & Login Pages for users who are not logged in or My Profile & Logout Pages for users who are logged in.
+    - An icon for the shopping basket which displays the grand total on desktop. On mobile and tablet this icon shows the grand total when clicked.
+    - All links have a hover and focus effect to help the user identify them as links.
+
+2. The Main Navigation - consisting of:
+
+    - Links to the Home, Shop, About and Contact Pages.
+    - The Shop link is a dropdown element which opens up to display links to the different types of products in the shop. The last link in this dropdown brings the user to the Shop Page with all products.
+    - On mobile and tablet the main navigation links are accessed by toggling the hamburger button.
+    - All links have a hover and focus effect to help the user identify them as links.
+
+3. The Delivery Banner with its dark background to highlight the text displayed within.
+
+<details>
+<summary>Screenshots of the Header</summary>
+<br>
+
+    Mobile Navigation
+
+![Mobile Navigation](docs/features/mobile-nav-closed.png)
+
+<br>
+
+    Mobile Navigation Open
+
+![Mobile Nav Open](docs/features/mobile-nav-open.png)
+
+<br>
+
+    Mobile Navigation Search
+
+![Mobile Nav Search](docs/features/mobile-nav-search.png)
+
+<br>
+
+    Tablet Navigation Account Dropdown
+
+![Tablet Nav Account](docs/features/tablet-nav-account.png)
+
+<br>
+
+    Desktop Navigation 
+
+![Desktop Nav](docs/features/desktop-nav-closed.png)
+
+<br>
+</details>
+
+**Footer**
+
+Features on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email if they prefer that method or contact and it also allows the users to keep connected via social media and to sign up for the newsletter.  It includes:
+
+- A newsletter signup – This is valuable to the user as it keeps them up to date with offers, new products, seasonal deals and news from the Shop Owner.
+- The website logo which is in itself a link which directs the user back to the Home Page.
+- Contact details are links which direct the user to the relevant apps. On mobile, the telephone number will bring up a call feature, while the email address will open up an email app on tablet and desktop as well.
+- Social links open in a new tab so that users are not directed away from the website.
+- Useful links are links that direct the user to:
+  - the Privacy Policy of the Ecommerce Store (opens in a new tab),
+  - the Contact Page of the website in order for the user to submit a query and
+  - Eco Market Malta - a website which advocates for sustainability and includes relevant information to this ecommerce site.
+- Copyright has a link to the creator's LinkedIn page, which also opens in a new tab.
+- All links have a hover and focus effect to help users identify them as links.
+- All links are labelled for screen reading technology.
+
+<details>
+<summary>Screenshots of the Footer</summary>
+<br>
+
+    Lower Footer on Mobile
+
+![Lower Footer on Mobile](docs/features/mobile-foot-lower.png)
+
+<br>
+
+    Footer on Tablet
+
+![Footer on Tablet](docs/features/tablet-foot.png)
+
+<br>
+
+    Footer on Desktop
+
+![Footer on Desktop](docs/features/desktop-foot.png)
+
+<br>
+</details>
+
+**Landing Page**
+
+*Home Page Hero*
+
+The Home page hero on the Landing Page takes up more than half the viewport of any screen size.  It includes a background image of a few chosen products from the online store with an overlay of a heading and sub heading which capture the essence of the store.  It also acts as a Call to Action(CTA) as it includes a bright button inviting the user to shop now.  The button has a hover and focus effect as demonstrated below.
+
+<details>
+<summary>Screenshots of Home Hero</summary>
+<br>
+
+	Home Hero on Tablet 
+
+![Home Hero on Tablet no hover](docs/features/tablet-homehero.png)
+
+<br>
+
+	Home Hero on Desktop with hover
+
+![Home Hero on Desktop with hover](docs/features/desktop-homehero-focus.png)
+
+<br>
+</details>
+
+*Home Page Content*
+
+The Home Page displays further content which gives the user an outline of what the business is about.  It includes 3 cards each displaying an icon, a heading and some text giving more detail about the business.  Each card also has a button which directs the user to more information throughout the site’s pages. All 3 buttons have a hover and focus effect to show the user that they are interactive elements.
+
+<details>
+<summary>Screenshots of the Home Page Content</summary>
+<br>
+
+	Home Content on Mobile
+
+![Home content card on mobile](docs/features/mobile-homecontent-hover.png)	
+
+<br>
+
+	Home Content on Tablet
+
+![Home content cards on tablet](docs/features/tablet-homecontent.png)
+
+<br>
+
+	Home Content on Desktop
+
+![Home content cards on desktop](docs/features/desktop-homecontent.png)
+
+<br>
+</details>
+
+**Shop**
+
+*All Products*
+
+The Shop Page reached through the Main navigation > All Products link, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they’ve been browsing by category.  
+
+The Shop Page reached through the Shop Now button on the Home Page, displays all the products available in the store without the category badges.  Like above, it also displays the number of products on the current page.  This number changes depending on which category of products the user chooses.  A sort-selector box is also available which helps the user sort the products by price, name, rating, theme, category, and availability.
+
+Each product card displays the product image, name, price, category, theme, rating and a link to view more details.
+
+<details>
+<summary>Screenshots of Product Page</summary>
+<br>
+
+	Mobile View
+
+![Mobile Shop All Products Top View](docs/features/mobile-shopallproducts.png)
+
+<br>
+
+	Tablet View
+
+![Tablet Shop Products](docs/features/tablet-shopproducts.png)
+
+<br>
+
+	Desktop View
+
+![Desktop Shop all Products sort by Theme](docs/features/desktop-shopsortbytheme.png)
+
+<br>
+
+	Product Card
+
+![Shop Page Product Card](docs/features/products-productcard.png)
+
+<br>
+</details>
+
+*Product Detail*
+
+The Product Detail Page displays more information about each specific product in the shop.  The Page is divided into two sections, with the top section showing information on the product and the bottom section showing any available reviews on the product.
+
+Top Section Features:
+
+-	Product name as a heading
+-	Product image which is a link that opens the image file in a new tab
+-	Product price high-lighted for better visibility
+-	Product SKU for reference
+-	Product category which links to other products in same category
+-	Product theme
+-	Product rating (this could be No rating) if product hasn’t yet been reviewed
+-	Product description which describes the product 
+-	Product stock.  If the stock is 0, this changes to Made to Order and a little high-lighted note is displayed to notify users of order quantity limitations and possible delays in delivery times
+-	Product additional information which is a dropdown link giving extra information on weight, dimensions and care details
+-	Quantity selector buttons which increment or decrement the quantity as needed by the user
+-	Add to Basket button which adds the quantity selected to the user’s basket
+-	Back to Shop button which brings to user back to the main products page
+
+<details>
+<summary>Screenshots of Product Detail</summary>
+<br>
+
+	Product Detail In Stock on Mobile
+
+![Product Detail on Mobile](docs/features/mobile-productdetail.png)
+
+<br>
+
+	Product Detail Made to Order on Tablet & Desktop
+
+![Product Detail on Tablet](docs/features/tablet-productdetail.png)
+
+<br>
+</details>
+
+Bottom Section Features:
+
+This section varies depending on whether there are any reviews submitted on the product and whether the user is a registered user or not. 
+
+All users can view the reviews if they are available.  If no reviews are available text will say “There are currently no reviews on this product”.  
+
+If user is not logged in, text at the bottom invites them to register or login to submit a review.
+
+Only registered users are allowed to add reviews. The Add review button is available to registered users who have not yet submitted a review on the product.  If registered user has already submitted a review, then they are only allowed to edit or delete the review.  Buttons are displayed accordingly.
+
+<details>
+<summary>Screenshots of Product Reviews</summary>
+<br>
+
+	No Reviews Unregistered User on Mobile View
+
+![No Reviews Not registered on Mobile](docs/features/mobile-noreviewsnouser.png)
+
+<br>
+
+	Reviews Unregistered User on Mobile View
+
+![Reviews Not registered on Mobile](docs/features/mobile-reviewsnouser.png)
+
+<br>
+
+	 Registered User Reviewed on Tablet View
+
+![Reviews Registered Reviewed on Tablet](docs/features/tablet-reviewsuserreviewed.png)
+
+<br>
+
+	Registered User Not Reviewed on Desktop View
+
+![Reviews Registered Not Reviewed on Desktop](docs/features/desktop-reviewsnotreviewed.png)
+
+<br>
+</details>
+
+**Add Review Page**
+
+The Add Review Page displays an image of the product being reviewed, the category and the name of the product.  This acts as a reminder for the user when reviewing the product.  The form is very simple, which 
+makes the process easy and quick for the logged-in reviewer.  All they need to do is pick a rating from 1 to 5 and write a short comment in the comment field, then click the Add button.  Both fields are required, and the user can click the Cancel button to get back to the Product Detail Page where they can check out more information about the product or see what other people have said in their reviews. Once the review is submitted the user is directed back to the product detail page where they get a success toast.  They can then see their review immediately on the page and the average calculation of all reviews on the product detail.
+
+<details>
+<summary>Screenshots for Add Review Page</summary>
+<br>
+
+	Product with No Rating
+
+![Product No Rating](docs/features/mobile-norating.png)
+
+<br>
+
+	Add Review Page on Tablet
+
+![Add Review Page](docs/features/tablet-addreview.png)
+
+<br>
+
+	Fill in Form
+
+![Add Review Form](docs/features/desktop-addreviewformcomplete.png)
+
+<br>
+
+	Toast Success & Product Rating
+
+![Toast Success and Product Rating](docs/features/tablet-toastsuccessproductrating.png)
+
+<br>
+
+Post Add Review View
+
+![Post Add Review View](docs/features/mobile-postaddreviewview.png)
+
+<br>
+
+</details>
+
+**Edit Review Page**
+
+The Edit Review Page is very similar to the Add Review Page.  The only difference is that the form displays pre-populated with the review information.  A logged in user can choose to change the rating, the comment or both on their own product reviews.  They can use the cancel button to get back to the Product Detail Page or update the review by clicking the Update button.  This will once again redirect them to the Product Detail Page where they can see their updated rating and review.
+
+<details>
+<summary>Screenshots for Edit Review Page</summary>
+<br>
+
+	Edit Review Form Prepopulated
+
+![Prepopulated Edit Review Form](docs/features/mobile-editreviewform.png)
+
+<br>
+
+	Toast Success Update Review
+
+![Toast success edit review form submitted](docs/features/toastsuccess-updatereviewrating.png) 
+
+<br>
+</details>
+
+**Delete Review**
+
+A logged-in user can choose to delete their own product review by clicking on the Delete button on their review.  This will bring the reviewer to a confirmation page where they can either cancel out of deleting the review and be redirected back to the Product Detail page of the product or Delete the review.
+
+<details>
+<summary>Screenshots of Delete Review</summary>
+<br>
+
+	Delete Review Confirmation Page
+
+![Delete Review Confirmation Page on tablet](docs/features/tablet-deletereviewconpage.png)
+
+<br>
+</details>
+
+**Basket**
+
+The Basket Page provides the user with a summary of the items they have added to their basket.  It also provides a subtotal for each product and a grand total for all the items in their basket.  Here, the user is provided with another opportunity to update the quantity of the products or remove them entirely.  Toasts will appear just below the navigation bar with confirmations of added, updated and deleted items as well as a small summary of what is in the basket. Error toasts notify users to amend their quantity if they update their quantity beyond the 10 items per product limit and 3 items per Made to Order product limit.  
+
+The user can return back to the Shop to add more products via the Keep Shopping button or head over to checkout via the Secure Checkout button. 
+
+Final validation checks take place when the user clicks the Secure Checkout button to make sure the quantities ordered are within limits.  This is for quantities that are greater than the product stock + 3.
+
+<details>
+<summary>Screenshots of Basket Page & Toasts</summary>
+<br>
+
+	Basket Page on Mobile
+
+![Basket with products on mobile](docs/features/mobile-basketview.png)
+
+<br>
+
+	Updating Quantity Toast on Tablet
+
+![Updating quantity toast](docs/features/tablet-basketupdatequantity.png)
+
+<br>
+
+	Deleting Product Toast on Desktop
+
+![Deleting product toast](docs/features/desktop-deletebasketproduct.png)
+
+<br>
+
+	Error Alert on updating quantity to more than 3 on Made to Order product
+
+![Error toast when updating Made to Order product](docs/features/mobile-basketerrormessage.png)
+
+<br>
+
+	Error Alert on updating quantity beyond the 10 per product limit
+
+![Error toast when updating beyond 10](docs/features/toasterror-quantityover10.png)
+
+<br>
+
+	Error Alert on Secure Checkout with quantity greater than product stock + 3
+
+![Error toast when quantity is greater than the product stock plus 3](docs/features/toasterror-overflow.png)
+
+<br>
+</details>
+
+
+### Future Features
 
 [Back to Top](#table-of-contents)
 
