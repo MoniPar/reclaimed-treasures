@@ -496,6 +496,199 @@ _____
 
 # Responsiveness
 
+Website was tested extensively on Chrome devtools for responsiveness.  All pages are fully responsive on screens with width between 320px and 2560px. Friends and family tested the website on their devices and all reported no issues with responsiveness.
+
+<details>
+<summary>Navigation, Footer & Home Page</summary>
+<br>
+
+**NAVIGATION & HOME HERO**
+
+    Mobile iPhone 5/SE Width 320px
+
+![Mobile Navigation & Hero](docs/responsive/mobile-navhero-iphone5SE.png)
+
+<br>
+
+    Tablet iPad Width 768px
+
+![Tablet Navigation & Hero](docs/responsive/tablet-navhero-ipad768.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Desktop Navigation & Hero](docs/responsive/desktop-navhero-1024.png)
+
+**FOOTER**
+
+    Mobile Samsung Galaxy S8 Width 360px
+
+![Mobile Footer](docs/responsive/mobile-footer-samsungs8360.png)
+
+<br>
+
+    Tablet Width 768px
+
+![Tablet Footer](docs/responsive/tablet-footer-768.png)
+
+<br>
+
+    Desktop Nest Hub Max Width 1280px
+
+![Desktop Footer](docs/responsive/desktop-footer-nesthubmax1280.png)
+    
+<br>
+
+**HOME PAGE CONTENT**
+
+    Mobile iPhone 12 Pro Width 390px
+
+![Mobile Home Content](docs/responsive/mobile-home-iphone12pro390.png)
+
+<br>
+
+    Tablet Surface Pro Width 912px
+
+![Tablet Home Content](docs/responsive/tablet-home-surfacepro912.png)
+
+<br>
+
+    Desktop Width 1440px 
+
+![Desktop Home Content](docs/responsive/desktop-home-1440.png)
+
+<br>
+</details>
+
+<details>
+<summary>Shop Page & Product Detail</summary>
+<br>
+
+    Mobile Samsung Galaxy S20 Width 420px
+
+![Mobile Shop Page](docs/responsive/mobile-shop-samsunggalaxys20ultra412.png)
+
+<br>
+
+    Tablet iPad Width 768px
+
+![Tablet Shop Page](docs/responsive/tablet-shop-ipad768.png)
+
+<br>
+
+    Desktop Nest Hub Width 1024px
+
+![Desktop Shop Page](docs/responsive/desktop-shop-nesthub1024.png)
+
+<br>
+
+**Product Detail**
+
+    Mobile Galaxy S5 Width 360px
+
+![Mobile Product Detail Page](docs/responsive/mobile-productdetail-galaxys5360.png)
+
+<br>
+
+    Tablet Surface Pro 7 Width 912px
+
+![Tablet Product Detail Page](docs/responsive/tablet-productdetail-surfacepro912.png)
+
+<br>
+
+    Desktop Width 1440px
+
+![Desktop Product Detail Page](docs/responsive/desktop-productdetail-1440.png)
+
+<br>
+
+**Reviews Section**
+
+    Mobile Width 375px
+
+![Mobile Reviews Section](docs/responsive/mobile-reviews-375.png)
+
+<br>
+
+    Tablet Width 768px
+
+![Tablet Reviews Section](docs/responsive/tablet-reviews-768.png)
+
+<br>
+
+    Desktop Nest Hub Max Width 1280px
+
+![Desktop Reviews Section](docs/responsive/desktop-reviews-nesthubmax1280.png)
+
+<br>
+</details>
+
+<details>
+<summary>Basket & Checkout</summary>
+<br>
+
+**Basket Page**
+
+    Mobile Width 320px
+
+![Mobile Basket Page](docs/responsive/mobile-basket-320.png)
+
+<br>
+
+    Tablet Width 912px
+
+![Tablet Basket Page](docs/responsive/tablet-basket-912.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Desktop Basket Page](docs/responsive//desktop-basket-1024.png)
+
+<br>
+
+**Checkout Page**
+
+    Mobile Width 320px
+
+![Mobile Checkout Page](docs/responsive/mobile-checkout-320.png)
+
+<br>
+
+    Tablet Width 768px
+
+![Tablet Checkout Page](docs/responsive/tablet-checkout-768.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Desktop Checkout Page](docs/responsive/desktop-checkout-1024.png)
+
+<br>
+
+**Checkout Success Page**
+
+    Mobile iPhone 14 Width 390px
+
+![Mobile Checkout Success page](docs/responsive/mobile-orderconfirm-iphone14390.png)
+
+<br>
+
+    Tablet iPad Mini Width 768px
+
+![Tablet Checkout Success Page](docs/responsive/tablet-orderconfirm-ipadmini768.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Desktop Checkout Success Page](docs/responsive/desktop-orderconfirm-1024.png)
+
+<br>
+</details>
+
 
 
 [Back To Top](#table-of-contents)
@@ -503,6 +696,22 @@ _____
 _____
 
 # Browser Compatibility
+
+Website was tested on current Chrome, Firefox, Edge, Brave for compatibility. It was also tested on Safari on an iPad running on iOS 12.5.7 and an iPhone on the latest iOS.
+
+<details>
+<summary>Table of results</summary>
+<br>
+
+| Intended      | Chrome    | Firefox   | Edge  | Brave     | Safari iOS12   | Safari iOS16     |
+|---------------|-----------|-----------|-------|-----------|----------------|------------------|
+| Appearance    | Good      | Good      | Good  | Good      | Poor           | Good             |
+| Responsiveness| Good      | Good      | Good  | Good      | Good           | Good             |
+
+The issue with using Safari on iOS12 is that it doesn't support webp images, therefore all product images in the Shop Page and some of the images on the About Page were not visible.
+
+<br>
+</details>
 
 [Back To Top](#table-of-contents)
 
@@ -1229,7 +1438,7 @@ All Tests Passed
 </details>
 
 <details>
-<summary>Shop Page </summary>
+<summary>Shop/All Products</summary>
 <br>
 
 **All Products**
@@ -1301,7 +1510,7 @@ All Tests Passed
 </details>  
 
 <details>
-<summary>Product Detail Page</summary>
+<summary>Product Detail</summary>
 <br>
 
 **Product Detail Section**
@@ -1464,7 +1673,7 @@ All Tests Passed
 </details>
 
 <details>
-<summary>Add Review Page</summary>
+<summary>Add Review</summary>
 <br>
 
 The Add Review Page is accessed via the Product Detail Page by a logged-in user who hasn't as yet submitted a review for that particular product
@@ -1486,7 +1695,7 @@ All Tests Passed
 </details>
 
 <details>
-<summary>Edit Review Page</summary>
+<summary>Edit Review</summary>
 <br>
 
 The Edit Review Page is accessed via the Product Detail Page by a logged-in user who has already submitted a review for that particular product
@@ -1509,7 +1718,7 @@ All Tests Passed
 </details>
 
 <details>
-<summary>Delete Review Confirmation Page</summary>
+<summary>Delete Review</summary>
 <br>
 
 The Delete Review Confirmation Page is accessed via the Product Detail Page by a logged-in user who has already submitted a review for that particular product.
@@ -1528,7 +1737,7 @@ All Tests Passed
 </details>
 
 <details>
-<summary>Basket Page</summary>
+<summary>Basket</summary>
 <br>
 
 The Basket Page can be accessed via the basket icon on the top navigation bar as well as by the button that appears in the toast after adding a product to the basket.
@@ -1651,7 +1860,158 @@ All Tests Passed -> The tests marked with - don't have the ideal effect but the 
 
 <br>
 
-</details> 
+</details>
+
+<details>
+<summary>Checkout</summary>
+<br>
+
+**Checkout Page**
+
+*Registered / Logged in Users*
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Form Validation | submit form with required fields left blank | tooltip directs user to fill in required field |
+| Save info box 	| Tick and check profile info after checkout | profile details populated with correct info |
+| Payment field | Enter invalid card no | text goes red, error message below “x your card number is invalid” | 
+| Adjust Basket button | hover over | colour & background changes, address shows basket |
+|	| click / tap	| directs to Basket Page |
+| Complete Order button | hover over | changes colour |
+|			| click / tap | if form is valid  directs to green overlay with spinner then Checkout Success Page |  
+
+All Tests Passed
+
+<br>
+
+*Unregistered / Not logged in Users*
+
+This table tests two links that are available for unregistered guests instead of the Save Info box in the previous table.
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Create an account link | hover over | gets underline, address shows accounts/signup |
+|			| click / tap | directs to Register Page |
+| Login to save information link | hover over | gets underline, address shows accounts/login |
+|			| click / tap | directs to Login Page |
+
+All Tests Passed
+
+<br>
+
+**Checkout Success Page**
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+|Success Toast 	| View		| displays just below the navbar, includes order no. & email address|
+|Order Confirmation Information | view | displays product names, quantity, totals, delivery info & email address | 
+|View latest deals button | hover over | changes colour, address shows shop/?category=new,deals |
+|		| click / tap | directs to Shop Page with deals and new categories |
+
+All Tests Passed
+
+<br>
+</details>
+
+<details>
+<summary>Registration & Authentication</summary>
+<br>
+
+**Registration Page**
+
+This page can be accessed by a non-logged in user via the My Account icon on the navbar, the Review section on Product Detail Pages, the Checkout form on the Checkout Page as well as the Login Page.
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| login link	| hover over	| gets underline, address shows accounts/login |
+|		|click / tap	| directs to the Login Page |
+| Form validation | submit form with required fields left blank | tooltip directs user to fill in required field |
+|Back to Login button | hover over | changes colour & background, address shows accounts/login |
+|		|click/tap	| directs to the Login Page |
+|Register button	|hover over	|changes colour	|
+|			|click / tap	| directs to Confirm Email Page, alert toast shows user’s email address |
+| Home button | hover over	|changes colour & background, address shows home |
+|		| click / tap 	| directs to the Home Page |
+
+All Tests Passed
+
+<br>
+
+**Confirm Email Page**
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+|Instructs the user to check their email to verify Email address | view | user clicks on the link in the email received |
+|Confirm Email Page with email URL | view | instructs user to confirm email and username by clicking the Confirm button |
+|Confirm button | hover over | changes colour |
+|		| click / tap | directs to Login Page with success alert |
+
+All Tests Passed
+
+<br>
+
+**Login Page**
+
+The Login Page can be accessed by a registered user straight after registration or via the My Account icon in the Top Navigation bar.  A non-logged in user can also access the Login Page via the Review section on the Product detail pages and the Checkout form.
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| registration link| hover over	| gets underline, address shows accounts/signup|
+|		|click / tap	| directs to the Registration Page |
+| Form validation | submit form with required fields left blank | tooltip directs user to fill in required field |
+|		|submit form with wrong information | error message highlighted at the top of the form |
+|Remember me checkbox | click / tap | ticks the checkbox |
+|Login button	|hover over	|changes colour	|
+|			|click / tap	| directs to Home Page, success toast alerts user that they are successfully logged in |
+|Forgot Password? Link |hover over | gets underline, address shows accounts/password/reset|
+|		| click / tap | directs to Password Reset Page |
+| Home button | hover over	|changes colour & background, address shows home |
+|		| click / tap 	| directs to the Home Page |
+ 
+All Tests Passed
+
+<br>
+
+**Logout Page**
+
+The Logout Page can be accessed via the My Account icon dropdown on the Top Navigation bar. 
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Cancel button	| hover over	| changes colour & background, address shows home |
+|		| click / tap 	| directs to Home Page without logging out |
+| Logout button	| hover over	| changes colour |
+|		| click / tap	| directs to Home Page logging out user, success toast message |
+
+All Tests Passed
+
+<br>
+
+**Reset Password**
+
+The Reset password page can be accessed via the Forgot my password link on the Login Page.
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Email field	| submit form blank | tooltip directs user to fill in required field |
+|Back to Login button | hover over   | changes colour & background, address shows accounts/login |
+|		| click / tap |directs back to Login Page |
+|Reset my Password button | hover over | changes colour |
+|		|click / tap | directs to Password Reset Done Page |
+|Password Reset Done Page | view | instructs user to click link in sent email |
+|Confirm Email Page	|view	|instructs to confirm email and username |
+|Confirm button	| hover over | changes colour |
+|		|click / tap | directs to Change Password Page |
+|Change Password form | submit form blank | tooltip directs user to fill in required field |
+|change password button | hover over | changes colour |
+|	| click / tap | directs to Change Password confirmation page, success toast password changed |
+
+All Tests Passed
+
+<br>
+</details>
+
+
 
 [Back To Top](#table-of-contents)
 

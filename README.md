@@ -634,7 +634,7 @@ The Home Page displays further content which gives the user an outline of what t
 
 *All Products*
 
-The Shop Page reached through the Main navigation > All Products link, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they’ve been browsing by category.  
+The Shop Page reached through the All Products link in the Shop dropdown on the Main Navigation, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they’ve been browsing by category.  
 
 The Shop Page reached through the Shop Now button on the Home Page, displays all the products available in the store without the category badges.  Like above, it also displays the number of products on the current page.  This number changes depending on which category of products the user chooses.  A sort-selector box is also available which helps the user sort the products by price, name, rating, theme, category, and availability.
 
@@ -708,7 +708,7 @@ Top Section Features:
 
 Bottom Section Features:
 
-This section varies depending on whether there are any reviews submitted on the product and whether the user is a registered user or not. 
+This section varies depending on whether there are any reviews submitted on the product and whether the user is a registered user or not.
 
 All users can view the reviews if they are available.  If no reviews are available text will say “There are currently no reviews on this product”.  
 
@@ -826,7 +826,7 @@ A logged-in user can choose to delete their own product review by clicking on th
 
 The Basket Page provides the user with a summary of the items they have added to their basket.  It also provides a subtotal for each product and a grand total for all the items in their basket.  Here, the user is provided with another opportunity to update the quantity of the products or remove them entirely.  Toasts will appear just below the navigation bar with confirmations of added, updated and deleted items as well as a small summary of what is in the basket. Error toasts notify users to amend their quantity if they update their quantity beyond the 10 items per product limit and 3 items per Made to Order product limit.  
 
-The user can return back to the Shop to add more products via the Keep Shopping button or head over to checkout via the Secure Checkout button. 
+The user can return back to the Shop to add more products via the Keep Shopping button or head over to checkout via the Secure Checkout button.
 
 Final validation checks take place when the user clicks the Secure Checkout button to make sure the quantities ordered are within limits.  This is for quantities that are greater than the product stock + 3.
 
@@ -867,6 +867,202 @@ Final validation checks take place when the user clicks the Secure Checkout butt
 	Error Alert on Secure Checkout with quantity greater than product stock + 3
 
 ![Error toast when quantity is greater than the product stock plus 3](docs/features/toasterror-overflow.png)
+
+<br>
+</details>
+
+**Checkout**
+
+The Checkout Page consists of a summary of the basket items with subtotals and total including delivery, as well as a form for the user's delivery and billing information.  It aims to provide an easy and efficient way for a user to make a purchase.
+  
+Registered users can check the save info checkbox to save their information for faster checkout on future orders.  If they have already updated the info on their Profile Page, the checkout form would be pre-populated with their information.  Users who are not registered or logged in are given the option to do so, to save their information for future purchases.
+
+The last field in the form is an input for the payment information.  Payments are processed by Stripe and to facilitate a payment, a user needs to input their card details into this field. If the details are invalid, a warning message is displayed below the payment field.
+
+When the user lands on the Checkout Page, a webhook is created with the user's order and information details if available.  This is sent to Stripe which creates a payment intent for the order.  This is beneficial for the user in case they lose connection, or something goes wrong while processing the order.  This makes sure that their order is recorded and sent to the database for further processing and to deduct the items ordered from the inventory.
+
+Users have access to their basket via the Adjust Basket button in case they decide to update the items they want to order. A message at the bottom reminds the user of the Grand total amount that their card will be charged. They can complete the order by clicking on the Complete Order button.  Users are notified if the required fields are not filled in when they click the Complete Order button.
+
+<details>
+<summary>Screenshot of Checkout Page</summary>
+<br>
+
+![Checkout Page on Desktop](docs/responsive/desktop-checkout-1024.png)
+
+<br>
+</details>
+
+**Checkout Payment Overlay**
+
+When a user clicks the Complete Order button, an overlay with a spinner is displayed, giving the user some visual feedback that their order is being processed.  If there's any problem with the payment information the user will be directed back to the Checkout Page and the payment field will be highlighted with an informative message.
+
+At this stage, Stripe confirms that charge and sends a signal back to the database that the payment intent has succeeded.  The order is created and recorded in the database and the items ordered are deducted from the inventory.
+
+**Checkout Success**
+
+Once the order has been processed, a checkout success page is displayed with information about the order made.  A success toast is also triggered and the user receives a confirmation email for the order submitted.
+
+A button at the bottom of the page directs the user to view the latest deals in the Shop. 
+
+<details>
+<summary>Screenshot of Checkout Success Page & Email</summary>
+<br>
+
+	Checkout Success Page with Order Information
+
+![Checkout Success Page with Order Information on tablet](docs/responsive/tablet-orderconfirm-ipadmini768.png)
+
+<br>
+
+    Order Confirmation Email
+
+![Order Confirmation Email](docs/features/orderconfirmemail.png)
+
+<br>
+</details>
+
+**Registration**
+
+The website has the functionality for a user to register for an account to be able to login and save their delivery information, view their order history and submit reviews.
+The Registration Page can be accessed via the My Account icon on the Top Navigation Bar.  A non-logged in user can also access the registration page from the Reviews section on the Product detail pages and the Checkout form.
+
+On the Registration Page there is a link and a button which directs the user to the Login Page, in case they already have an account.  Another button at the bottom can be used to go back to the Home Page.
+
+To register for an account, the user is asked to enter their email address twice to prevent any input errors.  They are also asked for a username and password twice, again this is to prevent any input errors. Once the user is satisfied with their form, they can click on the Register button which will bring them to the Confirm Email Page which will ask them to verify their email address.  An alert toast here displays the email address that the user has provided upon registration.  The user will then navigate to their email and click the link in the email sent by the site.  This will bring them to another page where they are asked to confirm their email address and username.  They will then be directed to the Login Page where a success toast tells them that they have confirmed the email address.  They can then login to their freshly registered account.
+
+<details>
+<summary>Screenshots for Registration</summary>
+<br>
+
+	Registration Form
+
+![Registration Form on Desktop](docs/responsive/desktop-registration-1024.png)
+
+<br>
+
+	Confirm Email Page with Alert Toast
+
+![Confirm Email Page on Mobile](docs/features/registration-confirmemail.png)
+
+<br>
+
+	Email with Confirmation Link
+
+![Email with Confirmation link](docs/features/registration-emailverification.png)
+
+<br>
+
+	Confirmation Link
+
+![Confirmation Link Page on Mobile](docs/features/registration-confirmemaillink.png)
+
+<br>
+
+	Login Form with Success Toast
+
+![Successful Registration directed to Login Page](docs/features/mobile-loginwithtoast.png)
+
+<br>
+</details>
+
+**Login Page**
+
+The Login Page can be accessed by a registered user straight after registration or via the My Account icon in the Top Navigation bar.  A non-logged in user can also access the Login Page via the Review section on the Product detail pages and the Checkout form.  
+
+The Login Page features:
+
+-	a link to the Registration Page, for users who haven't yet registered an account, 
+-	a form with inputs for username or email and password,
+-	a Remember me checkbox which gives the user the option to save their login details,
+-	the Login button which will log them into their account,
+-	a forgot password link which they can use to create a new password in case they have forgotten it and
+-	a Home button which will bring the user back to the Home Page.
+Both text input fields in this form are required and once the user submits the correct information they are directed to 
+
+<details>
+<summary>Screenshots for Login Page</summary>
+<br>
+
+	Login Page on Tablet
+
+![Login page on tablet](docs/responsive/tablet-login-ipadair820.png)
+
+<br>
+
+	Login Page Invalid Form
+
+![Login Page Error](docs/features/login-error.png)
+
+<br>
+
+	Login Success
+
+![Login Success](docs/features/login-success.png)
+
+<br>
+</details>
+
+**Logout Page**
+
+The Logout Page link is accessed via the My Account icon dropdown on the Top Navigation bar.  When a user selects this link, they are directed to a Logout Confirmation Page where they are asked to confirm if they want to log out.  The user is also given the option to cancel logging out using the Cancel button which will direct them to the Home Page while still logged in to their account.  If the user selects to log out, they are also redirected to the Home Page but this time they see a success toast alerting them that they have successfully logged out.  
+
+<details>
+<summary>Screenshots for Logout Page</summary>
+<br>
+
+	Logout Confirmation Page
+
+![Logout confirmation page](docs/responsive/mobile-logout-samsunggalaxya51412.png)
+
+<br>
+
+	Logout Success Toast
+
+![Signout success toast](docs/features/logout-success.png)
+
+<br>
+</details>
+
+**Password Reset**
+
+The Registration & Authentication functionality of django-allauth, gives the user the ability to reset their password if they have forgotten it.  The link for Forgotten Password? can be accessed through the Login Page.  When selected the user is directed to the Password Reset Page where they’re asked to enter their email address and after clicking on the Reset my Password button, they are directed to another page which instructs them to check their email and click on the link sent.  This will direct them to Change Password Page, where they can reset their password by entering the password twice. After submitting the form, they are directed to a page confirming that their password has been changed.  A toast success also alerts the user that their password has been changed. 
+
+<details>
+<summary>Screenshots for Password Reset</summary>
+<br>
+
+	Password Reset Page
+
+![Password reset page](docs/features/passwordreset.png)
+
+<br>
+
+	Password Reset Page Error
+
+![Password reset error](docs/features/passwordreset-error.png)
+
+<br>
+
+	Password Reset Done
+
+![Password reset done page](docs/features/passwordresetdone.png)
+
+<br>
+	Password Reset Email
+
+![Password reset email](docs/features/passwordreset-confirmreset.png)
+
+<br>
+
+	Change Password
+
+![Change Password page](docs/features/passwordreset-changepassword.png)
+
+<br>
+
+	Change Password Confirmation
+
+![Change password done](docs/features/passwordreset-done.png)
 
 <br>
 </details>
