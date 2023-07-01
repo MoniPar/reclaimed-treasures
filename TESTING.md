@@ -305,8 +305,8 @@ MOBILE
 ![Lighthouse testing results for Home Page Mobile](docs/lighthouse/mobile-home.png)
 
 Low performance score due to render blocking resources and unused javascript.
-Render blocking resources included the Bootstrap suit with the highest transfer size.  Coverage was used to identify critical CSS and JS but due to time constraints, these could not be eliminated.
-Stripe was flagged as unused JS, however it was decided to leave this in the base.html as recommended by Stripe documentation to manage fraudulent activity.
+Render blocking resources included the Bootstrap suite with the highest transfer size.  Coverage was used to identify critical CSS and JS but due to time constraints, these could not be eliminated.
+Stripe was flagged as unused JS, however it was decided to leave this in the base.html as recommended by Stripe documentation to prevent fraudulent activity.
 
 DESKTOP
 
@@ -322,7 +322,7 @@ MOBILE
 
 ![Lighthouse testing results for Shop Page](docs/lighthouse/mobile-shop.png)
 
-Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not switch at this stage.
+Low performance score due to use of HTTP/1. Recommendation to use HTTP/2 with Amazon Web services. This is out of my control and could not investigate further at this stage.
 Unused JavaScript - once again Stripe was flagged highest for this. Stripe recommends to place the JS link in the base.html to prevent fraudulent activity.
 
 DESKTOP

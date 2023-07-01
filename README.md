@@ -2,9 +2,9 @@
 
 Welcome to Vera's Reclaimed Treasures, a full stack e-commerce website built using the Django framework, Bootstrap, HTML, CSS, Python & JavaScript.  It utilises Stripe as the payment processor and Amazon Web Services S3 Bucket for storing static and media files. The project has been deployed on Heroku and uses a postgreSQL database instance hosted on ElephantSQL.
 
-This project was created for educational purposes only as my fifth and final project for a Diploma in Software Development with Code Institute.
+This project was created for educational purpose as my fifth and final project for a Diploma in Software Development with Code Institute.
 
-Vera's Reclaimed Treasures is an online store where one can buy unique and sustainable products, hand-painted on upcycled materials in myriads of patterns and colourful designs.
+Vera's Reclaimed Treasures is an online store where one can buy unique and sustainable products, hand-painted on upcycled materials in myriad patterns and colourful designs.
 
 [Link to the live website](https://veras-reclaimed-treasures.herokuapp.com/).
 
@@ -48,7 +48,7 @@ _____
 
 ## Introduction
 
-In my planning phase for this project, I wanted to create an ecommerce store for hand-made candles and soaps until I came across this lady's hand-painted collection of upcycled products at a fair in Malta. I was absolutely enthralled by what she had managed to create and decided to ask her for permission to use her creations for the basis of my ecommerce store.  That lady's name is Vera and her small business is called Vera's Magical Creations. At the moment Vera reaches potential customers at local markets, through her [facebook page]((https://www.facebook.com/profile.php?id=100070440427112)), or by word of mouth. All transactions are cash based and delivered in person which is time consuming.  
+In my planning phase for this project, I wanted to create an e-commerce store for hand-made candles and soaps until I came across this lady's hand-painted collection of upcycled products at a fair in Malta. I was absolutely enthralled by what she had managed to create and decided to ask her for permission to use her creations as the basis of my e-commerce store.  That lady's name is Vera and her small business is called Vera's Magical Creations. At the moment, Vera reaches potential customers at local markets, through her [facebook page](https://www.facebook.com/profile.php?id=100070440427112), or by word of mouth. All transactions are cash-based and delivered in person, which is time-consuming.  
 
 This project aims to create a more permanent online presence for Vera's business.  It gives her a way to organize her products, keep track of orders and automate sales without necessarily having to interact directly with all her customers.  An online store can help her reach a wider audience and maximize her business's potential.
 
@@ -70,7 +70,7 @@ _____
 Vera's Reclaimed Treasures is a Business to Consumer(B2C) e-commerce site.  It gives the site owner an online presence where people can find her latest works and browse a wide range of finished pieces.  In addition to being a store, it is also a showcase of Vera's artistic abilities.  It carries a message of eco-consciousness and will appeal to people who are seeking eco-friendly, creative art pieces.
 As a small, fledgling business, Vera’s Reclaimed Treasures, relies on engaging with the customers, open communication and relationship building.  The website offers ways to get in touch with Vera with feedback, queries and suggestions. Customers can also post reviews on individual products which would help Vera improve the product selection while giving the customers a positive shopping experience.
 
-The site's target audience falls into two overlapping tiers.  The first is people who are more broadly interested in art for use of décor or gifts.  The second are interested in reuse of discarded materials and items from an eco-friendly perspective.  These audiences are both very active demographics on Social Media, including Facebook, with many pages and discussion groups catering to them.
+The site's target audience falls into two overlapping tiers.  The first is people who are more broadly interested in art for use as décor or gifts.  The second are interested in reuse of discarded materials and items from an eco-friendly perspective.  These audiences are both very active demographics on Social Media, including Facebook, with many pages and discussion groups catering to them.
 
 ### Marketing Strategy
 
@@ -78,7 +78,8 @@ The marketing strategy at the outset will rely on a combination of organic conte
 
 #### Social Media Marketing
 
-As mentioned earlier, Vera already has established a Business Facebook page and she has a few followers, who have purchased her products in the past and who are interested in the same causes as her.  If utilized properly, this offers potential for business growth. 
+As mentioned above, Vera already has established a Business Facebook page and she has a few followerswho have purchased her products in the past and are interested in the same causes as her.  If utilized properly, this offers potential for business growth. 
+
 Pros of a Business Facebook Page:
 
 - Organic approach allows for limited growth at no cost.
@@ -86,7 +87,7 @@ Pros of a Business Facebook Page:
 - Fosters a sense of community through engagement, building brand personality.
 - Helps improve customer service and support.
 - The existing Facebook page already has an established presence and a foundation of showcasing many of her art pieces.
-- The Facebook Business page will include the link to the online ecommerce store, while users of the site are also linked back to her Facebook page so that they are kept in the loop about any new pieces, posts etc.
+- The Facebook Business page will include the link to the online e-commerce store, while users of the site are also linked back to her Facebook page so that they are kept in the loop about any new pieces, posts etc.
 
 Opportunities for improvement:
 
@@ -94,7 +95,7 @@ Opportunities for improvement:
 - Useful posts like tips and tricks and how to reuse recycled materials.
 - Have Q & A sessions: getting people to ask questions which she will answer in a video.
 - Posts about upcoming promotions, sales & deals.
-- Posts about upcoming in person events where Vera will be displaying and selling some of her work and asking people to bring recycled materials.
+- Posts about upcoming in-person events, where Vera will be displaying and selling some of her work and asking people to bring recycled materials.
 
 For the purposes of this project, a mock-up Business Facebook page was created, similar to Vera's own.
   
@@ -106,15 +107,15 @@ Links to the Social links can be found in the Footer of the website as well as o
 
 #### Email Marketing
 
-A Newsletter subscription service will be set up on the Ecommerce website.  This will keep users up to date on Vera's news, special promotions and more while encouraging them to revisit the website.
+A Newsletter subscription service will be set up on the e-commerce website.  This will keep users up to date on Vera's news, special promotions and more, while encouraging them to revisit the website.
 
 Pros of posting a Newsletter:
 
 - Easy and free to set up.
 - Acts as a reminder to previous customers and others interested in Vera's products.
-- Doesn't need to be as consistent as Facebook posts.
+- Does not need to be as regular as Facebook posts.
 - Different approaches can be tested out, allowing for a more refined marketing strategy over time.
-- A way to inform potential and returning customers about seasonal products, discount codes and bring in dates.
+- A way to inform potential and returning customers about seasonal products, discount codes and dates for bringing in recycled materials for upcycling.
   
 A newsletter sign-up form has been added to the Footer of the website.
 
@@ -122,9 +123,12 @@ A newsletter sign-up form has been added to the Footer of the website.
 
 ### Search Engine Optimisation
 
-Search Engine Optimisation(SEO) is a set of practices designed to improve the appearance and positioning of web pages in organic search results. To improve my website's visibility on search engines, I started by conducting some keyword research and defining short-tail keywords and long-tail keywords.  I used [Word Tracker]( https://www.wordtracker.com/) to narrow them down to the most relevant.  Once I had identified the keywords, I used them in the website's meta tags, title, headings, content and image alt descriptions.  These will help search engines understand the relationship between the different pages on the website. 
-A [sitemap.xml]( https://www.xml-sitemaps.com/) and a robots.txt file were also added to my project.  The sitemap lists all the pages on the website, while the robots.txt file tells search engines which pages they should not crawl.
+Search Engine Optimisation(SEO) is a set of practices designed to improve the appearance and positioning of web pages in organic search results. To improve my website's visibility on search engines, I started by conducting some keyword research and defining short-tail and long-tail keywords.  I used [Word Tracker](https://www.wordtracker.com/) to narrow them down to the most relevant.  Once I had identified the keywords, I used them in the website's meta tags, title, headings, content and image alt descriptions.  These will help search engines understand the relationship between the different pages on the website.
+
+A [sitemap.xml](https://www.xml-sitemaps.com/) and a robots.txt file were also added to my project.  The sitemap lists all the pages on the website, while the robots.txt file tells search engines which pages they should not crawl.
+
 In the footer I added one link to the Eco Market Malta website. This website ranks higher on Google and is very relevant to Vera's Reclaimed Treasures as it promotes artists and eco-friendly products.
+
 A privacy policy was also added to the website. While this is not a direct ranking factor for SEO, it is recommended to have Google and other search engines index it. In addition, it helps improve the website's credibility and trustworthiness and compliance with various laws and regulations related to data protection and privacy.
 
 ### Website Main Goals
@@ -147,7 +151,7 @@ For the user/customer:
 - To give users a responsive and easy to navigate website with a clear purpose.
 - To provide users with products that meet their expectations.
 - To allow users to view details on products and add them to their shopping basket.
-- To allow users to purchase Made to Order products if the stock runs out.
+- To allow users to purchase products as Made to Order if the stock runs out.
 - To allow users to checkout quickly and safely.
 - To give users the option to save their information for future visits.
 - To give registered users the ability to view their previous orders.
@@ -159,7 +163,7 @@ _____
 
 ## User Experience
 
-This section aims to determine what a user would expect from interacting with the website. Each User Story was recorded in [GitHub Issues](https://github.com/MoniPar/reclaimed-treasures/issues).  Scenarios of actions each type of user, including the business/site owner, wishes to take are listed below.  These were categorised into Epics listed in the Agile Methodology section, for the development of the project.  Two of the user stories listed below weren't completed on time and have been placed in the backlog for future iterations.
+This section aims to determine what a user would expect from interacting with the website. Each User Story was recorded in [GitHub Issues](https://github.com/MoniPar/reclaimed-treasures/issues).  Scenarios of actions each type of user, including the business/site owner, wishes to take are listed below.  These were categorised into Epics listed in the Agile Methodology section, for the development of the project.  Two of the user stories listed below were not completed on time and have been placed in the backlog for future iterations.
 
 ### User Stories
 
@@ -201,16 +205,16 @@ From User/Customer perspective:
 - [#48](https://github.com/MoniPar/reclaimed-treasures/issues/48) As a Registered Customer, I can edit and delete my reviews, so that I have the ability to correct any mistakes I make.
 
 - [#47](https://github.com/MoniPar/reclaimed-treasures/issues/47) As a User, I can navigate to the About page, so that I can learn more about the shop owner.
-- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I can easily access other parts of the website. - Not Completed
+- [#52](https://github.com/MoniPar/reclaimed-treasures/issues/52) As a User, I can easily navigate back to the top of the page with one click, so that I can easily access other parts of the website. - Won't Have
 
 The following User Stories were used to implement features which make the website run more smoothly and give the user a better experience using the website.  Some are made from the Business owner's or Developer's perspective.  Stories concerned with setting up and other developer tasks were left out from this list. Due to time lost with Code Anywhere technical issues, it was decided to leave the Product Management Interface and the Featured Products on Home page out. These were placed in the backlog for future iterations.
 
 - [#14](https://github.com/MoniPar/reclaimed-treasures/issues/14) As a business owner, I can have a banner with a CTA clearly visible on the landing page, so that users are encouraged to access the shop and view/buy products.
-- [#16](https://github.com/MoniPar/reclaimed-treasures/issues/16) As a business owner, I can choose which products to feature on the landing page, so that users are encouraged to check them out.
+- [#16](https://github.com/MoniPar/reclaimed-treasures/issues/16) As a business owner, I can choose which products to feature on the landing page, so that users are encouraged to check them out. - Backlog
 - [#20](https://github.com/MoniPar/reclaimed-treasures/issues/20) As a Shop Owner, I can use the Admin interface to add, update, view and delete products so that I can populate the online shop.
-- [#21](https://github.com/MoniPar/reclaimed-treasures/issues/21) As a store owner, I can add a product via the UI, so that I can add new items to my store.
-- [#22](https://github.com/MoniPar/reclaimed-treasures/issues/22) As a store owner, I can edit/update a product via the UI, so that I can change the product price, description, image and other product criteria.
-- [#23](https://github.com/MoniPar/reclaimed-treasures/issues/23) As a store owner, I can delete a product via the UI, so that remove items that are no longer on sale.
+- [#21](https://github.com/MoniPar/reclaimed-treasures/issues/21) As a store owner, I can add a product via the UI, so that I can add new items to my store. - Backlog
+- [#22](https://github.com/MoniPar/reclaimed-treasures/issues/22) As a store owner, I can edit/update a product via the UI, so that I can change the product price, description, image and other product criteria. - Backlog
+- [#23](https://github.com/MoniPar/reclaimed-treasures/issues/23) As a store owner, I can delete a product via the UI, so that remove items that are no longer on sale. - Backlog
   
 - [#32](https://github.com/MoniPar/reclaimed-treasures/issues/32) As a developer, I can add functionality with the plus (+) and minus (-) buttons to the quantity selector, so that the user has a better experience adding products to their basket on mobile.
 - [#40](https://github.com/MoniPar/reclaimed-treasures/issues/40) As a developer, I can make sure that customers can confidently provide the information required safely and securely, so that they can have a positive experience on the site.
@@ -226,7 +230,7 @@ _____
 
 ### Project and Database Structure
 
-Utilising the Django Framework, the project is divided into specific apps handling the different features of the website. The Project directory contains the different folders for these apps as well as a templates folder where the Allauth Authentication folders, the base templates and error pages templates live. It also contains a media folder for the product images and all other images on the website and a static directory which serves as a central location for storing static assets used throughout the project.
+Utilising the Django Framework, the project is divided into specific apps handling the different features of the website. The Project directory contains the different folders for these apps as well as a templates folder where the Allauth Authentication folders, the base templates and error pages templates live. It also contains a media folder for the product images and all other images on the website and a static directory which serves as a central location for storing static assets used throughout the project in development.
 
 The base template holds all the necessary <head> elements including the meta tags, title, links to stylesheets and scripts etc.  It also holds the Navigation, Footer and Messages/Toasts Code. All other apps' templates are extended from the base template.
 
@@ -236,9 +240,9 @@ The Home App includes the content of the Home Page as well as that of the About 
 
 The Products App includes the Shop Page and Product Detail functionality.  This is mostly based on the Boutique Ado walkthrough, with added features such as product stock & product availability.  The increment button on the product detail page has been amended to increment item quantity only up to 10 on products in stock, as Vera's inventory is quite small.   On Made to Order products, the increment button only goes up to 3.  This is to make sure that Vera doesn't get a large order of products that are not ready to be shipped.  The product availability was also added so that Vera can decide if she wants to replenish her stock before setting the product up as Made to Order, as some of her products take time to prepare and others depend on the availability of recycled materials.
 
-The Review App includes a custom model for Reviews.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they haven't yet purchased them.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.  
+The Review App includes a custom model for Reviews.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products, even if they have not purchased them yet.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.  
 
-The Basket App includes the functionality for the basket.  Once again this is based on the Boutique Ado project with the added functionality on the increment button mentioned in the Product App paragraph above.  Users can update the quantity of items in their basket or delete them if they change their mind.  They can also see a subtotal and a total for their order on the page and under the basket icon in the navigation.
+The Basket App includes the functionality for the basket.  Once again, this is based on the Boutique Ado project with the added functionality on the increment button mentioned in the Product App paragraph above.  Users can update the quantity of items in their basket or delete them if they change their mind.  They can also see a subtotal and a total for their order on the page and under the basket icon in the navigation.
 
 The Checkout App includes the functionality to handle the payment form.  Before the user gets to the checkout form page, I added a final check on the quantity of each product in their basket to make sure that there isn't an overflow greater than the limit of 3 items on products that were not marked as Made to Order.  Again, this is to ensure that Vera doesn't get a large order of products that are not readily available for shipping.  Upon form validation and successful payment intent, the user is directed to the checkout success page where they can see details of their order.  This is when the product stock is decremented in the database and the products are set to Made to Order if the stock is 0.
 
@@ -258,25 +262,25 @@ Models define the source of the data stored.  Each model contains the essential 
 
 The shaded tables are the custom models created for this project. These include the Review Model stored in the Review App and the Contact Model stored in the Contact App as mentioned above. The Product Model was customised to include extra features (please read on for more information).  
 
-The Review Model has a one-to-many relationship with the Product Model and a Many-to-One relationship with User.  It stores the rating for each product, the comments and submission dates of reviews made by registered users.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they haven't yet purchased them.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.
+The Review Model has a one-to-many relationship with the Product Model and a Many-to-One relationship with User.  It stores the rating for each product, the comments and submission dates of reviews made by registered users.  This gives registered users C.R.U.D. functionality to add, update and delete their reviews.  It was decided to have it set so that only one review on each product is submitted by the user.  At the moment, any registered user can submit a review on products even if they have not purchased them yet.  This was done on purpose, in order for Vera to gauge user interest on specific products in her collection.  In the future, it would be best to have a check before the review is published to make sure that this feature is not misused.
 
-The Contact Model has changed a little since the design of the Database Schema.  Extra fields were added to provide more information.  The Subject Field as a choice field, helps Vera quickly assess which submissions require more urgent action.  The date of submission and the actioned fields were also added to this effect.
+The Contact Model has changed a little since the design of the Database Schema.  Extra fields were added to provide more information.  Having the subject field as a choice field, helps Vera quickly assess which submissions require more urgent action.  The date of submission and the actioned fields were also added to this effect.
   
 The Product Model was customised to include:
 
-- A field for additional information, this includes the weight and size of the product as well as the care information of certain products.  
+- A field for additional information, this includes the weight and size of the product as well as the care information for certain products.  
 - A theme field, added to be able to categorise the products by the type of designs they display.  This would be helpful for commissions users might request.  
 - A stock field, which adds functionality to this model.  This is set to display the number of items left in the inventory.  Once the number of items in the inventory is decremented to 0, the Made to Order text is displayed and the customer is only allowed to order a limited quantity of that particular product per order.  
-- An available field displays a checkbox in the admin, which if unchecked would display a disabled button on the product detail page instead of the increment and decrement buttons.  This would stop the user from being able to purchase the product giving Vera time to replenish her stock and/or source the recycled materials needed.  
-- Finally an image thumbnail field was added in order to be able to add smaller versions of the product images to help the shop page load faster.
+- An available field displays a checkbox in the admin, which if unchecked would display a disabled button on the product detail page instead of the increment and decrement buttons.  This would stop the user from being able to purchase the product, giving Vera time to replenish her stock and/or source the recycled materials needed.  
+- Finally, an image thumbnail field was added in order to be able to add smaller versions of the product images to help the shop page load faster.
 
 ### Wireframes and Design Choices
 
 [Balsamiq](https://balsamiq.com/wireframes) was used to sketch wireframes for the most essential parts of the website, getting a feel for the website as a whole and an indication of the finished design. Through the implementation phase a few elements were changed to allow for a better user experience.
 
-[Right click for mobile wireframes pdf](docs/vrt-wireframes-mobiletablet.pdf)
+[Ctrl + click for mobile wireframes pdf](docs/vrt-wireframes-mobiletablet.pdf)
 
-[Right click for desktop wireframes pdf](docs/vrt-wireframes-tabletdesktop.pdf)
+[Ctrl + click for desktop wireframes pdf](docs/vrt-wireframes-tabletdesktop.pdf)
 
 **Colour Scheme**
 
@@ -284,7 +288,7 @@ The Product Model was customised to include:
 
 ![Colour Palette](docs/palette_bright.png)
 
-Giants orange created a great contrast against the dark overlay on the background images.
+Giants orange created a strong contrast against the dark overlay on the background images.
 Eggplant was used for the delivery banner to create more contrast against the white navigation.
 Mulberry colour was used as a hover effect on the main navigation links.  A very low opacity of this colour was also used as a background colour through out all the site.
 
@@ -294,7 +298,7 @@ Mulberry colour was used as a hover effect on the main navigation links.  A very
 
 **Icons**
 
-[Font Awesome](https://fontawesome.com) icons are used throughout the site.  The Social Media icons on the Footer and the Contact page are interactive links and have an aria-label which gives the relevant information to screen readers.   The icons on the product cards also have an aria-label as well as a tooltip explaining what the icon is meant to convey.  Other icons on the site are used for decorative purposes only and so they are set up so that they are not read by screen readers.
+[Font Awesome](https://fontawesome.com) icons are used throughout the site.  The Social Media icons on the Footer and the Contact page are interactive links and have an aria-label which gives the relevant information to screen readers.   The icons on the product cards also have an aria-label as well as a tooltip explaining what the icon is meant to convey.  Other icons on the site are used for decorative purposes only and are set not to be read by screen readers.
 
 [Back to Top](#table-of-contents)
 _____
@@ -319,7 +323,7 @@ This project was completed in 9 sprints.  The first 3 sprints were completed in 
 
 </details>
 
-The first sprint tackled the Initial Setup Epic and involved getting the development environment setup and the relevant packages installed. I decided to get the project ready for deployment at this early stage, so Heroku and the production database were configured and setup during this sprint.  Since this was done relatively fast, I also used the time to start setting up the S3 bucket.  The AWS Bucket Setup story was then placed in the backlog to be completed at a later stage.
+The first sprint tackled the Initial Setup Epic and involved getting the development environment set up and the relevant packages installed. I decided to get the project ready for deployment at this early stage, so Heroku and the production database were configured and set up during this sprint.  Since this was done relatively fast, I also used the time to start setting up the S3 bucket.  The AWS Bucket Setup story was then placed in the backlog to be completed at a later stage.
 
 Completed User Stories:
 
@@ -370,7 +374,7 @@ Completed User Stories:
 
 </details>
 
-The Fourth sprint tackled one user story from the Product Management Epic and the Product Viewing and Navigation Epic and consisted of setting up and getting the online shop running.  This was a much longer sprint than the others before it but I got it completed within the week as intended.
+The Fourth sprint tackled one user story from the Product Management Epic and the Product Viewing and Navigation Epic, and consisted of setting up and getting the online shop running.  This was a much longer sprint than the others before it, but I got it completed within the intended timeframe.
 
 Completed User Stories:
 
@@ -388,7 +392,7 @@ Completed User Stories:
 
 </details>
 
-The Fifth sprint tackled the Shopping Basket Epic and involved creating the shopping basket functionality including toast messages.  Again this was a longer sprint but the number of story points within this sprint seemed optimal.
+The Fifth sprint tackled the Shopping Basket Epic and involved creating the shopping basket functionality including toast messages.  Again this was a longer sprint, but the number of story points within seemed optimal.
 
 Completed User Stories:
 
@@ -426,7 +430,7 @@ Completed User Stories:
 
 </details>
 
-The Seventh sprint continued tackling the Checkout Epic and the User Profile Epic.  In this sprint I started adding the functionality for decrementing the product stock from the inventory on which I spent the majority of the time.  While working on that user story, I quickly came to realise that it needed a lot more work than I had anticipated.  In hindsight, I should have divided it into a few more user stories, which would have included updating the functionality of the increment button on the product detail page and the basket page.  The story points for the Product Stock user story were not indicative of the work I spent on it.
+The Seventh sprint continued tackling the Checkout Epic and the User Profile Epic.  In this sprint I started adding the functionality for decrementing the product stock from the inventory on which I spent the majority of the time.  While working on that user story, I quickly came to realise that it needed a lot more work than I had anticipated.  In hindsight, I should have divided it into a few more user stories, which would have included updating the functionality of the increment button on the product detail page and the basket page.  The story points for the Product Stock user story were not indicative of the work required for it.
 
 Completed User Stories:
 
@@ -449,7 +453,7 @@ Completed User Stories:
 
 The Eight sprint was originally set to tackle the 4 user stories from different Epics (displayed in the image above) as well as a bug I found while testing the product stock functionality.  Another user story was created for the product review functionality which was added to this sprint as displayed in the second image above.
 
-With this sprint completed the project was deployed again this time with the media files in the S3 bucket.
+With this sprint completed, the project was deployed again, this time with the media files in the S3 bucket.
 
 Completed User Stories:
 
@@ -468,7 +472,7 @@ Completed User Stories:
 
 </details>
 
-The Ninth sprint mainly tackled the SEO and Web Marketing Epic and included some bugs I found while testing the deployed site. The Back to Top button user story was deemed unnecessary since the navigation was always fixed at the top, so it was placed in the backlog for future iterations.
+The Ninth sprint mainly tackled the SEO and Web Marketing Epic and included some bugs I found while testing the deployed site. The Back to Top button user story was deemed unnecessary since the navigation was always fixed at the top, so it was marked as a won't have.
 
 Completed User Stories:
 
@@ -489,13 +493,13 @@ _____
 
 **HEADER & NAVIGATION**
 
-Featured on all pages, the fully responsive header is fixed to the top so that the user always has access to the navigation links, includes is divided into 3 parts:
+Featured on all pages, the fully responsive header is fixed to the top so that the user always has access to the navigation links, and is divided into 3 parts:
 
 1. The Top Navigation - consisting of:
 
-    - The website's logo which is a link that brings the user to the Home Page.
-    - A search box on desktop or search icon on mobile and tablet which when clicked opens a text input for users to search the Shop Owner's Collection.
-    - An icon for Accounts which when clicked drops down links for the Registration & Login Pages for users who are not logged in or My Profile & Logout Pages for users who are logged in.
+    - The website's logo, which is a link that brings the user to the Home Page.
+    - A search box on desktop or search icon on mobile and tablet, which when clicked, opens a text input for users to search the Shop Owner's Collection.
+    - An icon for Accounts, which when clicked, drops down links for the Registration & Login Pages for users who are not logged in, or My Profile & Logout Pages for users who are logged in.
     - An icon for the shopping basket which displays the grand total on desktop. On mobile and tablet this icon shows the grand total when clicked.
     - All links have a hover and focus effect to help the user identify them as links.
 
@@ -503,7 +507,7 @@ Featured on all pages, the fully responsive header is fixed to the top so that t
 
     - Links to the Home, Shop, About and Contact Pages.
     - The Shop link is a dropdown element which opens up to display links to the different types of products in the shop. The last link in this dropdown brings the user to the Shop Page with all products.
-    - On mobile and tablet the main navigation links are accessed by toggling the hamburger button.
+    - On mobile and tablet, the main navigation links are accessed by toggling the hamburger button.
     - All links have a hover and focus effect to help the user identify them as links.
 
 3. The Delivery Banner with its dark background to highlight the text displayed within.
@@ -545,16 +549,16 @@ Featured on all pages, the fully responsive header is fixed to the top so that t
 
 **FOOTER**
 
-Features on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email if they prefer that method or contact and it also allows the users to keep connected via social media and to sign up for the newsletter.  It includes:
+Featured on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email, if they prefer that method of contact. It also allows the users to keep connected via social media and to sign up for the newsletter.  It includes:
 
 - A newsletter signup – This is valuable to the user as it keeps them up to date with offers, new products, seasonal deals and news from the Shop Owner.
-- The website logo which is in itself a link which directs the user back to the Home Page.
+- The website logo, which is in itself a link directing the user back to the Home Page.
 - Contact details are links which direct the user to the relevant apps. On mobile, the telephone number will bring up a call feature, while the email address will open up an email app on tablet and desktop as well.
 - Social links open in a new tab so that users are not directed away from the website.
 - Useful links are links that direct the user to:
   - the Privacy Policy of the Ecommerce Store (opens in a new tab),
   - the Contact Page of the website in order for the user to submit a query and
-  - Eco Market Malta - a website which advocates for sustainability and includes relevant information to this ecommerce site.
+  - Eco Market Malta - a website which advocates for sustainability and includes relevant information to this e-commerce site.
 - Copyright has a link to the creator's LinkedIn page, which also opens in a new tab.
 - All links have a hover and focus effect to help users identify them as links.
 - All links are labelled for screen reading technology.
@@ -607,7 +611,7 @@ The Home page hero on the Landing Page takes up more than half the viewport of a
 
 **Home Page Content**
 
-The Home Page displays further content which gives the user an outline of what the business is about.  It includes 3 cards each displaying an icon, a heading and some text giving more detail about the business.  Each card also has a button which directs the user to more information throughout the site’s pages. All 3 buttons have a hover and focus effect to show the user that they are interactive elements.
+The Home Page displays further content which gives the user an outline of what the business is about.  It includes three cards, each displaying an icon, a heading and some text giving more detail about the business.  Each card also has a button which directs the user to more information throughout the site’s pages. All three buttons have a hover and focus effect to show the user that they are interactive elements.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -636,9 +640,9 @@ The Home Page displays further content which gives the user an outline of what t
 
 **All Products**
 
-The Shop Page reached through the All Products link in the Shop dropdown on the Main Navigation, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they’ve been browsing by category.  
+The Shop Page, reached through the All Products link in the Shop dropdown on the Main Navigation, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they have been browsing by category.  
 
-The Shop Page reached through the Shop Now button on the Home Page, displays all the products available in the store without the category badges.  Like above, it also displays the number of products on the current page.  This number changes depending on which category of products the user chooses.  A sort-selector box is also available which helps the user sort the products by price, name, rating, theme, category, and availability.
+The Shop Page, reached through the Shop Now button on the Home Page, displays all the products available in the store without the category badges.As above, it also displays the number of products on the current page. This number changes depending on which category of products the user chooses. A sort-selector box is also available, which helps the user sort the products by price, name, rating, theme, category, and availability.
 
 Each product card displays the product image, name, price, category, theme, rating and a link to view more details.
 
@@ -683,13 +687,13 @@ Product Detail section features:
 -	Product SKU for reference
 -	Product category which links to other products in same category
 -	Product theme
--	Product rating (this could be No rating) if product hasn’t yet been reviewed
--	Product description which describes the product 
--	Product stock.  If the stock is 0, this changes to Made to Order and a little high-lighted note is displayed to notify users of order quantity limitations and possible delays in delivery times
--	Product additional information which is a dropdown link giving extra information on weight, dimensions and care details
+-	Product rating (this could be No rating if product hasn’t yet been reviewed)
+-	Product description which describes the product
+-	Product stock.  If the stock is 0, this changes to Made to Order and a short highlighted note is displayed to notify users of order quantity limitations and possible delays in delivery times
+-	Product additional information, which is a dropdown link, giving extra information on weight, dimensions and care details
 -	Quantity selector buttons which increment or decrement the quantity as needed by the user
 -	Add to Basket button which adds the quantity selected to the user’s basket
--	Back to Shop button which brings to user back to the main products page
+-	Back to Shop button which brings the user back to the main products page
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -712,11 +716,11 @@ Product Detail section features:
 
 This section varies depending on whether there are any reviews submitted on the product and whether the user is a registered user or not.
 
-All users can view the reviews if they are available.  If no reviews are available text will say “There are currently no reviews on this product”.  
+All users can view the reviews if they are available.  If no reviews are available, text will say “There are currently no reviews on this product”.  
 
 If user is not logged in, text at the bottom invites them to register or login to submit a review.
 
-Only registered users are allowed to add reviews. The Add review button is available to registered users who have not yet submitted a review on the product.  If registered user has already submitted a review, then they are only allowed to edit or delete the review.  Buttons are displayed accordingly.
+Only registered users are allowed to add reviews. The Add review button is available to registered users who have not yet submitted a review on the product.  If a registered user has already submitted a review, then they are only allowed to edit or delete the review.  Buttons are displayed accordingly.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -749,8 +753,7 @@ Only registered users are allowed to add reviews. The Add review button is avail
 
 **Add Review Page**
 
-The Add Review Page displays an image of the product being reviewed, the category and the name of the product.  This acts as a reminder for the user when reviewing the product.  The form is very simple, which 
-makes the process easy and quick for the logged-in reviewer.  All they need to do is pick a rating from 1 to 5 and write a short comment in the comment field, then click the Add button.  Both fields are required, and the user can click the Cancel button to get back to the Product Detail Page where they can check out more information about the product or see what other people have said in their reviews. Once the review is submitted the user is directed back to the product detail page where they get a success toast.  They can then see their review immediately on the page and the average calculation of all reviews on the product detail.
+The Add Review Page displays an image of the product being reviewed, the category and the name of the product.  This acts as a reminder for the user when reviewing the product.  The form is very simple, which makes the process easy and quick for the logged-in reviewer.  All they need to do is pick a rating from 1 to 5 and write a short comment in the comment field, then click the Add button.  Both fields are required, and the user can click the Cancel button to get back to the Product Detail Page, where they can check out more information about the product or see what other people have said in their reviews. Once the review is submitted, the user is directed back to the product detail page where they get a success toast.  They can then see their review immediately on the page and the average rating of all reviews on the product detail.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -811,7 +814,7 @@ The Edit Review Page is very similar to the Add Review Page.  The only differenc
 
 **Delete Review**
 
-A logged-in user can choose to delete their own product review by clicking on the Delete button on their review.  This will bring the reviewer to a confirmation page where they can either cancel out of deleting the review and be redirected back to the Product Detail page of the product or Delete the review.
+A logged-in user can choose to delete their own product review by clicking on the Delete button on their review.  This will bring the reviewer to a confirmation page where they can either cancel out of deleting the review and be redirected back to the Product Detail page or Delete the review.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -896,7 +899,7 @@ Users have access to their basket via the Adjust Basket button in case they deci
 
 **Checkout Payment Overlay**
 
-When a user clicks the Complete Order button, an overlay with a spinner is displayed, giving the user some visual feedback that their order is being processed.  If there's any problem with the payment information the user will be directed back to the Checkout Page and the payment field will be highlighted with an informative message.
+When a user clicks the Complete Order button, an overlay with a spinner is displayed, giving the user some visual feedback that their order is being processed.  If there is any problem with the payment information, the user will be directed back to the Checkout Page and the payment field will be highlighted with an informative message.
 
 At this stage, Stripe confirms that charge and sends a signal back to the database that the payment intent has succeeded.  The order is created and recorded in the database and the items ordered are deducted from the inventory.
 
@@ -925,11 +928,9 @@ A button at the bottom of the page directs the user to view the latest deals in 
 
 **STOCK MANAGEMENT**
 
-A basic stock management system has been implemented in this ecommerce project to facilitate Made to Order product functionality.  Each product has a limited number of stock available in the inventory which is deducted after each order completion.  When the stock is down to 0, the product is marked as Made to Order on the UI.  This allows the customer to still be able to purchase the product, however the quantity is limited to only 3.  This makes sure that the shop owner doesn't get a high quantity of orders on products that are not yet ready to be shipped.
+A basic stock management system has been implemented in this ecommerce project to facilitate Made to Order product functionality.  Each product has a limited number of stock available in the inventory, which is deducted after each order completion.  When the stock is down to 0, the product is marked as Made to Order on the UI.  This allows the customer to still be able to purchase the product, however the quantity is limited to only 3.  This makes sure that the shop owner doesn't get a high quantity of orders on products that are not yet ready to be shipped.
 
 To limit the quantity of orders for a small inventory, the quantity selector (+) button is disabled when the quantity reaches 10 on products in stock and when the quantity reaches 3 on Made to Order products.  Further validation has been implemented in case the user manually types in a quantity using the quantity input box on both the Product detail page and the Basket page.
-
-Ideally the stock should be deducted when the customer places a product in their basket but because of the complexity of this functionality and time constraints this was not implemented at this time.
 
 Tests and more information related to this feature can be found in [TESTING.md](TESTING.md) under User Stories go to Checkout User Story #39 and under Features Testing go to Product Detail & Basket.
 
@@ -937,7 +938,7 @@ Tests and more information related to this feature can be found in [TESTING.md](
 
 The Profile Page is accessed by registered users only.  It consists of a form by which the user can update their delivery information, and a section where they can view their order history.
 
-The logged-in user can access the Profile Page through the My Account icon in the navbar.  Here they can add their default delivery information which will then pre-populate the checkout form to speed up the checkout process. 
+The logged-in user can access the Profile Page through the My Account icon in the navbar.  Here they can add their default delivery information which will then pre-populate the checkout form to speed up the checkout process.
 
 The Order History section displays a table with the user’s previous orders, listing the order number, the date, the items purchased and the order total. The user can click on the order number to see more detail about the order.  This will direct them to the specific order history page and an alert toast is displayed informing the user that they are looking at a previous order. They can then go back to the Profile page by clicking on the Back to Profile button at the bottom of the page.
 
@@ -968,12 +969,13 @@ The Order History section displays a table with the user’s previous orders, li
 
 **Register Page**
 
-The website has the functionality for a user to register for an account to be able to login and save their delivery information, view their order history and submit reviews.
+The website has the functionality for a user to register an account to be able to log in and save their delivery information, view their order history and submit reviews.
+
 The Registration Page can be accessed via the My Account icon on the Top Navigation Bar.  A non-logged in user can also access the registration page from the Reviews section on the Product detail pages and the Checkout form.
 
 On the Registration Page there is a link and a button which directs the user to the Login Page, in case they already have an account.  Another button at the bottom can be used to go back to the Home Page.
 
-To register for an account, the user is asked to enter their email address twice to prevent any input errors.  They are also asked for a username and password twice, again this is to prevent any input errors. Once the user is satisfied with their form, they can click on the Register button which will bring them to the Confirm Email Page which will ask them to verify their email address.  An alert toast here displays the email address that the user has provided upon registration.  The user will then navigate to their email and click the link in the email sent by the site.  This will bring them to another page where they are asked to confirm their email address and username.  They will then be directed to the Login Page where a success toast tells them that they have confirmed the email address.  They can then login to their freshly registered account.
+To register for an account, the user is asked to enter both the email address and password twice to prevent any input errors.  They are also asked for a username. Once the user is satisfied with their form, they can click on the Register button which will bring them to the Confirm Email Page which will ask them to verify their email address.  An alert toast here displays the email address that the user has provided upon registration.  The user will then navigate to their email and click the link in the email sent by the site.  This will bring them to another page where they are asked to confirm their email address and username.  They will then be directed to the Login Page where a success toast tells them that they have confirmed the email address.  They can then login to their newly registered account.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -1016,13 +1018,13 @@ The Login Page can be accessed by a registered user straight after registration 
 
 The Login Page features:
 
--	a link to the Registration Page, for users who haven't yet registered an account, 
+-	a link to the Registration Page, for users who haven't yet registered an account,
 -	a form with inputs for username or email and password,
--	a Remember me checkbox which gives the user the option to save their login details,
+-	a Remember Me checkbox which gives the user the option to save their login details,
 -	the Login button which will log them into their account,
--	a forgot password link which they can use to create a new password in case they have forgotten it and
+-	a Forgot Password link which they can use to create a new password in case they have forgotten it and
 -	a Home button which will bring the user back to the Home Page.
-Both text input fields in this form are required and once the user submits the correct information they are directed to 
+Both text input fields in this form are required and once the user submits the correct information they are directed to the Home Page as logged in users.
 
 <details>
 <summary>Click to view screenshots</summary>
@@ -1070,7 +1072,7 @@ The Logout Page link is accessed via the My Account icon dropdown on the Top Nav
 
 **Password Reset**
 
-The Registration & Authentication functionality of django-allauth, gives the user the ability to reset their password if they have forgotten it.  The link for Forgotten Password? can be accessed through the Login Page.  When selected the user is directed to the Password Reset Page where they’re asked to enter their email address and after clicking on the Reset my Password button, they are directed to another page which instructs them to check their email and click on the link sent.  This will direct them to Change Password Page, where they can reset their password by entering the password twice. After submitting the form, they are directed to a page confirming that their password has been changed.  A toast success also alerts the user that their password has been changed. 
+The Registration & Authentication functionality of django-allauth, gives the user the ability to reset their password if they have forgotten it.  The link for Forgotten Password? can be accessed through the Login Page.  When selected, the user is directed to the Password Reset Page where they are asked to enter their email address. After clicking on the Reset my Password button, they are directed to another page which instructs them to check their email and click on the link sent.  This will direct them to Change Password Page, where they can reset their password by entering the password twice. After submitting the form, they are directed to a page confirming that their password has been changed.  A toast success also alerts the user that their password has been changed.
 
 <details>
 <summary>Click to view screenshots </summary>
@@ -1207,9 +1209,9 @@ A user is directed to the Error 404 page when they try to access something that 
 
 ### Future Features
 
-The following is a list of features that I would have liked to implement in this project but because of lost time on issues with the Code Anywywere workspace, I did not get a chance to.
+The following is a list of features that I would have liked to implement in this project, given ore time:
 
-- Featured products on the Home Page: I think that the landing page would benefit greatly from having a few featured products that can be changed every season. This would give first time users an idea of the kind of products they can find on the online store. It would also be of benefit to returning customers who will be able to access new or seasonal products without having to go search for them in the store.
+- Featured products on the Home Page: I think that the landing page would benefit greatly from having a few featured products that can be changed every season. This would give first time users an idea of the kind of products they can find on the online store. It would also be of benefit to returning customers who will be able to access new or seasonal products without having to search for them in the store.
 - Improve the commenting text box in reviews by installing summernote to give the users a better experience when writing reviews.
 - Have the reviews submitted checked by the store owner or member of staff before having them published on the website.
 - Give the store owner or member of staff the ability to add, update and delete products from the User Interface instead of the Admin Interface.
@@ -1264,6 +1266,7 @@ This project was developed using the following languages, frameworks, libraries 
 - [Box Shadow Generator](https://cssgenerator.org/box-shadow-css-generator.html) - A box shadow generating tool
 - [Am I responsive](https://ui.dev/amiresponsive) - For responsive visuals of the website
 - [CanIUse](https://caniuse.com/) - Browser support tables for modern web technologies
+- [Compress or Die](https://compress-or-die.com) - Webp compression
 - [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size
 - [TinyURL](https://tinyurl.com/app/) - Shortens links
 - [Coolors](https://coolors.co/) - Colour Palette Generator
