@@ -24,9 +24,9 @@ _____
     - [Website Main Goals](#website-main-goals)
   - [User Experience](#user-experience)
     - [User Stories](#user-stories)
-    - [Project \& Database Structure](#project--database-structure)
+    - [Project and Database Structure](#project-and-database-structure)
       - [Data Models](#data-models)
-    - [Wireframes \& Design Choices](#wireframes--design-choices)
+    - [Wireframes and Design Choices](#wireframes-and-design-choices)
   - [Agile Methodology](#agile-methodology)
   - [Features](#features)
     - [Existing Features](#existing-features)
@@ -36,11 +36,11 @@ _____
     - [Frameworks \& Dependencies](#frameworks--dependencies)
     - [Tools](#tools)
   - [Deployment](#deployment)
-  - [Validation \& Testing](#validation--testing)
+  - [Validation and Testing](#validation-and-testing)
   - [Bugs](#bugs)
   - [Credits](#credits)
-    - [Media](#media)
     - [Code](#code)
+    - [Media](#media)
     - [Acknowledgements](#acknowledgements)
 
 [Back to Top](#table-of-contents)
@@ -49,25 +49,27 @@ _____
 ## Introduction
 
 In my planning phase for this project, I wanted to create an ecommerce store for hand-made candles and soaps until I came across this lady's hand-painted collection of upcycled products at a fair in Malta. I was absolutely enthralled by what she had managed to create and decided to ask her for permission to use her creations for the basis of my ecommerce store.  That lady's name is Vera and her small business is called Vera's Magical Creations. At the moment Vera reaches potential customers at local markets, through her [facebook page]((https://www.facebook.com/profile.php?id=100070440427112)), or by word of mouth. All transactions are cash based and delivered in person which is time consuming.  
-This project aims to create a more permanent online presence for Vera's business.  It gives her a way to organize her products, keep track of orders and automate sales without necessarily having to interact directly with all her customers.  An online store can help her reach a wider audience and maximize her business's potential.
 
 This project aims to create a more permanent online presence for Vera's business.  It gives her a way to organize her products, keep track of orders and automate sales without necessarily having to interact directly with all her customers.  An online store can help her reach a wider audience and maximize her business's potential.
 
 By following the principles of User Experience Design, Search Engine Optimization and utilizing the Django full-stack framework and Stripe API for secure payments, Vera's Reclaimed Treasures offers its customers an efficient and seamless way to view and purchase her products from anywhere in the world.
 
 You can test the payment functionality by using the following details in the checkout page:
-•	Card Number: 4242 4242 4242 4242
-•	Expiry Date: Any future date formatted to MM/YY
-•	CVN: Any 3 digit number
-•	Postcode: Any 5 digits
+
+-	Card Number: 4242 4242 4242 4242
+-	Expiry Date: Any future date formatted to MM/YY
+-	CVN: Any 3 digit number
+-	Postcode: Any 5 digits
 
 [Back to Top](#table-of-contents)
+
 _____
 
 ## Business Model
 
 Vera's Reclaimed Treasures is a Business to Consumer(B2C) e-commerce site.  It gives the site owner an online presence where people can find her latest works and browse a wide range of finished pieces.  In addition to being a store, it is also a showcase of Vera's artistic abilities.  It carries a message of eco-consciousness and will appeal to people who are seeking eco-friendly, creative art pieces.
-As a small, fledgling business, Vera’s Reclaimed Treasures, relies on engaging with the customers, open communication and relationship building.  The website offers ways to get in touch with Vera with feedback, queries and suggestions.  Customers can also post reviews on individual products which would help Vera improve the product selection while giving the customers a positive shopping experience.
+As a small, fledgling business, Vera’s Reclaimed Treasures, relies on engaging with the customers, open communication and relationship building.  The website offers ways to get in touch with Vera with feedback, queries and suggestions. Customers can also post reviews on individual products which would help Vera improve the product selection while giving the customers a positive shopping experience.
+
 The site's target audience falls into two overlapping tiers.  The first is people who are more broadly interested in art for use of décor or gifts.  The second are interested in reuse of discarded materials and items from an eco-friendly perspective.  These audiences are both very active demographics on Social Media, including Facebook, with many pages and discussion groups catering to them.
 
 ### Marketing Strategy
@@ -222,7 +224,7 @@ The following User Stories were used to implement features which make the websit
 
 _____
 
-### Project & Database Structure
+### Project and Database Structure
 
 Utilising the Django Framework, the project is divided into specific apps handling the different features of the website. The Project directory contains the different folders for these apps as well as a templates folder where the Allauth Authentication folders, the base templates and error pages templates live. It also contains a media folder for the product images and all other images on the website and a static directory which serves as a central location for storing static assets used throughout the project.
 
@@ -268,7 +270,7 @@ The Product Model was customised to include:
 - An available field displays a checkbox in the admin, which if unchecked would display a disabled button on the product detail page instead of the increment and decrement buttons.  This would stop the user from being able to purchase the product giving Vera time to replenish her stock and/or source the recycled materials needed.  
 - Finally an image thumbnail field was added in order to be able to add smaller versions of the product images to help the shop page load faster.
 
-### Wireframes & Design Choices
+### Wireframes and Design Choices
 
 [Balsamiq](https://balsamiq.com/wireframes) was used to sketch wireframes for the most essential parts of the website, getting a feel for the website as a whole and an indication of the finished design. Through the implementation phase a few elements were changed to allow for a better user experience.
 
@@ -485,7 +487,7 @@ _____
 
 ### Existing Features
 
-**Header & Navigation**
+**HEADER & NAVIGATION**
 
 Featured on all pages, the fully responsive header is fixed to the top so that the user always has access to the navigation links, includes is divided into 3 parts:
 
@@ -507,7 +509,7 @@ Featured on all pages, the fully responsive header is fixed to the top so that t
 3. The Delivery Banner with its dark background to highlight the text displayed within.
 
 <details>
-<summary>Screenshots of the Header</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
     Mobile Navigation
@@ -541,7 +543,7 @@ Featured on all pages, the fully responsive header is fixed to the top so that t
 <br>
 </details>
 
-**Footer**
+**FOOTER**
 
 Features on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email if they prefer that method or contact and it also allows the users to keep connected via social media and to sign up for the newsletter.  It includes:
 
@@ -558,7 +560,7 @@ Features on all pages, the responsive footer is valuable to the users as it enco
 - All links are labelled for screen reading technology.
 
 <details>
-<summary>Screenshots of the Footer</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
     Lower Footer on Mobile
@@ -580,14 +582,14 @@ Features on all pages, the responsive footer is valuable to the users as it enco
 <br>
 </details>
 
-**Landing Page**
+**LANDING PAGE**
 
-*Home Page Hero*
+**Home Page Hero**
 
 The Home page hero on the Landing Page takes up more than half the viewport of any screen size.  It includes a background image of a few chosen products from the online store with an overlay of a heading and sub heading which capture the essence of the store.  It also acts as a Call to Action(CTA) as it includes a bright button inviting the user to shop now.  The button has a hover and focus effect as demonstrated below.
 
 <details>
-<summary>Screenshots of Home Hero</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Home Hero on Tablet 
@@ -603,12 +605,12 @@ The Home page hero on the Landing Page takes up more than half the viewport of a
 <br>
 </details>
 
-*Home Page Content*
+**Home Page Content**
 
 The Home Page displays further content which gives the user an outline of what the business is about.  It includes 3 cards each displaying an icon, a heading and some text giving more detail about the business.  Each card also has a button which directs the user to more information throughout the site’s pages. All 3 buttons have a hover and focus effect to show the user that they are interactive elements.
 
 <details>
-<summary>Screenshots of the Home Page Content</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Home Content on Mobile
@@ -630,9 +632,9 @@ The Home Page displays further content which gives the user an outline of what t
 <br>
 </details>
 
-**Shop**
+**SHOP**
 
-*All Products*
+**All Products**
 
 The Shop Page reached through the All Products link in the Shop dropdown on the Main Navigation, displays all the products available in the store with category badges to facilitate access to the different categories of products.  The badges are links and have a hover and focus effect to show that they are interactive elements.  Another link to the Products Home is available at the top of this page to bring the user back to All Products if they’ve been browsing by category.  
 
@@ -641,7 +643,7 @@ The Shop Page reached through the Shop Now button on the Home Page, displays all
 Each product card displays the product image, name, price, category, theme, rating and a link to view more details.
 
 <details>
-<summary>Screenshots of Product Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Mobile View
@@ -669,11 +671,11 @@ Each product card displays the product image, name, price, category, theme, rati
 <br>
 </details>
 
-*Product Detail*
+**PRODUCT DETAIL**
 
 The Product Detail Page displays more information about each specific product in the shop.  The Page is divided into two sections, with the top section showing information on the product and the bottom section showing any available reviews on the product.
 
-Top Section Features:
+Product Detail section features:
 
 -	Product name as a heading
 -	Product image which is a link that opens the image file in a new tab
@@ -690,7 +692,7 @@ Top Section Features:
 -	Back to Shop button which brings to user back to the main products page
 
 <details>
-<summary>Screenshots of Product Detail</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Product Detail In Stock on Mobile
@@ -706,7 +708,7 @@ Top Section Features:
 <br>
 </details>
 
-Bottom Section Features:
+**PRODUCT REVIEWS**
 
 This section varies depending on whether there are any reviews submitted on the product and whether the user is a registered user or not.
 
@@ -717,7 +719,7 @@ If user is not logged in, text at the bottom invites them to register or login t
 Only registered users are allowed to add reviews. The Add review button is available to registered users who have not yet submitted a review on the product.  If registered user has already submitted a review, then they are only allowed to edit or delete the review.  Buttons are displayed accordingly.
 
 <details>
-<summary>Screenshots of Product Reviews</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	No Reviews Unregistered User on Mobile View
@@ -751,7 +753,7 @@ The Add Review Page displays an image of the product being reviewed, the categor
 makes the process easy and quick for the logged-in reviewer.  All they need to do is pick a rating from 1 to 5 and write a short comment in the comment field, then click the Add button.  Both fields are required, and the user can click the Cancel button to get back to the Product Detail Page where they can check out more information about the product or see what other people have said in their reviews. Once the review is submitted the user is directed back to the product detail page where they get a success toast.  They can then see their review immediately on the page and the average calculation of all reviews on the product detail.
 
 <details>
-<summary>Screenshots for Add Review Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Product with No Rating
@@ -791,7 +793,7 @@ Post Add Review View
 The Edit Review Page is very similar to the Add Review Page.  The only difference is that the form displays pre-populated with the review information.  A logged in user can choose to change the rating, the comment or both on their own product reviews.  They can use the cancel button to get back to the Product Detail Page or update the review by clicking the Update button.  This will once again redirect them to the Product Detail Page where they can see their updated rating and review.
 
 <details>
-<summary>Screenshots for Edit Review Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Edit Review Form Prepopulated
@@ -812,7 +814,7 @@ The Edit Review Page is very similar to the Add Review Page.  The only differenc
 A logged-in user can choose to delete their own product review by clicking on the Delete button on their review.  This will bring the reviewer to a confirmation page where they can either cancel out of deleting the review and be redirected back to the Product Detail page of the product or Delete the review.
 
 <details>
-<summary>Screenshots of Delete Review</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Delete Review Confirmation Page
@@ -822,7 +824,7 @@ A logged-in user can choose to delete their own product review by clicking on th
 <br>
 </details>
 
-**Basket**
+**BASKET**
 
 The Basket Page provides the user with a summary of the items they have added to their basket.  It also provides a subtotal for each product and a grand total for all the items in their basket.  Here, the user is provided with another opportunity to update the quantity of the products or remove them entirely.  Toasts will appear just below the navigation bar with confirmations of added, updated and deleted items as well as a small summary of what is in the basket. Error toasts notify users to amend their quantity if they update their quantity beyond the 10 items per product limit and 3 items per Made to Order product limit.  
 
@@ -831,7 +833,7 @@ The user can return back to the Shop to add more products via the Keep Shopping 
 Final validation checks take place when the user clicks the Secure Checkout button to make sure the quantities ordered are within limits.  This is for quantities that are greater than the product stock + 3.
 
 <details>
-<summary>Screenshots of Basket Page & Toasts</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Basket Page on Mobile
@@ -871,7 +873,7 @@ Final validation checks take place when the user clicks the Secure Checkout butt
 <br>
 </details>
 
-**Checkout**
+**CHECKOUT**
 
 The Checkout Page consists of a summary of the basket items with subtotals and total including delivery, as well as a form for the user's delivery and billing information.  It aims to provide an easy and efficient way for a user to make a purchase.
   
@@ -879,12 +881,12 @@ Registered users can check the save info checkbox to save their information for 
 
 The last field in the form is an input for the payment information.  Payments are processed by Stripe and to facilitate a payment, a user needs to input their card details into this field. If the details are invalid, a warning message is displayed below the payment field.
 
-When the user lands on the Checkout Page, a webhook is created with the user's order and information details if available.  This is sent to Stripe which creates a payment intent for the order.  This is beneficial for the user in case they lose connection, or something goes wrong while processing the order.  This makes sure that their order is recorded and sent to the database for further processing and to deduct the items ordered from the inventory.
+When the user lands on the Checkout Page, a webhook is created with the user's order and information details if available.  This is sent to Stripe which creates a payment intent for the order.  This is beneficial for the user in case they lose connection, or something goes wrong while processing the order.  This makes sure that their order is recorded and sent to the database for further processing.
 
 Users have access to their basket via the Adjust Basket button in case they decide to update the items they want to order. A message at the bottom reminds the user of the Grand total amount that their card will be charged. They can complete the order by clicking on the Complete Order button.  Users are notified if the required fields are not filled in when they click the Complete Order button.
 
 <details>
-<summary>Screenshot of Checkout Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 ![Checkout Page on Desktop](docs/responsive/desktop-checkout-1024.png)
@@ -902,7 +904,7 @@ At this stage, Stripe confirms that charge and sends a signal back to the databa
 
 Once the order has been processed, a checkout success page is displayed with information about the order made.  A success toast is also triggered and the user receives a confirmation email for the order submitted.
 
-A button at the bottom of the page directs the user to view the latest deals in the Shop. 
+A button at the bottom of the page directs the user to view the latest deals in the Shop.
 
 <details>
 <summary>Screenshot of Checkout Success Page & Email</summary>
@@ -921,7 +923,50 @@ A button at the bottom of the page directs the user to view the latest deals in 
 <br>
 </details>
 
-**Registration**
+**STOCK MANAGEMENT**
+
+A basic stock management system has been implemented in this ecommerce project to facilitate Made to Order product functionality.  Each product has a limited number of stock available in the inventory which is deducted after each order completion.  When the stock is down to 0, the product is marked as Made to Order on the UI.  This allows the customer to still be able to purchase the product, however the quantity is limited to only 3.  This makes sure that the shop owner doesn't get a high quantity of orders on products that are not yet ready to be shipped.
+
+To limit the quantity of orders for a small inventory, the quantity selector (+) button is disabled when the quantity reaches 10 on products in stock and when the quantity reaches 3 on Made to Order products.  Further validation has been implemented in case the user manually types in a quantity using the quantity input box on both the Product detail page and the Basket page.
+
+Ideally the stock should be deducted when the customer places a product in their basket but because of the complexity of this functionality and time constraints this was not implemented at this time.
+
+Tests and more information related to this feature can be found in [TESTING.md](TESTING.md) under User Stories go to Checkout User Story #39 and under Features Testing go to Product Detail & Basket.
+
+**PROFILE**
+
+The Profile Page is accessed by registered users only.  It consists of a form by which the user can update their delivery information, and a section where they can view their order history.
+
+The logged-in user can access the Profile Page through the My Account icon in the navbar.  Here they can add their default delivery information which will then pre-populate the checkout form to speed up the checkout process. 
+
+The Order History section displays a table with the user’s previous orders, listing the order number, the date, the items purchased and the order total. The user can click on the order number to see more detail about the order.  This will direct them to the specific order history page and an alert toast is displayed informing the user that they are looking at a previous order. They can then go back to the Profile page by clicking on the Back to Profile button at the bottom of the page.
+
+<details>
+<summary>Click to view screenshots</summary>
+<br>
+
+	Profile Page
+
+![Profile Page on Desktop](docs/responsive/desktop-profile-nesthubmax1280.png)
+
+<br>
+
+	Success Toast Updated Profile
+
+![Success toast for updated profile](docs/features/profile-toastsuccessfulupdate.png)
+
+<br>
+
+	Order History with Alert Toast
+
+![Order history of an order](docs/features/profile-order_history.png)
+
+<br>   
+</details>
+
+**REGISTRATION & AUTHENTICATION**
+
+**Register Page**
 
 The website has the functionality for a user to register for an account to be able to login and save their delivery information, view their order history and submit reviews.
 The Registration Page can be accessed via the My Account icon on the Top Navigation Bar.  A non-logged in user can also access the registration page from the Reviews section on the Product detail pages and the Checkout form.
@@ -931,7 +976,7 @@ On the Registration Page there is a link and a button which directs the user to 
 To register for an account, the user is asked to enter their email address twice to prevent any input errors.  They are also asked for a username and password twice, again this is to prevent any input errors. Once the user is satisfied with their form, they can click on the Register button which will bring them to the Confirm Email Page which will ask them to verify their email address.  An alert toast here displays the email address that the user has provided upon registration.  The user will then navigate to their email and click the link in the email sent by the site.  This will bring them to another page where they are asked to confirm their email address and username.  They will then be directed to the Login Page where a success toast tells them that they have confirmed the email address.  They can then login to their freshly registered account.
 
 <details>
-<summary>Screenshots for Registration</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Registration Form
@@ -980,7 +1025,7 @@ The Login Page features:
 Both text input fields in this form are required and once the user submits the correct information they are directed to 
 
 <details>
-<summary>Screenshots for Login Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Login Page on Tablet
@@ -1007,7 +1052,7 @@ Both text input fields in this form are required and once the user submits the c
 The Logout Page link is accessed via the My Account icon dropdown on the Top Navigation bar.  When a user selects this link, they are directed to a Logout Confirmation Page where they are asked to confirm if they want to log out.  The user is also given the option to cancel logging out using the Cancel button which will direct them to the Home Page while still logged in to their account.  If the user selects to log out, they are also redirected to the Home Page but this time they see a success toast alerting them that they have successfully logged out.  
 
 <details>
-<summary>Screenshots for Logout Page</summary>
+<summary>Click to view screenshots</summary>
 <br>
 
 	Logout Confirmation Page
@@ -1028,7 +1073,7 @@ The Logout Page link is accessed via the My Account icon dropdown on the Top Nav
 The Registration & Authentication functionality of django-allauth, gives the user the ability to reset their password if they have forgotten it.  The link for Forgotten Password? can be accessed through the Login Page.  When selected the user is directed to the Password Reset Page where they’re asked to enter their email address and after clicking on the Reset my Password button, they are directed to another page which instructs them to check their email and click on the link sent.  This will direct them to Change Password Page, where they can reset their password by entering the password twice. After submitting the form, they are directed to a page confirming that their password has been changed.  A toast success also alerts the user that their password has been changed. 
 
 <details>
-<summary>Screenshots for Password Reset</summary>
+<summary>Click to view screenshots </summary>
 <br>
 
 	Password Reset Page
@@ -1067,8 +1112,113 @@ The Registration & Authentication functionality of django-allauth, gives the use
 <br>
 </details>
 
+**ABOUT PAGE**
+
+The About Page is accessed via the link in the Main Navigation bar as well as the About Me button on the Home Page's Eco-Friendly Products card.  The information on the page outlines the history and the purpose of this small business.  It helps a potential customer find out the level of experience Vera has in her craft. It helps build a level of trust in her ability to create very well accomplished products and service.  An image of Vera at a market fair is displayed on the page along with a tile with some of her bespoke creations which testify to the creativity and original style she brings to any commissioned requests.
+
+The page also displays a carousel at the bottom which consists of two CTAs.  One for the Shop and one for commissions.  Each of these display a button which leads to the Shop and the Contact page respectively.
+
+<details>
+<summary>Click to view screenshots</summary>
+<br>
+
+	Vera
+
+![Image and information](docs/responsive/tablet-about-ipadmini768.png)
+
+<br>
+
+	Commissions
+
+![Image and information](docs/responsive/mobile-about-375.png)
+
+	CTA
+
+![Shop CTA](docs/responsive/desktop-aboutcta-1368.png)
+
+![Contact CTA](docs/responsive/desktop-aboutcta2-1368.png)
+
+<br>
+</details>
+
+**CONTACT PAGE & FORM**
+
+The Contact Page can be accessed via the link on the Main Navigation bar, the Get in Touch button/link on the Home Page and in the Footer and the CTA on the About Page.  
+
+The page hero aims to encourage users to get in touch with any query they might have.  The informal text below aims to elicit the same effect.  Other contact details like the phone number and email address are provided along with the social links and the contact form.
+
+The Contact form gives users an easy way to communicate with the store owner, without leaving the website. This requires the user to select a subject with their query of choice, fill in their name, email, and type in their message.  Once they submit the form, they are directed to a Thank You page, with some information about when to expect a response. A success toast is also displayed here confirming that the message has been submitted.
+
+Messages submitted via the contact form are sent directly to the shop owner’s email to make sure she can provide immediate feedback and support to her customers.  
+
+<details>
+<summary>Click to view screenshots</summary>
+<br>
+
+	Contact Page Hero
+
+![Contact Page](docs/responsive/mobile-contact-samsunga51412.png)
+
+<br>
+
+	Contacts and Form
+
+![Contact details and form](docs/responsive/desktop-contact-surfacepro1368.png)
+
+<br>
+
+	Thank You & Success Toast
+
+![Contact form submitted](docs/features/contact-thankyou.png)
+
+<br>
+
+	Contact email received by shop owner
+
+![Contact form message in email](docs/features/contactemailreceipt.png)
+
+<br>
+</details>
+
+**ERROR PAGES**
+
+Custom Error pages 403, 404 & 500 have been added to this project in order to keep the users on the website if any errors occur.  The user will still be able to access the navigation and the footer and they will also be provided with a Home button which will bring them back to the Home page.  The error pages are designed to match the rest of the site and have text that reflects the error.
+
+A user is directed to the Error 403 when they try to access pages that they are not authorised to. An example of this is trying to edit or delete another user's review through the url.
+
+A user is directed to the Error 404 page when they try to access something that does not exist.  An example for this is entering an incorrect product id in the url.
+
+<details>
+<summary>Click here for screenshots</summary>
+<br>
+
+    Error 403 Page
+
+![Forbidden](docs/responsive/mobile-error403.png)
+
+<br>
+
+    Error 404 Page
+
+![Not Found](docs/responsive/tablet-error404.png)
+
+<br>
+</details>
 
 ### Future Features
+
+The following is a list of features that I would have liked to implement in this project but because of lost time on issues with the Code Anywywere workspace, I did not get a chance to.
+
+- Featured products on the Home Page: I think that the landing page would benefit greatly from having a few featured products that can be changed every season. This would give first time users an idea of the kind of products they can find on the online store. It would also be of benefit to returning customers who will be able to access new or seasonal products without having to go search for them in the store.
+- Improve the commenting text box in reviews by installing summernote to give the users a better experience when writing reviews.
+- Have the reviews submitted checked by the store owner or member of staff before having them published on the website.
+- Give the store owner or member of staff the ability to add, update and delete products from the User Interface instead of the Admin Interface.
+
+Other features that I would like to implement in the future are:
+
+- A Blog Page where the store owner can post articles about her craft or other related material.  This would include commenting and liking by registered users.  This feature would potentially increase the traffic on the website and by having a blog post comment section, it would also open up communication and build relationships between the shop owner and the website's users.
+- A Wishlist where registered users can add, update and remove products from their wishlist.  This would benefit the store owner as it would give her a better idea on how to improve her product selection.
+- Give the customer a way to select gift wrapping for products that they would like to send directly as gifts. This could potentially include sending out a card with a message of their choice.
 
 [Back to Top](#table-of-contents)
 
@@ -1137,7 +1287,7 @@ All deployment information can be found in [DEPLOYMENT.md](DEPLOYMENT.md)
 
 _____
 
-## Validation & Testing
+## Validation and Testing
 
 All validation & testing information can be found in [TESTING.md](TESTING.md).
 
@@ -1315,6 +1465,11 @@ Products that are marked as 'Not Available' (boolean field) are recorded as havi
 Problem:
 When simulating issues during checkout transaction in development, the payment intent is being created and is successful. Stripe sends the metadata to django and the order is being created successfully in the DB.  Email confirmation of order is being sent and a registered user can see the order details in their Profile page.  However, the product stock is not being decremented and the items are not being cleared from the user's basket.
 
+**Autofocus in Signup/Register Form**
+
+Problem:
+When opening the Register form the autofocus goes straight to the Username field which is the third field in the form skipping the email fields entirely which is not ideal.
+
 </details>
 
 [Back to Top](#table-of-contents)
@@ -1322,21 +1477,19 @@ _____
 
 ## Credits
 
-### Media
-
-Vera Vinita Schembri for allowing me to use images from her collection for 
-the purpose of this ecommerce store
-
-Austen Donohoe for the designing the Vera's Reclaimed Treasures Logo and the 
-hero images for the Home and Contact Pages.
-
 ### Code
 
-The following walkthroughs helped me get my project in shape. I have adapted the code in these walkthroughs for the needs of my project.
+- Code Institute's "Boutique Ado", accessed from the CI's LMS for the Diploma in Software Development.  I followed this walkthrough as the basis for my own store, then added functionality to better serve the purpose of my project.
 
-- Code Institute's "Boutique Ado", found in the CI's LMS for the Diploma in Software Development.  I followed this walkthrough as the basis for my own store, then added functionality to better serve the purpose of my project.
+- [Django Shop](https://django-shop.readthedocs.io/en/latest/reference/inventory.html) - used as inspiration to create a basic stock management system for my store.
 
-- [Django Tutorial: A simple contact form](https://www.youtube.com/watch?v=1ihn3iRXtsY)
+- [Ecommerce Website - Adding reviews](https://www.youtube.com/watch?v=8iCqlFyFu2s) - average rating function used on the Product Model.
+
+- [How to build Ecommmerce website - Product reviews](https://www.youtube.com/watch?v=Y5vvGQyHtpM) - helped me implement the basis for my Product Reviews.
+
+- John Dolan, for the list comprehension on the Product Detail view.
+
+- [Django Tutorial: A simple contact form](https://www.youtube.com/watch?v=1ihn3iRXtsY) - loosely based my Contact view on this tutorial.
 
 - [BobbyHadz.com - TypeError - Sequence item 0: expected str instance, NoneType found](https://bobbyhadz.com/blog/python-typeerror-sequence-item-0-expected-str-instance-list-found#sequence-item-0-expected-str-instance-nonetype-found)
 - [How to reduce stock quantity when an order is made](https://stackoverflow.com/questions/65216808/django-how-to-reduce-stock-quantity-when-an-order-is-made)
@@ -1345,10 +1498,32 @@ The following walkthroughs helped me get my project in shape. I have adapted the
 - [Using F to sort null values](https://docs.djangoproject.com/en/4.2/ref/models/expressions/#using-f-to-sort-null-values)
 - [How to force a user to logout](https://stackoverflow.com/questions/953879/how-to-force-a-user-logout-in-django)
 
+Other pages I referred to a lot:
+
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
+- [Stripe Documentation](https://stripe.com/docs)
+
+### Media
+
+[Vera's Magical Creations](https://www.facebook.com/profile.php?id=100070440427112) for allowing me to use images from her collection for the purpose of this ecommerce store.
+
+[Austen Donohoe & Circle Strafe Media](https://www.circlestrafemedia.com/) for designing the Website's Logo and favicon, the hero images for the Home and Contact Pages and the tiles on the About Page.
+
 [Back to Top](#table-of-contents)
 _____
 
 ### Acknowledgements
+
+I would like to thank the following people who inspired, motivated, guided, helped and supported me in the development of this project.
+
+- Roman Rakic, Ian Bowell, facilitator Iris Smok and the rest of my cohort for all the enlightening stand-ups.
+- My mentor Samantha Dartnall for the guidance and the encouragement.
+- John Dolan & Leon Parnis for guiding me in the right direction when I lost the plot.
+- CI tutors and all the helpful people on slack for asking questions and documenting solutions.
+- Vera Viniita Schembri for the inspiration in building this ecommerce store.
+- My partner Austen Donohoe, without whom once again, I wouldn't have made it through in one piece!
 
 [Back to Top](#table-of-contents)
 

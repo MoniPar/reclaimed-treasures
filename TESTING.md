@@ -565,6 +565,8 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 <summary>Shop Page & Product Detail</summary>
 <br>
 
+**SHOP**
+
     Mobile Samsung Galaxy S20 Width 420px
 
 ![Mobile Shop Page](docs/responsive/mobile-shop-samsunggalaxys20ultra412.png)
@@ -583,7 +585,7 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 
 <br>
 
-**Product Detail**
+**PRODUCT DETAIL**
 
     Mobile Galaxy S5 Width 360px
 
@@ -603,7 +605,7 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 
 <br>
 
-**Reviews Section**
+**REVIEWS SECTION**
 
     Mobile Width 375px
 
@@ -622,13 +624,49 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 ![Desktop Reviews Section](docs/responsive/desktop-reviews-nesthubmax1280.png)
 
 <br>
+
+**ADD REVIEW**
+
+    Mobile iPhone X Width 375px
+
+![Add review form on mobile](docs/responsive/mobile-addreview-iphonex375.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Add review form on desktop](docs/responsive/desktop-addreview-1024.png)
+
+<br>
+
+**EDIT REVIEW**
+
+    Tablet Width 768px
+
+![Edit review form on tablet](docs/responsive/tablet-editreview-768.png)
+
+<br>
+
+**DELETE REVIEW**
+
+    Mobile Galaxy S9 Width 320px
+
+![Delete review confimation on mobile](docs/responsive/mobile-deletereview-galaxys9320.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Delete review confirmation on desktop](docs/responsive/desktop-deletereivew-1024.png)
+
+<br>
 </details>
 
 <details>
 <summary>Basket & Checkout</summary>
 <br>
 
-**Basket Page**
+**BASKET PAGE**
 
     Mobile Width 320px
 
@@ -648,7 +686,7 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 
 <br>
 
-**Checkout Page**
+**CHECKOUT PAGE**
 
     Mobile Width 320px
 
@@ -668,7 +706,7 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 
 <br>
 
-**Checkout Success Page**
+**CHECKOUT SUCCESS PAGE**
 
     Mobile iPhone 14 Width 390px
 
@@ -689,7 +727,147 @@ Website was tested extensively on Chrome devtools for responsiveness.  All pages
 <br>
 </details>
 
+<details>
+<summary>Profile</summary>
+<br>
 
+    Mobile Samsung S8 Width 360px
+
+![Profile page on mobile](docs/responsive/mobile-profile-samsungs8360.png)
+
+<br>
+
+    Desktop Nest Hub Max Width 1280px
+
+![Profile page on destkop](docs/responsive/desktop-profile-nesthubmax1280.png)
+
+<br>
+</details>
+
+<details>
+<summary>Registration & Authentication</summary>
+<br>
+
+**REGISTER PAGE**
+
+    Mobile iPhone X Width 414
+
+![Register page on mobile](docs/responsive/mobile-register-iphonxr414.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Register page on desktop](docs/responsive/desktop-registration-1024.png)
+
+<br>
+
+**LOGIN PAGE**
+
+    Tablet iPad Air Width 820px
+
+![Login page on tablet](docs/responsive/tablet-login-ipadair820.png)
+
+<br>
+
+**LOGOUT PAGE**
+
+    Mobile Samsung Galaxy A5 Width 412px
+
+![Logout page on mobile ](docs/responsive/mobile-logout-samsunggalaxya51412.png)
+
+<br>
+</details>
+
+<details>
+<summary>About & Contact Pages</summary>
+<br>
+
+**ABOUT PAGE**
+
+    Mobile Width 375px
+
+![About page on mobile](docs/responsive/mobile-about-375.png)
+
+<br>
+
+    Tablet iPad Mini Width 768px
+
+![About page on tablet](docs/responsive/tablet-about-ipadmini768.png)
+
+<br>
+
+    Desktop
+
+![About page on desktop](docs/responsive/desktop-aboutcta-1368.png)
+
+<br>
+
+**CONTACT PAGE**
+
+    Mobile Samsung Galaxy A5 Width 412px
+
+![Contact page on mobile ](docs/responsive/mobile-contact-samsunga51412.png)
+
+<br>
+
+    Tablet Surface Duo Width 540px
+
+![Contact page on tablet](docs/responsive/tablet-contact-surfaceduo540.png)
+
+<br>
+
+    Desktop Surface Pro Width 1369
+
+![Contact page on laptop](docs/responsive/desktop-contact-surfacepro1368.png)
+
+<br>
+</details>
+
+<details>
+<summary>Error Pages</summary>
+<br>
+
+**ERROR 403**
+
+    Mobile Width 320px
+
+![Error 403 page on Mobile](docs/responsive/mobile-error403.png)
+
+<br>
+
+    Tablet Width 768px
+
+![Error 403 on Tablet](docs/responsive/tablet-error403.png)
+
+<br>
+
+    Desktop Width 1024px
+
+![Error 403 on Desktop](docs/responsive/desktop-error403.png)
+
+<br>
+
+**ERROR 404**
+
+    Mobile Width 320px
+
+![Error 404 on Mobile](docs/responsive/mobile-error404-iphonese375.png)
+
+<br>
+
+    Tablet Width 768px
+
+![Error 404 page on tablet](docs/responsive/tablet-error404.png)
+
+<br>
+
+    Desktop 1024px
+
+![Error 404 page on desktop](docs/responsive/desktop-error404.png)
+
+<br>
+</details>
 
 [Back To Top](#table-of-contents)
 
@@ -790,7 +968,7 @@ As a business owner, I can choose which products to feature on the landing page,
 </details>
 
 <details>
-<summary>User Registration & Authorisation</summary>
+<summary>User Registration & Authentication</summary>
 <br>
 
 [User Story #7](https://github.com/MoniPar/reclaimed-treasures/issues/7)
@@ -1676,7 +1854,7 @@ All Tests Passed
 <summary>Add Review</summary>
 <br>
 
-The Add Review Page is accessed via the Product Detail Page by a logged-in user who hasn't as yet submitted a review for that particular product
+The Add Review Page is accessed via the Product Detail Page by a logged-in user who hasn't as yet submitted a review for that particular product.
 
 | Feature	 | Action 	| Effect 		|
 |--------------------|--------------------|-------------------|
@@ -1737,6 +1915,44 @@ All Tests Passed
 </details>
 
 <details>
+<summary>Defensive Tests on Reviews</summary>
+<br>
+
+The following table includes tests for preventing unauthorised users from adding, updating and deleting reviews as well as logged in users who have already submitted a review on a particular product.
+
+| User  | Feature	 | Action 	| Effect 		|
+|-------|------------|----------|---------------|
+| Not logged in | add review page | type `/reviews/add_review/<any available product id>` at the end of url | directed to Login Page |
+|       | edit review page | type `/reviews/edit_review/<any available review id>` at the end of url | directed to Login Page |
+|       | delete review page | type `/reviews/delete_review/<any available review id>` at the end of url | directed to Login Page |
+| Logged in | edit someone else's review | type `/reviews/edit_review/<review id of another user>` at the end of url | directed to Forbidden 403 |
+|       | delete someone else's review | type `/reviews/delete_review/<review id of another user>` at the end of url | directed to Forbidden 403 |
+| Has reviewed | add review page | type `/reviews/add_review/<reviewed product id>` at the end of url | directed to Product Detail Page with warning toast |
+
+All Tests Passed
+
+<br>
+
+    Unauthorised review editing
+
+![Forbidden 403 Access Denied](docs/features/defensive-editreview.png)
+
+<br>
+
+    Unauthorised review deletion
+
+![Forbidden 403 Access Denied](docs/features/defensive-deletereview.png)
+
+<br>
+
+    User has reviewed warning message
+
+![Warning message for user who has already reviewed product](docs/features/defensive-addreview.png)
+
+<br>
+</details>
+
+<details>
 <summary>Basket</summary>
 <br>
 
@@ -1787,7 +2003,7 @@ The following table tests the quantity selector buttons on certain conditions.
 |	*	| quantity = None | click / tap | decrements to negative integer |
 | Quantity selector (+)	| product in stock | click / tap | increments till quantity = 10, becomes dimmed |
 |		|product Made to Order | click / tap | increments till quantity = 3, becomes dimmed |
-| 	*	| quantity > 10 | click / tap | quantity keeps being incremented | 	 
+| 	*	| quantity > 10 | click / tap | quantity keeps being incremented |
 
 All Tests Passed -> Tests marked with * have unwanted consequences, further validation has been written to amend this.
 
@@ -1914,6 +2130,26 @@ All Tests Passed
 </details>
 
 <details>
+<summary>Profile</summary>
+<br>
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Form 		| Fill in | Form is filled in with user’s default delivery info |
+| Update profile button | hover over | change colour |
+|			| click / tap | Toast Success Profile updated successfully |
+| Checkout Form | Choose products and navigate to Checkout | Checkout form is pre-populated with Profile form info |
+| Order number | hover over | displays full order number, address shows profile/order_history/<order number> |
+|	| click / tap | directs to order history  detail, toast alert notifies user that this is a past confirmation for order number … |
+| Back to Profile button | hover over | changes colour, address shows profile |
+|	| click / tap | directs to Profile Page |
+
+All Tests Passed
+
+<br>
+</details>
+
+<details>
 <summary>Registration & Authentication</summary>
 <br>
 
@@ -1967,7 +2203,7 @@ The Login Page can be accessed by a registered user straight after registration 
 |		| click / tap | directs to Password Reset Page |
 | Home button | hover over	|changes colour & background, address shows home |
 |		| click / tap 	| directs to the Home Page |
- 
+
 All Tests Passed
 
 <br>
@@ -2011,8 +2247,72 @@ All Tests Passed
 <br>
 </details>
 
+<details>
+<summary>About Page</summary>
 
+<br>
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| Carousel	| hover over right arrow | brightens up | 	
+|	| click / tap | goes to next slide |
+|		| hover over left arrow | brightens up |	
+|	| click / tap | goes to previous slide |
+| Shop Now button | hover over | changes colour, address shows shop |
+|		| click / tap | directs to Shop Page |
+| Get in Touch button | hover over | changes colour, address shows contact |
+|		| click / tap | directs to Contact Page |
+
+All Tests Passed
+
+<br>
+</details>
+
+<details>
+<summary>Contact</summary>
+<br>
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| contact phone | hover over |changes colour, gets underline, address shows tel:<phonenumber> |
+|		| click / tap | opens new tab / asks to open or switch app |
+| contact email | hover over |changes colour, gets underline, address shows mailto:<emailaddress> |
+|		| click / tap | opens outlook, mail, gmail or asks how to open or switch app |
+| facebook link | hover over |changes colour, address shows <Facebook Business Page> |
+|		| click / tap | opens new tab with Facebook Business page |
+| Instagram link | hover over |changes colour, address shows <Instagram Page> |
+|		| click / tap | opens new tab with Instagram page |
+| Form Validation | submit form with required fields left blank | tooltips direct user to fill in required fields |
+| Submit button | hover over | changes colour |
+|		| click / tap | submits form & directs user to Thank you page, alert toast success |
+| Home button on Thank you page | hover over | change colour & background, address shows home |
+|		| click / tap | directs to Home Page |
+
+All Tests Passed
+
+<br>
+</details>  
+
+<details>
+<summary>Error Pages</summary>
+<br>
+
+| Feature	 | Action 	| Effect 		|
+|--------------------|--------------------|-------------------|
+| To test Error 404 page | type `/test` at the end of url | directed to Error 404 page |
+| Head Back Home button | hover over | changes colour, address shows home |
+|       | click / tap | directs to Home Page |
+| To test Error 403 page | As admin type `/reviews/edit_review/31` at the end of url | directed to Error 403 |
+| Home button | hover over | changes colour, address shows home |
+|       | click / tap | directs to Home Page |
+
+All Tests Passed
+
+<br>
+</details>
 
 [Back To Top](#table-of-contents)
 
 _____
+
+[Back to README.md](README.md)
